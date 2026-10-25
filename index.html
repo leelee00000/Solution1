@@ -1,0 +1,1847 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>FlowMate · Find your next orbit</title><style>
+:root{--blue:#263ecb;--ink:#202944;--muted:#78819a;--paper:#f8f5ee;--cream:#f3e6cb;--orange:#f26f4f;--line:#dcdedc}*{box-sizing:border-box}body{margin:0;font-family:Inter,'Segoe UI','Microsoft YaHei',sans-serif;color:var(--ink);background:var(--paper)}button{font:inherit;cursor:pointer}button:focus-visible{outline:2px solid var(--orange);outline-offset:3px}.app{min-height:100vh;display:grid;grid-template-columns:122px minmax(0,1fr) 258px;background:radial-gradient(ellipse at 53% 40%,#fffdfa,#f7f3e9 76%)}aside{border-right:1px solid #d8dce5;display:flex;flex-direction:column;padding:28px 9px 22px;min-height:100vh}.brand{font-family:Georgia,serif;font-size:21px;color:var(--blue);letter-spacing:-1.9px;margin:0 0 4px 4px}.tagline{font-size:8px;letter-spacing:2px;color:#6979b4;margin-left:5px}.nav{display:grid;gap:9px;margin-top:68px}.nav button{border:0;background:none;text-align:left;padding:13px 9px;color:#626d87;border-radius:14px;display:flex;gap:8px;align-items:center;font-size:12px}.nav button .ico{width:19px;text-align:center;font-size:16px}.nav button.active{color:white;background:linear-gradient(100deg,#263ecb,#6476db 62%,#ece9f0);box-shadow:0 6px 15px #243fc91c}.aside-bottom{margin-top:auto;color:#3853c3;font-size:10px;letter-spacing:2px;line-height:1.9;padding-left:12px}.main{position:relative;min-width:0;min-height:860px;overflow:hidden}.topbar{height:96px;display:flex;justify-content:space-between;align-items:center;padding:0 37px;position:relative;z-index:5}.filters{display:flex;gap:4px;background:#f4f0e9b5;border:1px solid #e8e4de;padding:5px;border-radius:30px}.filters button{border:0;background:transparent;padding:9px 17px;border-radius:25px;font-size:12px;color:#555e78}.filters button.active{background:var(--blue);color:white;box-shadow:0 2px 8px #233dc733}.search{border:0;background:none;color:#243657;font-size:21px}.headline{position:absolute;top:112px;left:42px;z-index:3;pointer-events:none}.headline .kicker{font-size:10px;letter-spacing:2.4px;color:#7582b1}.headline h1{font-family:Georgia,'Microsoft YaHei',serif;font-size:31px;font-weight:400;color:#253ab0;letter-spacing:-1px;margin:8px 0}.headline p{color:#8c91a0;font-size:11px;letter-spacing:.3px;margin:0}.space{position:absolute;inset:90px 0 190px;cursor:default;touch-action:auto}.space:active{cursor:default}canvas{width:100%;height:100%;display:block}.bottom{position:absolute;bottom:27px;left:42px;right:35px;display:flex;align-items:flex-end;justify-content:space-between;z-index:4;pointer-events:none}.stats{display:flex;gap:30px}.stat{padding-right:28px;border-right:1px solid #d5d8df}.stat:last-child{border:0}.stat b{font:37px Georgia,serif;color:#263dbd;font-weight:400}.stat span{display:block;font-size:11px;color:#77819b;margin-top:5px}.hint{font-size:10px;letter-spacing:1.3px;color:#6f81c3;line-height:1.8;text-align:right}.detail{border-left:1px solid #e0dfdc;padding:22px 12px;display:flex;flex-direction:column;gap:16px;background:#faf8f3b8;min-height:100vh}.detail-top{display:flex;justify-content:space-between;align-items:center;height:45px}.detail-top small{font-size:10px;letter-spacing:1.8px;color:#7a85a1}.detail-top button{border:0;background:none;color:#273da9;font-size:22px}.card{border:1px solid #eae6df;background:#fffdfa;border-radius:22px;padding:13px;box-shadow:0 10px 35px #59618b0c}.planet-art{height:118px;border-radius:14px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 55% 50%,#e4d5b9,#f7e8cd 62%,#f9f0df)}.planet-art:before{content:'';position:absolute;width:140px;height:140px;border-radius:50%;top:-26px;left:calc(50% - 70px);background:radial-gradient(circle at 28% 20%,#91a1ff,#4258d7 36%,#2439b1 67%,#101c68);box-shadow:inset -15px -12px 22px #1d1e6899,10px 13px 35px #2639ad29}.planet-art:after{content:'';position:absolute;left:7%;top:55%;width:87%;height:35px;border:2px solid #2644c4;border-radius:50%;transform:rotate(-19deg)}.art-star{position:absolute;right:18px;top:20px;color:#e96d4e;font-size:18px}.card h2{font-size:18px;margin:17px 8px 11px;letter-spacing:-.5px}.badges{display:flex;gap:7px;margin:0 8px 17px}.badge{border-radius:20px;background:#e1e7fa;color:#2440a9;font-size:11px;padding:6px 11px}.badge.urgent{background:#ffe4d9;color:#e65a3e}.info{margin:0 8px;display:grid;grid-template-columns:72px 1fr;row-gap:13px;font-size:12px}.info dt{color:#8d94a6}.info dd{margin:0;color:#303c5d;line-height:1.4}.divider{border:0;border-top:1px solid #e6e3de;margin:19px 8px}.section{font-size:12px;font-weight:700;margin:0 8px 14px}.timeline{display:grid;gap:0;margin:0 8px 19px}.event{display:grid;grid-template-columns:18px 1fr auto;gap:10px;align-items:center;min-height:44px;position:relative;font-size:11px}.event:not(:last-child):before{content:'';position:absolute;left:6px;top:27px;bottom:-15px;width:1px;background:#d3d8e8}.event .point{height:12px;width:12px;border:1.5px solid #364d88;border-radius:50%;background:#fffdfa}.event.hot .point{background:var(--orange);border-color:var(--orange)}.event time{color:#8991a1;font-size:10px}.event.hot,.event.hot time{color:#eb674c}.cta{display:block;width:100%;border:0;background:var(--blue);color:white;border-radius:30px;padding:14px;font-size:12px;font-weight:650}.secondary{margin-top:8px;display:block;width:100%;border:1px solid #d6dbe7;background:none;color:#31449a;border-radius:30px;padding:12px;font-size:12px}.secondary.saved{background:#edf0ff}.mini{font-size:10px;color:#8992a5;line-height:1.7;padding:0 9px}.toast{position:fixed;left:50%;bottom:25px;transform:translateX(-50%);background:#2438a7;color:white;border-radius:40px;padding:11px 20px;font-size:12px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:20}.toast.show{opacity:1}.searchbox{position:absolute;z-index:9;top:72px;right:34px;background:#fffdfa;border:1px solid #e4e3e0;border-radius:15px;box-shadow:0 10px 35px #24367724;padding:11px;display:none}.searchbox.open{display:block}.searchbox input{border:0;outline:0;background:none;width:210px;font-size:12px;padding:7px}.searchbox button{border:0;background:none;color:#3a4a98}@media(max-width:1100px){.app{grid-template-columns:116px minmax(0,1fr) 240px}.brand{font-size:21px}.filters button{padding:8px 10px}.topbar{padding:0 20px}.detail{padding:18px 10px}.headline{left:25px}}@media(max-width:790px){.app{display:block}aside{min-height:unset;padding:15px;flex-direction:row;align-items:center;border-bottom:1px solid #e3e3e3}.brand{font-size:23px;margin:0}.tagline,.aside-bottom{display:none}.nav{margin:0 0 0 auto;display:flex;gap:0}.nav button{padding:9px}.nav button span:last-child{display:none}.main{min-height:630px}.space{inset:90px 0 138px}.headline{top:100px}.headline h1{font-size:24px}.bottom{left:24px;bottom:18px}.stat b{font-size:28px}.stats{gap:10px}.stat{padding-right:12px}.detail{min-height:unset;border-left:0;border-top:1px solid #ddd;max-width:none}.card{max-width:600px;margin:auto;width:100%}}
+
+.future-overlay{position:fixed;inset:0;z-index:80;background:#1c275b75;backdrop-filter:blur(9px);display:none;align-items:center;justify-content:center;padding:22px}.future-overlay.open{display:flex}.future-dialog{width:min(1030px,98vw);max-height:94vh;overflow:auto;border:1px solid #ffffffb8;border-radius:26px;background:#fbf8f1;box-shadow:0 25px 90px #14235445;padding:30px 34px;color:#202944}.future-header{display:flex;justify-content:space-between;gap:20px;border-bottom:1px solid #dcdedc;padding-bottom:21px}.future-header small,.future-eyebrow,.future-label{letter-spacing:.19em;color:#4960bb;font-size:11px;font-weight:700}.future-header h2{font:normal clamp(27px,3vw,39px) Georgia,'Microsoft YaHei',serif;color:#243bbb;margin:8px 0}.future-header p{font-size:13px;color:#858da1;margin:0}.future-header>button{border:1px solid #d8dff2;background:#fffdf7;border-radius:50%;width:36px;height:36px;color:#3048bd}.future-layout{display:grid;grid-template-columns:.87fr 1.13fr;gap:35px;padding-top:25px}.future-input{padding-right:10px}.future-label{margin:8px 0 14px}.goal-options,.risk-options{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:28px}.goal-options button,.risk-options button{border:1px solid #d5dcf0;background:#fffefa;color:#53617c;border-radius:50px;padding:9px 13px;font-size:12px}.goal-options button.chosen,.risk-options button.chosen{background:#3049cc;color:white;border-color:#3049cc}.range-row{display:flex;justify-content:space-between;align-items:center;color:#69748f;font-size:13px;margin-top:12px}.range-row strong{color:#3049cc}.future-input input[type=range]{width:100%;accent-color:#3049cc;margin:13px 0 19px}.future-note{border-top:1px solid #e4e1d9;padding-top:14px;font-size:11px;color:#9199aa;line-height:1.8}.future-outcome{border-radius:22px;background:linear-gradient(140deg,#f4f0e8,#f8f6f2 60%,#e5e9ff);border:1px solid #e5e2dc;padding:20px 25px 24px;overflow:hidden}.future-sky{height:144px;position:relative;margin:8px 0 0;background:radial-gradient(ellipse at 50% 70%,#f7dfc2a3,transparent 67%)}.future-orbit{position:absolute;border:1px solid #8fa2db55;border-radius:50%;width:72%;height:52%;left:14%;top:26%;transform:rotate(-17deg)}.future-orbit.two{width:92%;height:74%;left:4%;top:14%;transform:rotate(-17deg)}.future-orbit.three{width:52%;height:37%;left:24%;top:33%;transform:rotate(-17deg)}.future-world{position:absolute;display:block;border-radius:50%;box-shadow:inset -9px -8px 14px #223a8866, inset 7px 6px 10px #fff9eacc}.future-world.a{width:58px;height:58px;left:23%;top:21%;background:radial-gradient(circle at 32% 27%,#e5eaff,#4a67d9 55%,#1c3297)}.future-world.b{width:27px;height:27px;left:72%;top:52%;background:radial-gradient(circle at 30% 30%,#fff1d2,#efaa7d 58%,#d46b57)}.future-world.c{width:15px;height:15px;left:52%;top:7%;background:radial-gradient(circle at 30% 30%,#fff7e2,#d5b47c)}.future-star{position:absolute;top:43%;left:51%;font-size:32px;color:#3049cc}.future-outcome h3{font-size:22px;line-height:1.45;color:#253bb2;margin:8px 0}.future-outcome>p{font-size:12px;line-height:1.8;color:#687590;margin:0 0 18px}.future-metrics{display:flex;gap:34px;border-top:1px solid #d8dbea;border-bottom:1px solid #d8dbea;padding:14px 0}.future-metrics>div{display:flex;align-items:baseline;gap:8px}.future-metrics b{font:32px Georgia;color:#2b43c0}.future-metrics small{font-size:11px;color:#7885a2}.future-road{padding:15px 0}.future-road>div{display:flex;gap:12px;align-items:flex-start;margin:11px 0;font-size:12px;color:#53617c}.future-road em{font-style:normal;flex-shrink:0;border:1px solid #bcc8e7;border-radius:20px;color:#344bc3;padding:3px 9px;font-size:10px}.future-action{display:flex;gap:10px;flex-wrap:wrap}.future-action button{border:1px solid #3049cc;background:#3049cc;color:white;border-radius:30px;padding:12px 17px;font-size:12px}.future-action button+button{background:transparent;color:#3049cc}@media(max-width:760px){.future-layout{grid-template-columns:1fr}.future-dialog{padding:20px}.future-overlay{padding:9px}.future-sky{height:100px}}
+.next-orbit{margin:16px 0 12px;padding:16px 18px;border:1px solid #d7ddf1;border-radius:18px;background:linear-gradient(130deg,#f3f1e9,#e9edff 70%,#fff1e4)}.next-orbit span{display:block;font-size:10px;letter-spacing:.16em;color:#526bb3;margin-bottom:9px}.next-orbit strong{display:block;font-size:17px;color:#253db8}.next-orbit p{font-size:12px;line-height:1.7;color:#69758e;margin:8px 0 12px}.next-orbit button{border:1px solid #bdc9ed;border-radius:99px;background:#fffaf2;color:#253db8;padding:9px 13px;font-size:12px}.next-orbit button:hover{background:#e1e8ff}.zoom-indicator{position:absolute;right:18px;bottom:20px;z-index:7;padding:11px 15px;border:1px solid #d6dcf0;border-radius:15px;background:#fffaf0ee;box-shadow:0 8px 25px #24397c12;pointer-events:none;opacity:.72;transition:opacity .2s}.zoom-indicator.visible{opacity:1;border-color:#7b8ce0}.zoom-indicator span{font-size:10px;letter-spacing:.12em;color:#7381a5;display:block}.zoom-indicator strong{font-size:18px;color:#263ecb;display:block;margin:2px 0}.zoom-indicator small{font-size:10px;line-height:1.6;color:#7d8499;display:block}.space canvas{cursor:grab}@media(max-width:850px){.zoom-indicator{right:8px;bottom:8px;padding:8px}.zoom-indicator small{display:none}}
+
+/* V80: one-screen composition. Counts become a compact header strip;
+   the timeline docks immediately below the orbital viewport. */
+@media (min-width:701px){
+ .main{height:680px!important;min-height:680px!important}
+ .space{inset:92px 0 104px!important}
+ .time-ruler.candy-ruler{top:auto!important;bottom:17px!important;left:clamp(18px,3vw,38px)!important;right:clamp(18px,3vw,38px)!important}
+ .bottom{top:170px!important;bottom:auto!important;left:auto!important;right:clamp(18px,3vw,38px)!important;align-items:center!important}
+ .stats{gap:11px!important;align-items:center!important}
+ .stat{padding-right:11px!important}
+ .stat b{font-size:20px!important}
+ .stat span{font-size:9px!important;margin-top:0!important}
+ .hint{display:none!important}
+}
+@media (max-width:900px) and (min-width:701px){.bottom{top:204px!important;right:20px!important}.stat b{font-size:17px!important}.stats{gap:7px!important}}
+@media (max-width:700px){
+ .main{height:665px!important;min-height:665px!important}
+ .space{inset:94px 0 110px!important}
+ .time-ruler.candy-ruler{top:auto!important;bottom:15px!important}
+ .bottom{top:170px!important;bottom:auto!important;left:auto!important;right:15px!important}
+ .stat b{font-size:18px!important}.stat span{font-size:9px!important}.stats{gap:8px!important}.stat{padding-right:8px!important}.hint{display:none!important}
+}
+</style><style>.space{background:radial-gradient(ellipse at 50% 46%,#fffaf0 0%,#f8f4ec 75%,#f3eee6 100%)}.card{background:linear-gradient(145deg,#fffdf9,#f5f0e8)}.planet-art{background:radial-gradient(circle at 35% 30%,#f5e8cc,#d4d9f5 44%,#2542c2 74%,#172d8b 100%)}.main:after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.10;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E")} .time-controls{position:absolute;top:97px;right:30px;z-index:6;display:flex;align-items:center;gap:9px;flex-wrap:wrap}.time-controls label{font-size:11px;color:#66718d}.time-controls select{font:12px 'Microsoft YaHei',sans-serif;border:1px solid #d8dcef;border-radius:20px;background:#fffdf9;padding:8px 12px;color:#263dbd;cursor:pointer}.key-panel{position:absolute;top:205px;left:42px;z-index:5;background:#fffdf9db;border:1px solid #e8e5df;border-radius:14px;padding:12px 14px;font-size:11px;color:#64708b;max-width:200px}.key-panel strong{display:block;color:#263dbd;margin-bottom:9px;font-size:11px}.key-line{display:flex;align-items:center;gap:8px;margin:7px 0}.key-dot{display:inline-block;width:10px;height:10px;border-radius:50%;flex:none}.key-scale{display:flex;gap:5px;align-items:center;margin-top:12px}.key-scale i{display:inline-block;border-radius:50%;background:#8c9ada}.empty-note{position:absolute;top:52%;left:50%;transform:translate(-50%,-50%);color:#78819a;font-size:13px;z-index:4;pointer-events:none}.planet-legend{font-size:10px;color:#7d87a2;margin:0 8px 12px;line-height:1.6}@media(max-width:1100px){.time-controls{top:98px;right:15px}.key-panel{top:215px;left:25px}}@media(max-width:790px){.time-controls{top:94px;left:20px;right:auto}.key-panel{top:177px;left:20px;padding:8px 10px}.headline{display:none}}
+.future-overlay{position:fixed;inset:0;z-index:80;background:#1c275b75;backdrop-filter:blur(9px);display:none;align-items:center;justify-content:center;padding:22px}.future-overlay.open{display:flex}.future-dialog{width:min(1030px,98vw);max-height:94vh;overflow:auto;border:1px solid #ffffffb8;border-radius:26px;background:#fbf8f1;box-shadow:0 25px 90px #14235445;padding:30px 34px;color:#202944}.future-header{display:flex;justify-content:space-between;gap:20px;border-bottom:1px solid #dcdedc;padding-bottom:21px}.future-header small,.future-eyebrow,.future-label{letter-spacing:.19em;color:#4960bb;font-size:11px;font-weight:700}.future-header h2{font:normal clamp(27px,3vw,39px) Georgia,'Microsoft YaHei',serif;color:#243bbb;margin:8px 0}.future-header p{font-size:13px;color:#858da1;margin:0}.future-header>button{border:1px solid #d8dff2;background:#fffdf7;border-radius:50%;width:36px;height:36px;color:#3048bd}.future-layout{display:grid;grid-template-columns:.87fr 1.13fr;gap:35px;padding-top:25px}.future-input{padding-right:10px}.future-label{margin:8px 0 14px}.goal-options,.risk-options{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:28px}.goal-options button,.risk-options button{border:1px solid #d5dcf0;background:#fffefa;color:#53617c;border-radius:50px;padding:9px 13px;font-size:12px}.goal-options button.chosen,.risk-options button.chosen{background:#3049cc;color:white;border-color:#3049cc}.range-row{display:flex;justify-content:space-between;align-items:center;color:#69748f;font-size:13px;margin-top:12px}.range-row strong{color:#3049cc}.future-input input[type=range]{width:100%;accent-color:#3049cc;margin:13px 0 19px}.future-note{border-top:1px solid #e4e1d9;padding-top:14px;font-size:11px;color:#9199aa;line-height:1.8}.future-outcome{border-radius:22px;background:linear-gradient(140deg,#f4f0e8,#f8f6f2 60%,#e5e9ff);border:1px solid #e5e2dc;padding:20px 25px 24px;overflow:hidden}.future-sky{height:144px;position:relative;margin:8px 0 0;background:radial-gradient(ellipse at 50% 70%,#f7dfc2a3,transparent 67%)}.future-orbit{position:absolute;border:1px solid #8fa2db55;border-radius:50%;width:72%;height:52%;left:14%;top:26%;transform:rotate(-17deg)}.future-orbit.two{width:92%;height:74%;left:4%;top:14%;transform:rotate(-17deg)}.future-orbit.three{width:52%;height:37%;left:24%;top:33%;transform:rotate(-17deg)}.future-world{position:absolute;display:block;border-radius:50%;box-shadow:inset -9px -8px 14px #223a8866, inset 7px 6px 10px #fff9eacc}.future-world.a{width:58px;height:58px;left:23%;top:21%;background:radial-gradient(circle at 32% 27%,#e5eaff,#4a67d9 55%,#1c3297)}.future-world.b{width:27px;height:27px;left:72%;top:52%;background:radial-gradient(circle at 30% 30%,#fff1d2,#efaa7d 58%,#d46b57)}.future-world.c{width:15px;height:15px;left:52%;top:7%;background:radial-gradient(circle at 30% 30%,#fff7e2,#d5b47c)}.future-star{position:absolute;top:43%;left:51%;font-size:32px;color:#3049cc}.future-outcome h3{font-size:22px;line-height:1.45;color:#253bb2;margin:8px 0}.future-outcome>p{font-size:12px;line-height:1.8;color:#687590;margin:0 0 18px}.future-metrics{display:flex;gap:34px;border-top:1px solid #d8dbea;border-bottom:1px solid #d8dbea;padding:14px 0}.future-metrics>div{display:flex;align-items:baseline;gap:8px}.future-metrics b{font:32px Georgia;color:#2b43c0}.future-metrics small{font-size:11px;color:#7885a2}.future-road{padding:15px 0}.future-road>div{display:flex;gap:12px;align-items:flex-start;margin:11px 0;font-size:12px;color:#53617c}.future-road em{font-style:normal;flex-shrink:0;border:1px solid #bcc8e7;border-radius:20px;color:#344bc3;padding:3px 9px;font-size:10px}.future-action{display:flex;gap:10px;flex-wrap:wrap}.future-action button{border:1px solid #3049cc;background:#3049cc;color:white;border-radius:30px;padding:12px 17px;font-size:12px}.future-action button+button{background:transparent;color:#3049cc}@media(max-width:760px){.future-layout{grid-template-columns:1fr}.future-dialog{padding:20px}.future-overlay{padding:9px}.future-sky{height:100px}}
+.next-orbit{margin:16px 0 12px;padding:16px 18px;border:1px solid #d7ddf1;border-radius:18px;background:linear-gradient(130deg,#f3f1e9,#e9edff 70%,#fff1e4)}.next-orbit span{display:block;font-size:10px;letter-spacing:.16em;color:#526bb3;margin-bottom:9px}.next-orbit strong{display:block;font-size:17px;color:#253db8}.next-orbit p{font-size:12px;line-height:1.7;color:#69758e;margin:8px 0 12px}.next-orbit button{border:1px solid #bdc9ed;border-radius:99px;background:#fffaf2;color:#253db8;padding:9px 13px;font-size:12px}.next-orbit button:hover{background:#e1e8ff}.zoom-indicator{position:absolute;right:18px;bottom:20px;z-index:7;padding:11px 15px;border:1px solid #d6dcf0;border-radius:15px;background:#fffaf0ee;box-shadow:0 8px 25px #24397c12;pointer-events:none;opacity:.72;transition:opacity .2s}.zoom-indicator.visible{opacity:1;border-color:#7b8ce0}.zoom-indicator span{font-size:10px;letter-spacing:.12em;color:#7381a5;display:block}.zoom-indicator strong{font-size:18px;color:#263ecb;display:block;margin:2px 0}.zoom-indicator small{font-size:10px;line-height:1.6;color:#7d8499;display:block}.space canvas{cursor:grab}@media(max-width:850px){.zoom-indicator{right:8px;bottom:8px;padding:8px}.zoom-indicator small{display:none}}
+</style><style>.headline{top:110px;left:32px}.headline h1{font-size:clamp(23px,2.1vw,32px)}.time-controls{top:105px;right:18px;gap:5px}.time-controls select{padding:7px 8px}.key-panel{top:232px;left:25px;max-width:184px;padding:11px}.key-panel .key-line{margin:5px 0}.key-panel strong{font-size:10px}.space{inset:130px 0 90px}.headline{max-width:290px}.headline p{max-width:230px;line-height:1.6}@media(max-width:1200px){.headline{top:165px}.key-panel{top:290px}.time-controls{top:100px;left:24px;right:auto}}@media(max-width:790px){.space{inset:100px 0 70px}.key-panel{top:170px;max-width:150px}}
+.future-overlay{position:fixed;inset:0;z-index:80;background:#1c275b75;backdrop-filter:blur(9px);display:none;align-items:center;justify-content:center;padding:22px}.future-overlay.open{display:flex}.future-dialog{width:min(1030px,98vw);max-height:94vh;overflow:auto;border:1px solid #ffffffb8;border-radius:26px;background:#fbf8f1;box-shadow:0 25px 90px #14235445;padding:30px 34px;color:#202944}.future-header{display:flex;justify-content:space-between;gap:20px;border-bottom:1px solid #dcdedc;padding-bottom:21px}.future-header small,.future-eyebrow,.future-label{letter-spacing:.19em;color:#4960bb;font-size:11px;font-weight:700}.future-header h2{font:normal clamp(27px,3vw,39px) Georgia,'Microsoft YaHei',serif;color:#243bbb;margin:8px 0}.future-header p{font-size:13px;color:#858da1;margin:0}.future-header>button{border:1px solid #d8dff2;background:#fffdf7;border-radius:50%;width:36px;height:36px;color:#3048bd}.future-layout{display:grid;grid-template-columns:.87fr 1.13fr;gap:35px;padding-top:25px}.future-input{padding-right:10px}.future-label{margin:8px 0 14px}.goal-options,.risk-options{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:28px}.goal-options button,.risk-options button{border:1px solid #d5dcf0;background:#fffefa;color:#53617c;border-radius:50px;padding:9px 13px;font-size:12px}.goal-options button.chosen,.risk-options button.chosen{background:#3049cc;color:white;border-color:#3049cc}.range-row{display:flex;justify-content:space-between;align-items:center;color:#69748f;font-size:13px;margin-top:12px}.range-row strong{color:#3049cc}.future-input input[type=range]{width:100%;accent-color:#3049cc;margin:13px 0 19px}.future-note{border-top:1px solid #e4e1d9;padding-top:14px;font-size:11px;color:#9199aa;line-height:1.8}.future-outcome{border-radius:22px;background:linear-gradient(140deg,#f4f0e8,#f8f6f2 60%,#e5e9ff);border:1px solid #e5e2dc;padding:20px 25px 24px;overflow:hidden}.future-sky{height:144px;position:relative;margin:8px 0 0;background:radial-gradient(ellipse at 50% 70%,#f7dfc2a3,transparent 67%)}.future-orbit{position:absolute;border:1px solid #8fa2db55;border-radius:50%;width:72%;height:52%;left:14%;top:26%;transform:rotate(-17deg)}.future-orbit.two{width:92%;height:74%;left:4%;top:14%;transform:rotate(-17deg)}.future-orbit.three{width:52%;height:37%;left:24%;top:33%;transform:rotate(-17deg)}.future-world{position:absolute;display:block;border-radius:50%;box-shadow:inset -9px -8px 14px #223a8866, inset 7px 6px 10px #fff9eacc}.future-world.a{width:58px;height:58px;left:23%;top:21%;background:radial-gradient(circle at 32% 27%,#e5eaff,#4a67d9 55%,#1c3297)}.future-world.b{width:27px;height:27px;left:72%;top:52%;background:radial-gradient(circle at 30% 30%,#fff1d2,#efaa7d 58%,#d46b57)}.future-world.c{width:15px;height:15px;left:52%;top:7%;background:radial-gradient(circle at 30% 30%,#fff7e2,#d5b47c)}.future-star{position:absolute;top:43%;left:51%;font-size:32px;color:#3049cc}.future-outcome h3{font-size:22px;line-height:1.45;color:#253bb2;margin:8px 0}.future-outcome>p{font-size:12px;line-height:1.8;color:#687590;margin:0 0 18px}.future-metrics{display:flex;gap:34px;border-top:1px solid #d8dbea;border-bottom:1px solid #d8dbea;padding:14px 0}.future-metrics>div{display:flex;align-items:baseline;gap:8px}.future-metrics b{font:32px Georgia;color:#2b43c0}.future-metrics small{font-size:11px;color:#7885a2}.future-road{padding:15px 0}.future-road>div{display:flex;gap:12px;align-items:flex-start;margin:11px 0;font-size:12px;color:#53617c}.future-road em{font-style:normal;flex-shrink:0;border:1px solid #bcc8e7;border-radius:20px;color:#344bc3;padding:3px 9px;font-size:10px}.future-action{display:flex;gap:10px;flex-wrap:wrap}.future-action button{border:1px solid #3049cc;background:#3049cc;color:white;border-radius:30px;padding:12px 17px;font-size:12px}.future-action button+button{background:transparent;color:#3049cc}@media(max-width:760px){.future-layout{grid-template-columns:1fr}.future-dialog{padding:20px}.future-overlay{padding:9px}.future-sky{height:100px}}
+.next-orbit{margin:16px 0 12px;padding:16px 18px;border:1px solid #d7ddf1;border-radius:18px;background:linear-gradient(130deg,#f3f1e9,#e9edff 70%,#fff1e4)}.next-orbit span{display:block;font-size:10px;letter-spacing:.16em;color:#526bb3;margin-bottom:9px}.next-orbit strong{display:block;font-size:17px;color:#253db8}.next-orbit p{font-size:12px;line-height:1.7;color:#69758e;margin:8px 0 12px}.next-orbit button{border:1px solid #bdc9ed;border-radius:99px;background:#fffaf2;color:#253db8;padding:9px 13px;font-size:12px}.next-orbit button:hover{background:#e1e8ff}.zoom-indicator{position:absolute;right:18px;bottom:20px;z-index:7;padding:11px 15px;border:1px solid #d6dcf0;border-radius:15px;background:#fffaf0ee;box-shadow:0 8px 25px #24397c12;pointer-events:none;opacity:.72;transition:opacity .2s}.zoom-indicator.visible{opacity:1;border-color:#7b8ce0}.zoom-indicator span{font-size:10px;letter-spacing:.12em;color:#7381a5;display:block}.zoom-indicator strong{font-size:18px;color:#263ecb;display:block;margin:2px 0}.zoom-indicator small{font-size:10px;line-height:1.6;color:#7d8499;display:block}.space canvas{cursor:grab}@media(max-width:850px){.zoom-indicator{right:8px;bottom:8px;padding:8px}.zoom-indicator small{display:none}}
+</style><style>.brand{white-space:nowrap}.nav button{white-space:nowrap}.headline{left:26px}.key-panel{left:26px;top:245px;background:#fffdf9db}.planet-art:before{background:radial-gradient(circle at 27% 22%,#f7e9ce 0%,#b5c1fa 13%,#5068dc 43%,#253fbd 72%,#182b88 100%);box-shadow:inset -12px -12px 28px #172a8470,8px 13px 25px #2639ad19}.planet-art:after{border-width:1px;opacity:.7}
+.future-overlay{position:fixed;inset:0;z-index:80;background:#1c275b75;backdrop-filter:blur(9px);display:none;align-items:center;justify-content:center;padding:22px}.future-overlay.open{display:flex}.future-dialog{width:min(1030px,98vw);max-height:94vh;overflow:auto;border:1px solid #ffffffb8;border-radius:26px;background:#fbf8f1;box-shadow:0 25px 90px #14235445;padding:30px 34px;color:#202944}.future-header{display:flex;justify-content:space-between;gap:20px;border-bottom:1px solid #dcdedc;padding-bottom:21px}.future-header small,.future-eyebrow,.future-label{letter-spacing:.19em;color:#4960bb;font-size:11px;font-weight:700}.future-header h2{font:normal clamp(27px,3vw,39px) Georgia,'Microsoft YaHei',serif;color:#243bbb;margin:8px 0}.future-header p{font-size:13px;color:#858da1;margin:0}.future-header>button{border:1px solid #d8dff2;background:#fffdf7;border-radius:50%;width:36px;height:36px;color:#3048bd}.future-layout{display:grid;grid-template-columns:.87fr 1.13fr;gap:35px;padding-top:25px}.future-input{padding-right:10px}.future-label{margin:8px 0 14px}.goal-options,.risk-options{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:28px}.goal-options button,.risk-options button{border:1px solid #d5dcf0;background:#fffefa;color:#53617c;border-radius:50px;padding:9px 13px;font-size:12px}.goal-options button.chosen,.risk-options button.chosen{background:#3049cc;color:white;border-color:#3049cc}.range-row{display:flex;justify-content:space-between;align-items:center;color:#69748f;font-size:13px;margin-top:12px}.range-row strong{color:#3049cc}.future-input input[type=range]{width:100%;accent-color:#3049cc;margin:13px 0 19px}.future-note{border-top:1px solid #e4e1d9;padding-top:14px;font-size:11px;color:#9199aa;line-height:1.8}.future-outcome{border-radius:22px;background:linear-gradient(140deg,#f4f0e8,#f8f6f2 60%,#e5e9ff);border:1px solid #e5e2dc;padding:20px 25px 24px;overflow:hidden}.future-sky{height:144px;position:relative;margin:8px 0 0;background:radial-gradient(ellipse at 50% 70%,#f7dfc2a3,transparent 67%)}.future-orbit{position:absolute;border:1px solid #8fa2db55;border-radius:50%;width:72%;height:52%;left:14%;top:26%;transform:rotate(-17deg)}.future-orbit.two{width:92%;height:74%;left:4%;top:14%;transform:rotate(-17deg)}.future-orbit.three{width:52%;height:37%;left:24%;top:33%;transform:rotate(-17deg)}.future-world{position:absolute;display:block;border-radius:50%;box-shadow:inset -9px -8px 14px #223a8866, inset 7px 6px 10px #fff9eacc}.future-world.a{width:58px;height:58px;left:23%;top:21%;background:radial-gradient(circle at 32% 27%,#e5eaff,#4a67d9 55%,#1c3297)}.future-world.b{width:27px;height:27px;left:72%;top:52%;background:radial-gradient(circle at 30% 30%,#fff1d2,#efaa7d 58%,#d46b57)}.future-world.c{width:15px;height:15px;left:52%;top:7%;background:radial-gradient(circle at 30% 30%,#fff7e2,#d5b47c)}.future-star{position:absolute;top:43%;left:51%;font-size:32px;color:#3049cc}.future-outcome h3{font-size:22px;line-height:1.45;color:#253bb2;margin:8px 0}.future-outcome>p{font-size:12px;line-height:1.8;color:#687590;margin:0 0 18px}.future-metrics{display:flex;gap:34px;border-top:1px solid #d8dbea;border-bottom:1px solid #d8dbea;padding:14px 0}.future-metrics>div{display:flex;align-items:baseline;gap:8px}.future-metrics b{font:32px Georgia;color:#2b43c0}.future-metrics small{font-size:11px;color:#7885a2}.future-road{padding:15px 0}.future-road>div{display:flex;gap:12px;align-items:flex-start;margin:11px 0;font-size:12px;color:#53617c}.future-road em{font-style:normal;flex-shrink:0;border:1px solid #bcc8e7;border-radius:20px;color:#344bc3;padding:3px 9px;font-size:10px}.future-action{display:flex;gap:10px;flex-wrap:wrap}.future-action button{border:1px solid #3049cc;background:#3049cc;color:white;border-radius:30px;padding:12px 17px;font-size:12px}.future-action button+button{background:transparent;color:#3049cc}@media(max-width:760px){.future-layout{grid-template-columns:1fr}.future-dialog{padding:20px}.future-overlay{padding:9px}.future-sky{height:100px}}
+.next-orbit{margin:16px 0 12px;padding:16px 18px;border:1px solid #d7ddf1;border-radius:18px;background:linear-gradient(130deg,#f3f1e9,#e9edff 70%,#fff1e4)}.next-orbit span{display:block;font-size:10px;letter-spacing:.16em;color:#526bb3;margin-bottom:9px}.next-orbit strong{display:block;font-size:17px;color:#253db8}.next-orbit p{font-size:12px;line-height:1.7;color:#69758e;margin:8px 0 12px}.next-orbit button{border:1px solid #bdc9ed;border-radius:99px;background:#fffaf2;color:#253db8;padding:9px 13px;font-size:12px}.next-orbit button:hover{background:#e1e8ff}.zoom-indicator{position:absolute;right:18px;bottom:20px;z-index:7;padding:11px 15px;border:1px solid #d6dcf0;border-radius:15px;background:#fffaf0ee;box-shadow:0 8px 25px #24397c12;pointer-events:none;opacity:.72;transition:opacity .2s}.zoom-indicator.visible{opacity:1;border-color:#7b8ce0}.zoom-indicator span{font-size:10px;letter-spacing:.12em;color:#7381a5;display:block}.zoom-indicator strong{font-size:18px;color:#263ecb;display:block;margin:2px 0}.zoom-indicator small{font-size:10px;line-height:1.6;color:#7d8499;display:block}.space canvas{cursor:grab}@media(max-width:850px){.zoom-indicator{right:8px;bottom:8px;padding:8px}.zoom-indicator small{display:none}}
+</style><style>.nav button{padding:12px 5px;gap:5px;font-size:11px}.nav button .ico{width:15px;font-size:14px}.brand{letter-spacing:-1.5px}.tagline{letter-spacing:1px;font-size:7px}.detail .info{grid-template-columns:65px 1fr;row-gap:10px;font-size:11px}.card{padding:10px}.key-panel{max-width:170px}
+.future-overlay{position:fixed;inset:0;z-index:80;background:#1c275b75;backdrop-filter:blur(9px);display:none;align-items:center;justify-content:center;padding:22px}.future-overlay.open{display:flex}.future-dialog{width:min(1030px,98vw);max-height:94vh;overflow:auto;border:1px solid #ffffffb8;border-radius:26px;background:#fbf8f1;box-shadow:0 25px 90px #14235445;padding:30px 34px;color:#202944}.future-header{display:flex;justify-content:space-between;gap:20px;border-bottom:1px solid #dcdedc;padding-bottom:21px}.future-header small,.future-eyebrow,.future-label{letter-spacing:.19em;color:#4960bb;font-size:11px;font-weight:700}.future-header h2{font:normal clamp(27px,3vw,39px) Georgia,'Microsoft YaHei',serif;color:#243bbb;margin:8px 0}.future-header p{font-size:13px;color:#858da1;margin:0}.future-header>button{border:1px solid #d8dff2;background:#fffdf7;border-radius:50%;width:36px;height:36px;color:#3048bd}.future-layout{display:grid;grid-template-columns:.87fr 1.13fr;gap:35px;padding-top:25px}.future-input{padding-right:10px}.future-label{margin:8px 0 14px}.goal-options,.risk-options{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:28px}.goal-options button,.risk-options button{border:1px solid #d5dcf0;background:#fffefa;color:#53617c;border-radius:50px;padding:9px 13px;font-size:12px}.goal-options button.chosen,.risk-options button.chosen{background:#3049cc;color:white;border-color:#3049cc}.range-row{display:flex;justify-content:space-between;align-items:center;color:#69748f;font-size:13px;margin-top:12px}.range-row strong{color:#3049cc}.future-input input[type=range]{width:100%;accent-color:#3049cc;margin:13px 0 19px}.future-note{border-top:1px solid #e4e1d9;padding-top:14px;font-size:11px;color:#9199aa;line-height:1.8}.future-outcome{border-radius:22px;background:linear-gradient(140deg,#f4f0e8,#f8f6f2 60%,#e5e9ff);border:1px solid #e5e2dc;padding:20px 25px 24px;overflow:hidden}.future-sky{height:144px;position:relative;margin:8px 0 0;background:radial-gradient(ellipse at 50% 70%,#f7dfc2a3,transparent 67%)}.future-orbit{position:absolute;border:1px solid #8fa2db55;border-radius:50%;width:72%;height:52%;left:14%;top:26%;transform:rotate(-17deg)}.future-orbit.two{width:92%;height:74%;left:4%;top:14%;transform:rotate(-17deg)}.future-orbit.three{width:52%;height:37%;left:24%;top:33%;transform:rotate(-17deg)}.future-world{position:absolute;display:block;border-radius:50%;box-shadow:inset -9px -8px 14px #223a8866, inset 7px 6px 10px #fff9eacc}.future-world.a{width:58px;height:58px;left:23%;top:21%;background:radial-gradient(circle at 32% 27%,#e5eaff,#4a67d9 55%,#1c3297)}.future-world.b{width:27px;height:27px;left:72%;top:52%;background:radial-gradient(circle at 30% 30%,#fff1d2,#efaa7d 58%,#d46b57)}.future-world.c{width:15px;height:15px;left:52%;top:7%;background:radial-gradient(circle at 30% 30%,#fff7e2,#d5b47c)}.future-star{position:absolute;top:43%;left:51%;font-size:32px;color:#3049cc}.future-outcome h3{font-size:22px;line-height:1.45;color:#253bb2;margin:8px 0}.future-outcome>p{font-size:12px;line-height:1.8;color:#687590;margin:0 0 18px}.future-metrics{display:flex;gap:34px;border-top:1px solid #d8dbea;border-bottom:1px solid #d8dbea;padding:14px 0}.future-metrics>div{display:flex;align-items:baseline;gap:8px}.future-metrics b{font:32px Georgia;color:#2b43c0}.future-metrics small{font-size:11px;color:#7885a2}.future-road{padding:15px 0}.future-road>div{display:flex;gap:12px;align-items:flex-start;margin:11px 0;font-size:12px;color:#53617c}.future-road em{font-style:normal;flex-shrink:0;border:1px solid #bcc8e7;border-radius:20px;color:#344bc3;padding:3px 9px;font-size:10px}.future-action{display:flex;gap:10px;flex-wrap:wrap}.future-action button{border:1px solid #3049cc;background:#3049cc;color:white;border-radius:30px;padding:12px 17px;font-size:12px}.future-action button+button{background:transparent;color:#3049cc}@media(max-width:760px){.future-layout{grid-template-columns:1fr}.future-dialog{padding:20px}.future-overlay{padding:9px}.future-sky{height:100px}}
+.next-orbit{margin:16px 0 12px;padding:16px 18px;border:1px solid #d7ddf1;border-radius:18px;background:linear-gradient(130deg,#f3f1e9,#e9edff 70%,#fff1e4)}.next-orbit span{display:block;font-size:10px;letter-spacing:.16em;color:#526bb3;margin-bottom:9px}.next-orbit strong{display:block;font-size:17px;color:#253db8}.next-orbit p{font-size:12px;line-height:1.7;color:#69758e;margin:8px 0 12px}.next-orbit button{border:1px solid #bdc9ed;border-radius:99px;background:#fffaf2;color:#253db8;padding:9px 13px;font-size:12px}.next-orbit button:hover{background:#e1e8ff}.zoom-indicator{position:absolute;right:18px;bottom:20px;z-index:7;padding:11px 15px;border:1px solid #d6dcf0;border-radius:15px;background:#fffaf0ee;box-shadow:0 8px 25px #24397c12;pointer-events:none;opacity:.72;transition:opacity .2s}.zoom-indicator.visible{opacity:1;border-color:#7b8ce0}.zoom-indicator span{font-size:10px;letter-spacing:.12em;color:#7381a5;display:block}.zoom-indicator strong{font-size:18px;color:#263ecb;display:block;margin:2px 0}.zoom-indicator small{font-size:10px;line-height:1.6;color:#7d8499;display:block}.space canvas{cursor:grab}@media(max-width:850px){.zoom-indicator{right:8px;bottom:8px;padding:8px}.zoom-indicator small{display:none}}
+</style><style>.verification{margin:14px 24px 20px;border-top:1px solid #d5d6df;padding-top:12px;position:relative;z-index:4}.verification summary{cursor:pointer;color:#2835aa;font-weight:650;font-size:12px;letter-spacing:.03em}.verify-intro{font-size:11px;color:#777d8e;line-height:1.6;margin:10px 0}.verify-list{max-height:190px;overflow:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:7px}.verify-row{background:#f8f7f1;border:1px solid #e4e1d8;border-radius:9px;padding:9px 10px;font-size:11px;line-height:1.5}.verify-row strong{display:block;color:#20243b;font-size:11px}.verify-row span{color:#6e7488}.verify-row a{color:#263ecb;text-decoration:none}.verify-row a:hover{text-decoration:underline}.verification:not([open]){padding-bottom:0}.verification:not([open]) .verify-list{display:none}.zoom-indicator{position:absolute;right:18px;bottom:20px;z-index:7;padding:11px 15px;border:1px solid #d6dcf0;border-radius:15px;background:#fffaf0ee;box-shadow:0 8px 25px #24397c12;pointer-events:none;opacity:.72;transition:opacity .2s}.zoom-indicator.visible{opacity:1;border-color:#7b8ce0}.zoom-indicator span{font-size:10px;letter-spacing:.12em;color:#7381a5;display:block}.zoom-indicator strong{font-size:18px;color:#263ecb;display:block;margin:2px 0}.zoom-indicator small{font-size:10px;line-height:1.6;color:#7d8499;display:block}.space canvas{cursor:grab}@media(max-width:850px){.zoom-indicator{right:8px;bottom:8px;padding:8px}.zoom-indicator small{display:none}}
+</style><style>
+/* V60: One navigation row, no data panel obscuring the universe */
+.main{min-height:780px;overflow:hidden}
+.topbar{height:auto;min-height:94px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;padding:18px 22px 12px;z-index:12}
+.topbar .filters{flex:0 1 auto;min-width:0}
+.topbar .time-controls{position:static!important;top:auto!important;left:auto!important;right:auto!important;display:flex;align-items:center;gap:6px;flex:0 1 auto;margin:0;font-size:11px;white-space:nowrap}
+.topbar .time-controls select{font-size:11px;padding:7px 22px 7px 8px;max-width:115px}
+.topbar .search{order:3;margin-left:0}
+.headline{top:112px!important;left:26px!important;max-width:340px;z-index:5;pointer-events:none}
+.headline .kicker{font-size:10px;letter-spacing:.13em}
+.headline h1{font-size:clamp(23px,2.4vw,33px);margin-top:7px}
+.space{inset:92px 0 54px!important}
+.key-panel{position:absolute!important;top:205px!important;left:23px!important;right:auto!important;width:165px;max-width:165px;z-index:9;padding:8px 11px!important;background:#fffdf9e8}
+.key-panel summary{cursor:pointer;list-style:none;font-size:11px;font-weight:650;color:#263ecb;white-space:nowrap}
+.key-panel summary::-webkit-details-marker{display:none}
+.key-panel summary:after{content:' ▾';font-size:10px}
+.key-panel[open] summary{margin-bottom:8px}
+.key-panel:not([open])>*:not(summary){display:none}
+.verification{margin:4px 0 0!important;border-top:1px solid #e1dfd8;padding:13px 0 0!important;z-index:auto}
+.verification summary{font-size:11px}
+.verify-list{grid-template-columns:1fr;max-height:250px}
+.verify-row{font-size:10px}
+@media(max-width:1180px){.topbar{gap:8px}.topbar .time-controls{width:auto}.headline{top:123px!important}.key-panel{top:213px!important}}
+@media(max-width:850px){.topbar{padding:14px 12px}.topbar .time-controls{order:2}.topbar .search{order:3}.headline{top:150px!important}.key-panel{top:220px!important}}
+.zoom-indicator{position:absolute;right:18px;bottom:20px;z-index:7;padding:11px 15px;border:1px solid #d6dcf0;border-radius:15px;background:#fffaf0ee;box-shadow:0 8px 25px #24397c12;pointer-events:none;opacity:.72;transition:opacity .2s}.zoom-indicator.visible{opacity:1;border-color:#7b8ce0}.zoom-indicator span{font-size:10px;letter-spacing:.12em;color:#7381a5;display:block}.zoom-indicator strong{font-size:18px;color:#263ecb;display:block;margin:2px 0}.zoom-indicator small{font-size:10px;line-height:1.6;color:#7d8499;display:block}.space canvas{cursor:grab}@media(max-width:850px){.zoom-indicator{right:8px;bottom:8px;padding:8px}.zoom-indicator small{display:none}}
+</style><style>
+.time-ruler{position:absolute;left:clamp(20px,5%,55px);right:clamp(20px,5%,55px);bottom:105px;z-index:8;display:flex;align-items:center;gap:23px;min-height:64px;padding:11px 22px;border:1px solid #e4e1da;border-radius:18px;background:#fffdf8eb;box-shadow:0 6px 22px #253c9910;backdrop-filter:blur(10px)}
+.ruler-head{display:flex;flex-direction:column;gap:2px;flex:0 0 175px}.ruler-head span{font-size:10px;letter-spacing:.1em;color:#606f97}.ruler-head em{font-size:9px;font-style:normal;color:#a0a9b9}.ruler-head strong{font-size:16px;color:#263ecb;font-weight:650}.ruler-head small{font-size:10px;color:#9298a5}.ruler-track{flex:1;min-width:100px}.ruler-track input{appearance:none;-webkit-appearance:none;display:block;width:100%;height:5px;border-radius:10px;outline:0;cursor:pointer;margin:8px 0 14px;background:linear-gradient(to right,#344bc5 var(--progress,31.4%),#d8deee var(--progress,31.4%))}.ruler-track input::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;width:19px;height:19px;border:4px solid #fffdf8;border-radius:50%;background:#3049ce;box-shadow:0 0 0 1px #344bc5,0 2px 8px #283fa53a;cursor:ew-resize}.ruler-track input::-moz-range-thumb{width:13px;height:13px;border:3px solid #fffdf8;border-radius:50%;background:#3049ce;box-shadow:0 0 0 1px #344bc5;cursor:ew-resize}.ruler-ticks{display:flex;justify-content:space-between;gap:2px;font-size:9px;color:#8993a9;white-space:nowrap}.bottom{bottom:20px!important}.zoom-indicator{display:none!important}
+@media(max-width:950px){.time-ruler{gap:12px;padding:10px 12px}.ruler-head{flex-basis:125px}.ruler-head em,.ruler-head small{display:none}.ruler-ticks{font-size:8px}}
+@media(max-width:600px){.time-ruler{bottom:82px;left:12px;right:12px;display:block}.ruler-head{flex-direction:row;justify-content:space-between;align-items:center;margin-bottom:8px}.ruler-head strong{font-size:13px}.ruler-ticks{font-size:8px}.bottom{bottom:10px!important}}
+
+/* V71 — a horizon instrument embedded in the galaxy rather than a detached footer card */
+.main{position:relative}
+.time-ruler{position:absolute!important;top:clamp(420px, 62vh, 600px)!important;bottom:auto!important;left:auto!important;right:clamp(20px,3.2vw,46px)!important;width:min(430px,calc(100% - 50px))!important;min-height:0!important;padding:12px 15px 11px!important;gap:15px!important;border:1px solid #b9c7ed85!important;border-radius:15px!important;background:linear-gradient(112deg,#fffdf6ee,#f5f3efc9)!important;box-shadow:0 7px 24px #283fa914!important;backdrop-filter:blur(14px);z-index:11!important}
+.ruler-head{flex:0 0 98px!important;gap:5px!important}
+.ruler-head span{font-size:10px!important;letter-spacing:.06em!important;color:#6879a6!important}
+.ruler-head em{font-size:8px!important}
+.ruler-head strong{font-size:13px!important;white-space:nowrap}
+.ruler-head small{display:none!important}
+.ruler-track{min-width:0!important}
+.ruler-track-labels{display:flex;justify-content:space-between;margin:0 1px 7px;color:#8793b7;font-size:8px;letter-spacing:.09em}
+.ruler-track input{height:3px!important;cursor:ew-resize}
+.ruler-ticks{font-size:9px!important;color:#8995b4!important;margin-top:8px!important}
+.time-ruler:before{content:'';position:absolute;left:-23px;top:50%;width:23px;border-top:1px dashed #a9b9e1;pointer-events:none}
+@media(max-width:1050px){.time-ruler{top:clamp(390px,59vh,560px)!important;right:16px!important;width:min(385px,calc(100% - 32px))!important}}
+@media(max-width:700px){.time-ruler{top:clamp(370px,60vh,530px)!important;left:14px!important;right:14px!important;width:auto!important;gap:10px!important;padding:10px!important}.ruler-head{flex-basis:85px!important}.ruler-head strong{font-size:11px!important}}
+</style><style>
+/* V72: Tanghulu horizon, docked below the orbital drawing */
+.main{min-height:790px!important}
+.space{inset:90px 0 125px!important}
+.time-ruler.candy-ruler{position:absolute!important;top:auto!important;bottom:76px!important;left:clamp(18px,3vw,38px)!important;right:clamp(18px,3vw,38px)!important;width:auto!important;min-height:0!important;padding:9px 15px 10px!important;display:flex!important;align-items:center!important;gap:16px!important;border:1px solid #d9deedb5!important;border-radius:19px!important;background:linear-gradient(115deg,#fffaf1ed,#f9f5eeed 64%,#f1f0f7e9)!important;box-shadow:0 7px 22px #233e8e10!important;z-index:10!important;backdrop-filter:blur(10px)}
+.time-ruler.candy-ruler:before{display:none!important}
+.candy-ruler .ruler-head{flex:0 0 137px!important;gap:4px!important}
+.candy-ruler .ruler-head span{font-size:9px!important;letter-spacing:.07em!important}
+.candy-ruler .ruler-head strong{font-size:14px!important}
+.candy-ruler .ruler-track{position:relative;flex:1;min-width:0!important}
+.candy-row-label{display:flex;justify-content:space-between;font-size:9px;letter-spacing:.09em;color:#7583ae;margin-bottom:3px}
+.candy-track{height:27px;display:flex;align-items:center;justify-content:center;overflow:visible;position:relative;pointer-events:none;padding:0 8px}
+.candy-bead{position:relative;flex:1 1 0;min-width:0;max-width:22px;aspect-ratio:1;border-radius:50%;margin-left:-4px;background:radial-gradient(circle at 28% 22%,#fffdf6 0%,#e4e6f4 36%,#b9c4eb 76%,#899cdb 100%);border:1px solid #fff9f2c9;box-shadow:inset -2px -3px 4px #4962ae19,0 1px 2px #233c8e0e;opacity:.76;transition:background .16s,transform .16s,opacity .16s;}
+.candy-bead:first-child{margin-left:0}
+.candy-bead.past{opacity:1;background:radial-gradient(circle at 26% 20%,#e8e9ff 0%,#8595ec 30%,#3f56d3 69%,#2436ac 100%);box-shadow:inset -2px -3px 5px #18278555,0 1px 3px #3346ba18}
+.candy-bead:nth-child(6n + 3).past{background:radial-gradient(circle at 27% 21%,#ffefd9 0%,#f2b49b 32%,#ec866f 72%,#d76d66 100%)}
+.candy-bead:nth-child(6n + 5).past{background:radial-gradient(circle at 27% 21%,#fff6e4 0%,#f0d29e 32%,#d9ac66 74%,#b98a4d 100%)}
+.candy-bead.current{transform:scale(1.34);z-index:2;box-shadow:0 0 0 2px #fffdf7,0 0 0 3px #3549cb,0 3px 8px #2739ac3b}
+.candy-ruler #horizonSlider{position:absolute!important;left:0;right:0;top:16px;width:100%!important;height:27px!important;margin:0!important;opacity:0!important;cursor:ew-resize!important;z-index:4!important;touch-action:none}
+.candy-ruler .ruler-ticks{margin-top:0!important;font-size:9px!important}
+.bottom{bottom:14px!important}
+@media(max-width:920px){.candy-ruler .ruler-head{flex-basis:105px!important}.candy-ruler .ruler-head strong{font-size:12px!important}.time-ruler.candy-ruler{gap:10px!important;padding:9px!important}.candy-bead{margin-left:-5px}}
+@media(max-width:650px){.time-ruler.candy-ruler{bottom:70px!important;left:9px!important;right:9px!important;display:block!important}.candy-ruler .ruler-head{flex-direction:row!important;justify-content:space-between!important;margin-bottom:5px}.candy-ruler .ruler-head span{font-size:8px!important}.candy-bead{margin-left:-6px}.space{bottom:138px!important}}
+
+/* V73: Keep the central visualization independent from the tall detail column. */
+@media(min-width:701px){
+ .main{height:790px!important;min-height:790px!important;align-self:start!important}
+ .space{inset:88px 0 108px!important}
+ .time-ruler.candy-ruler{top:570px!important;bottom:auto!important;left:clamp(18px,3vw,38px)!important;right:clamp(18px,3vw,38px)!important}
+ .bottom{bottom:12px!important}
+}
+/* One coherent cobalt family; orange only marks half-year milestones. */
+.candy-ruler .candy-bead.past{background:radial-gradient(circle at 27% 20%,#f1f0ff 0%,#a4b0f4 25%,#4860d7 63%,#2537ac 100%)!important}
+.candy-ruler .candy-bead:nth-child(6n).past{background:radial-gradient(circle at 27% 20%,#fff1df 0%,#f8b49c 30%,#ed8c70 69%,#cb6758 100%)!important}
+.candy-ruler .candy-bead:not(.past){background:radial-gradient(circle at 27% 20%,#fffdfa 0%,#e5e9fa 35%,#b9c5ea 75%,#98a9d9 100%)!important}
+.candy-ruler .candy-bead.current{box-shadow:0 0 0 2px #fffdf7,0 0 0 3px #3549cb,0 3px 8px #2739ac3b!important}
+@media(max-width:700px){.main{min-height:730px!important;height:730px!important}.time-ruler.candy-ruler{top:545px!important;bottom:auto!important}}
+
+/* V74: one continuous gradient across the entire bead chain, not a gradient per bead */
+.candy-ruler .candy-bead,
+.candy-ruler .candy-bead.past,
+.candy-ruler .candy-bead:not(.past),
+.candy-ruler .candy-bead:nth-child(6n).past,
+.candy-ruler .candy-bead:nth-child(6n + 3).past,
+.candy-ruler .candy-bead:nth-child(6n + 5).past{
+ background:var(--bead-color,#4c61d9)!important;
+ box-shadow:inset 0 1px 1px #ffffff5c, inset -1px -2px 2px #172b751e, 0 1px 2px #22368c18!important;
+ border:1px solid #ffffffa8!important;
+ opacity:1!important;
+}
+.candy-ruler .candy-bead:not(.past){opacity:.38!important}
+.candy-ruler .candy-bead.current{opacity:1!important;box-shadow:0 0 0 2px #fffdf7,0 0 0 3px #3549cb,0 3px 8px #2739ac3b!important}
+</style><style>
+/* V80 maintenance: resolve the earlier cascade without changing its visual language. */
+.main{height:100vh!important;min-height:680px!important;align-self:start!important}
+.space{inset:92px 0 112px!important}
+.time-ruler.candy-ruler{top:auto!important;bottom:18px!important}
+.bottom{top:170px!important;bottom:auto!important;height:auto!important;align-items:center!important}
+.candy-bead{max-width:none!important}
+.candy-ruler .candy-bead:not(.past){opacity:1!important}
+.detail{height:100vh;min-height:680px;overflow-y:auto;overflow-x:hidden;align-self:start}
+.verify-list{grid-template-columns:1fr!important}
+.badges{flex-wrap:wrap}.info dd{overflow-wrap:anywhere}
+button:disabled{opacity:.45;cursor:default}
+.empty-note{background:#fffaf0e8;padding:15px;border-radius:14px;max-width:80%;text-align:center;line-height:1.8}
+.source-link{display:block;color:var(--blue);font-size:11px;margin:12px 8px;line-height:1.7}
+.panel-dialog{width:min(760px,96vw)}.panel-content{padding-top:20px;font-size:13px;line-height:1.8}
+.panel-row{padding:14px;border:1px solid #e4e1d8;border-radius:14px;margin:10px 0;background:#fffdf9}
+.panel-row button{font-size:12px;border:1px solid #d5dcf0;background:#fffaf2;border-radius:20px;padding:7px 12px;color:var(--blue);margin-right:8px}
+.panel-row p{color:#78819a;margin:5px 0}.panel-row h3{font-size:14px;margin:0 0 6px}.panel-row a{color:var(--blue)}
+#orbit:focus-visible{outline:2px solid var(--blue);outline-offset:-3px}
+.future-dialog:focus{outline:none}
+@media(max-width:1100px) and (min-width:791px){.topbar{padding-bottom:0}.headline{top:140px!important}.bottom{top:194px!important}}
+@media(max-width:790px){
+ .main{height:680px!important;min-height:680px!important}.detail{height:auto;min-height:0;overflow:visible}
+ .space{inset:125px 0 130px!important}.bottom{top:142px!important;bottom:auto!important;left:auto!important;right:15px!important}
+ .key-panel{top:140px!important;left:15px!important}.time-ruler.candy-ruler{bottom:15px!important}
+ .topbar{padding:12px;gap:8px}.topbar .filters{max-width:calc(100% - 30px)}.topbar .filters button{padding:8px 11px}
+ .topbar .time-controls{order:4;flex-basis:100%;gap:5px}.topbar .search{order:3}
+ .searchbox{top:110px;right:14px}.brand{font-size:20px}
+ .future-metrics{gap:16px}.future-metrics b{font-size:26px}.future-header>button{flex-shrink:0}
+}
+</style><style>.profile-inline{border:0;background:none;padding:6px 8px;color:var(--blue);font:inherit;font-size:11px;cursor:pointer}.aside-bottom .profile-inline{padding:10px 0;letter-spacing:0}.profile-form{display:grid;grid-template-columns:1fr 1fr;gap:14px}.profile-form label{display:grid;gap:5px;color:#65708e;font-size:12px}.profile-form input,.profile-form select{width:100%;min-width:0;border:1px solid #d5dcf0;background:#fffdf9;color:var(--ink);padding:10px;border-radius:12px;font:inherit}.profile-form .wide{grid-column:1/-1}.profile-form label.wide{display:flex;align-items:center}.profile-form input[type=checkbox]{width:auto}.profile-form .secondary{margin-top:0}.source-link{overflow-wrap:anywhere}.badge{max-width:100%;line-height:1.5}.empty-note{top:48%}.profile-form input:focus-visible,.profile-form select:focus-visible{outline:2px solid var(--blue)}@media(max-width:500px){.profile-form{grid-template-columns:1fr}.profile-form .wide{grid-column:auto}}</style><style>.source-evidence{font-size:10px;color:#78819a;line-height:1.7;margin:8px}.source-evidence summary{color:var(--blue);cursor:pointer}.source-evidence blockquote{margin:8px 0;padding-left:8px;border-left:2px solid #d7ddef}.source-evidence p{margin:8px 0}.library-controls{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.library-controls>input,.library-controls select{border:1px solid #d5dcf0;border-radius:15px;background:#fffdf9;padding:9px;color:var(--ink);font:inherit;font-size:12px}.library-controls>input{flex:1;min-width:160px}.library-controls label{font-size:12px;color:#65708e}.detail .planet-legend{margin-bottom:8px}.detail #eligibilitySummary{margin:12px 8px 5px;padding:0}.profile-form label{align-content:start}</style><style>@media(min-width:791px){.detail .card h2{margin-top:12px;margin-bottom:8px}.detail .badges{margin-bottom:12px}.detail .info{row-gap:8px}.detail .divider{margin:14px 8px}.detail .timeline{margin-bottom:12px}.detail .event{min-height:36px}.detail .event:not(:last-child):before{top:25px;bottom:-11px}.detail .source-link{margin:8px;font-size:10px}}</style><style>
+/* V80: always-readable orbit annotations; no per-frame visibility arbitration. */
+.orbit-label-layer{position:absolute;inset:0;pointer-events:none;z-index:5}
+.orbit-label{position:absolute;pointer-events:auto;display:flex;flex-direction:column;justify-content:center;gap:2px;padding:5px 8px;border:0;border-left:2px solid var(--orbit-color);border-radius:4px;background:#faf7efec;color:#283756;text-align:left;line-height:16px;cursor:pointer;box-shadow:none}
+.orbit-label>span{display:block;font-size:12px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.orbit-label>small{font-size:10px;color:#7382a7;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.orbit-label.selected{background:#eeeffadc}.orbit-label.selected>span{color:#263ecb;font-weight:650}
+.orbit-label.previewed{background:#fffdf8;box-shadow:0 2px 12px #24367712}.orbit-label:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.orbit-preview{position:absolute;z-index:16;width:300px;max-width:calc(100% - 16px);pointer-events:none;background:#fffdf8f7;border:1px solid #dce0ec;border-radius:14px;padding:13px 15px;box-shadow:0 9px 28px #263a871a;color:#34415e;font-size:11px;line-height:1.6}
+.orbit-preview[hidden]{display:none}.orbit-preview-title{display:block;font-size:13px;color:#263ecb;line-height:1.6}.orbit-preview p{margin:5px 0}.orbit-preview small{display:block;color:#7b849a;font-size:10px}
+</style><style>@media(max-width:600px){.main{height:calc(680px + var(--orbit-extra-height,0px))!important;min-height:calc(680px + var(--orbit-extra-height,0px))!important}}</style><style>.self-check-form{margin:18px 0;padding:16px;border:1px solid #dce0ec;border-radius:16px;background:#fffdf9}.self-check-form h3{font-size:15px;color:var(--blue);margin:0 0 8px}.self-check-form label{display:grid;grid-template-columns:1fr 145px;gap:8px;align-items:start;margin:16px 0;font-size:12px}.self-check-form label small{grid-column:1/-1;color:#7b849a;line-height:1.7}.self-check-form select{font:inherit;border:1px solid #dce0ec;border-radius:10px;padding:8px;background:#fffdf9;color:var(--ink)}@media(max-width:500px){.self-check-form label{grid-template-columns:1fr}}</style><style>.path-facts{font-size:12px}.path-facts small{color:#7b849a}.path-reasons{padding-left:19px;margin:9px 0;font-size:12px;line-height:1.8}.path-source{margin:16px 0;font-size:12px;color:#7b849a}.path-source summary{color:var(--blue);cursor:pointer}</style><style>
+/* Dedicated, non-overlapping regions: controls / galaxy / opportunity index / ruler. */
+.main{display:grid!important;grid-template-rows:auto auto minmax(320px,1fr) auto auto;gap:12px;height:max(100vh,var(--orbit-min-height,760px))!important;min-height:var(--orbit-min-height,760px)!important;overflow:visible!important;padding-bottom:12px}
+.topbar{grid-row:1;min-height:76px;z-index:12}
+.orbit-heading{grid-row:2;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 24px;min-width:0}
+.orbit-heading .headline{position:static!important;inset:auto!important;max-width:340px;flex:1;min-width:0}
+.orbit-heading .headline h1{margin:6px 0;font-size:clamp(23px,2.4vw,31px)}
+.orbit-heading .key-panel{position:relative!important;inset:auto!important;width:165px;max-width:165px;flex:0 0 165px;margin:0!important;align-self:center;z-index:2}
+.orbit-heading .bottom{position:static!important;inset:auto!important;height:auto!important;flex:0 0 auto;pointer-events:none}
+.space{grid-row:3;position:relative!important;inset:auto!important;min-height:320px;width:100%;min-width:0;overflow:hidden}
+.space canvas{position:absolute;inset:0;width:100%;height:100%}
+.orbit-index{grid-row:4;min-width:0;margin:0 24px;border-top:1px solid #dedfdc;padding:10px 0 0}
+.orbit-index[hidden]{display:none}
+.orbit-index-heading{font-size:10px;color:#7884a4;letter-spacing:.06em;margin-bottom:7px}
+.orbit-label-layer{position:static!important;inset:auto!important;display:grid;grid-template-columns:repeat(var(--orbit-columns,4),minmax(0,1fr));gap:8px;pointer-events:none}
+.orbit-label-layer .orbit-label{position:relative!important;left:auto!important;top:auto!important;width:100%!important;height:44px!important;min-width:0}
+.time-ruler.candy-ruler{grid-row:5;position:relative!important;inset:auto!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;width:auto!important;margin:0 24px!important;align-self:start}
+.orbit-preview{position:relative!important;inset:auto!important;left:auto!important;top:auto!important;width:100%;max-width:none;pointer-events:none;flex-shrink:0;z-index:auto}
+.orbit-preview[hidden]{display:none!important}
+.empty-note{top:auto!important;bottom:15px;left:50%;width:min(440px,85%);max-width:85%;transform:translateX(-50%);font-size:12px;padding:8px}
+@media(max-width:1100px){.orbit-heading{flex-wrap:wrap;gap:10px}.orbit-heading .headline{flex-basis:calc(100% - 190px)}.orbit-heading .bottom{margin-left:auto}}
+@media(max-width:790px){.main{height:max(calc(100vh - 75px),var(--orbit-min-height,850px))!important;min-height:var(--orbit-min-height,850px)!important;grid-template-rows:auto auto minmax(340px,1fr) auto auto}.orbit-heading{padding:0 14px;flex-wrap:nowrap;gap:8px}.orbit-heading .headline{display:none!important}.orbit-heading .key-panel{flex-basis:155px;width:155px;max-width:155px}.orbit-heading .bottom{margin-left:auto}.space{min-height:340px}.orbit-index{margin:0 14px}.time-ruler.candy-ruler{margin:0 14px!important}.topbar{min-height:76px}.orbit-preview{max-width:none}}
+</style><style>
+/* The galaxy is the primary discovery surface; index and detail are supporting controls. */
+@media(min-width:791px){.app{grid-template-columns:96px minmax(0,1fr) 224px}.brand{font-size:19px}.tagline{font-size:6px}.detail{padding:18px 10px;gap:10px}}
+@media(min-width:791px) and (max-width:1100px){.app{grid-template-columns:84px minmax(0,1fr) 206px}.brand{font-size:17px}}
+.main{gap:8px;padding-bottom:8px;grid-template-rows:auto auto minmax(540px,1fr) auto auto}
+.topbar{min-height:64px;padding:10px 20px;gap:8px}.topbar .filters button{padding-top:8px;padding-bottom:8px}
+.orbit-heading{padding:0 20px;gap:12px}.orbit-heading .headline h1{font-size:27px;margin:3px 0}.orbit-heading .headline .kicker{font-size:9px}.orbit-purpose{font-size:10px!important;line-height:1.5;margin:2px 0!important;color:#7b86a3!important}
+.orbit-heading .key-panel{flex-basis:150px;max-width:150px;padding:7px 9px!important}.orbit-heading .stat b{font-size:18px!important}.orbit-heading .stat span{font-size:8px!important}
+.space{min-height:540px}
+.orbit-index{margin:0 20px;padding-top:6px}.orbit-index-heading{display:none}.orbit-label-layer{gap:4px}
+.orbit-label-layer .orbit-label{height:30px!important;padding:3px 7px;flex-direction:row;align-items:center;justify-content:space-between;gap:7px;border-radius:3px;background:#faf7efb5}
+.orbit-label>span{font-size:11px;min-width:0;flex:1}.orbit-label>small{font-size:9px;flex:0 0 62px;max-width:62px;text-align:right}
+.time-ruler.candy-ruler{margin:0 20px!important;padding:6px 12px!important;border-radius:14px!important;box-shadow:none!important}.candy-ruler .ruler-head{flex-basis:120px!important}.candy-ruler .ruler-head strong{font-size:12px!important}.candy-track{height:22px}.candy-ruler .ruler-ticks{font-size:8px!important}.candy-row-label{font-size:8px;margin-bottom:1px}
+.detail .planet-art,.detail .planet-legend{display:none}.detail .card{padding:12px;border-radius:17px;box-shadow:none}.detail .card h2{font-size:16px;line-height:1.55;margin:2px 4px 10px}.detail .badges{margin:0 4px 10px;gap:4px}.detail .badge{padding:4px 7px;font-size:10px}.detail #eligibilitySummary{font-size:11px;margin:8px 4px 5px}.detail-quick{font-size:10px;color:#7884a4;margin:4px;line-height:1.7}.detail #editProfile{padding:5px 4px;font-size:10px}.detail .cta{padding:11px;font-size:11px}.detail .secondary{padding:9px;font-size:11px}
+.detail-more{border-top:1px solid #e3e2dc;margin-top:12px;padding-top:9px;font-size:11px}.detail-more>summary{cursor:pointer;color:var(--blue);font-size:11px;line-height:1.8}.detail-more .info{margin:12px 4px}.detail-more .source-link{margin:10px 4px}.detail-more .source-evidence{margin:8px 4px}.detail .mini{font-size:9px;line-height:1.6;padding:0 4px}.detail .verification{padding-top:10px!important}.detail .verification summary{font-size:10px}
+@media(max-width:790px){.main{grid-template-rows:auto auto minmax(420px,1fr) auto auto}.space{min-height:420px}.topbar{padding:10px 12px}.orbit-heading{padding:0 12px}.orbit-index{margin:0 12px}.time-ruler.candy-ruler{margin:0 12px!important}.orbit-label-layer .orbit-label{height:30px!important}.orbit-label>span{font-size:10px}.orbit-label>small{font-size:8px;flex-basis:49px;max-width:49px}.detail{gap:10px}}
+</style><style>.detail.previewing .card{display:none}</style><style>
+/* Legend disclosure never participates in the heading's intrinsic size. */
+.orbit-heading .key-panel{height:31px;box-sizing:border-box;overflow:hidden}
+.orbit-heading .key-panel[open] summary{margin-bottom:0}
+.legend-explanation{padding:14px;border:1px solid #e3e2dc;border-radius:14px;background:#fffdf9;color:#64708b;font-size:12px;line-height:1.7}
+.legend-explanation[hidden]{display:none}.legend-explanation header{display:flex;justify-content:space-between;align-items:center;color:var(--blue)}
+.legend-explanation button{background:transparent;border:0;color:var(--blue);cursor:pointer;padding:6px;font-size:16px}
+.legend-explanation strong{display:block;margin:12px 0 8px}.legend-explanation .key-line{margin:8px 0}
+</style><style>
+/* Keep metadata readable without increasing the index or shrinking the galaxy. */
+.orbit-label-layer .orbit-label{flex-direction:column;align-items:stretch;justify-content:center;gap:0;padding:2px 7px;text-align:left}
+.orbit-label>span{flex:none;line-height:13px;font-size:11px}
+.orbit-label>small{flex:none;width:100%;max-width:100%;line-height:11px;font-size:9px;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.return-orbit{display:none}
+@media(max-width:790px){.orbit-label>span{font-size:10px}.orbit-label>small{flex:none;max-width:100%;font-size:9px}.return-orbit{display:block;background:none;border:0;color:var(--blue);font:inherit;font-size:12px;padding:9px 4px;margin-bottom:8px;cursor:pointer}}
+</style><style>
+@media(max-width:790px){.orbit-label-layer .orbit-label{height:44px!important;padding:5px 8px}.orbit-label>span{font-size:11px;line-height:15px}.orbit-label>small{font-size:10px;line-height:14px}.library-controls>input,.library-controls select{min-height:44px;width:100%}.library-controls label{min-height:44px;display:flex;align-items:center}.panel-row button,.panel-row>.source-link{min-height:44px;display:inline-flex;align-items:center}}
+</style><style>
+/* V80 refinement: larger worlds, quiet chrome, one clear primary action. */
+@media(min-width:1101px){.app{grid-template-columns:128px minmax(0,1fr) 260px}}
+@media(min-width:791px) and (max-width:1100px){.app{grid-template-columns:88px minmax(0,1fr) 224px}}
+@media(min-width:1101px){aside{padding:27px 12px 22px}.brand{font-size:25px;letter-spacing:-1.7px}.tagline{font-size:6px;letter-spacing:1.1px}.nav button{font-size:12px;padding:14px 10px;gap:10px}}
+.nav{gap:11px}.nav button{transition:color .18s,background .18s,box-shadow .18s}.nav button:not(.active):hover{background:#edece9;color:var(--blue)}.nav button.active{background:linear-gradient(100deg,#263ecb 0%,#6677dc 55%,#efedf0 100%);box-shadow:none}.nav .ico svg{width:17px;height:17px;display:block}.aside-bottom{font-size:8px;letter-spacing:1.4px}
+.filters{padding:3px;border-color:#e6e2da;background:#f2efe8aa}.filters button{transition:background .18s,color .18s,box-shadow .18s}.filters button.active{background:linear-gradient(135deg,#2843cf,#5269e0);box-shadow:inset 0 0 0 1px #243cc3,0 3px 9px #2b42bc1a}
+.orbit-heading .headline .kicker{display:none}.orbit-heading .headline h1{font-size:23px;letter-spacing:-.6px;font-weight:400}.orbit-heading .key-panel{border:0;background:transparent;flex-basis:132px;max-width:132px}.orbit-heading .key-panel summary{font-weight:400;color:#7c86a0;font-size:10px}.orbit-heading .stat:last-child{display:none}.orbit-heading .stats{gap:15px}.orbit-heading .stat{padding-right:15px}.orbit-heading .stat:nth-child(2){border:0;padding-right:0}
+.space{background:radial-gradient(ellipse at 47% 48%,#fffaf0 0%,#faf6ed 58%,#f8f5ee 100%)}
+.detail{border-left:1px solid #dfdfdc;background:#faf8f3a8;padding:22px 13px;gap:12px}.detail-top{height:28px}.detail-top small{font-size:10px;letter-spacing:.12em}.detail .card{padding:12px;border-radius:20px;background:linear-gradient(150deg,#fffdf9,#f9f5ed);border-color:#e9e5dc;box-shadow:0 9px 28px #27335306}
+.detail .planet-art{display:block;height:78px;margin-bottom:14px;border-radius:12px;background:radial-gradient(ellipse at 60% 45%,#f2dcbf,#fbefdc 72%)}.detail .planet-art:before{width:109px;height:109px;top:-17px;left:calc(50% - 55px);box-shadow:inset -12px -10px 24px #1b2c895c,5px 9px 20px #273ba727;background:radial-gradient(circle at 28% 22%,#f6eedc,#8298e4 27%,#3d58ca 55%,#1f348c 87%)}.detail .planet-art:after{height:26px;top:43%;border-width:1px;transform:rotate(-19deg)}.detail .planet-art .art-star{font-size:11px}
+.detail .card h2{font-size:18px;line-height:1.5;letter-spacing:-.3px;margin:0 3px 10px}.detail .badges{margin:0 3px 9px;gap:5px}.detail .badge.urgent{display:none}.detail #eligibilitySummary{font-size:11px;line-height:1.65;margin:8px 3px 4px}.detail #editProfile{padding:6px 3px;font-size:10px}.detail-quick{font-size:11px;margin:0 3px 5px}.detail .cta{padding:12px;font-size:12px;background:linear-gradient(125deg,#263ecb,#465fdf);box-shadow:inset 0 0 0 1px #263ecb}
+.detail-actions{display:flex;align-items:center;gap:8px;margin-top:9px}.detail-actions .secondary{margin:0;width:auto;flex:1;font-size:10px;padding:9px 5px;border:0;background:transparent;border-radius:9px;color:#657394}.detail-actions .secondary:hover{background:#eceefa;color:var(--blue)}.detail-actions .secondary.saved{background:#e9edfb;color:var(--blue)}.detail-more{margin-top:9px;padding-top:8px}.detail-more>summary{font-size:10px;color:#7b86a0}.detail .verification{margin-top:0}.detail .verification summary{font-size:9px;color:#8a91a0}.detail .verification .mini{font-size:10px}
+.orbit-preview{border:0;background:transparent;box-shadow:none;padding:12px 3px}.orbit-preview-title{font-size:19px;line-height:1.55;color:#24376b}.orbit-preview p{font-size:12px;line-height:1.8}.orbit-preview small{font-size:10px;color:#8a91a2}
+.orbit-index{border-color:#e4e2dc}.orbit-label-layer .orbit-label{background:transparent;border-radius:5px;transition:background .15s,border-color .15s,color .15s}.orbit-label-layer .orbit-label.selected{background:#eceef9}.orbit-label-layer .orbit-label.previewed{background:#eff0f8}.orbit-label>small{color:#8a93a6}.orbit-label>span{font-weight:400}.orbit-label.selected>span{font-weight:600}
+.time-ruler.candy-ruler{background:transparent!important;border-color:#e5e4e7!important;opacity:.9}.candy-track{opacity:.75}.candy-ruler .ruler-head span{font-size:7px!important}.candy-ruler .ruler-head strong{font-weight:500}
+@media(max-width:790px){.detail{padding:18px 16px}.detail .card{max-width:520px}.detail .planet-art{height:110px}.detail .planet-art:before{width:145px;height:145px;left:calc(50% - 72px)}.orbit-heading .key-panel{flex-basis:132px;max-width:132px}.detail-actions .secondary{font-size:12px;min-height:44px}.orbit-preview{max-width:520px;margin:auto;width:100%}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;scroll-behavior:auto!important}}
+</style><style>.detail .planet-art:before,.detail .planet-art:after{display:none}.detail .planet-art canvas{width:100%;height:100%;display:block}</style><style>
+/* Airy paper and soft pigment, with cobalt reserved for navigation and actions. */
+:root{--paper:#fbf9f3}body{background:#fbf9f3}.app{background:radial-gradient(ellipse at 50% 42%,#fffdf7,#faf8f2 82%)}
+.space{background:radial-gradient(ellipse at 48% 45%,#fffdf7 0%,#fcfaf4 65%,#faf8f2 100%)}
+.main:after{opacity:.065}.detail{background:#fcfaf580;border-left-color:#e5e5df}.detail .card{background:#fffefa70;border-color:#e9e6dd99;box-shadow:0 6px 24px #50628e03}.detail .planet-art{background:#faf3e7}
+aside{border-right-color:#dde1e799}.filters{border-color:#e6e2da80;background:#f5f2eb70}.nav button.active{background:linear-gradient(100deg,#344ccc 0%,#8292df 48%,#f1eff1 100%)}
+.orbit-index{border-color:#e8e5dd}.orbit-label-layer .orbit-label.selected{background:#eef0f67d}.orbit-label-layer .orbit-label.previewed{background:#eff1f780}.orbit-heading .key-panel summary{color:#838da2}
+</style><style>
+/* Final spacing and material pass: readable information, quiet surfaces. */
+.brand{font-weight:400}.orbit-heading .headline h1{font-size:24px;letter-spacing:-.7px}
+.detail .card{background:linear-gradient(145deg,#fffefa9c,#fcfaf455);border-color:#e9e6dd70;box-shadow:0 12px 36px #6c769b04}.detail .planet-art{border-radius:11px}
+.detail .card h2{font-size:19px;line-height:1.5;letter-spacing:-.4px}.detail #eligibilitySummary{font-size:12px;color:#75809a;line-height:1.65}.detail-quick{color:#7b87a1}.detail #editProfile{color:#6577b9}
+.orbit-label>span{font-size:11.5px;line-height:13.5px;letter-spacing:.05px}.orbit-label>small{font-size:9.5px;line-height:11.5px;color:#7d89a0}.orbit-label-layer .orbit-label{border-left-color:color-mix(in srgb,var(--orbit-color) 58%,transparent)}
+.orbit-label-layer .orbit-label.selected{background:linear-gradient(90deg,#e9edf88c,#f4f5f633)}.orbit-heading .stat b{font-size:20px!important}.orbit-heading .stat span{font-size:9px!important;color:#7c87a1}.detail .detail-more>summary{color:#7c87a1}
+@media(max-width:790px){.orbit-label>span{font-size:11px;line-height:15px}.orbit-label>small{font-size:10px;line-height:14px}.detail .card h2{font-size:20px}.detail .card{padding:16px}.detail .planet-art{height:116px}.detail #eligibilitySummary{font-size:12px}.orbit-heading .stat b{font-size:18px!important}}
+</style><style>
+.galaxy-controls{display:flex;align-items:center;gap:3px;flex:none}.galaxy-controls button{border:0;background:transparent;color:#7d89a2;font-size:11px;min-width:32px;height:31px;padding:4px 5px;border-radius:9px;transition:background .15s,color .15s}.galaxy-controls button:last-child{width:62px}.galaxy-controls button:hover,.galaxy-controls button[aria-pressed=true]{color:var(--blue);background:#ebeff780}.galaxy-controls button:disabled{opacity:.35;cursor:default}
+.orbit-heading .key-panel{flex:0 0 48px;max-width:48px;width:48px;padding:7px 2px!important}.orbit-heading .headline{min-width:0;flex:1}.space canvas{touch-action:pan-y pinch-zoom;cursor:grab}.space canvas.is-dragging{cursor:grabbing!important}.orbit-label-layer .orbit-label.comparing{background:#edf0fa;border-left-color:var(--blue)}.orbit-label[data-saved=true]>small:after{content:' · ♡';color:#b98272}
+.galaxy-status{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+.comparison-wrap{max-width:100%;overflow-x:auto}.comparison-table{border-collapse:collapse;width:100%;min-width:480px;font-size:12px;line-height:1.8;table-layout:fixed}.comparison-table th,.comparison-table td{text-align:left;vertical-align:top;padding:14px 12px;border-bottom:1px solid #e5e4de;overflow-wrap:anywhere}.comparison-table thead th{font-size:16px;color:#263a7d;font-weight:500}.comparison-table th:first-child{width:88px;font-size:11px;color:#8290a4;font-weight:400}.comparison-table td a{color:var(--blue)}.comparison-table td p{margin:5px 0}.comparison-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}.comparison-actions button{background:transparent;color:var(--blue);border:1px solid #d9deed;border-radius:24px;padding:10px 15px;font-size:12px}
+@media(min-width:791px) and (max-width:1100px){.orbit-heading{flex-wrap:nowrap}.orbit-heading .headline{flex:1;flex-basis:0}.orbit-heading .headline h1{font-size:21px}}
+@media(max-width:790px){.orbit-heading{gap:6px}.orbit-heading .key-panel{flex:0 0 40px;max-width:40px;width:40px}.galaxy-controls button{min-width:30px;height:36px}.galaxy-controls button:last-child{width:58px}.orbit-heading .bottom{margin-left:auto}.comparison-table{min-width:440px}.comparison-table th,.comparison-table td{padding:11px 8px}.comparison-table thead th{font-size:14px}}
+</style><style>.comparison-scroll-hint{display:none}@media(max-width:790px){.comparison-scroll-hint{display:block;color:#8993a9;font-size:11px}.galaxy-controls button{height:44px;min-width:34px;font-size:11px}}</style></head><body><div class="app"><aside><div><div class="brand">FlowMate</div><div class="tagline">FIND YOUR NEXT ORBIT.</div></div><nav class="nav"><button class="active" data-nav="探索"><span class="ico">◉</span><span>探索</span></button><button data-nav="机会库"><span class="ico">◇</span><span>机会库</span></button><button data-nav="我的轨迹"><span class="ico">◎</span><span>我的轨迹</span></button><button data-nav="日程"><span class="ico">▦</span><span>日程</span></button><button data-nav="收藏"><span class="ico">♡</span><span>收藏</span></button></nav><div class="aside-bottom"><button class="profile-inline" id="profileBtn">个人资格 ↗</button><br/>OPPORTUNITY<br/>FOR CURIOUS<br/>MINDS.</div></aside><main class="main"><div class="topbar"><div class="filters" id="filters"><button data-cat="全部">全部</button><button class="active" data-cat="竞赛">竞赛</button><button data-cat="科研">科研</button><button data-cat="项目">项目</button><button data-cat="创业">创业</button></div><button aria-label="搜索" class="search" id="searchBtn">⌕</button><div class="time-controls"><label for="rangeSelect">时间范围</label><select id="rangeSelect"><option value="6">未来半年</option><option selected="" value="12">未来一年</option><option value="custom" hidden>自定义</option><option value="24">未来两年</option></select><label for="dateMode">按</label><select id="dateMode"><option value="apply">报名截止</option><option value="award">评奖结果</option></select></div></div><div class="searchbox" id="searchbox"><input id="searchInput" placeholder="搜索名称、学校或方向…"/><button id="clearSearch">✕</button></div><div class="headline"><div class="kicker">YOUR OPPORTUNITY UNIVERSE / 2026</div><h1>发现下一次可能</h1></div><details class="key-panel"><summary>图例 · 颜色 / 大小</summary><strong>视觉图例 / VISUAL KEY</strong><div id="categoryLegend"></div><div class="key-scale"><i style="width:8px;height:8px"></i><i style="width:13px;height:13px"></i><i style="width:20px;height:20px"></i><span>尺寸随景深与焦点变化</span></div><div style="margin-top:8px">越靠近中心，时间越近</div><div style="margin-top:8px">编号对应行星与名称；尺寸不代表评级。悬停预览，点击固定详情。</div></details><div class="empty-note" hidden="" id="emptyNote">当前筛选暂无有已知节点的机会。可调整类别、时间或个人资格；未知日期与已截止记录见机会库。</div><div class="space" id="space"><canvas id="orbit" tabindex="0" aria-label="机会星系，悬停预览；使用左右方向键选择机会，回车查看详情"></canvas></div><div class="time-ruler candy-ruler" aria-label="未来时间范围控制"><div class="ruler-head"><span>TIME HORIZON / 时间视野</span><strong id="zoomValue">未来 12 个月</strong></div><div class="ruler-track"><div class="candy-row-label"><span>NOW · 此刻</span><span>FUTURE · 未来 ↗</span></div><div class="candy-track" id="candyTrack" aria-hidden="true"></div><input id="horizonSlider" type="range" min="1" max="36" step="0.5" value="12" aria-label="未来时间范围，单位月"><div class="ruler-ticks"><span>1月</span><span>6月</span><span>12月</span><span>18月</span><span>24月</span><span>36月</span></div></div></div><div class="bottom"><div class="stats"><div class="stat"><b id="total">08</b><span>筛选结果</span></div><div class="stat"><b id="savedCount">0</b><span>已收藏</span></div><div class="stat"><b id="highCount">0</b><span>待核实机会</span></div></div><div class="hint">DISCOVER<br/>FOCUS<br/>ACT ↗</div></div></main><section class="detail"><div class="detail-top"><small>OPPORTUNITY / 详情</small><button aria-label="下一个机会" id="next">↗</button></div><article class="card"><div class="planet-art"><span class="art-star">✦</span></div><h2 id="title"></h2><p class="planet-legend" id="planetLegend"></p><div class="badges"><span class="badge" id="category"></span><span class="badge urgent" id="urgency"></span><span class="badge" id="availability"></span></div><dl class="info"><dt>主办单位</dt><dd id="organizer"></dd><dt>面向对象</dt><dd id="audience"></dd><dt>报名时间</dt><dd id="apply"></dd><dt>所属领域</dt><dd id="field"></dd></dl><p id="eligibilitySummary" class="mini"></p><button id="editProfile" class="profile-inline">完善个人资格 ↗</button><a id="sourceLink" class="source-link" target="_blank" rel="noopener noreferrer">查看官方来源 ↗</a><details id="sourceEvidence" class="source-evidence"><summary>公告依据与限制</summary><div id="evidenceBody"></div></details><hr class="divider"/><div class="section">时间节点</div><div class="timeline" id="timeline"></div><button class="cta" id="simulateBtn">预演我的可能未来　↗</button><button class="secondary" id="pathBtn">查看资格路径　↗</button><button class="secondary" id="saveBtn">♡　收藏</button></article><p class="mini" id="sourceSummary"></p><details class="verification"><summary>机会来源清单 · 16 条（含已截止与待核记录）</summary><div class="verify-intro">星系展示所选时间范围内的已知日期样本，默认排除明确不符合个人条件的记录。待核实不等于可报名；完整清单保留未知日期和已截止记录。</div><div class="verify-list" id="verifyList"></div></details></section></div><div aria-hidden="true" class="future-overlay" id="futureOverlay"><section aria-labelledby="futureTitle" aria-modal="true" class="future-dialog" role="dialog"><header class="future-header"><div><small>FLOWMATE / POSSIBILITY STUDIO</small><h2 id="futureTitle">预演一种可能的未来</h2><p>不是预测结果，而是把期待变成可选择、可行动的路径。</p></div><button aria-label="关闭" id="closeFuture">✕</button></header><div class="future-layout"><div class="future-input"><div class="future-label">01 / 我想从这次机会得到什么</div><div class="goal-options" id="goalOptions"><button class="chosen" data-goal="作品集">完成一件代表作</button><button data-goal="能力">获得新的能力</button><button data-goal="连接">认识合作伙伴</button><button data-goal="突破">挑战更大的舞台</button></div><div class="future-label">02 / 我愿意投入多少</div><div class="range-row"><span>每周投入</span><strong id="hoursValue">6 小时</strong></div><input id="hoursRange" max="20" min="2" step="1" type="range" value="6"/><div class="range-row"><span>坚持多久</span><strong id="weeksValue">8 周</strong></div><input id="weeksRange" max="24" min="2" step="1" type="range" value="8"/><div class="future-label">03 / 目前最大的顾虑</div><div class="risk-options" id="riskOptions"><button class="chosen" data-risk="时间不够">时间不够</button><button data-risk="能力不足">能力不足</button><button data-risk="缺少伙伴">缺少伙伴</button></div><div class="future-note">所有场景均为假设性规划；不代表获奖、录取或成果承诺。</div></div><div class="future-outcome"><div class="future-eyebrow">A FUTURE YOU CAN WORK TOWARD</div><div class="future-sky"><div class="future-orbit one"></div><div class="future-orbit two"></div><div class="future-orbit three"></div><span class="future-world a"></span><span class="future-world b"></span><span class="future-world c"></span><span class="future-star">✦</span></div><h3 id="futureStory">八周后，你可能拥有一件可以讲述的作品。</h3><p id="futureSubtitle"></p><p id="futureBasis" class="mini"></p><div class="future-metrics"><div><b id="futureHours">48</b><small>计划投入小时</small></div><div><b id="futureSteps">4</b><small>行动节点</small></div></div><div class="future-road" id="futureRoad"></div><div class="next-orbit"><span>YOUR NEXT ORBIT / 下一站</span><strong id="nextOrbitTitle">从一次尝试，走向下一次机会</strong><p id="nextOrbitDetail">根据你希望获得的成长，推荐一种下一步探索方向。</p><button id="nextOrbitBtn" type="button">在星系中探索下一站 ↗</button></div><div class="future-action"><button id="commitFuture">把这条路径加入我的轨迹 →</button><button id="resetFuture">重新想象</button></div></div></div></section></div><div aria-hidden="true" class="future-overlay" id="panelOverlay"><section role="dialog" aria-modal="true" aria-labelledby="panelTitle" class="future-dialog panel-dialog"><header class="future-header"><h2 id="panelTitle"></h2><button aria-label="关闭面板" id="closePanel">✕</button></header><div class="panel-content" id="panelContent"></div></section></div><div class="toast" id="toast" role="status"></div><script id="opportunity-data" type="application/json">{
+  "schemaVersion": 1,
+  "baseline": "V80",
+  "description": "V80 baseline; 16 opportunity records including specific tracks and school registration stages, 15 official notices reviewed. fm-008 deadline conflict remains pending. Records are not counts of distinct national competitions.",
+  "opportunities": [
+    {
+      "name": "中国国际大学生创新大赛（2026）",
+      "cat": "竞赛",
+      "direction": "创业实践",
+      "org": "教育部等部门、江苏省人民政府",
+      "aud": "以官方赛道规则及学校审核为准",
+      "field": "全国",
+      "a": 0.0,
+      "note": "总决赛2026年11月；校赛、省赛时间独立；不应作为当前可报名机会",
+      "id": "fm-001",
+      "dates": {
+        "start": "2026-08-10",
+        "end": "2026-09-25",
+        "award": null,
+        "deadlineAt": "2026-09-25T12:00:00+08:00",
+        "timezone": "Asia/Shanghai",
+        "published": "2026-07-31"
+      },
+      "source": {
+        "url": "https://www.moe.gov.cn/srcsite/A08/s5672/202607/t20260731_1445670.html",
+        "kind": "official-notice",
+        "verification": "verified",
+        "verifiedAt": "2026-10-25",
+        "lastAttemptAt": "2026-10-25",
+        "lastAttemptResult": "http-200-body-reviewed",
+        "importedClaimedCheckedAt": "2026-10-24",
+        "importedClaimedStatus": "已截止",
+        "registrationOpenOn": null,
+        "evidence": {
+          "bodySha256": "afb111d5dd7293faccce913108d624e731f34287cbf8eced91b832cda91cce9c",
+          "quotes": [
+            "报名系统开放时间为2026年8月10日，报名截止时间为9月25日12时。",
+            "参赛人员年龄不超过35岁"
+          ],
+          "scope": "核实公告所载日期与已列资格；不代表审核通过或实时接受报名。",
+          "monitorHash": "0ad4adbf6277cbd54327455868354fe0f84520908f25db370d6b6ac3928b3a26"
+        }
+      },
+      "eligibility": {
+        "schools": [],
+        "regions": [],
+        "degrees": [],
+        "enrollmentYears": [],
+        "studyYears": [],
+        "majorGroups": [],
+        "enrolled": null,
+        "rulesComplete": false,
+        "basis": "2026-10-25 已阅读官方正文；仅将明确条件用于硬匹配，其余条件在资格路径中复核。",
+        "studyModes": [],
+        "leaderStudyYears": [],
+        "teamSize": null,
+        "requirements": []
+      }
+    },
+    {
+      "name": "第十四届全国大学生数字媒体科技作品及创意竞赛",
+      "cat": "竞赛",
+      "direction": "科技创新",
+      "org": "赛事官网",
+      "aud": "详见赛区及官网规则",
+      "field": "全国",
+      "a": 2.4,
+      "note": "报名与作品提交已截止。12月4—6日颁奖典礼/作品展览为待定安排，不作为确定评奖日期。",
+      "id": "fm-002",
+      "dates": {
+        "start": null,
+        "end": "2026-10-23",
+        "award": null,
+        "deadlineAt": "2026-10-23T23:59:59+08:00",
+        "timezone": "Asia/Shanghai",
+        "published": null
+      },
+      "source": {
+        "url": "https://www.cmit.cn/wap/index.html",
+        "kind": "organizer-site",
+        "verification": "verified",
+        "verifiedAt": "2026-10-25",
+        "lastAttemptAt": "2026-10-25",
+        "lastAttemptResult": "http-200-body-reviewed",
+        "importedClaimedCheckedAt": "2026-10-24",
+        "importedClaimedStatus": "已截止",
+        "registrationOpenOn": null,
+        "evidence": {
+          "bodySha256": "ed298997b38a1bc38fb15b45cb2e014774918636d9c3cc186c455ae9e2b18313",
+          "quotes": [
+            "⏰ 2026年10月23日23:59:59截止",
+            "每个参赛团队学生人数不超过5人"
+          ],
+          "scope": "核实公告所载日期与已列资格；不代表审核通过或实时接受报名。",
+          "monitorHash": "0c5ec46fa26cb47a4dad8363a9f1a7baca5fa99bc6ad26903003772cb0dffbd9"
+        }
+      },
+      "eligibility": {
+        "schools": [],
+        "regions": [],
+        "degrees": [],
+        "enrollmentYears": [],
+        "studyYears": [],
+        "majorGroups": [],
+        "enrolled": null,
+        "rulesComplete": false,
+        "basis": "2026-10-25 已阅读官方正文；仅将明确条件用于硬匹配，其余条件在资格路径中复核。",
+        "studyModes": [],
+        "leaderStudyYears": [],
+        "teamSize": null,
+        "requirements": []
+      }
+    },
+    {
+      "name": "重庆交通大学2027年大学生创新创业训练计划培育项目",
+      "cat": "科研",
+      "direction": "科技创新",
+      "org": "重庆交通大学教务处",
+      "aud": "该校全日制普通本科生，负责人限二、三年级等",
+      "field": "重庆交通大学校内",
+      "a": 4.8,
+      "note": "学生材料11月20日前提交；学院11月23日前推荐。二、三年级仅限制负责人；成员不受此年级硬限制。导师、在研项目与参与数另须核实。 须团队申报、至多5人；公告未列最小人数，需另核。",
+      "id": "fm-003",
+      "dates": {
+        "start": null,
+        "end": "2026-11-20",
+        "award": null,
+        "deadlineAt": null,
+        "timezone": "Asia/Shanghai",
+        "published": "2026-10-16"
+      },
+      "source": {
+        "url": "https://jw.cqjtu.edu.cn/info/1074/11035.htm",
+        "kind": "official-notice",
+        "verification": "verified",
+        "verifiedAt": "2026-10-25",
+        "lastAttemptAt": "2026-10-25",
+        "lastAttemptResult": "http-200-body-reviewed",
+        "importedClaimedCheckedAt": "2026-10-24",
+        "importedClaimedStatus": "日期待核实",
+        "registrationOpenOn": null,
+        "evidence": {
+          "bodySha256": "c9ff8b7ed8161ed5f51fca30e81d9bbb43b4026ccce47bba2ebb60d1748b6af9",
+          "quotes": [
+            "项目负责人于11月20日前通过项目管理平台",
+            "项目负责人须为全日制普通本科二年级或三年级学生",
+            "团队人数不得超过5人"
+          ],
+          "scope": "核实公告所载日期与已列资格；不代表审核通过或实时接受报名。",
+          "monitorHash": "11663a4f00e96e9c29640d5c621d20e8d99508b290de94b583a7dbd8c5b155c3"
+        }
+      },
+      "eligibility": {
+        "schools": [
+          "重庆交通大学"
+        ],
+        "regions": [],
+        "degrees": [
+          "本科"
+        ],
+        "enrollmentYears": [],
+        "studyYears": [],
+        "majorGroups": [],
+        "enrolled": true,
+        "rulesComplete": false,
+        "basis": "2026-10-25 已阅读官方正文；仅将明确条件用于硬匹配，其余条件在资格路径中复核。",
+        "studyModes": [
+          "全日制"
+        ],
+        "leaderStudyYears": [
+          2,
+          3
+        ],
+        "teamSize": {
+          "min": null,
+          "max": 5
+        },
+        "requirements": [
+          {
+            "id": "team-formed",
+            "label": "已组成申报团队，且各成员分工明确",
+            "quote": "申请者必须是团队"
+          },
+          {
+            "id": "project-count",
+            "label": "计入本次申报后，我参与的项目不超过2项",
+            "quote": "每名学生最多参与2个项目"
+          },
+          {
+            "id": "leader-clear",
+            "label": "本人作为负责人只申报1项，且没有尚未结题的负责人在研项目",
+            "quote": "项目负责人在研项目未结题时不能作为负责人申报新的项目",
+            "whenRole": "负责人"
+          },
+          {
+            "id": "mentor",
+            "label": "已确认指导教师及其指导名额；创业实践项目已满足双导师要求",
+            "quote": "创业实践项目实施学校导师和企业导师的双导师制"
+          },
+          {
+            "id": "original-project",
+            "label": "项目未重复立项，也不是已参赛作品或毕业设计题目",
+            "quote": "已参加过各级各类竞赛的作品、已作为毕业设计（论文）进行的题目，不得申报"
+          }
+        ]
+      }
+    },
+    {
+      "name": "中国石油大学（华东）2027批次大创（创新训练·负责人申报）",
+      "cat": "科研",
+      "direction": "科技创新",
+      "org": "中国石油大学（华东）教务处",
+      "aud": "本校学生；原则上主要面向全日制本科二、三年级，例外需院部确认",
+      "field": "中国石油大学（华东）校内",
+      "a": 7.2,
+      "note": "本条节点是创新训练项目负责人填申报书：11月1—8日。学生选题及师生互选为10月23—31日；创业训练/实践的时间另行通知。原则性年级条件不作为绝对排除。",
+      "id": "fm-004",
+      "dates": {
+        "start": "2026-11-01",
+        "end": "2026-11-08",
+        "award": null,
+        "deadlineAt": null,
+        "timezone": "Asia/Shanghai",
+        "published": "2026-10-08"
+      },
+      "source": {
+        "url": "https://jwc.upc.edu.cn/2026/1008/c18523a502163/page.htm",
+        "kind": "official-notice",
+        "verification": "verified",
+        "verifiedAt": "2026-10-25",
+        "lastAttemptAt": "2026-10-25",
+        "lastAttemptResult": "http-200-body-reviewed",
+        "importedClaimedCheckedAt": "2026-10-24",
+        "importedClaimedStatus": "日期待核实",
+        "registrationOpenOn": null,
+        "evidence": {
+          "bodySha256": "af6384c5b4baca098d69577c921efe93e1bf669e83106ac5220e69137105a70b",
+          "quotes": [
+            "11 月 1 日-11 月 8 日",
+            "项目负责人填写申报书",
+            "10 月 23 日-10 月 31 日"
+          ],
+          "scope": "核实公告所载日期与已列资格；不代表审核通过或实时接受报名。",
+          "documentUrl": "https://jwc.upc.edu.cn/_upload/article/files/5b/e4/e6c864274535810713862774c4df/de72f1f1-7873-4881-80d9-1244c7abf652.pdf",
+          "monitorHash": "964c95d737da0b7c6c051c79791a8e10f364090c6015c6ce602efe9acab957dc"
+        }
+      },
+      "eligibility": {
+        "schools": [
+          "中国石油大学（华东）"
+        ],
+        "regions": [],
+        "degrees": [],
+        "enrollmentYears": [],
+        "studyYears": [],
+        "majorGroups": [],
+        "enrolled": null,
+        "rulesComplete": false,
+        "basis": "2026-10-25 已阅读官方正文；仅将明确条件用于硬匹配，其余条件在资格路径中复核。",
+        "studyModes": [],
+        "leaderStudyYears": [],
+        "teamSize": null,
+        "requirements": []
+      }
+    },
+    {
+      "name": "湖北省2026年度大学生创业扶持项目",
+      "cat": "创业",
+      "direction": "创业实践",
+      "org": "湖北省人力资源和社会保障厅等部门",
+      "aud": "创意组：湖北高校/技工院校在校生；创业组另含毕业5年内毕业生并有在鄂注册经营等条件",
+      "field": "湖北省",
+      "a": 9.6,
+      "note": "2026年申报窗口4月1日至5月15日，现已截止。创意组和创业组条件不同；未选组别时，不因就读省市或毕业身份直接判为不符。",
+      "id": "fm-005",
+      "dates": {
+        "start": "2026-04-01",
+        "end": "2026-05-15",
+        "award": null,
+        "deadlineAt": null,
+        "timezone": "Asia/Shanghai",
+        "published": "2026-03-31"
+      },
+      "source": {
+        "url": "https://rst.hubei.gov.cn/zfxxgk/zc/qtzdgkwj/202603/t20260331_5902664.shtml",
+        "kind": "official-notice",
+        "verification": "verified",
+        "verifiedAt": "2026-10-25",
+        "lastAttemptAt": "2026-10-25",
+        "lastAttemptResult": "http-200-body-reviewed",
+        "importedClaimedCheckedAt": "2026-10-24",
+        "importedClaimedStatus": "日期待核实",
+        "registrationOpenOn": null,
+        "evidence": {
+          "bodySha256": "5fda3c1320b17352d96d631de3bf13a71fae2f8eca1d92955386581371b3d3bb",
+          "quotes": [
+            "4月1日至5月15日期间",
+            "本项目设创意组、创业组"
+          ],
+          "scope": "核实公告所载日期与已列资格；不代表审核通过或实时接受报名。",
+          "monitorHash": "e7db13bca4c4d5bf7d18a69d6053cbacd21bec17043be8f92c5cd7b8b2665caf"
+        }
+      },
+      "eligibility": {
+        "schools": [],
+        "regions": [],
+        "degrees": [],
+        "enrollmentYears": [],
+        "studyYears": [],
+        "majorGroups": [],
+        "enrolled": null,
+        "rulesComplete": false,
+        "basis": "2026-10-25 已阅读官方正文；仅将明确条件用于硬匹配，其余条件在资格路径中复核。",
+        "studyModes": [],
+        "leaderStudyYears": [],
+        "teamSize": null,
+        "requirements": []
+      }
+    },
+    {
+      "name": "同济大学第二届大学生物理学术竞赛",
+      "cat": "竞赛",
+      "direction": "学术科研",
+      "org": "同济大学本科生院、创新创业学院（物理科学与工程学院承办）",
+      "aud": "仅2025级、2026级全校理工科专业学生；其他年级或专业不符合通知条件",
+      "field": "同济大学",
+      "a": 12.0,
+      "note": "初赛报名10月20—31日；作品11月30日截止；个人或团队均可，每队至多5人。仅校内网络/VPN能访问报名平台。复赛另有优胜与组队要求。",
+      "id": "fm-006",
+      "dates": {
+        "start": "2026-10-20",
+        "end": "2026-10-31",
+        "award": null,
+        "deadlineAt": null,
+        "timezone": "Asia/Shanghai",
+        "published": "2026-10-19"
+      },
+      "source": {
+        "url": "https://mphylab.tongji.edu.cn/page/home/info23622_INFO",
+        "kind": "official-notice",
+        "verification": "verified",
+        "verifiedAt": "2026-10-25",
+        "lastAttemptAt": "2026-10-25",
+        "lastAttemptResult": "http-200-body-reviewed",
+        "importedClaimedCheckedAt": "2026-10-24",
+        "importedClaimedStatus": "报名中（有资格限制）",
+        "registrationOpenOn": null,
+        "evidence": {
+          "bodySha256": "7febcb0e21a558f7369af919aa5df3dda9e66cf07f5d8528f8d4fb4462466406",
+          "quotes": [
+            "2025级和2026级全校理工科各专业学生。",
+            "报名时间：2026年10月20日 — 2026年10月31日",
+            "每队人数不超过5人"
+          ],
+          "scope": "核实公告所载日期与已列资格；不代表审核通过或实时接受报名。",
+          "monitorRegion": {
+            "start": "关于举办2026年第二届同济大学大学生物理学术竞赛（TJPT）的通知",
+            "end": "教学通知"
+          },
+          "monitorHash": "c5226ccd10d42025fa454cef3712d1134efedb08564ce2a3126842078eaa3a94"
+        }
+      },
+      "eligibility": {
+        "schools": [
+          "同济大学"
+        ],
+        "regions": [],
+        "degrees": [],
+        "enrollmentYears": [
+          2025,
+          2026
+        ],
+        "studyYears": [],
+        "majorGroups": [
+          "理工科"
+        ],
+        "enrolled": null,
+        "rulesComplete": true,
+        "basis": "已核验初赛对象与人数条件。仅用于初赛报名初筛；复赛另须初赛优胜并5人组队，须学校审核。",
+        "studyModes": [],
+        "leaderStudyYears": [],
+        "teamSize": {
+          "min": 1,
+          "max": 5
+        },
+        "requirements": []
+      }
+    },
+    {
+      "name": "2026年“AI+教育”创新应用技能大赛（同济大学学生组）",
+      "cat": "竞赛",
+      "direction": "科技创新",
+      "org": "同济大学信息化办公室",
+      "aud": "同济大学全日制在校学生，大学生AI创新创业组；教师校内选拔不适用于学生",
+      "field": "同济大学",
+      "a": 14.4,
+      "note": "学生组报名和材料提交10月15日已截止；不能把教师组校内选拔资格套给学生。11月12日为颁奖典礼，不冒充评奖结果发布日期。",
+      "id": "fm-007",
+      "dates": {
+        "start": "2026-09-15",
+        "end": "2026-10-15",
+        "award": null,
+        "deadlineAt": null,
+        "timezone": "Asia/Shanghai",
+        "published": "2026-09-15"
+      },
+      "source": {
+        "url": "https://nic.tongji.edu.cn/info/1029/1570.htm",
+        "kind": "official-notice",
+        "verification": "verified",
+        "verifiedAt": "2026-10-25",
+        "lastAttemptAt": "2026-10-25",
+        "lastAttemptResult": "http-200-body-reviewed",
+        "importedClaimedCheckedAt": "2026-10-24",
+        "importedClaimedStatus": "已截止",
+        "registrationOpenOn": null,
+        "evidence": {
+          "bodySha256": "73cfe36f23ee9998d39ccdce2b37c91c2f78004c54ca260a1511acf3d79f4e3d",
+          "quotes": [
+            "面向我校全日制在校学生",
+            "即日—2026年10月15日"
+          ],
+          "scope": "核实公告所载日期与已列资格；不代表审核通过或实时接受报名。",
+          "monitorHash": "bf04c48683559623138969bc37d9e356eb5b9b8a091e3f055acb484b4fe4d5d7"
+        }
+      },
+      "eligibility": {
+        "schools": [
+          "同济大学"
+        ],
+        "regions": [],
+        "degrees": [],
+        "enrollmentYears": [],
+        "studyYears": [],
+        "majorGroups": [],
+        "enrolled": true,
+        "rulesComplete": false,
+        "basis": "2026-10-25 已阅读官方正文；仅将明确条件用于硬匹配，其余条件在资格路径中复核。",
+        "studyModes": [
+          "全日制"
+        ],
+        "leaderStudyYears": [],
+        "teamSize": {
+          "min": 1,
+          "max": 5
+        },
+        "requirements": []
+      }
+    },
+    {
+      "name": "第二届全国人工智能应用创新大赛",
+      "cat": "竞赛",
+      "direction": "科技创新",
+      "org": "中国技术经济学会（人工智能应用专业委员会承办）",
+      "aud": "普通高校/高职学生及科研院所、企业、创业团队；队员1—3名，指导教师另计，分组和赛道另核",
+      "field": "全国",
+      "a": 16.8,
+      "note": "日期冲突待主办方澄清：公开接口 signEndDt 为2026-11-10，正式通知的报名/缴费/交作品窗口为2026-09-18至2026-10-20；首页代码默认2026-10-31不是正式延期公告。停止使用单一确定截止日期，在机会库保留记录。",
+      "id": "fm-008",
+      "dates": {
+        "start": "2026-09-18",
+        "end": null,
+        "award": null,
+        "deadlineAt": null,
+        "timezone": "Asia/Shanghai",
+        "published": null
+      },
+      "source": {
+        "url": "https://www.ai-race.com.cn/",
+        "kind": "organizer-site",
+        "verification": "pending",
+        "verifiedAt": null,
+        "lastAttemptAt": "2026-10-25",
+        "lastAttemptResult": "official-public-api-and-notice-deadline-conflict",
+        "importedClaimedCheckedAt": "2026-10-24",
+        "importedClaimedStatus": "报名窗口内（待复核）",
+        "registrationOpenOn": null,
+        "importedEnd": "2026-11-10",
+        "evidence": {
+          "bodySha256": "4ae322088bc77a37a37a6d6a0c9da6ed5b416e31a446eb650a070acce89545c0",
+          "quotes": [
+            "API报名截止：2026-11-10",
+            "2026年9月18日—10月20日",
+            "每支团队由1—3名参赛队员组成"
+          ],
+          "scope": "已读取官网公开接口和其中的正式通知，但报名截止存在冲突；此证据不构成当前可报名核验。",
+          "documentUrl": "https://www.ai-race.com.cn/prod-api/open/competition/detail"
+        }
+      },
+      "eligibility": {
+        "schools": [],
+        "regions": [],
+        "degrees": [],
+        "enrollmentYears": [],
+        "studyYears": [],
+        "majorGroups": [],
+        "enrolled": null,
+        "rulesComplete": false,
+        "basis": "官网公开信息可读取，但接口与正式通知日期冲突；仅保留一致的队员人数等信息，不判断为可报名。",
+        "studyModes": [],
+        "leaderStudyYears": [],
+        "teamSize": {
+          "min": 1,
+          "max": 3
+        },
+        "requirements": []
+      }
+    },
+    {
+      "name": "第十二届数维杯数学建模挑战赛（秋季赛）",
+      "cat": "竞赛",
+      "direction": "学术科研",
+      "org": "中国仿真学会、辽宁科技大学",
+      "aud": "全国普通高校全日制在校生，1–3人/队",
+      "field": "全国",
+      "a": 19.2,
+      "note": "官方正文确认核验日已开放报名，11月20日06:00截止；每队1—3人，允许跨校、不可重复组队，200元/队。2027年1月中旬公布成绩，没有具体日，不补造评奖日期。",
+      "id": "fm-009",
+      "dates": {
+        "start": null,
+        "end": "2026-11-20",
+        "award": null,
+        "deadlineAt": "2026-11-20T06:00:00+08:00",
+        "timezone": "Asia/Shanghai",
+        "published": null
+      },
+      "source": {
+        "url": "https://www.nmmcm.org.cn/Competition/",
+        "kind": "organizer-site",
+        "verification": "verified",
+        "verifiedAt": "2026-10-25",
+        "lastAttemptAt": "2026-10-25",
+        "lastAttemptResult": "http-200-body-reviewed",
+        "importedClaimedCheckedAt": "2026-10-24",
+        "importedClaimedStatus": "报名窗口内（待复核）",
+        "registrationOpenOn": "2026-10-25",
+        "evidence": {
+          "bodySha256": "3048b84137c9bef8a4d7a674bfea9b127180b62fcc73dcd411b2f77d46a609cc",
+          "quotes": [
+            "报名截止：即日起至2026年11月20日06:00",
+            "每队1–3名学生",
+            "普通高校全日制在校生"
+          ],
+          "scope": "核实公告所载日期与已列资格；不代表审核通过或实时接受报名。",
+          "monitorHash": "24550c6811efd05544ed6509b91b240614a298e21c423d656aa1ffb1e430d7f4"
+        }
+      },
+      "eligibility": {
+        "schools": [],
+        "regions": [],
+        "degrees": [
+          "专科",
+          "本科",
+          "硕士",
+          "博士"
+        ],
+        "enrollmentYears": [],
+        "studyYears": [],
+        "majorGroups": [],
+        "enrolled": true,
+        "rulesComplete": true,
+        "basis": "已核实普通高校全日制在校身份、学历分组、1—3人及不可重复组队等报名初筛规则；本人确认项单独标识，作品及材料要求仍按章程审核。",
+        "studyModes": [
+          "全日制"
+        ],
+        "leaderStudyYears": [],
+        "teamSize": {
+          "min": 1,
+          "max": 3
+        },
+        "requirements": [
+          {
+            "id": "one-team",
+            "label": "本人为普通高校全日制在校生，没有重复组队，且按学历组别报名",
+            "quote": "全国普通高校全日制在校生（分专科组、本科生组、研究生组）。以队为单位报名，每队1–3名学生，可设1名指导教师（允许跨校组队，不可重复组队），各校参赛队数不限。"
+          }
+        ]
+      }
+    },
+    {
+      "name": "第九届传智杯数智创新与AI应用大赛",
+      "cat": "竞赛",
+      "direction": "科技创新",
+      "org": "传智杯大赛组委会（西安交通大学教务处转发）",
+      "aud": "全国高校本专科生、研究生；分组要求",
+      "field": "全国",
+      "a": 21.6,
+      "note": "官网规则需按研究生/A/B/C组与赛点身份复核，不可向低组别填报；校内QQ群与联系人仅适用于西安交通大学。",
+      "id": "fm-010",
+      "dates": {
+        "start": "2026-09-01",
+        "end": "2026-11-18",
+        "award": null,
+        "deadlineAt": null,
+        "timezone": "Asia/Shanghai",
+        "published": "2026-10-09"
+      },
+      "source": {
+        "url": "https://jwc.xjtu.edu.cn/info/1172/10505.htm",
+        "kind": "official-notice",
+        "verification": "verified",
+        "verifiedAt": "2026-10-25",
+        "lastAttemptAt": "2026-10-25",
+        "lastAttemptResult": "http-200-body-reviewed",
+        "importedClaimedCheckedAt": "2026-10-24",
+        "importedClaimedStatus": "报名窗口内（待复核）",
+        "registrationOpenOn": null,
+        "evidence": {
+          "bodySha256": "ceff0b1fca52c1b9c315219d8d2435bbd905de0cc818f7cf2fc2e7036d307fcb",
+          "quotes": [
+            "报名时间：2026年9月1日—2026年11月18日",
+            "全国各高校的研究生及本、专科所有年级学生均可自愿报名参赛"
+          ],
+          "scope": "核实公告所载日期与已列资格；不代表审核通过或实时接受报名。",
+          "monitorHash": "c92fdc7ecabd7ca2e03e9c52b9bf35b031199127bbf201aa1bf82ac68ccc47e2"
+        }
+      },
+      "eligibility": {
+        "schools": [],
+        "regions": [],
+        "degrees": [
+          "专科",
+          "本科",
+          "硕士",
+          "博士"
+        ],
+        "enrollmentYears": [],
+        "studyYears": [],
+        "majorGroups": [],
+        "enrolled": true,
+        "rulesComplete": false,
+        "basis": "2026-10-25 已阅读官方正文；仅将明确条件用于硬匹配，其余条件在资格路径中复核。",
+        "studyModes": [],
+        "leaderStudyYears": [],
+        "teamSize": null,
+        "requirements": [
+          {
+            "id": "correct-group",
+            "label": "已核对院校/学历对应组别，不向低组别报名",
+            "quote": "不可向下填报"
+          },
+          {
+            "id": "preliminary",
+            "label": "已确认自己属于赛点或非赛点，并完成相应初赛安排",
+            "quote": "非赛点院校的参赛选手应在规定时间内参加初赛"
+          }
+        ]
+      }
+    },
+    {
+      "name": "第十八届蓝桥杯（人工智能赛等）",
+      "cat": "竞赛",
+      "direction": "科技创新",
+      "org": "蓝桥杯大赛组委会（开封职业学院转发）",
+      "aud": "参赛资格及赛项要求以官网为准",
+      "field": "全国",
+      "a": 24.0,
+      "note": "AI赛截止14:00；设计赛项截止另为2027-04-26；正式全日制学籍，具体科目/组别另核；2027年4月省赛、6月总决赛不是结果发布日期。",
+      "id": "fm-011",
+      "dates": {
+        "start": "2026-10-08",
+        "end": "2026-12-18",
+        "award": null,
+        "deadlineAt": "2026-12-18T14:00:00+08:00",
+        "timezone": "Asia/Shanghai",
+        "published": "2026-10-22"
+      },
+      "source": {
+        "url": "https://xxgcxy.kfvc.edu.cn/2026/1022/c206a11078/pagem.htm",
+        "kind": "official-notice",
+        "verification": "verified",
+        "verifiedAt": "2026-10-25",
+        "lastAttemptAt": "2026-10-25",
+        "lastAttemptResult": "http-200-body-reviewed",
+        "importedClaimedCheckedAt": "2026-10-24",
+        "importedClaimedStatus": "报名窗口内（待复核）",
+        "registrationOpenOn": null,
+        "evidence": {
+          "bodySha256": "adbca902fe91ec50a0a68313892b9646867db7068e4f6a48b163134e197302e7",
+          "quotes": [
+            "2026年10月8日10:00—2026年12月18日14:00",
+            "具有正式全日制学籍"
+          ],
+          "scope": "核实公告所载日期与已列资格；不代表审核通过或实时接受报名。",
+          "monitorHash": "bd365f987cf36bc8570c6b0bfbbfec14d6ec794a23d50ad77507098e2a79b2a9"
+        }
+      },
+      "eligibility": {
+        "schools": [],
+        "regions": [],
+        "degrees": [
+          "专科",
+          "本科",
+          "硕士",
+          "博士"
+        ],
+        "enrollmentYears": [],
+        "studyYears": [],
+        "majorGroups": [],
+        "enrolled": true,
+        "rulesComplete": false,
+        "basis": "2026-10-25 已阅读官方正文；仅将明确条件用于硬匹配，其余条件在资格路径中复核。",
+        "studyModes": [
+          "全日制"
+        ],
+        "leaderStudyYears": [],
+        "teamSize": null,
+        "requirements": [
+          {
+            "id": "subject-group",
+            "label": "已阅读目标科目和组别规则，确认当前学历/学校符合要求",
+            "quote": "符合相关科目报名要求"
+          },
+          {
+            "id": "schedule",
+            "label": "多科目报名不存在竞赛时间冲突；晋级决赛时按规定只选一科目",
+            "quote": "比赛时间相同的科目，参赛选手仅限选择其中一个科目报名"
+          }
+        ]
+      }
+    },
+    {
+      "name": "第十八届蓝桥杯（视觉艺术设计／数字科技创新赛）",
+      "cat": "竞赛",
+      "direction": "设计创意",
+      "org": "蓝桥杯大赛组委会（开封职业学院转发）",
+      "aud": "参赛资格及赛项要求以官网为准",
+      "field": "全国",
+      "a": 26.4,
+      "note": "作品提交截止14:00；以主办方最新公告为准；正式全日制学籍，具体科目/组别另核；2027年4月省赛、6月总决赛不是结果发布日期。",
+      "id": "fm-012",
+      "dates": {
+        "start": "2026-10-08",
+        "end": "2027-04-26",
+        "award": null,
+        "deadlineAt": "2027-04-26T14:00:00+08:00",
+        "timezone": "Asia/Shanghai",
+        "published": "2026-10-22"
+      },
+      "source": {
+        "url": "https://xxgcxy.kfvc.edu.cn/2026/1022/c206a11078/pagem.htm",
+        "kind": "official-notice",
+        "verification": "verified",
+        "verifiedAt": "2026-10-25",
+        "lastAttemptAt": "2026-10-25",
+        "lastAttemptResult": "http-200-body-reviewed",
+        "importedClaimedCheckedAt": "2026-10-24",
+        "importedClaimedStatus": "报名窗口内（待复核）",
+        "registrationOpenOn": null,
+        "evidence": {
+          "bodySha256": "adbca902fe91ec50a0a68313892b9646867db7068e4f6a48b163134e197302e7",
+          "quotes": [
+            "2026年10月8日10:00—2027年4月26日14:00",
+            "具有正式全日制学籍"
+          ],
+          "scope": "核实公告所载日期与已列资格；不代表审核通过或实时接受报名。",
+          "monitorHash": "bd365f987cf36bc8570c6b0bfbbfec14d6ec794a23d50ad77507098e2a79b2a9"
+        }
+      },
+      "eligibility": {
+        "schools": [],
+        "regions": [],
+        "degrees": [
+          "专科",
+          "本科",
+          "硕士",
+          "博士"
+        ],
+        "enrollmentYears": [],
+        "studyYears": [],
+        "majorGroups": [],
+        "enrolled": true,
+        "rulesComplete": false,
+        "basis": "2026-10-25 已阅读官方正文；仅将明确条件用于硬匹配，其余条件在资格路径中复核。",
+        "studyModes": [
+          "全日制"
+        ],
+        "leaderStudyYears": [],
+        "teamSize": null,
+        "requirements": [
+          {
+            "id": "subject-group",
+            "label": "已阅读目标科目和组别规则，确认当前学历/学校符合要求",
+            "quote": "符合相关科目报名要求"
+          },
+          {
+            "id": "schedule",
+            "label": "多科目报名不存在竞赛时间冲突；晋级决赛时按规定只选一科目",
+            "quote": "比赛时间相同的科目，参赛选手仅限选择其中一个科目报名"
+          }
+        ]
+      }
+    },
+    {
+      "name": "2027年第四届大学生数据要素素质大赛",
+      "cat": "竞赛",
+      "direction": "科技创新",
+      "org": "长沙理工大学数学与统计学院公告",
+      "aud": "本校本科生/研究生，每队3—5人、不可跨校；毕业2年内未就业校友另可与在校生组队",
+      "field": "长沙理工大学校内组织（全国赛事）",
+      "a": 2.1,
+      "note": "本条仅核验长沙理工大学组织通知，不外推为全国通用规则。11月1日—12月31日报名；需本校指导教师、赛区及每人仅一队等复核。",
+      "id": "fm-013",
+      "dates": {
+        "start": "2026-11-01",
+        "end": "2026-12-31",
+        "award": null,
+        "deadlineAt": null,
+        "timezone": "Asia/Shanghai",
+        "published": "2026-10-21"
+      },
+      "source": {
+        "url": "https://www.csust.edu.cn/stxy/info/1053/10965.htm",
+        "kind": "official-notice",
+        "verification": "verified",
+        "verifiedAt": "2026-10-25",
+        "lastAttemptAt": "2026-10-25",
+        "lastAttemptResult": "http-200-body-reviewed",
+        "importedClaimedCheckedAt": "2026-10-24",
+        "importedClaimedStatus": "尚未开始",
+        "registrationOpenOn": null,
+        "evidence": {
+          "bodySha256": "5eefaa9a0a6e7ecb294f062315733f2f66a472126482895b0097d213bb72de41",
+          "quotes": [
+            "参赛对象：我校全日制在校本科生、研究生",
+            "报名时间：2026 年 11 月 1 日—12 月 31 日",
+            "每队3—5 人",
+            "不得跨校"
+          ],
+          "scope": "核实公告所载日期与已列资格；不代表审核通过或实时接受报名。",
+          "monitorHash": "b0e153a30d1aece719f7b4e86deaf8ff7c5aa945052c7908422b198c1bc25098"
+        }
+      },
+      "eligibility": {
+        "schools": [
+          "长沙理工大学"
+        ],
+        "regions": [],
+        "degrees": [
+          "本科",
+          "硕士",
+          "博士"
+        ],
+        "enrollmentYears": [],
+        "studyYears": [],
+        "majorGroups": [],
+        "enrolled": null,
+        "rulesComplete": false,
+        "basis": "2026-10-25 已阅读官方正文；仅将明确条件用于硬匹配，其余条件在资格路径中复核。",
+        "studyModes": [
+          "全日制"
+        ],
+        "leaderStudyYears": [],
+        "teamSize": {
+          "min": 3,
+          "max": 5
+        },
+        "requirements": [
+          {
+            "id": "single-team",
+            "label": "本人只参加一队，所有队员符合不可跨校要求",
+            "quote": "每人限参加一队"
+          },
+          {
+            "id": "mentor",
+            "label": "已确定1—2名本校在职指导教师",
+            "quote": "每队配 1—2 名本校在职教师指导"
+          },
+          {
+            "id": "track",
+            "label": "已选择正确分赛区和赛道，不报名职业教育赛区",
+            "quote": "不得报名职业教育赛区"
+          }
+        ]
+      }
+    },
+    {
+      "name": "第十二届全国大学生生命科学竞赛（科学探究类）",
+      "cat": "竞赛",
+      "direction": "学术科研",
+      "org": "全国大学生生命科学竞赛组委会（温州大学转发）",
+      "aud": "生命科学相关团队，参赛资格需按赛事规则复核",
+      "field": "全国",
+      "a": 3.5,
+      "note": "正文确认2027年1月31日前完成网报，4月15日交材料；开始日期及完整学生/团队规则仍待附件核实。省赛、决赛日期不作为确定结果日。",
+      "id": "fm-014",
+      "dates": {
+        "start": null,
+        "end": "2027-01-31",
+        "award": null,
+        "deadlineAt": null,
+        "timezone": "Asia/Shanghai",
+        "published": "2026-09-22"
+      },
+      "source": {
+        "url": "https://shxy.wzu.edu.cn/info/1068/161351.htm",
+        "kind": "official-notice",
+        "verification": "verified",
+        "verifiedAt": "2026-10-25",
+        "lastAttemptAt": "2026-10-25",
+        "lastAttemptResult": "http-200-body-reviewed",
+        "importedClaimedCheckedAt": "2026-10-24",
+        "importedClaimedStatus": "报名窗口内（待复核）",
+        "registrationOpenOn": null,
+        "evidence": {
+          "bodySha256": "af4fd9b5c3bf99fc31da71776626e0ce0fc40bfc63a019dba76b432e3f576041",
+          "quotes": [
+            "2027年1月31日前",
+            "2027年4月15日，提交所有材料截止"
+          ],
+          "scope": "核实公告所载日期与已列资格；不代表审核通过或实时接受报名。",
+          "monitorHash": "1b4a8ca0e21092c7c41bf8a91801efe57301f3bd358e910ff329c6331bfae051"
+        }
+      },
+      "eligibility": {
+        "schools": [],
+        "regions": [],
+        "degrees": [],
+        "enrollmentYears": [],
+        "studyYears": [],
+        "majorGroups": [],
+        "enrolled": null,
+        "rulesComplete": false,
+        "basis": "2026-10-25 已阅读官方正文；仅将明确条件用于硬匹配，其余条件在资格路径中复核。",
+        "studyModes": [],
+        "leaderStudyYears": [],
+        "teamSize": null,
+        "requirements": []
+      }
+    },
+    {
+      "name": "第十八届蓝桥杯 · 智能装备数字化建模",
+      "cat": "竞赛",
+      "direction": "科技创新",
+      "org": "赛事组委会（西安交通大学教务处转发）",
+      "aud": "参见已核验条件及完整赛项规则",
+      "field": "全国",
+      "a": 28,
+      "note": "蓝桥杯数字科技创新具体赛项，非独立赛事总量。初赛报名与作品提交同一截止；使用MWORKS；决赛预计时间不是评奖结果日期。西安交大校内QQ群仅适用于该校。",
+      "id": "fm-015",
+      "dates": {
+        "start": "2026-10-08",
+        "end": "2027-04-26",
+        "award": null,
+        "deadlineAt": "2027-04-26T14:00:00+08:00",
+        "timezone": "Asia/Shanghai",
+        "published": "2026-10-19"
+      },
+      "source": {
+        "url": "https://jwc.xjtu.edu.cn/info/1172/10543.htm",
+        "kind": "official-notice",
+        "verification": "verified",
+        "verifiedAt": "2026-10-25",
+        "lastAttemptAt": "2026-10-25",
+        "lastAttemptResult": "http-200-body-reviewed",
+        "registrationOpenOn": null,
+        "evidence": {
+          "bodySha256": "bf970a7da52da6f19e76527d888e3d8b1143a7fce856e8f70c1a58d70f20549e",
+          "quotes": [
+            "全国选拔赛报名及作品提交时间：2026年10月8日10:00—2027年4月26日14:00。",
+            "每队由1—3名学生组成，不允许跨学校组队",
+            "具有正式全日制学籍并符合相关科目报名要求的研究生、本科生及高职高专学生"
+          ],
+          "scope": "已阅读官方高校通知；明确区分全国赛项要求与校内组织范围，不代表报名审核通过。",
+          "monitorHash": "b2b58f7df7be13c3be01a642e150d701f2a5efb6d89ee5d61bc65548180aae58"
+        },
+        "importedClaimedCheckedAt": null,
+        "importedClaimedStatus": "新核验记录，无V80导入声明"
+      },
+      "eligibility": {
+        "schools": [],
+        "regions": [],
+        "degrees": [
+          "专科",
+          "本科",
+          "硕士",
+          "博士"
+        ],
+        "enrollmentYears": [],
+        "studyYears": [],
+        "majorGroups": [],
+        "enrolled": true,
+        "rulesComplete": false,
+        "basis": "2026-10-25 人工阅读官方通知。未覆盖的赛项规则须继续核对；个人确认不是官方审查。",
+        "studyModes": [
+          "全日制"
+        ],
+        "leaderStudyYears": [],
+        "teamSize": {
+          "min": 1,
+          "max": 3
+        },
+        "requirements": [
+          {
+            "id": "same-school",
+            "label": "所有参赛学生来自同一学校",
+            "quote": "不允许跨学校组队"
+          },
+          {
+            "id": "group",
+            "label": "已按学历选择正确组别并核实完整赛项规则",
+            "quote": "职业院校组仅限高职高专学生"
+          }
+        ]
+      }
+    },
+    {
+      "name": "第十二届智能农业装备创新大赛 · 西安交大校内报名",
+      "cat": "竞赛",
+      "direction": "科技创新",
+      "org": "赛事组委会（西安交通大学教务处转发）",
+      "aud": "参见已核验条件及完整赛项规则",
+      "field": "西安交通大学校内",
+      "a": 29,
+      "note": "本记录仅为西安交通大学校内报名，10月30日不是全国截止。官网报名11月30日，作品12月20日；非全日制全脱产研究生有条件允许，不能按普通非全日制一律拒绝。",
+      "id": "fm-016",
+      "dates": {
+        "start": "2026-09-10",
+        "end": "2026-10-30",
+        "award": null,
+        "deadlineAt": null,
+        "timezone": "Asia/Shanghai",
+        "published": "2026-10-16"
+      },
+      "source": {
+        "url": "https://jwc.xjtu.edu.cn/info/1172/10541.htm",
+        "kind": "official-notice",
+        "verification": "verified",
+        "verifiedAt": "2026-10-25",
+        "lastAttemptAt": "2026-10-25",
+        "lastAttemptResult": "http-200-body-reviewed",
+        "registrationOpenOn": null,
+        "evidence": {
+          "bodySha256": "58261e558e0ed8b9231e66de403913bd7adc1bfdddd6104e7ddd91b4e4664faa",
+          "quotes": [
+            "校内报名截止日期：2026年10月30日。",
+            "大赛官网报名时间：2026年9月10日—11月30日。",
+            "每个参赛队学生人数2~5人，指导教师不多于3人。"
+          ],
+          "scope": "已阅读官方高校通知；明确区分全国赛项要求与校内组织范围，不代表报名审核通过。",
+          "monitorHash": "e3a63e1568ae8cacc375b0db8cdbef54a7dfe045a07fcfcc28f2990ba2db96a7"
+        },
+        "importedClaimedCheckedAt": null,
+        "importedClaimedStatus": "新核验记录，无V80导入声明"
+      },
+      "eligibility": {
+        "schools": [
+          "西安交通大学"
+        ],
+        "regions": [],
+        "degrees": [
+          "专科",
+          "本科",
+          "硕士",
+          "博士"
+        ],
+        "enrollmentYears": [],
+        "studyYears": [],
+        "majorGroups": [],
+        "enrolled": true,
+        "rulesComplete": false,
+        "basis": "2026-10-25 人工阅读官方通知。未覆盖的赛项规则须继续核对；个人确认不是官方审查。",
+        "studyModes": [],
+        "leaderStudyYears": [],
+        "teamSize": {
+          "min": 2,
+          "max": 5
+        },
+        "requirements": [
+          {
+            "id": "registered",
+            "label": "2026年9月前（含9月）已正式注册，属于公告规定的非成人教育学生",
+            "quote": "2026年9月前（含9月）正式注册"
+          },
+          {
+            "id": "study-track",
+            "label": "已核实学历、学习形式及A/B/C/D类别的队长和组别要求",
+            "quote": "全日制、非全日制（全脱产学习）研究生"
+          },
+          {
+            "id": "mentor",
+            "label": "指导教师不超过3人",
+            "quote": "指导教师不多于3人"
+          }
+        ]
+      }
+    }
+  ]
+}</script>
+<script id="source-health-data" type="application/json">{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-25T13:24:31.499640+00:00",
+  "nextCheckAfter": "2026-10-26T13:24:31.499640+00:00",
+  "description": "自动检查仅比较官方正文快照；不自动修改日期、资格或人工核验结论。",
+  "results": [
+    {
+      "id": "fm-001",
+      "url": "https://www.moe.gov.cn/srcsite/A08/s5672/202607/t20260731_1445670.html",
+      "reviewedAt": "2026-10-25",
+      "status": "unchanged",
+      "contentHash": "0ad4adbf6277cbd54327455868354fe0f84520908f25db370d6b6ac3928b3a26",
+      "message": "与已核验正文快照一致；不等于报名审核通过",
+      "reviewedBodyHash": "afb111d5dd7293faccce913108d624e731f34287cbf8eced91b832cda91cce9c",
+      "referenceHash": "0ad4adbf6277cbd54327455868354fe0f84520908f25db370d6b6ac3928b3a26"
+    },
+    {
+      "id": "fm-002",
+      "url": "https://www.cmit.cn/wap/index.html",
+      "reviewedAt": "2026-10-25",
+      "status": "unchanged",
+      "contentHash": "0c5ec46fa26cb47a4dad8363a9f1a7baca5fa99bc6ad26903003772cb0dffbd9",
+      "message": "与已核验正文快照一致；不等于报名审核通过",
+      "reviewedBodyHash": "ed298997b38a1bc38fb15b45cb2e014774918636d9c3cc186c455ae9e2b18313",
+      "referenceHash": "0c5ec46fa26cb47a4dad8363a9f1a7baca5fa99bc6ad26903003772cb0dffbd9"
+    },
+    {
+      "id": "fm-003",
+      "url": "https://jw.cqjtu.edu.cn/info/1074/11035.htm",
+      "reviewedAt": "2026-10-25",
+      "status": "unchanged",
+      "contentHash": "11663a4f00e96e9c29640d5c621d20e8d99508b290de94b583a7dbd8c5b155c3",
+      "message": "与已核验正文快照一致；不等于报名审核通过",
+      "reviewedBodyHash": "c9ff8b7ed8161ed5f51fca30e81d9bbb43b4026ccce47bba2ebb60d1748b6af9",
+      "referenceHash": "11663a4f00e96e9c29640d5c621d20e8d99508b290de94b583a7dbd8c5b155c3"
+    },
+    {
+      "id": "fm-004",
+      "url": "https://jwc.upc.edu.cn/2026/1008/c18523a502163/page.htm",
+      "reviewedAt": "2026-10-25",
+      "status": "unchanged",
+      "contentHash": "964c95d737da0b7c6c051c79791a8e10f364090c6015c6ce602efe9acab957dc",
+      "message": "与已核验正文快照一致；不等于报名审核通过",
+      "reviewedBodyHash": "af6384c5b4baca098d69577c921efe93e1bf669e83106ac5220e69137105a70b",
+      "referenceHash": "964c95d737da0b7c6c051c79791a8e10f364090c6015c6ce602efe9acab957dc"
+    },
+    {
+      "id": "fm-005",
+      "url": "https://rst.hubei.gov.cn/zfxxgk/zc/qtzdgkwj/202603/t20260331_5902664.shtml",
+      "reviewedAt": "2026-10-25",
+      "status": "unchanged",
+      "contentHash": "e7db13bca4c4d5bf7d18a69d6053cbacd21bec17043be8f92c5cd7b8b2665caf",
+      "message": "与已核验正文快照一致；不等于报名审核通过",
+      "reviewedBodyHash": "5fda3c1320b17352d96d631de3bf13a71fae2f8eca1d92955386581371b3d3bb",
+      "referenceHash": "e7db13bca4c4d5bf7d18a69d6053cbacd21bec17043be8f92c5cd7b8b2665caf"
+    },
+    {
+      "id": "fm-006",
+      "url": "https://mphylab.tongji.edu.cn/page/home/info23622_INFO",
+      "reviewedAt": "2026-10-25",
+      "status": "unchanged",
+      "contentHash": "c5226ccd10d42025fa454cef3712d1134efedb08564ce2a3126842078eaa3a94",
+      "message": "与已核验正文快照一致；不等于报名审核通过",
+      "reviewedBodyHash": "7febcb0e21a558f7369af919aa5df3dda9e66cf07f5d8528f8d4fb4462466406",
+      "referenceHash": "c5226ccd10d42025fa454cef3712d1134efedb08564ce2a3126842078eaa3a94"
+    },
+    {
+      "id": "fm-007",
+      "url": "https://nic.tongji.edu.cn/info/1029/1570.htm",
+      "reviewedAt": "2026-10-25",
+      "status": "unchanged",
+      "contentHash": "bf04c48683559623138969bc37d9e356eb5b9b8a091e3f055acb484b4fe4d5d7",
+      "message": "与已核验正文快照一致；不等于报名审核通过",
+      "reviewedBodyHash": "73cfe36f23ee9998d39ccdce2b37c91c2f78004c54ca260a1511acf3d79f4e3d",
+      "referenceHash": "bf04c48683559623138969bc37d9e356eb5b9b8a091e3f055acb484b4fe4d5d7"
+    },
+    {
+      "id": "fm-008",
+      "url": "https://www.ai-race.com.cn/",
+      "reviewedAt": null,
+      "reviewedBodyHash": "4ae322088bc77a37a37a6d6a0c9da6ed5b416e31a446eb650a070acce89545c0",
+      "referenceHash": null,
+      "status": "unreviewed",
+      "message": "已读取官网信息，但报名截止冲突尚未澄清",
+      "checkedAt": "2026-10-25T13:43:49.600000+00:00"
+    },
+    {
+      "id": "fm-009",
+      "url": "https://www.nmmcm.org.cn/Competition/",
+      "reviewedAt": "2026-10-25",
+      "status": "unchanged",
+      "contentHash": "24550c6811efd05544ed6509b91b240614a298e21c423d656aa1ffb1e430d7f4",
+      "message": "与已核验正文快照一致；不等于报名审核通过",
+      "reviewedBodyHash": "3048b84137c9bef8a4d7a674bfea9b127180b62fcc73dcd411b2f77d46a609cc",
+      "referenceHash": "24550c6811efd05544ed6509b91b240614a298e21c423d656aa1ffb1e430d7f4"
+    },
+    {
+      "id": "fm-010",
+      "url": "https://jwc.xjtu.edu.cn/info/1172/10505.htm",
+      "reviewedAt": "2026-10-25",
+      "status": "unchanged",
+      "contentHash": "c92fdc7ecabd7ca2e03e9c52b9bf35b031199127bbf201aa1bf82ac68ccc47e2",
+      "message": "与已核验正文快照一致；不等于报名审核通过",
+      "reviewedBodyHash": "ceff0b1fca52c1b9c315219d8d2435bbd905de0cc818f7cf2fc2e7036d307fcb",
+      "referenceHash": "c92fdc7ecabd7ca2e03e9c52b9bf35b031199127bbf201aa1bf82ac68ccc47e2"
+    },
+    {
+      "id": "fm-011",
+      "url": "https://xxgcxy.kfvc.edu.cn/2026/1022/c206a11078/pagem.htm",
+      "reviewedAt": "2026-10-25",
+      "status": "unchanged",
+      "contentHash": "bd365f987cf36bc8570c6b0bfbbfec14d6ec794a23d50ad77507098e2a79b2a9",
+      "message": "与已核验正文快照一致；不等于报名审核通过",
+      "reviewedBodyHash": "adbca902fe91ec50a0a68313892b9646867db7068e4f6a48b163134e197302e7",
+      "referenceHash": "bd365f987cf36bc8570c6b0bfbbfec14d6ec794a23d50ad77507098e2a79b2a9"
+    },
+    {
+      "id": "fm-012",
+      "url": "https://xxgcxy.kfvc.edu.cn/2026/1022/c206a11078/pagem.htm",
+      "reviewedAt": "2026-10-25",
+      "status": "unchanged",
+      "contentHash": "bd365f987cf36bc8570c6b0bfbbfec14d6ec794a23d50ad77507098e2a79b2a9",
+      "message": "与已核验正文快照一致；不等于报名审核通过",
+      "reviewedBodyHash": "adbca902fe91ec50a0a68313892b9646867db7068e4f6a48b163134e197302e7",
+      "referenceHash": "bd365f987cf36bc8570c6b0bfbbfec14d6ec794a23d50ad77507098e2a79b2a9"
+    },
+    {
+      "id": "fm-013",
+      "url": "https://www.csust.edu.cn/stxy/info/1053/10965.htm",
+      "reviewedAt": "2026-10-25",
+      "status": "unchanged",
+      "contentHash": "b0e153a30d1aece719f7b4e86deaf8ff7c5aa945052c7908422b198c1bc25098",
+      "message": "与已核验正文快照一致；不等于报名审核通过",
+      "reviewedBodyHash": "5eefaa9a0a6e7ecb294f062315733f2f66a472126482895b0097d213bb72de41",
+      "referenceHash": "b0e153a30d1aece719f7b4e86deaf8ff7c5aa945052c7908422b198c1bc25098"
+    },
+    {
+      "id": "fm-014",
+      "url": "https://shxy.wzu.edu.cn/info/1068/161351.htm",
+      "reviewedAt": "2026-10-25",
+      "status": "unchanged",
+      "contentHash": "1b4a8ca0e21092c7c41bf8a91801efe57301f3bd358e910ff329c6331bfae051",
+      "message": "与已核验正文快照一致；不等于报名审核通过",
+      "reviewedBodyHash": "af4fd9b5c3bf99fc31da71776626e0ce0fc40bfc63a019dba76b432e3f576041",
+      "referenceHash": "1b4a8ca0e21092c7c41bf8a91801efe57301f3bd358e910ff329c6331bfae051"
+    }
+  ]
+}</script>
+<script>
+let CURRENT_DATE=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());const TODAY=new Date(CURRENT_DATE+'T00:00:00');const DAY=86400000;const colors={'科技创新':['#3653cf','#14277b'],'设计创意':['#f29a77','#b64e42'],'创业实践':['#e7b975','#a47b49'],'学术科研':['#8595bf','#465b92'],'综合创新':['#b8a5df','#7067b3']};const catalogue=JSON.parse(document.getElementById('opportunity-data').textContent);
+let sourceHealth=JSON.parse(document.getElementById('source-health-data').textContent);
+const items=catalogue.opportunities.map(it=>({...it,start:it.dates.start,end:it.dates.end,award:it.dates.award,url:it.source.url,verified:it.source.verification==='verified',checked:it.source.verifiedAt}));
+const dateOf=s=>s?new Date(s+'T00:00:00'):null;const fmt=s=>s?s.replaceAll('-','.'): '待公布';const daysUntil=s=>s?Math.round((dateOf(s)-TODAY)/DAY):null;let rangeMonths=12,dateMode='apply';function keyDate(it){return dateMode==='award'?it.award:it.end}function horizon(months=rangeMonths){let d=new Date(TODAY);d.setDate(d.getDate()+Math.round(months*30.4375));return d}function visibleItems(months=rangeMonths){return items.map((it,i)=>({it,i})).filter(({it})=>{let d=dateOf(keyDate(it));return (cat==='全部'||it.cat===cat)&&[it.name,it.field,it.direction].join(' ').toLocaleLowerCase().includes(query.trim().toLocaleLowerCase())&&d&&d>=TODAY&&d<=horizon(months)&&(dateMode!=='apply'||!it.dates.deadlineAt||new Date(it.dates.deadlineAt)>new Date())&&(profile.showIneligible||matchProfile(it).code!=='ineligible')})}function updateStats(){const purpose=document.querySelector('.orbit-purpose');if(purpose)purpose.textContent='越近中心越临近'+(dateMode==='award'?'结果日期':'截止')+' · 颜色表示方向';let v=visibleItems();document.getElementById('total').textContent=String(v.length).padStart(2,'0');document.getElementById('highCount').textContent=String(v.filter(x=>!x.it.verified||matchProfile(x.it).code!=='eligible').length).padStart(2,'0');document.getElementById('emptyNote').hidden=v.length!==0;if(v.length){select(v.some(x=>x.i===active)?active:v[0].i)}else{clearSelection()}reconcileGalaxyComparison();syncGalaxyControls()}document.getElementById('categoryLegend').innerHTML=Object.entries(colors).map(([k,v])=>`<div class="key-line"><i class="key-dot" style="background:${v[0]}"></i>${k}</div>`).join('');
+function readStored(key,fallback){try{return JSON.parse(localStorage.getItem(key))??fallback}catch{return fallback}}
+function store(key,value){try{localStorage.setItem(key,JSON.stringify(value));return true}catch{toast('浏览器未允许本地保存；本次修改仅在当前页面有效');return false}}
+let active=0,cat='竞赛',query='',saved=new Set((Array.isArray(readStored('flowmate_saved',[]))?readStored('flowmate_saved',[]):[]).map(x=>Number.isInteger(x)?items[x]?.id:x).filter(x=>items.some(it=>it.id===x))),positions=[],hover=-1;
+let suppressClick=false;
+const galaxyInteraction={paused:false,rotation:0,dragging:false,drag:null,compareMode:false,compared:[]};
+let profile=normalizeProfile(readStored('flowmate_profile',{}));if(profile.teamSizeBasis!=='participants')profile.teamSize='';
+let eligibilityAnswers=readStored('flowmate_eligibility_answers',{});if(!eligibilityAnswers||typeof eligibilityAnswers!=='object'||Array.isArray(eligibilityAnswers))eligibilityAnswers={};
+document.getElementById('savedCount').textContent=saved.size;const canvas=document.getElementById('orbit'),ctx=canvas.getContext('2d'),space=document.getElementById('space');let W=0,H=0,dpr=1;function resize(){dpr=Math.min(devicePixelRatio||1,2);W=space.clientWidth;H=space.clientHeight;canvas.width=Math.round(W*dpr);canvas.height=Math.round(H*dpr);ctx.setTransform(dpr,0,0,dpr,0,0)}addEventListener('resize',resize);resize();const TAU=Math.PI*2;function ellipse(cx,cy,rx,ry,tilt,t){let x=rx*Math.cos(t),y=ry*Math.sin(t);return {x:cx+x*Math.cos(tilt)-y*Math.sin(tilt),y:cy+x*Math.sin(tilt)+y*Math.cos(tilt),depth:Math.sin(t)}}function strokeEllipse(cx,cy,rx,ry,tilt,color,width=1,dash=[]){ctx.beginPath();for(let i=0;i<=180;i++){let p=ellipse(cx,cy,rx,ry,tilt,i/180*TAU);i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y)}ctx.closePath();ctx.strokeStyle=color;ctx.lineWidth=width;ctx.setLineDash(dash);ctx.stroke();ctx.setLineDash([])}function planet(x,y,r,seed,selected,bright,painter=ctx,variant=0){
+ const ctx=painter,pair=colors[seed]||colors['科技创新'];const hash=[...seed].reduce((a,c)=>a+c.charCodeAt(0),0);
+ // Soft pigment on translucent paper: no surface lines, polygons or geographic grids.
+ const tint=(hex,white)=>{const n=parseInt(hex.slice(1),16);return 'rgb('+[n>>16,(n>>8)&255,n&255].map(c=>Math.round(c+(250-c)*white)).join(',')+')'};
+ ctx.save();if(selected){ctx.strokeStyle='#637bd24d';ctx.lineWidth=.8;ctx.beginPath();ctx.ellipse(x,y,r*1.52,r*.37,-.43,0,TAU);ctx.stroke()}
+ ctx.shadowColor='#6676950c';ctx.shadowBlur=r*.8;ctx.shadowOffsetY=r*.08;
+ const angle=-.7+(variant*1.618%2.4),phase=.42+.12*Math.sin(variant*1.7),dx=Math.cos(angle)*r,dy=Math.sin(angle)*r;const globe=ctx.createLinearGradient(x-dx,y-dy,x+dx,y+dy);globe.addColorStop(0,tint(pair[0],.03));globe.addColorStop(phase,tint(pair[0],.24));globe.addColorStop(Math.min(.88,phase+.32),tint(pair[0],.76));globe.addColorStop(1,'#f9efdd');ctx.fillStyle=globe;ctx.beginPath();ctx.arc(x,y,r,0,TAU);ctx.fill();ctx.shadowColor='transparent';
+ ctx.save();ctx.beginPath();ctx.arc(x,y,r,0,TAU);ctx.clip();
+ // Broad, low-contrast washes have feathered edges and never form outlined patches.
+ for(let k=0;k<6;k++){const a=hash*.017+k*2.39996,rr=r*Math.sqrt((k+.4)/7),px=x+Math.cos(a)*rr*.8,py=y+Math.sin(a)*rr*.8,rad=r*(.3+.08*Math.sin(k+hash));const wash=ctx.createRadialGradient(px,py,0,px,py,rad);wash.addColorStop(0,k%2?'#fff7e828':'#bdcbe51a');wash.addColorStop(1,'#fff7e800');ctx.fillStyle=wash;ctx.fillRect(px-rad,py-rad,rad*2,rad*2)}
+ // One cached, fixed paper grain: subtle pigment texture without shimmer or surface lines.
+ if(!planet.paperGrain){const paper=document.createElement('canvas');paper.width=paper.height=128;const brush=paper.getContext('2d'),pixels=brush.createImageData(128,128);let state=73619;for(let i=0;i<pixels.data.length;i+=4){state=(Math.imul(state,1664525)+1013904223)>>>0;const tone=(state>>>16)&255;pixels.data[i]=pixels.data[i+1]=pixels.data[i+2]=tone<128?132:255;pixels.data[i+3]=8+(tone%18)}brush.putImageData(pixels,0,0);planet.paperGrain=paper}
+ ctx.save();ctx.globalAlpha=.48;ctx.drawImage(planet.paperGrain,x-r,y-r,r*2,r*2);ctx.restore();
+ const light=ctx.createRadialGradient(x-r*.25,y-r*.55,0,x,y,r*1.35);light.addColorStop(0,'#fffdf04a');light.addColorStop(.62,'#fff9eb00');light.addColorStop(1,'#69779c12');ctx.fillStyle=light;ctx.fillRect(x-r,y-r,r*2,r*2);ctx.restore();
+ // The single focus ring is functional; the sphere itself has no hard outline.
+ if(selected){ctx.beginPath();ctx.ellipse(x,y,r*1.52,r*.37,-.43,0,Math.PI);ctx.strokeStyle='#4963c76b';ctx.lineWidth=.8;ctx.stroke()}ctx.restore();
+}
+
+// Persistent, readable labels. Orbital motion never decides whether text exists.
+const orbitMain=document.querySelector('.main');
+const orbitHeading=document.createElement('div');orbitHeading.className='orbit-heading';orbitMain.insertBefore(orbitHeading,space);orbitHeading.append(document.querySelector('.headline'),document.querySelector('.key-panel'),document.querySelector('.bottom'));
+const legendDisclosure=document.querySelector('.key-panel');
+const legendExplanation=document.createElement('section');legendExplanation.id='legendExplanation';legendExplanation.className='legend-explanation';legendExplanation.hidden=true;legendExplanation.setAttribute('aria-label','星系图例说明');
+const legendHeader=document.createElement('header');legendHeader.append(textNode('b','星系图例'));const closeLegend=textNode('button','×');closeLegend.type='button';closeLegend.setAttribute('aria-label','关闭图例');legendHeader.append(closeLegend);legendExplanation.append(legendHeader);
+for(const child of [...legendDisclosure.children].slice(1))legendExplanation.append(child);
+document.querySelector('.detail').prepend(legendExplanation);legendDisclosure.querySelector('summary').setAttribute('aria-controls','legendExplanation');
+function syncLegend(){legendExplanation.hidden=!legendDisclosure.open;legendDisclosure.querySelector('summary').setAttribute('aria-expanded',String(legendDisclosure.open))}legendDisclosure.addEventListener('toggle',syncLegend);legendDisclosure.querySelector('summary').addEventListener('click',e=>{e.preventDefault();legendDisclosure.open=!legendDisclosure.open;syncLegend();if(legendDisclosure.open&&innerWidth<=790)legendExplanation.scrollIntoView({behavior:'smooth',block:'center'})});
+closeLegend.onclick=()=>{legendDisclosure.open=false;legendDisclosure.querySelector('summary').focus({preventScroll:true});if(innerWidth<=790)legendDisclosure.scrollIntoView({behavior:'smooth',block:'center'})};
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&legendDisclosure.open)legendDisclosure.open=false});
+
+const orbitIndex=document.createElement('section');orbitIndex.className='orbit-index';orbitIndex.setAttribute('aria-label','星系机会速览');const indexHeading=document.createElement('div');indexHeading.className='orbit-index-heading';indexHeading.textContent='机会速览';orbitIndex.append(indexHeading);orbitMain.insertBefore(orbitIndex,document.querySelector('.time-ruler'));
+const orbitLabelLayer=document.createElement('div');orbitLabelLayer.className='orbit-label-layer';orbitLabelLayer.setAttribute('aria-label','当前星系机会');orbitIndex.append(orbitLabelLayer);
+const orbitPreview=document.createElement('section');orbitPreview.id='orbitPreview';orbitPreview.className='orbit-preview';orbitPreview.setAttribute('role','tooltip');orbitPreview.hidden=true;document.querySelector('.detail').insertBefore(orbitPreview,document.querySelector('.card'));
+space.append(document.getElementById('emptyNote'));
+const shortOrbitNames={
+ 'fm-001':'中国国际大学生创新大赛','fm-002':'数字媒体科技与创意竞赛','fm-003':'重庆交大 · 大创培育','fm-004':'石油大学（华东）· 大创','fm-005':'湖北大学生创业扶持','fm-006':'同济物理学术竞赛','fm-007':'同济 · AI+教育学生组','fm-008':'人工智能应用创新大赛','fm-009':'数维杯数学建模','fm-010':'传智杯 · 数智与AI','fm-011':'蓝桥杯 · AI等赛项','fm-012':'蓝桥杯 · 设计与创新','fm-013':'大学生数据要素大赛','fm-014':'生命科学 · 科学探究','fm-015':'蓝桥杯 · 装备数字建模','fm-016':'西安交大 · 智能农装'
+};
+let orbitLabelLayoutKey='',orbitLabelNodes=new Map(),keyboardPreview=-1,orbitTime=0,lastOrbitFrame=null;const planetEmphasis=new Map();
+function orbitCode(it){return it.id.replace('fm-','').replace(/^0/,'')}
+function orbitScope(it){const schools=it.eligibility.schools;if(schools.length)return '限'+schools[0].replace('大学','').replace('（华东）','华东');return it.eligibility.regions.length?'限'+it.eligibility.regions.join('/'):'全国 · 资格另核'}
+function orbitSummary(it){const remaining=daysUntil(keyDate(it));if(sourceReviewState(it).needsReview)return '原登记 '+(remaining===0?'今天':remaining+'天后')+' · 来源需复核';return (remaining===0?'今天':remaining+'天后')+(dateMode==='award'?'结果':'截止')+' · '+(it.verified?orbitScope(it):'来源待核')}
+function hideOrbitPreview(){orbitPreview.hidden=true;document.querySelector('.detail').classList.remove('previewing');orbitLabelLayer.querySelectorAll('[aria-describedby]').forEach(el=>el.removeAttribute('aria-describedby'))}
+function showOrbitPreview(i,anchor){if(!items[i]||!visibleItems().some(x=>x.i===i)){hideOrbitPreview();return}const it=items[i];orbitPreview.replaceChildren();const name=textNode('strong',it.name);name.className='orbit-preview-title';orbitPreview.append(textNode('small','机会预览'),name,textNode('p',it.direction+' · '+availability(it).label),textNode('p','截止：'+deadlineText(it)),textNode('p','范围：'+it.field),textNode('p',matchProfile(it).label),textNode('p',sourceReviewState(it).needsReview?sourceReviewState(it).label+'；显示原登记信息':it.verified?'公告核验 '+it.checked+' · 初筛不等于最终审核通过':'来源正文待核实，登记日期不代表已确认可报名'),textNode('small','点击行星或名称，固定详情'));
+ orbitPreview.hidden=false;animateOpportunity(orbitPreview);document.querySelector('.detail').classList.add('previewing');document.querySelector('.detail').scrollTop=0;orbitLabelNodes.get(i)?.setAttribute('aria-describedby','orbitPreview');
+}
+function orbitLabelAnchor(node){return {x:parseFloat(node.style.left)+node.offsetWidth/2,y:parseFloat(node.style.top)+node.offsetHeight/2}}
+function updateOrbitLabels(visible,geometry){
+ const key=[W,H,dateMode,visible.map(x=>x.i).join(',')].join('|');
+ const keep=new Set(visible.map(x=>x.i));for(const [i,node] of orbitLabelNodes){if(!keep.has(i)){if(node.contains(document.activeElement))canvas.focus({preventScroll:true});node.remove();orbitLabelNodes.delete(i)}}
+ if(!keep.has(hover)){hover=-1;if(keyboardPreview<0)hideOrbitPreview()}if(!keep.has(keyboardPreview)){keyboardPreview=-1;if(hover<0)hideOrbitPreview()}
+ for(const {it,i} of visible){let node=orbitLabelNodes.get(i);if(!node){node=document.createElement('button');node.type='button';node.className='orbit-label';node.dataset.orbitId=it.id;node.title=it.name;node.append(textNode('span',orbitCode(it)+' · '+(shortOrbitNames[it.id]||it.name)),textNode('small',''));node.style.setProperty('--orbit-color',(colors[it.direction]||colors['科技创新'])[0]);node.addEventListener('pointerenter',()=>{hover=i;showOrbitPreview(i,orbitLabelAnchor(node))});node.addEventListener('pointerleave',()=>{if(hover===i)hover=-1;if(keyboardPreview<0)hideOrbitPreview()});node.addEventListener('focus',()=>{if(node.matches(':focus-visible')){keyboardPreview=i;showOrbitPreview(i,orbitLabelAnchor(node))}});node.addEventListener('blur',()=>{if(keyboardPreview===i)keyboardPreview=-1;if(hover<0)hideOrbitPreview()});node.addEventListener('click',()=>{if(galaxyInteraction.compareMode){toggleGalaxyComparison(i);return}inspectOpportunity(i);if(matchMedia('(pointer:coarse)').matches){document.querySelector('.detail').scrollIntoView({behavior:'smooth',block:'start'})}});orbitLabelLayer.append(node);orbitLabelNodes.set(i,node)}const summary=orbitSummary(it);if(node.lastChild.textContent!==summary)node.lastChild.textContent=summary;const aria='编号'+orbitCode(it)+'，'+it.name+'，'+summary+(saved.has(it.id)?'，已收藏':'')+(galaxyInteraction.compareMode?'，点击选择或取消对比':'，点击查看详情');if(node.getAttribute('aria-label')!==aria)node.setAttribute('aria-label',aria);if(node.getAttribute('aria-pressed')!==String(i===active))node.setAttribute('aria-pressed',String(i===active));node.dataset.saved=String(saved.has(it.id));node.classList.toggle('comparing',galaxyInteraction.compared.includes(it.id));node.classList.toggle('selected',i===active);node.classList.toggle('previewed',i===hover||i===keyboardPreview)}
+ const columns=Math.max(2,Math.min(5,Math.floor((orbitMain.clientWidth-48)/190)));if(orbitMain.style.getPropertyValue('--orbit-columns')!==String(columns))orbitMain.style.setProperty('--orbit-columns',String(columns));
+ const rows=Math.ceil(visibleItems(36).length/columns),reservedHeight=rows?rows*(innerWidth<=790?44:30)+(rows-1)*4:0;if(orbitLabelLayer.style.minHeight!==reservedHeight+'px')orbitLabelLayer.style.minHeight=reservedHeight+'px';
+ orbitIndex.hidden=visible.length===0;
+ const minimum=(innerWidth<=790?420:540)+document.querySelector('.topbar').offsetHeight+orbitHeading.offsetHeight+(orbitIndex.hidden?0:orbitIndex.offsetHeight)+document.querySelector('.time-ruler').offsetHeight+40;
+ const needed=Math.ceil(minimum)+'px';if(orbitMain.style.getPropertyValue('--orbit-min-height')!==needed)orbitMain.style.setProperty('--orbit-min-height',needed);
+ if(W!==space.clientWidth||H!==space.clientHeight){resize();labelBoxes=[];orbitLabelLayoutKey='';return}
+ orbitLabelLayoutKey=key;const canvasRect=canvas.getBoundingClientRect();labelBoxes=visible.map(({i})=>{const r=orbitLabelNodes.get(i).getBoundingClientRect();return {i,x:r.x-canvasRect.x,y:r.y-canvasRect.y,w:r.width,h:r.height}});
+ // Identity badges replace leader lines. No long stroke connects a label to a planet.
+ orbitBadges=[];const occupiedBadges=[];
+ for(const p of positions){const it=items[p.i],size=9,anchorRadius=p.badgeR||p.r,opts=[[-1,-1],[1,-1],[-1,1],[1,1],[0,-1],[0,1]].map(([dx,dy])=>({x:p.x+dx*(anchorRadius+8),y:p.y+dy*(anchorRadius+8)}));
+  const blocked=q=>q.x<size||q.x>W-size||q.y<size||q.y>H-size||labelBoxes.some(b=>q.x+size>b.x&&q.x-size<b.x+b.w&&q.y+size>b.y&&q.y-size<b.y+b.h)||positions.some(other=>other.i!==p.i&&Math.hypot(q.x-other.x,q.y-other.y)<size+(other.badgeR||other.r))||occupiedBadges.some(other=>Math.hypot(q.x-other.x,q.y-other.y)<size*2+2)||Math.hypot(q.x-geometry.cx,q.y-geometry.cy)<38;
+  const q=opts.find(q=>!blocked(q))||opts[0];occupiedBadges.push(q);orbitBadges.push({...q,i:p.i,code:orbitCode(it)});
+  const highlighted=p.i===active||p.i===hover||p.i===keyboardPreview||galaxyInteraction.compared.includes(it.id);
+  if(highlighted){ctx.beginPath();ctx.arc(p.x,p.y,p.r+4,0,TAU);ctx.strokeStyle='#6f83ca28';ctx.lineWidth=.7;ctx.stroke()}
+  ctx.beginPath();ctx.arc(q.x,q.y,size,0,TAU);ctx.fillStyle=highlighted?'#263ecb':'#fffaf1f2';ctx.fill();ctx.strokeStyle=highlighted?'#263ecb':'#a9b3d3';ctx.lineWidth=.8;ctx.stroke();ctx.fillStyle=highlighted?'#ffffff':'#40528c';ctx.font='10px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(orbitCode(it),q.x,q.y+.5);ctx.textAlign='left';ctx.textBaseline='alphabetic';if(saved.has(it.id)){ctx.beginPath();ctx.arc(q.x+7,q.y-7,2.8,0,TAU);ctx.fillStyle='#d18b75';ctx.fill()}
+ }
+
+}
+new ResizeObserver(resize).observe(space);
+canvas.addEventListener('pointerleave',()=>{hover=-1;if(keyboardPreview<0)hideOrbitPreview();canvas.style.cursor='grab'});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){hover=-1;keyboardPreview=-1;hideOrbitPreview()}});
+space.addEventListener('pointerleave',()=>{hover=-1;if(keyboardPreview<0)hideOrbitPreview()});
+
+let labelBoxes=[],frameGeometry={},orbitBadges=[],orbitTimeTicks=[];
+let renderedRange=rangeMonths;let visualZoom=1;let start=performance.now();function draw(now){const delta=lastOrbitFrame===null?0:Math.min(100,Math.max(0,now-lastOrbitFrame));lastOrbitFrame=now;if(!galaxyInteraction.paused&&!galaxyInteraction.dragging&&hover<0&&keyboardPreview<0&&!document.querySelector('.future-overlay.open')&&!matchMedia('(prefers-reduced-motion: reduce)').matches)orbitTime+=delta/1000;const time=orbitTime;renderedRange=rangeMonths;const targetZoom=Math.max(.68,Math.min(1.85,Math.pow(12/rangeMonths,.28)));visualZoom+=(targetZoom-visualZoom)*Math.min(.23,Math.max(.08,(now-(draw.lastFrame||now))/160));visualZoom=Math.min(visualZoom,.76/(.15+.85*Math.sqrt(rangeMonths/36)));draw.lastFrame=now;ctx.clearRect(0,0,W,H);let cx=W*.50,cy=H*.50;let rx=W*.6,ry=H*.52,tilt=-.24;const ex=Math.hypot(rx*Math.cos(tilt),ry*Math.sin(tilt)),ey=Math.hypot(rx*Math.sin(tilt),ry*Math.cos(tilt));const horizonFraction=(.15+.85*Math.sqrt(rangeMonths/36))*visualZoom;const fit=Math.min((W/2-42)/(horizonFraction*ex),(H/2-42)/(horizonFraction*ey));rx*=fit;ry*=fit;const orbitFraction=m=>(.15+.85*Math.sqrt(Math.max(0,Math.min(36,m))/36))*visualZoom;positions=[];ctx.save();let bg=ctx.createRadialGradient(cx,cy,12,cx,cy,Math.max(W,H)*.6);bg.addColorStop(0,'#fffaf1');bg.addColorStop(1,'#f9f5ed00');ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);// Calendar-based orbit bands: new outer rings appear as the future horizon grows.
+const ringStep=6;
+const ringCount=Math.floor(renderedRange/ringStep);
+strokeEllipse(cx,cy,rx*orbitFraction(0),ry*orbitFraction(0),tilt,'#93a2d429',.9);
+for(let k=1;k<=ringCount;k++){
+ const month=k*ringStep;
+ const f=orbitFraction(month);
+ strokeEllipse(cx,cy,rx*f,ry*f,tilt,k===ringCount?'#7d8fce38':'#93a2d429',k===ringCount?1.1:.85);
+}
+// A faint horizon boundary remains visible between six-month milestones.
+if(renderedRange<ringStep||renderedRange%ringStep>.15){strokeEllipse(cx,cy,rx*orbitFraction(renderedRange),ry*orbitFraction(renderedRange),tilt,'#93a2d42d',.9,[2,7])}for(let k=0;k<36;k++){let x=((k*131.7+47)%Math.max(W,1)),y=((k*89.3+41)%Math.max(H,1));ctx.fillStyle=k%6===0?'#ed8a67':'#6e85d247';ctx.beginPath();ctx.arc(x,y,k%7===0?1.8:.8,0,TAU);ctx.fill()}let scanAngle=time*.35+galaxyInteraction.rotation;let scan=ellipse(cx,cy,rx*orbitFraction(renderedRange),ry*orbitFraction(renderedRange),tilt,scanAngle);ctx.strokeStyle='#e77d5999';ctx.lineWidth=1.6;ctx.beginPath();ctx.arc(scan.x,scan.y,3,0,TAU);ctx.stroke();ctx.fillStyle='#ef7453';ctx.fill();let visible=visibleItems();let labels=[];for(let {it,i} of visible){let remaining=daysUntil(keyDate(it));let orbit=orbitFraction(Math.max(0,remaining)/30.4375);let t=it.a+galaxyInteraction.rotation+time*(.032/(.75+Math.sqrt(Math.max(0,remaining)/1095.75)*.35));let p=ellipse(cx,cy,rx*orbit,ry*orbit,tilt,t);const focused=i===active||i===hover||i===keyboardPreview,target=focused?1:0,previous=planetEmphasis.get(i)||0,emphasis=matchMedia('(prefers-reduced-motion: reduce)').matches?target:previous+(target-previous)*.14;planetEmphasis.set(i,emphasis);let size=((W<500?19:26)+emphasis*(W<500?8:13))*(.78+.28*(p.depth+1)/2);let angle=((t-scanAngle)%TAU+TAU)%TAU;let bright=Math.min(angle,TAU-angle)<.13;planet(p.x,p.y,size,it.direction,i===active,bright,ctx,i);positions.push({x:p.x,y:p.y,r:Math.max(size,18),badgeR:(W<500?27:39)*(.78+.28*(p.depth+1)/2),i});labels.push({it,i,p,size,remaining});}frameGeometry={cx,cy,rx,ry,tilt,zoom:visualZoom,ringCount,horizon:renderedRange};
+updateOrbitLabels(visible,frameGeometry);
+// Sparse time marks expose what the orbital distance means, rather than acting as decoration.
+orbitTimeTicks=[];const milestones=ringCount?Array.from({length:ringCount},(_,k)=>(k+1)*6):[renderedRange];const ticks=milestones.length<=3?milestones:[milestones[0],milestones[Math.floor(milestones.length/2)],milestones.at(-1)];
+for(const month of ticks){const f=orbitFraction(month),text=month+'个月';ctx.font='11px sans-serif';const width=ctx.measureText(text).width+8;for(const t of [Math.PI*.78,Math.PI*.15,Math.PI*1.25,Math.PI*1.75]){const point=ellipse(cx,cy,rx*f,ry*f,tilt,t),box={x:point.x+6,y:point.y+6,w:width,h:16};if(box.x<6||box.y<6||box.x+box.w>W-6||box.y+box.h>H-6||positions.some(p=>p.x+p.r+9>box.x&&p.x-p.r-9<box.x+box.w&&p.y+p.r+9>box.y&&p.y-p.r-9<box.y+box.h)||orbitTimeTicks.some(b=>box.x<b.x+b.w&&box.x+box.w>b.x&&box.y<b.y+b.h&&box.y+box.h>b.y))continue;ctx.fillStyle='#faf7efe0';ctx.fillRect(box.x-2,box.y-1,box.w+4,box.h+2);ctx.fillStyle='#7483ab';ctx.fillText(text,box.x+2,box.y+12);orbitTimeTicks.push({...box,month});break}}
+
+ctx.save();let g=ctx.createRadialGradient(cx-7,cy-8,1,cx,cy,43);g.addColorStop(0,'#fffdf4');g.addColorStop(.65,'#efe2c5');g.addColorStop(1,'#dddccf');ctx.fillStyle=g;ctx.beginPath();ctx.arc(cx,cy,W<500?25:36,0,TAU);ctx.fill();ctx.fillStyle='#2e45bd';ctx.font='25px Georgia';ctx.textAlign='center';ctx.fillText('✦',cx,cy+8);ctx.font='11px Georgia';ctx.fillText('FlowMate',cx,cy+(W<500?47:58));ctx.textAlign='left';ctx.restore();ctx.restore();requestAnimationFrame(draw)}requestAnimationFrame(draw);
+const purpose=document.createElement('p');purpose.className='orbit-purpose';purpose.textContent='越近中心越临近截止 · 颜色表示方向';document.querySelector('.headline').append(purpose);
+const detailCard=document.querySelector('.card');const detailMore=document.createElement('details');detailMore.id='detailMore';detailMore.className='detail-more';detailMore.append(textNode('summary','资格、时间与官方来源'));
+const quickDeadline=document.createElement('p');quickDeadline.id='detailQuickDeadline';quickDeadline.className='detail-quick';document.getElementById('eligibilitySummary').after(quickDeadline);
+const fullNodes=[document.querySelector('.info'),document.getElementById('sourceLink'),document.getElementById('sourceEvidence'),document.querySelector('.detail .divider'),document.querySelector('.detail .section'),document.getElementById('timeline')];for(const node of fullNodes)detailMore.append(node);detailCard.append(detailMore);
+detailMore.addEventListener('toggle',()=>detailCard.classList.toggle('inspecting',detailMore.open));
+function animateOpportunity(node){if(!matchMedia('(prefers-reduced-motion: reduce)').matches)node.animate([{opacity:.45,transform:'translateY(5px)'},{opacity:1,transform:'translateY(0)'}],{duration:180,easing:'ease-out'})}function inspectOpportunity(i){hideOrbitPreview();select(i);detailMore.open=true;document.querySelector('.detail').scrollTop=0;animateOpportunity(detailCard)}
+
+function clearSelection(){active=-1;document.getElementById('title').textContent='暂无符合筛选的机会';document.getElementById('detailQuickDeadline').textContent='';for(const id of ['category','urgency','organizer','audience','apply','field','planetLegend','eligibilitySummary','availability'])document.getElementById(id).textContent='—';document.getElementById('timeline').replaceChildren();document.getElementById('sourceLink').hidden=true;document.getElementById('sourceEvidence').hidden=true;for(const id of ['simulateBtn','pathBtn','saveBtn','next'])document.getElementById(id).disabled=true}
+function select(i){if(!items[i])return;if(active!==i)document.querySelector('.detail').scrollTop=0;active=i;let it=items[i];for(const id of ['simulateBtn','pathBtn','saveBtn','next'])document.getElementById(id).disabled=false;const source=document.getElementById('sourceLink');source.hidden=false;source.href=it.url;source.textContent=sourceReviewState(it).needsReview?(it.verified?'原核验公告':'登记来源')+' ↗ · '+sourceReviewState(it).label:it.verified?'官方公告 ↗ · '+it.checked+' 核验':'查看登记来源 ↗ · 正文待核实';renderEvidence(it);document.getElementById('planetLegend').textContent=it.direction+' · 中性大小，未评级';const assessment=matchProfile(it);document.getElementById('eligibilitySummary').textContent=assessment.label;document.getElementById('availability').textContent=availability(it).label;document.getElementById('detailQuickDeadline').textContent=deadlineText(it)+' · '+it.field;document.getElementById('title').textContent=it.name;renderDetailArtwork(it);document.getElementById('category').textContent=it.cat;document.getElementById('urgency').textContent=(keyDate(it)?((dateMode==='apply'&&availability(it).code==='closed')||daysUntil(keyDate(it))<0?'已截止':daysUntil(keyDate(it))===0?'今天'+(dateMode==='award'?'评奖':'截止'):daysUntil(keyDate(it))+'天后'+(dateMode==='award'?'评奖':'截止')):'日期待核实');document.getElementById('organizer').textContent=it.org.split('（')[0];document.getElementById('organizer').title=it.org;document.getElementById('audience').textContent=it.aud;document.querySelectorAll('.info dt')[2].textContent=sourceReviewState(it).needsReview?'原登记时间':'报名时间';document.querySelector('.detail .section').textContent=sourceReviewState(it).needsReview?'原登记节点（需复核）':'时间节点';document.getElementById('apply').textContent=(it.start?fmt(it.start):'开始日未列明')+' — '+deadlineText(it);document.getElementById('field').textContent=it.field;let ev=[['报名开始',fmt(it.start)],['报名截止',fmt(it.end)],['评奖结果',fmt(it.award)]];document.getElementById('timeline').innerHTML=ev.map((e,j)=>'<div class="event '+(j===1?'hot':'')+'"><span class="point"></span><span>'+e[0]+'</span><time>'+e[1]+'</time></div>').join('');let b=document.getElementById('saveBtn');b.textContent=saved.has(items[i].id)?'♥　已收藏':'♡　收藏';b.classList.toggle('saved',saved.has(items[i].id))}select(0);canvas.addEventListener('click',e=>{if(suppressClick){suppressClick=false;return;}let rect=canvas.getBoundingClientRect(),x=e.clientX-rect.left,y=e.clientY-rect.top;let hit=findOrbitHit(x,y);if(hit){if(galaxyInteraction.compareMode)toggleGalaxyComparison(hit.i);else{inspectOpportunity(hit.i);if(matchMedia('(pointer:coarse)').matches)document.querySelector('.detail').scrollIntoView({behavior:'smooth',block:'start'})}}});canvas.addEventListener('mousemove',e=>{if(galaxyInteraction.dragging)return;const r=canvas.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;const hit=findOrbitHit(x,y);const next=hit?hit.i:-1;canvas.style.cursor=hit?'pointer':'grab';if(next!==hover){hover=next;if(hit)showOrbitPreview(hit.i,{x,y});else if(keyboardPreview<0)hideOrbitPreview()}});document.querySelectorAll('[data-cat]').forEach(b=>b.addEventListener('click',()=>{cat=b.dataset.cat;document.querySelectorAll('[data-cat]').forEach(x=>x.classList.toggle('active',x===b));updateStats()}));document.getElementById('next').onclick=()=>{let v=visibleItems();if(v.length){let n=v.findIndex(x=>x.i===active);select(v[(n+1)%v.length].i)}};document.getElementById('saveBtn').onclick=()=>{saved.has(items[active].id)?saved.delete(items[active].id):saved.add(items[active].id);document.getElementById('savedCount').textContent=saved.size;const persisted=store('flowmate_saved',[...saved]);select(active);if(persisted)toast(saved.has(items[active].id)?'已加入收藏':'已取消收藏')};function toast(t){let el=document.getElementById('toast');el.textContent=t;el.classList.add('show');clearTimeout(window._toast);window._toast=setTimeout(()=>el.classList.remove('show'),2200)}document.getElementById('pathBtn').onclick=()=>showPath(active);document.querySelectorAll('[data-nav]').forEach(b=>b.onclick=()=>openNavigation(b.dataset.nav));const searchButton=document.getElementById('searchBtn'),searchBox=document.getElementById('searchbox'),searchField=document.getElementById('searchInput');searchButton.setAttribute('aria-controls','searchbox');searchButton.setAttribute('aria-expanded','false');searchField.setAttribute('aria-label','搜索名称、学校或方向');document.getElementById('clearSearch').setAttribute('aria-label','清除搜索并关闭');searchButton.onclick=()=>{if(searchBox.classList.contains('open')){document.getElementById('clearSearch').click();return}searchBox.classList.add('open');searchButton.setAttribute('aria-expanded','true');searchField.focus()};searchField.addEventListener('keydown',e=>{if(e.key==='Escape'){e.stopPropagation();document.getElementById('clearSearch').click()}});document.getElementById('searchInput').oninput=e=>{query=e.target.value;updateStats()};document.getElementById('clearSearch').onclick=()=>{query='';document.getElementById('searchInput').value='';document.getElementById('searchbox').classList.remove('open');searchButton.setAttribute('aria-expanded','false');updateStats();searchButton.focus()};
+document.getElementById('rangeSelect').onchange=e=>{if(e.target.value==='custom')return;setRange(Number(e.target.value))};
+// Time horizon is a single state, controlled by a range slider or the mouse wheel.
+const rangeSelect=document.getElementById('rangeSelect');
+const zoomValue=document.getElementById('zoomValue');
+const horizonSlider=document.getElementById('horizonSlider');
+const candyTrack=document.getElementById('candyTrack');
+candyTrack.innerHTML=Array.from({length:36},(_,i)=>'<span class="candy-bead" data-month="'+(i+1)+'"></span>').join('');
+function updateCandy(){candyTrack.querySelectorAll('.candy-bead').forEach((bead,i)=>{const m=i+1;bead.classList.toggle('past',m<=rangeMonths);bead.classList.toggle('current',m===Math.round(rangeMonths));const t=i/35;const a=[174,188,242],b=[35,55,188];const rgb=a.map((v,k)=>Math.round(v+(b[k]-v)*t));bead.style.setProperty('--bead-color','rgb('+rgb.join(',')+')');});}
+
+function setRange(months){
+ const next=Math.max(1,Math.min(36,Math.round(months*2)/2));
+ if(Math.abs(next-rangeMonths)<.001)return;
+ rangeMonths=next;
+ const nearest=[6,12,24].find(x=>Math.abs(x-rangeMonths)<.05);
+ rangeSelect.value=nearest?String(nearest):'custom';
+ rangeSelect.querySelector('[value=custom]').textContent='未来 '+rangeMonths+' 个月';
+ zoomValue.textContent='未来 '+rangeMonths+' 个月';
+ horizonSlider.value=String(rangeMonths);
+ horizonSlider.style.setProperty('--progress',((rangeMonths-1)/35*100)+'%');
+ updateCandy();
+ updateStats();
+}
+horizonSlider.addEventListener('input',e=>setRange(Number(e.target.value)));
+horizonSlider.style.setProperty('--progress',((rangeMonths-1)/35*100)+'%');
+updateCandy();
+canvas.style.cursor='default';canvas.style.touchAction='auto';
+// Wheel zoom applies only while hovering the time ruler; elsewhere the page scrolls normally.
+// Stateless wheel control: one wheel action has exactly one direction.
+// No residual momentum or animation lag can make the view move backwards at the limits.
+const ruler=document.querySelector('.time-ruler');
+let wheelLast=0;
+ruler.addEventListener('wheel',e=>{
+ e.preventDefault();
+ e.stopPropagation();
+ const dy=e.deltaY*(e.deltaMode===1?16:e.deltaMode===2?window.innerHeight:1);
+ if(Math.abs(dy)<.01)return;
+ const now=performance.now();
+ // Rate-limit high frequency wheel events without buffering motion across the limits.
+ if(now-wheelLast<45)return;
+ wheelLast=now;
+ setRange(rangeMonths+(dy>0?.5:-.5));
+}, {passive:false,capture:true});
+// Keep the browser's native range-wheel behavior from competing with the custom wheel handler.
+horizonSlider.addEventListener('wheel',e=>{e.preventDefault();},{passive:false});
+document.getElementById('dateMode').onchange=e=>{dateMode=e.target.value;updateStats();if(visibleItems().length)select(visibleItems().some(x=>x.i===active)?active:visibleItems()[0].i)};updateStats();
+// Possibility Studio: scenario planning, not an outcome prediction.
+const futureOverlay=document.getElementById('futureOverlay');let goal='作品集',risk='时间不够';let futurePlans=[];
+const goalText={作品集:['一件可以讲述的代表作','完成作品的核心体验、过程记录与展示材料'],能力:['一项能独立运用的新能力','用真实任务练习，并留下可以验证的过程'],连接:['一段新的协作关系','主动联系伙伴，建立分工并共同交付'],突破:['一次勇敢的公开尝试','从小规模试验走向一次正式提交或展示']};
+const riskText={'时间不够':'把工作拆成每周可完成的小任务，优先保护核心成果','能力不足':'第一阶段安排技能试做，遇到阻碍及时缩小范围','缺少伙伴':'先制作一页项目介绍，明确需要什么样的合作'};
+function renderFuture(){let hours=+document.getElementById('hoursRange').value,weeks=+document.getElementById('weeksRange').value,total=hours*weeks;document.getElementById('hoursValue').textContent=hours+' 小时';document.getElementById('weeksValue').textContent=weeks+' 周';document.getElementById('futureHours').textContent=total;let name=items[active].name;const current=items[active],deadline=daysUntil(current.end);document.getElementById('futureBasis').textContent=(current.verified?'公告信息：':'登记信息（待核）：')+(current.end?'截止 '+fmt(current.end):'截止日期未知')+'。'+matchProfile(current).label+'。用户假设：每周 '+hours+' 小时，持续 '+weeks+' 周。'+(deadline!==null&&weeks*7>deadline?'规划风险：投入周期晚于登记截止，请先确认资格及提交时间；可将目标调整为阶段成果。':'情景推演不代表获奖或可报名承诺。');document.getElementById('futureStory').textContent=weeks+'周后，你可能拥有'+goalText[goal][0]+'。';document.getElementById('futureSubtitle').textContent='以「'+name+'」为起点：'+goalText[goal][1]+'。';let steps=[['第 1 周','明确目标，核实报名资格与实际截止日期'],['第 '+Math.max(1,Math.round(weeks*.3))+' 周 · 试做','做出最小可展示版本；'+riskText[risk]],['第 '+Math.max(1,Math.round(weeks*.7))+' 周 · 反馈','邀请反馈，调整最关键的问题'],['第 '+weeks+' 周','整理成果，提交或公开展示，并记录收获']];document.getElementById('futureSteps').textContent=steps.length;document.getElementById('futureRoad').innerHTML=steps.map(x=>'<div><em>'+x[0]+'</em><span>'+x[1]+'</span></div>').join('');const nextMap={'作品集':['项目','把成果变成一次真实协作','尝试加入跨学科项目，让作品从个人表达走向实际协作。'],'能力':['科研','用一个研究问题深化能力','在真实课题中检验新技能，留下有证据的学习成果。'],'连接':['项目','寻找下一组共创伙伴','通过共创项目结识不同专业的伙伴，逐渐建立长期合作。'],'突破':['竞赛','把阶段成果带向更大舞台','寻找适合当前成果的竞赛，准备展示与交流。']};let next=nextMap[goal]||nextMap['作品集'];document.getElementById('nextOrbitTitle').textContent=next[1];document.getElementById('nextOrbitDetail').textContent=next[2];document.getElementById('nextOrbitBtn').dataset.nextcat=next[0]}
+function openFuture(){if(active<0)return;renderFuture();openModal(futureOverlay)}function closeFuture(){closeModal(futureOverlay)}
+document.getElementById('nextOrbitBtn').onclick=()=>{let target=document.getElementById('nextOrbitBtn').dataset.nextcat||'项目';cat=target;document.querySelectorAll('[data-cat]').forEach(b=>b.classList.toggle('active',b.dataset.cat===cat));closeFuture();updateStats();document.getElementById('space').scrollIntoView({behavior:'smooth',block:'center'})};document.getElementById('simulateBtn').onclick=openFuture;document.getElementById('closeFuture').onclick=closeFuture;futureOverlay.addEventListener('click',e=>{if(e.target===futureOverlay)closeFuture()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeFuture()});
+document.querySelectorAll('[data-goal]').forEach(b=>b.onclick=()=>{goal=b.dataset.goal;document.querySelectorAll('[data-goal]').forEach(x=>x.classList.toggle('chosen',x===b));renderFuture()});document.querySelectorAll('[data-risk]').forEach(b=>b.onclick=()=>{risk=b.dataset.risk;document.querySelectorAll('[data-risk]').forEach(x=>x.classList.toggle('chosen',x===b));renderFuture()});document.getElementById('hoursRange').oninput=renderFuture;document.getElementById('weeksRange').oninput=renderFuture;
+document.getElementById('resetFuture').onclick=()=>{goal='作品集';risk='时间不够';document.getElementById('hoursRange').value=6;document.getElementById('weeksRange').value=8;document.querySelectorAll('[data-goal]').forEach(x=>x.classList.toggle('chosen',x.dataset.goal===goal));document.querySelectorAll('[data-risk]').forEach(x=>x.classList.toggle('chosen',x.dataset.risk===risk));renderFuture()};
+document.getElementById('commitFuture').onclick=()=>{let plan={itemId:items[active].id||String(active),name:items[active].name,goal,hours:+document.getElementById('hoursRange').value,weeks:+document.getElementById('weeksRange').value,risk,created:new Date().toISOString()};futurePlans.push(plan);const persisted=store('flowmate_future_plans',futurePlans);closeFuture();if(persisted)toast('已保存一条可能性路径 · '+plan.weeks+'周 / 每周'+plan.hours+'小时')};futurePlans=readStored('flowmate_future_plans',[]);if(!Array.isArray(futurePlans))futurePlans=[];futurePlans=futurePlans.filter(p=>p&&typeof p.name==='string'&&Number.isFinite(p.hours)&&Number.isFinite(p.weeks));
+
+renderVerification();
+
+// Panels retain V80's dialog/card vocabulary. No network or account is needed.
+let lastFocus=null,modalOpen=null;
+function openModal(el){hover=-1;keyboardPreview=-1;hideOrbitPreview();lastFocus=document.activeElement;modalOpen=el;el.classList.add('open');el.setAttribute('aria-hidden','false');document.querySelector('.app').inert=true;document.body.style.overflow='hidden';el.querySelector('button,input,select')?.focus()}
+function closeModal(el){if(!el.classList.contains('open'))return;el.classList.remove('open');el.setAttribute('aria-hidden','true');document.querySelector('.app').inert=false;document.body.style.overflow='';modalOpen=null;lastFocus?.focus()}
+const panelOverlay=document.getElementById('panelOverlay'),panelContent=document.getElementById('panelContent');
+function showPanel(title){document.getElementById('panelTitle').textContent=title;panelContent.replaceChildren();openModal(panelOverlay)}
+function textNode(tag,text){const node=document.createElement(tag);node.textContent=text;return node}
+function rowFor(it,i){const row=document.createElement('article');row.className='panel-row';row.append(textNode('h3',it.name),textNode('p',it.field+' · '+(it.end?deadlineText(it)+' 截止':'日期待核实')+' · '+availability(it).label),textNode('p',matchProfile(it).label+'：'+matchProfile(it).reasons.join('；')));const btn=textNode('button','查看详情 ↗');btn.onclick=()=>{closeModal(panelOverlay);inspectOpportunity(i);document.querySelector('.detail').scrollIntoView({behavior:'smooth',block:'nearest'})};const official=textNode('a','官方公告 ↗');official.href=it.url;official.target='_blank';official.rel='noopener noreferrer';official.className='source-link';row.append(btn,official);return row}
+function openNavigation(nav){if(nav==='探索'){closeModal(panelOverlay);return}showPanel(nav);if(nav==='我的轨迹'){if(!futurePlans.length)panelContent.append(textNode('p','尚未保存路径。在机会详情中预演一种未来，再加入我的轨迹。'));for(const p of futurePlans){const r=document.createElement('article');r.className='panel-row';r.append(textNode('h3',p.name),textNode('p','假设性规划 · '+p.goal+' · '+p.weeks+'周 / 每周'+p.hours+'小时'),textNode('p','下一步：核实资格和截止日期，列出本周最小任务。'));panelContent.append(r)}return}if(nav==='机会库'){renderLibrary();return}let list=items.map((it,i)=>({it,i}));if(nav==='收藏')list=list.filter(x=>saved.has(x.it.id));if(nav==='日程')list=list.filter(x=>x.it.end&&dateOf(x.it.end)>=TODAY).sort((a,b)=>a.it.end.localeCompare(b.it.end));if(!list.length)panelContent.append(textNode('p','暂无记录。'));for(const {it,i} of list)panelContent.append(rowFor(it,i))}
+function showPath(i){
+ if(!items[i])return;const it=items[i],result=matchProfile(it);showPanel('资格路径');panelContent.append(textNode('h3',it.name));
+ const facts=document.createElement('div');facts.className='panel-row path-facts';facts.append(textNode('p','身份：'+it.aud),textNode('p','范围：'+it.field+'；截止：'+deadlineText(it)),textNode('small',it.verified?'官方正文核验 '+it.checked+' · 最终以主办方审核为准':sourceReviewState(it).label));panelContent.append(facts,textNode('p','个人匹配：'+result.label));
+ const reasons=document.createElement('ul');reasons.className='path-reasons';const actionable=result.code==='pending'?result.reasons.filter(r=>!/(符合已知条件$|在校状态符合$|负责人年级符合$|参赛队员人数符合已知限制$|^本人已确认)/.test(r)):result.reasons;for(const reason of actionable)reasons.append(textNode('li',reason));panelContent.append(reasons);
+ const edit=textNode('button','填写或修改个人资格');edit.className='secondary';edit.onclick=()=>{closeModal(panelOverlay);openProfile()};panelContent.append(edit);appendSelfCheckForm(it);
+ const detail=document.createElement('details');detail.className='path-source';detail.append(textNode('summary','公告限制与来源说明'),textNode('p',it.note),textNode('p',it.eligibility.basis));panelContent.append(detail);
+ const link=textNode('a','以官方通知核实资格和材料 ↗');link.href=it.url;link.target='_blank';link.rel='noopener noreferrer';panelContent.append(link);
+}
+document.getElementById('closePanel').onclick=()=>closeModal(panelOverlay);panelOverlay.onclick=e=>{if(e.target===panelOverlay)closeModal(panelOverlay)};
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modalOpen)closeModal(modalOpen);if(e.key==='Tab'&&modalOpen){const controls=[...modalOpen.querySelectorAll('button,input,select,a[href]')].filter(n=>!n.disabled&&n.getClientRects().length);const first=controls[0],last=controls.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}});
+canvas.addEventListener('keydown',e=>{if(!['ArrowLeft','ArrowRight','Enter'].includes(e.key))return;e.preventDefault();const v=visibleItems();if(!v.length)return;if(e.key==='Enter'){if(galaxyInteraction.compareMode){toggleGalaxyComparison(active);return}inspectOpportunity(active);detailMore.querySelector('summary').focus();return}const n=v.findIndex(x=>x.i===active);select(v[(n+(e.key==='ArrowRight'?1:-1)+v.length)%v.length].i)});
+
+
+// Eligibility is tri-state: known mismatch, pending, or all documented rules satisfied.
+function normalizeProfile(raw){raw=raw&&typeof raw==='object'&&!Array.isArray(raw)?raw:{};const p={};for(const k of ['school','region','major','majorGroup','degree','enrollmentYear','studyYear','enrolled','studyMode','role','teamSize','teamSizeBasis'])p[k]=typeof raw[k]==='string'?raw[k].trim().slice(0,100):'';p.showIneligible=raw.showIneligible===true;return p}
+function matchProfile(it,p=profile){
+ const rules=it.eligibility;const mismatches=[],pending=[],matched=[];
+ const checks=[['schools','school','学校'],['regions','region','就读地区'],['degrees','degree','学历'],['enrollmentYears','enrollmentYear','入学年份'],['studyYears','studyYear','当前年级'],['majorGroups','majorGroup','专业类别'],['studyModes','studyMode','学习形式']];
+ for(const [key,field,label] of checks){if(!rules[key].length)continue;const value=p[field];if(!value)pending.push('待填写'+label+'（要求：'+rules[key].join(' / ')+'）');else if(!rules[key].some(x=>String(x)===value))mismatches.push(label+'不符：要求'+rules[key].join(' / '));else matched.push(label+'符合已知条件')}
+ if(rules.enrolled!==null){if(!p.enrolled)pending.push('待确认在校状态');else if((p.enrolled==='是')!==rules.enrolled)mismatches.push('在校状态不符');else matched.push('在校状态符合')}
+ if(rules.leaderStudyYears?.length){
+  if(!p.role)pending.push('待确认申请身份（负责人或成员）');
+  else if(p.role==='负责人'){if(!p.studyYear)pending.push('负责人待填写当前年级');else if(!rules.leaderStudyYears.some(y=>String(y)===p.studyYear))mismatches.push('负责人年级不符：须为'+rules.leaderStudyYears.join(' / ')+'年级');else matched.push('负责人年级符合')}
+ }
+ if(rules.teamSize){const size=Number(p.teamSize),limits=rules.teamSize.min===null?'至多'+rules.teamSize.max+'人（最小人数未列明）':rules.teamSize.min+'—'+rules.teamSize.max+'人';if(!p.teamSize)pending.push('待确认参赛队员人数（'+limits+'）');else if(!Number.isInteger(size)||size<1||(rules.teamSize.min!==null&&size<rules.teamSize.min)||size>rules.teamSize.max)mismatches.push('参赛队员人数不符：要求'+limits);else matched.push('参赛队员人数符合已知限制')}
+ let selfDeclared=false;const answers=answersFor(it,p);for(const requirement of rules.requirements||[]){if(requirement.whenRole&&p.role!==requirement.whenRole)continue;const answer=answers[requirement.id];if(answer==='no')mismatches.push('本人自查不满足：'+requirement.label);else if(answer==='yes'){matched.push('本人已确认：'+requirement.label);selfDeclared=true}else pending.push('待本人确认：'+requirement.label)}
+ const review=sourceReviewState(it);if(review.needsReview)pending.push(review.label);else if(it.source.verification!=='verified')pending.push('官方来源正文待核实');
+ if(!rules.rulesComplete)pending.push('完整赛道、专业及团队条件待官方复核');
+ if(mismatches.length)return {code:'ineligible',label:'资格不符（按已知样本条件）',reasons:mismatches};
+ if(pending.length)return {code:'pending',label:matched.length?'已知条件符合 · 完整资格待核实':rules.schools.length?'仅限'+rules.schools.join(' / ')+' · 资格待核实':rules.regions.length?'仅限'+rules.regions.join(' / ')+' · 资格待核实':'资格待核实',reasons:[...matched,...pending]};
+ return {code:'eligible',label:selfDeclared?'条件初筛通过 · 含本人自查':'符合已核实初筛条件',selfDeclared,reasons:matched.length?matched:['官方规则无额外资格限制']};
+}
+function availability(it,now=new Date()){
+ const review=sourceReviewState(it,now);if(review.needsReview)return {code:'unverified',label:review.label};
+ const today=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit'}).format(now);
+ if(it.dates.deadlineAt?now>=new Date(it.dates.deadlineAt):it.end&&it.end<today)return {code:'closed',label:it.source.verification==='verified'?'已截止':'已截止（按登记日期）'};
+ if(!it.end||it.source.verification!=='verified')return {code:'unverified',label:'日期待核实'};
+ if(it.start&&it.start>today)return {code:'upcoming',label:'未开始'};
+ if(!it.start&&it.source.registrationOpenOn!==today)return {code:'unverified',label:'报名开始日期待核实'};
+ return {code:'open',label:'报名窗口内 · 仍须核实资格'};
+}
+function deadlineText(it){if(!it.end)return '截止日期待核实';const t=it.dates.deadlineAt;return fmt(it.end)+(t?' '+t.slice(11,16)+'（北京时间）':'')}
+function renderEvidence(it){const box=document.getElementById('sourceEvidence'),body=document.getElementById('evidenceBody');box.hidden=false;body.replaceChildren();body.append(textNode('p',it.note),textNode('p',it.eligibility.basis));if(it.source.evidence){body.append(textNode('p',it.verified?'公告正文核验：'+it.checked:'已读取公开信息，但存在冲突，尚未确认可报名'));if(it.source.evidence.documentUrl){const original=textNode('a','查看原始公告／公开数据 ↗');original.href=it.source.evidence.documentUrl;original.target='_blank';original.rel='noopener noreferrer';body.append(original)}for(const quote of it.source.evidence.quotes)body.append(textNode('blockquote',quote))}else body.append(textNode('p','当前仅保留登记信息；动态站点正文未完成核验。'))}
+function renderVerification(){const root=document.getElementById('verifyList');root.replaceChildren();const verified=items.filter(it=>it.verified).length;document.getElementById('sourceSummary').textContent='官方正文已核验 '+verified+' 条，来源待核 '+(items.length-verified)+' 条。公告核验与个人资格分开判断；行星大小未评级。';for(const it of items){const row=document.createElement('div');row.className='verify-row';row.append(textNode('strong',it.name),textNode('span',it.cat+' · '+availability(it).label+' · '+it.field),textNode('p',matchProfile(it).label));const link=textNode('a',it.verified?'公告已核验 '+it.checked+' ↗':'登记来源 · 待核实 ↗');link.href=it.url;link.target='_blank';link.rel='noopener noreferrer';row.append(link);root.append(row)}const healthButton=textNode('button','查看数据更新记录 ↗');healthButton.className='profile-inline';healthButton.onclick=showSourceHealth;root.prepend(healthButton);document.getElementById('sourceSummary').textContent+=' '+sourceHealthSummary()}
+function openProfile(){
+ showPanel('个人资格');
+ panelContent.innerHTML=`<p>资料仅保存在本机浏览器，用于排除明确不符的机会。留空会显示待核实，不会默认认定符合。</p><form id="profileForm" class="profile-form">
+ <label>就读学校<input name="school" placeholder="例如：同济大学" maxlength="100"></label>
+ <label>就读省市<input name="region" placeholder="例如：上海市、湖北省" maxlength="100"></label>
+ <label>专业名称<input name="major" placeholder="按实际专业填写" maxlength="100"></label>
+ <label>专业类别<select name="majorGroup"><option value="">未填写</option><option>理工科</option><option>人文社科</option><option>艺术设计</option><option>其他</option></select></label>
+ <label>学历<select name="degree"><option value="">未填写</option><option>专科</option><option>本科</option><option>硕士</option><option>博士</option><option>其他</option></select></label>
+ <label>入学年份<input name="enrollmentYear" type="number" min="1980" max="2100" placeholder="例如：2025"></label>
+ <label>当前年级<select name="studyYear"><option value="">未填写</option>${[1,2,3,4,5,6].map(y=>'<option value="'+y+'">'+y+' 年级</option>').join('')}</select></label>
+ <label>学习形式<select name="studyMode"><option value="">未填写</option><option>全日制</option><option>非全日制</option></select></label><label>申请身份<select name="role"><option value="">未填写</option><option>负责人</option><option>成员</option></select></label><label>参赛队员人数<input name="teamSize" type="number" min="1" max="100" placeholder="不含指导教师；个人参赛填1"></label><label>是否在校<select name="enrolled"><option value="">未填写</option><option>是</option><option>否</option></select></label>
+ <label class="wide"><input name="showIneligible" type="checkbox">同时在星系显示明确不符合条件的机会（始终标识原因）</label>
+ <p class="wide mini">学校与省市按全称精确匹配；专业类别由你确认，不会根据专业名称猜测。初筛通过也须主办方最终审核；待核记录不会自动判断为符合。</p>
+ <button type="submit" class="cta">保存并更新匹配</button><button type="button" id="clearProfile" class="secondary">清除个人资料</button></form>`;
+ const form=document.getElementById('profileForm');for(const [key,value] of Object.entries(profile)){const input=form.elements.namedItem(key);if(input){if(input.type==='checkbox')input.checked=value;else input.value=value}}
+ form.onsubmit=e=>{e.preventDefault();profile=normalizeProfile(Object.fromEntries(new FormData(form)));profile.showIneligible=form.elements.showIneligible.checked;profile.teamSizeBasis='participants';const persisted=store('flowmate_profile',profile);closeModal(panelOverlay);updateStats();renderVerification();if(persisted)toast('已保存个人资格，匹配结果已更新')};
+ document.getElementById('clearProfile').onclick=()=>{profile=normalizeProfile({});try{localStorage.removeItem('flowmate_profile');localStorage.removeItem('flowmate_eligibility_answers');eligibilityAnswers={}}catch{toast('浏览器未允许清除存储，请在浏览器设置中清除资料')}closeModal(panelOverlay);updateStats();renderVerification()};
+ form.elements.school.focus();
+}
+document.getElementById('profileBtn').onclick=openProfile;document.getElementById('editProfile').onclick=openProfile;
+
+
+function renderLibrary(){
+ const form=document.createElement('div');form.className='library-controls';form.innerHTML='<input aria-label="搜索机会库" placeholder="搜索名称、学校或方向"><select aria-label="机会库状态"><option value="all">全部状态</option><option value="open">报名窗口内</option><option value="upcoming">未开始</option><option value="closed">已截止</option><option value="unverified">日期待核实</option></select><select aria-label="机会方向"><option value="all">全部方向</option></select><select aria-label="机会排序"><option value="deadline">优先近期截止</option><option value="published">最近发布</option></select><label><input type="checkbox">仅看初筛通过</label>';
+ const directionSelect=form.querySelector('[aria-label="机会方向"]');for(const direction of Object.keys(colors)){const option=textNode('option',direction);option.value=direction;directionSelect.append(option)}
+ const count=textNode('p',''),list=document.createElement('div');list.id='libraryResults';count.setAttribute('role','status');panelContent.append(form,count,list);
+ function render(){const query=form.querySelector('input').value.trim().toLocaleLowerCase(),state=form.querySelector('[aria-label="机会库状态"]').value,direction=directionSelect.value,sort=form.querySelector('[aria-label="机会排序"]').value,only=form.querySelector('[type=checkbox]').checked;const rank={eligible:0,pending:1,ineligible:2};const matches=items.map((it,i)=>({it,i,match:matchProfile(it)})).filter(({it,match})=>([it.name,it.field,it.direction].join(' ').toLocaleLowerCase().includes(query))&&(state==='all'||availability(it).code===state)&&(direction==='all'||it.direction===direction)&&(!only||match.code==='eligible')).sort((a,b)=>{if(sort==='published')return (b.it.dates.published||'').localeCompare(a.it.dates.published||'')||a.it.id.localeCompare(b.it.id);const statusRank={open:0,upcoming:1,unverified:2,closed:3};return (statusRank[availability(a.it).code]-statusRank[availability(b.it).code])||((a.it.end||'9999').localeCompare(b.it.end||'9999'))||rank[a.match.code]-rank[b.match.code]||a.it.id.localeCompare(b.it.id)});count.textContent=matches.length+' 条结果 · 初筛通过仍须主办方审核';list.replaceChildren();if(!matches.length)list.append(textNode('p','暂无符合筛选的机会。可调整条件或完善个人资格。'));for(const {it,i} of matches)list.append(rowFor(it,i))}
+ // Native input events cover search, selects and checkboxes; blur/change must not replace a button mid-click.
+ form.addEventListener('input',render);render();
+}
+
+
+function selfCheckFingerprint(it,p=profile){const identity=normalizeProfile(p);delete identity.showIneligible;return (it.source.evidence?.bodySha256||'unverified')+'|'+JSON.stringify(it.eligibility.requirements||[])+'|'+JSON.stringify(identity)}
+function answersFor(it,p=profile){const entry=eligibilityAnswers[it.id];return entry&&Number.isFinite(Date.parse(entry.updatedAt))&&Date.now()-Date.parse(entry.updatedAt)<=7*86400000&&entry.fingerprint===selfCheckFingerprint(it,p)&&entry.answers&&typeof entry.answers==='object'&&!Array.isArray(entry.answers)?entry.answers:{}}
+function appendSelfCheckForm(it){
+ const rules=(it.eligibility.requirements||[]).filter(r=>!r.whenRole||profile.role===r.whenRole);if(!rules.length)return;
+ const form=document.createElement('form');form.className='self-check-form';form.dataset.itemId=it.id;form.append(textNode('h3','逐项资格自查'),textNode('p','下列条件来自公告。回答由你本人提供，不代表主办方认证；留空会保持待核实。'));
+ const current=answersFor(it);for(const r of rules){const label=document.createElement('label');label.append(textNode('span',r.label));const select=document.createElement('select');select.name=r.id;select.setAttribute('aria-label',r.label);for(const [value,text] of [['unknown','待确认'],['yes','本人确认满足'],['no','目前不满足']]){const option=textNode('option',text);option.value=value;select.append(option)}select.value=['yes','no'].includes(current[r.id])?current[r.id]:'unknown';label.append(select);const quote=textNode('small','公告依据：“'+r.quote+'”');label.append(quote);form.append(label)}
+ const submit=textNode('button','保存自查并更新匹配');submit.type='submit';submit.className='secondary';const status=textNode('p','');status.setAttribute('role','status');form.append(submit,status);
+ form.onsubmit=e=>{e.preventDefault();const answers={...current};for(const r of rules)answers[r.id]=form.elements.namedItem(r.id).value;eligibilityAnswers[it.id]={fingerprint:selfCheckFingerprint(it),answers,updatedAt:new Date().toISOString()};const persisted=store('flowmate_eligibility_answers',eligibilityAnswers);updateStats();renderVerification();const result=matchProfile(it);status.textContent=(persisted?'已保存。':'仅在本次页面有效。')+result.label+'；'+result.reasons.join('；')};panelContent.append(form);
+}
+function findOrbitHit(x,y){const badge=orbitBadges.find(b=>Math.hypot(b.x-x,b.y-y)<12);if(badge)return positions.find(p=>p.i===badge.i);return positions.map(p=>({...p,d:Math.hypot(p.x-x,p.y-y)})).filter(p=>p.d<p.r+10).sort((a,b)=>a.d-b.d)[0]}
+
+
+function sourceReviewState(it,now=new Date()){
+ if(it.source.lastAttemptResult==='official-public-api-and-notice-deadline-conflict')return {needsReview:true,label:'官方日期存在冲突，需主办方确认'};
+ const row=sourceHealth.results?.find(r=>r.id===it.id);if(!row)return {needsReview:false,label:'暂无自动检查记录'};
+ if((row.reviewedBodyHash&&row.reviewedBodyHash!==it.source.evidence?.bodySha256)||(row.referenceHash&&row.referenceHash!==it.source.evidence?.monitorHash))return {needsReview:true,label:'核验依据已更新，自动检查需重新完成'};
+ if(row.status==='unreviewed'&&it.source.verification==='verified')return {needsReview:true,label:'自动检查尚未对应当前核验依据'};
+ if(row.status==='changed')return {needsReview:true,label:'公告内容变化，日期与资格需复核'};
+ if(row.status==='unreachable')return {needsReview:true,label:'来源暂不可达，当前状态需复核'};
+ if(it.source.verification==='verified'&&sourceHealth.checkedAt&&now-new Date(sourceHealth.checkedAt)>48*3600000)return {needsReview:true,label:'更新检查已过期，当前状态需复核'};
+ return {needsReview:false,label:row.status==='unchanged'?'与已核验正文一致':'正文仍待人工核验'};
+}
+function sourceHealthSummary(){if(!sourceHealth.checkedAt)return '尚无自动检查记录。';const date=new Intl.DateTimeFormat('zh-CN',{timeZone:'Asia/Shanghai',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date(sourceHealth.checkedAt));const pending=items.filter(it=>sourceReviewState(it).needsReview).length;return '最近检查 '+date+'，'+pending+' 条来源需复核。'}
+function showSourceHealth(){showPanel('数据更新记录');panelContent.append(textNode('p',sourceHealthSummary()),textNode('p','自动检查比较官方正文，不会擅自修改报名日期或把待核实记录改为已核验。联网运行时按日检查，页面使用最近检查结果；离线时保留随文件保存的快照。'));for(const it of items){const state=sourceReviewState(it),row=sourceHealth.results?.find(r=>r.id===it.id);const card=document.createElement('article');card.className='panel-row';card.append(textNode('h3',it.name),textNode('p',state.label),textNode('p','人工核验：'+(it.source.verifiedAt||'尚未完成')+'；'+(row?.message||'尚无自动检查记录')));panelContent.append(card)}}
+async function reloadSourceHealth(){refreshCalendarDay();if(!/^https?:$/.test(location.protocol))return;try{const response=await fetch('./data/source-health.json',{cache:'no-store'});if(!response.ok)return;const report=await response.json();if(report.schemaVersion!==1||!Array.isArray(report.results)||report.results.length!==items.length||new Set(report.results.map(r=>r?.id)).size!==items.length||!Number.isFinite(Date.parse(report.checkedAt))||report.results.some(r=>!items.some(it=>it.id===r.id)||!['unchanged','changed','unreachable','unreviewed'].includes(r.status)))return;if(report.checkedAt===sourceHealth.checkedAt)return;sourceHealth=report;updateStats();renderVerification()}catch{}}
+let lastCalendarReviewKey='';
+function refreshCalendarDay(){const next=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());if(next!==CURRENT_DATE){CURRENT_DATE=next;TODAY.setTime(new Date(next+'T00:00:00').getTime());orbitLabelLayoutKey='';hover=-1;keyboardPreview=-1;hideOrbitPreview()}const key=next+'|'+items.map(it=>sourceReviewState(it).needsReview).join(',');if(key!==lastCalendarReviewKey){lastCalendarReviewKey=key;updateStats();renderVerification()}}
+reloadSourceHealth();setInterval(reloadSourceHealth,300000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)reloadSourceHealth()});
+
+
+const returnOrbit=textNode('button','← 返回星系');returnOrbit.type='button';returnOrbit.className='return-orbit';returnOrbit.onclick=()=>{space.scrollIntoView({behavior:'smooth',block:'center'});canvas.focus({preventScroll:true})};document.querySelector('.detail .card').prepend(returnOrbit);
+
+const actionRow=document.createElement('div');actionRow.className='detail-actions';const pathAction=document.getElementById('pathBtn'),simulateAction=document.getElementById('simulateBtn'),saveAction=document.getElementById('saveBtn');pathAction.className='cta';pathAction.textContent='查看资格路径　→';simulateAction.className='secondary';simulateAction.textContent='预演未来 ↗';detailCard.insertBefore(pathAction,detailMore);detailCard.insertBefore(actionRow,detailMore);actionRow.append(simulateAction,saveAction);
+const sourceDisclosure=document.querySelector('.verification');sourceDisclosure.insertBefore(document.getElementById('sourceSummary'),sourceDisclosure.querySelector('summary').nextSibling);
+document.querySelector('.detail-top small').textContent='机会详情';
+const navPaths={'探索':'<circle cx="12" cy="12" r="8"/><path d="m15 9-2 4-4 2 2-4z"/>','机会库':'<path d="m12 3 9 5-9 5-9-5zM3 12l9 5 9-5M3 16l9 5 9-5"/>','我的轨迹':'<circle cx="6" cy="5" r="2"/><circle cx="18" cy="19" r="2"/><path d="M6 7v6a4 4 0 0 0 4 4h4a4 4 0 0 0 4-4V7"/>','日程':'<rect x="4" y="5" width="16" height="16" rx="3"/><path d="M8 3v4m8-4v4M4 11h16m-12 4h3"/>','收藏':'<path d="M20 10c0 5-8 10-8 10S4 15 4 10a4.5 4.5 0 0 1 8-3 4.5 4.5 0 0 1 8 3Z"/>'};for(const button of document.querySelectorAll('[data-nav]')){const icon=button.querySelector('.ico');if(icon&&navPaths[button.dataset.nav]){icon.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+navPaths[button.dataset.nav]+'</svg>';button.setAttribute('aria-label',button.dataset.nav)}}
+
+function renderDetailArtwork(it){const art=document.getElementById('detailArtwork');if(!art||!it)return;const width=art.parentElement.clientWidth,height=art.parentElement.clientHeight;if(!width||!height)return;const ratio=Math.min(devicePixelRatio||1,2);art.width=Math.round(width*ratio);art.height=Math.round(height*ratio);const painter=art.getContext('2d');painter.setTransform(ratio,0,0,ratio,0,0);const glow=painter.createRadialGradient(width*.6,height*.4,0,width*.5,height*.5,width*.7);glow.addColorStop(0,'#f7ecda');glow.addColorStop(1,'#fdf8ee');painter.fillStyle=glow;painter.fillRect(0,0,width,height);planet(width*.53,height*.53,Math.min(width*.32,height*.85),it.direction,true,false,painter,items.indexOf(it))}
+const detailArtwork=document.createElement('canvas');detailArtwork.id='detailArtwork';detailArtwork.setAttribute('aria-hidden','true');document.querySelector('.planet-art').replaceChildren(detailArtwork);new ResizeObserver(()=>renderDetailArtwork(items[active])).observe(detailArtwork.parentElement);renderDetailArtwork(items[active]);
+// Orbit interaction changes the viewing angle, never the date/radius mapping.
+const galaxyControls=document.createElement('div');galaxyControls.className='galaxy-controls';galaxyControls.setAttribute('aria-label','星系操作');
+const pauseGalaxy=textNode('button','暂停');pauseGalaxy.id='pauseGalaxy';pauseGalaxy.type='button';pauseGalaxy.title='暂停或继续星系公转';
+const resetGalaxy=textNode('button','复位');resetGalaxy.id='resetGalaxy';resetGalaxy.type='button';resetGalaxy.title='恢复拖动前的星系朝向';
+const compareGalaxy=textNode('button','对比');compareGalaxy.id='compareGalaxy';compareGalaxy.type='button';
+galaxyControls.append(pauseGalaxy,resetGalaxy,compareGalaxy);orbitHeading.insertBefore(galaxyControls,document.querySelector('.key-panel'));document.querySelector('.key-panel summary').textContent='图例';
+const galaxyStatus=textNode('div','');galaxyStatus.id='galaxyStatus';galaxyStatus.className='galaxy-status';galaxyStatus.setAttribute('role','status');orbitMain.append(galaxyStatus);
+legendExplanation.append(textNode('p','编号右上方的暖色小点表示已收藏。拖动只改变朝向，不改变日期远近。'));
+canvas.setAttribute('aria-label','机会星系：横向拖动转动；左右方向键选择，回车查看详情；开启对比后，选择两项比较。');
+function syncGalaxyControls(){
+ const state=galaxyInteraction,paused=document.getElementById('pauseGalaxy'),reset=document.getElementById('resetGalaxy'),compare=document.getElementById('compareGalaxy');if(!paused)return;
+ paused.textContent=state.paused?'继续':'暂停';paused.setAttribute('aria-pressed',String(state.paused));paused.setAttribute('aria-label',state.paused?'继续星系公转':'暂停星系公转');reset.disabled=Math.abs(state.rotation)<.001;
+ compare.textContent=state.compareMode?(state.compared.length?'已选 1/2':'选两项'):state.compared.length===2?'对比 2项':'对比';compare.setAttribute('aria-pressed',String(state.compareMode));compare.setAttribute('aria-label',state.compareMode?'取消机会对比，已选'+state.compared.length+'项':state.compared.length===2?'重新查看两项机会对比':'选择两项机会进行对比');
+ const purpose=document.querySelector('.orbit-purpose');if(purpose)purpose.textContent=state.compareMode?'依次选择两颗星球 · 再点一次可取消':'越近中心越临近'+(dateMode==='award'?'结果日期':'截止')+' · 拖动转动星系';
+}
+function reconcileGalaxyComparison(){if(!galaxyInteraction.compared.length)return;const visible=new Set(visibleItems().map(({it})=>it.id));const previous=galaxyInteraction.compared.length;galaxyInteraction.compared=galaxyInteraction.compared.filter(id=>visible.has(id));if(previous!==galaxyInteraction.compared.length){const status=document.getElementById('galaxyStatus');if(status)status.textContent='筛选已变更，已移除不在当前星系中的对比项'}if(!galaxyInteraction.compareMode&&galaxyInteraction.compared.length!==2)galaxyInteraction.compared=[]}
+pauseGalaxy.onclick=()=>{galaxyInteraction.paused=!galaxyInteraction.paused;syncGalaxyControls();galaxyStatus.textContent=galaxyInteraction.paused?'星系已暂停，仍可拖动和选择机会':'星系继续公转'};
+resetGalaxy.onclick=()=>{galaxyInteraction.rotation=0;syncGalaxyControls();galaxyStatus.textContent='已恢复默认朝向，时间范围和筛选保留'};
+compareGalaxy.onclick=()=>{if(galaxyInteraction.compared.length===2&&!galaxyInteraction.compareMode){openGalaxyComparison();return}galaxyInteraction.compareMode=!galaxyInteraction.compareMode;galaxyInteraction.compared=[];hideOrbitPreview();hover=-1;keyboardPreview=-1;syncGalaxyControls();if(galaxyInteraction.compareMode)toast('依次点击两颗星球或下方名称，查看对比')};
+function toggleGalaxyComparison(i){const it=items[i];if(!it||!visibleItems().some(x=>x.i===i))return;const ids=galaxyInteraction.compared,index=ids.indexOf(it.id);if(index>=0)ids.splice(index,1);else if(ids.length<2)ids.push(it.id);hideOrbitPreview();galaxyStatus.textContent='已选'+ids.length+'项用于对比';syncGalaxyControls();if(ids.length===2){galaxyInteraction.compareMode=false;syncGalaxyControls();openGalaxyComparison()}}
+function openGalaxyComparison(){
+ const chosen=galaxyInteraction.compared.map(id=>items.find(it=>it.id===id));if(chosen.length!==2||chosen.some(it=>!it))return;showPanel('机会对比');
+ panelContent.append(textNode('p','对照官方登记与当前个人资料；初筛结果不代表主办方审核通过。'));
+ const scrollHint=textNode('p','左右滑动查看两项，向下查看完整条件');scrollHint.className='comparison-scroll-hint';panelContent.append(scrollHint);const wrap=textNode('div','');wrap.className='comparison-wrap';const table=document.createElement('table');table.className='comparison-table';const caption=textNode('caption','两项机会的截止、范围及个人资格');caption.className='galaxy-status';table.append(caption);
+ const head=document.createElement('thead'),heading=document.createElement('tr');for(const text of ['比较项',...chosen.map(it=>it.name)]){const cell=textNode('th',text);cell.scope='col';heading.append(cell)}head.append(heading);table.append(head);const body=document.createElement('tbody');
+ const fields=[['报名截止',it=>deadlineText(it)],['当前状态',it=>availability(it).label],['适用范围',it=>{const school=it.eligibility.schools.join('、');return school&&!it.field.includes(school)?it.field+' · '+school:it.field}],['个人资格',it=>{const match=matchProfile(it);return match.label+'：'+match.reasons.join('；')}],['队伍人数',it=>{const team=it.eligibility.teamSize;if(!team)return '人数要求需核实';return team.min===null?'最多'+team.max+'名参赛学生':team.max===null?'至少'+team.min+'名参赛学生':team.min===team.max?team.min+'名参赛学生':team.min+'–'+team.max+'名参赛学生'}],['补充条件',it=>(it.eligibility.requirements||[]).map(r=>r.label).join('；')||it.eligibility.basis],['来源核验',it=>(it.verified?'正文核验 '+it.checked:'正文待核实')+' · '+sourceReviewState(it).label]];
+ for(const [name,value] of fields){const row=document.createElement('tr'),title=textNode('th',name);title.scope='row';row.append(title);for(const it of chosen)row.append(textNode('td',value(it)));body.append(row)}
+ const links=document.createElement('tr'),title=textNode('th','官方公告');title.scope='row';links.append(title);for(const it of chosen){const cell=document.createElement('td'),link=textNode('a','查看原文 ↗');link.href=it.url;link.target='_blank';link.rel='noopener noreferrer';cell.append(link);links.append(cell)}body.append(links);table.append(body);wrap.append(table);panelContent.append(wrap);
+ const actions=document.createElement('div');actions.className='comparison-actions';for(const [index,it] of chosen.entries()){const button=textNode('button','查看'+(index===0?'左':'右')+'侧机会详情');button.onclick=()=>{closeModal(panelOverlay);inspectOpportunity(items.indexOf(it));if(innerWidth<=790)document.querySelector('.detail').scrollIntoView({behavior:'smooth',block:'start'})};actions.append(button)}const restart=textNode('button','重新选择');restart.onclick=()=>{closeModal(panelOverlay);galaxyInteraction.compared=[];galaxyInteraction.compareMode=true;syncGalaxyControls();canvas.focus({preventScroll:true});if(innerWidth<=790)space.scrollIntoView({behavior:'smooth',block:'center'})};actions.append(restart);panelContent.append(actions)
+}
+canvas.addEventListener('pointerdown',e=>{if(!e.isPrimary||e.button!==0)return;galaxyInteraction.drag={id:e.pointerId,x:e.clientX,y:e.clientY,rotation:galaxyInteraction.rotation};suppressClick=false});
+canvas.addEventListener('pointermove',e=>{const drag=galaxyInteraction.drag;if(!drag||drag.id!==e.pointerId)return;const dx=e.clientX-drag.x,dy=e.clientY-drag.y;if(!galaxyInteraction.dragging){if(Math.abs(dx)<7||Math.abs(dx)<Math.abs(dy)*1.2)return;galaxyInteraction.dragging=true;hover=-1;keyboardPreview=-1;hideOrbitPreview();canvas.classList.add('is-dragging');canvas.setPointerCapture(e.pointerId)}if(e.cancelable)e.preventDefault();galaxyInteraction.rotation=(drag.rotation+dx/Math.max(W,1)*TAU)%TAU;syncGalaxyControls()});
+function finishGalaxyDrag(e,cancelled=false){const drag=galaxyInteraction.drag;if(!drag||drag.id!==e.pointerId)return;const moved=galaxyInteraction.dragging;galaxyInteraction.drag=null;galaxyInteraction.dragging=false;canvas.classList.remove('is-dragging');if(canvas.hasPointerCapture(e.pointerId))canvas.releasePointerCapture(e.pointerId);if(moved&&!cancelled){suppressClick=true;setTimeout(()=>{suppressClick=false},0)}else suppressClick=false;syncGalaxyControls()}
+canvas.addEventListener('pointerup',e=>finishGalaxyDrag(e));canvas.addEventListener('pointercancel',e=>finishGalaxyDrag(e,true));canvas.addEventListener('lostpointercapture',e=>{if(galaxyInteraction.drag)finishGalaxyDrag(e,true)});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&galaxyInteraction.compareMode){galaxyInteraction.compareMode=false;galaxyInteraction.compared=[];syncGalaxyControls();galaxyStatus.textContent='已退出对比选择'}});
+syncGalaxyControls();
+
+canvas.addEventListener('keydown',e=>{if(e.altKey||e.ctrlKey||e.metaKey)return;if(e.repeat&&['Space','KeyC','Home'].includes(e.code)){e.preventDefault();return}if(e.code==='Space'){e.preventDefault();pauseGalaxy.click()}else if(e.key==='Home'){e.preventDefault();if(!resetGalaxy.disabled)resetGalaxy.click()}else if(e.key.toLowerCase()==='c'){e.preventDefault();compareGalaxy.click()}});
+pauseGalaxy.title='暂停或继续星系公转（画布聚焦后按空格）';compareGalaxy.title='选择两项机会对比（画布聚焦后按 C）';resetGalaxy.title='恢复默认朝向，保留筛选（画布聚焦后按 Home）';legendExplanation.append(textNode('p','键盘：左右键切换机会，回车查看详情或选入对比；空格暂停，C 开启对比，Home 恢复朝向。'));
+</script></body></html>
+
