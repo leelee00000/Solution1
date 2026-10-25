@@ -1,0 +1,14 @@
+node_modules/
+.venv/
+__pycache__/
+artifacts/*.png
+artifacts/source-*.html
+artifacts/*.log
+artifacts/source-*.txt
+artifacts/source-*.pdf
+artifacts/source-captures/
+artifacts/ai-*
+
+artifacts/import-backups/
+artifacts/load-test*/
+artifacts/qa-fixture/

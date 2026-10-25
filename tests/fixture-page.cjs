@@ -1,0 +1,4 @@
+// Functional regression tests use a fixed catalogue; current production data is tested separately.
+const fs=require('fs'),path=require('path');const root=path.resolve(__dirname,'..'),dir=path.join(root,'artifacts/qa-fixture');fs.mkdirSync(path.join(dir,'data'),{recursive:true});let html=fs.readFileSync(path.join(root,'index.html'),'utf8');
+for(const [id,file] of [['opportunity-data','opportunities.json'],['source-health-data','source-health.json']]){const data=JSON.parse(fs.readFileSync(path.join(__dirname,'fixtures',file),'utf8'));const text=JSON.stringify(data).replace(/</g,'\\u003c');html=html.replace(new RegExp('(<script id="'+id+'" type="application/json">)[\\s\\S]*?(</script>)'),(m,a,z)=>a+text+z);if(file==='source-health.json')fs.writeFileSync(path.join(dir,'data',file),JSON.stringify(data))}
+const file=path.join(dir,'index.html');fs.writeFileSync(file,html);module.exports={url:'http://127.0.0.1:8000/artifacts/qa-fixture/index.html',file,html};

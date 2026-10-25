@@ -1,0 +1,1089 @@
+{
+  "schemaVersion": 1,
+  "baseline": "V80",
+  "description": "V80 baseline; 16 opportunity records including specific tracks and school registration stages, 15 official notices reviewed. fm-008 deadline conflict remains pending. Records are not counts of distinct national competitions.",
+  "opportunities": [
+    {
+      "name": "中国国际大学生创新大赛（2026）",
+      "cat": "竞赛",
+      "direction": "创业实践",
+      "org": "教育部等部门、江苏省人民政府",
+      "aud": "以官方赛道规则及学校审核为准",
+      "field": "全国",
+      "a": 0.0,
+      "note": "总决赛2026年11月；校赛、省赛时间独立；不应作为当前可报名机会",
+      "id": "fm-001",
+      "dates": {
+        "start": "2026-08-10",
+        "end": "2026-09-25",
+        "award": null,
+        "deadlineAt": "2026-09-25T12:00:00+08:00",
+        "timezone": "Asia/Shanghai",
+        "published": "2026-07-31"
+      },
+      "source": {
+        "url": "https://www.moe.gov.cn/srcsite/A08/s5672/202607/t20260731_1445670.html",
+        "kind": "official-notice",
+        "verification": "verified",
+        "verifiedAt": "2026-10-25",
+        "lastAttemptAt": "2026-10-25",
+        "lastAttemptResult": "http-200-body-reviewed",
+        "importedClaimedCheckedAt": "2026-10-24",
+        "importedClaimedStatus": "已截止",
+        "registrationOpenOn": null,
+        "evidence": {
+          "bodySha256": "afb111d5dd7293faccce913108d624e731f34287cbf8eced91b832cda91cce9c",
+          "quotes": [
+            "报名系统开放时间为2026年8月10日，报名截止时间为9月25日12时。",
+            "参赛人员年龄不超过35岁"
+          ],
+          "scope": "核实公告所载日期与已列资格；不代表审核通过或实时接受报名。",
+          "monitorHash": "0ad4adbf6277cbd54327455868354fe0f84520908f25db370d6b6ac3928b3a26"
+        }
+      },
+      "eligibility": {
+        "schools": [],
+        "regions": [],
+        "degrees": [],
+        "enrollmentYears": [],
+        "studyYears": [],
+        "majorGroups": [],
+        "enrolled": null,
+        "rulesComplete": false,
+        "basis": "2026-10-25 已阅读官方正文；仅将明确条件用于硬匹配，其余条件在资格路径中复核。",
+        "studyModes": [],
+        "leaderStudyYears": [],
+        "teamSize": null,
+        "requirements": []
+      }
+    },
+    {
+      "name": "第十四届全国大学生数字媒体科技作品及创意竞赛",
+      "cat": "竞赛",
+      "direction": "科技创新",
+      "org": "赛事官网",
+      "aud": "详见赛区及官网规则",
+      "field": "全国",
+      "a": 2.4,
+      "note": "报名与作品提交已截止。12月4—6日颁奖典礼/作品展览为待定安排，不作为确定评奖日期。",
+      "id": "fm-002",
+      "dates": {
+        "start": null,
+        "end": "2026-10-23",
+        "award": null,
+        "deadlineAt": "2026-10-23T23:59:59+08:00",
+        "timezone": "Asia/Shanghai",
+        "published": null
+      },
+      "source": {
+        "url": "https://www.cmit.cn/wap/index.html",
+        "kind": "organizer-site",
+        "verification": "verified",
+        "verifiedAt": "2026-10-25",
+        "lastAttemptAt": "2026-10-25",
+        "lastAttemptResult": "http-200-body-reviewed",
+        "importedClaimedCheckedAt": "2026-10-24",
+        "importedClaimedStatus": "已截止",
+        "registrationOpenOn": null,
+        "evidence": {
+          "bodySha256": "ed298997b38a1bc38fb15b45cb2e014774918636d9c3cc186c455ae9e2b18313",
+          "quotes": [
+            "⏰ 2026年10月23日23:59:59截止",
+            "每个参赛团队学生人数不超过5人"
+          ],
+          "scope": "核实公告所载日期与已列资格；不代表审核通过或实时接受报名。",
+          "monitorHash": "0c5ec46fa26cb47a4dad8363a9f1a7baca5fa99bc6ad26903003772cb0dffbd9"
+        }
+      },
+      "eligibility": {
+        "schools": [],
+        "regions": [],
+        "degrees": [],
+        "enrollmentYears": [],
+        "studyYears": [],
+        "majorGroups": [],
+        "enrolled": null,
+        "rulesComplete": false,
+        "basis": "2026-10-25 已阅读官方正文；仅将明确条件用于硬匹配，其余条件在资格路径中复核。",
+        "studyModes": [],
+        "leaderStudyYears": [],
+        "teamSize": null,
+        "requirements": []
+      }
+    },
+    {
+      "name": "重庆交通大学2027年大学生创新创业训练计划培育项目",
+      "cat": "科研",
+      "direction": "科技创新",
+      "org": "重庆交通大学教务处",
+      "aud": "该校全日制普通本科生，负责人限二、三年级等",
+      "field": "重庆交通大学校内",
+      "a": 4.8,
+      "note": "学生材料11月20日前提交；学院11月23日前推荐。二、三年级仅限制负责人；成员不受此年级硬限制。导师、在研项目与参与数另须核实。 须团队申报、至多5人；公告未列最小人数，需另核。",
+      "id": "fm-003",
+      "dates": {
+        "start": null,
+        "end": "2026-11-20",
+        "award": null,
+        "deadlineAt": null,
+        "timezone": "Asia/Shanghai",
+        "published": "2026-10-16"
+      },
+      "source": {
+        "url": "https://jw.cqjtu.edu.cn/info/1074/11035.htm",
+        "kind": "official-notice",
+        "verification": "verified",
+        "verifiedAt": "2026-10-25",
+        "lastAttemptAt": "2026-10-25",
+        "lastAttemptResult": "http-200-body-reviewed",
+        "importedClaimedCheckedAt": "2026-10-24",
+        "importedClaimedStatus": "日期待核实",
+        "registrationOpenOn": null,
+        "evidence": {
+          "bodySha256": "c9ff8b7ed8161ed5f51fca30e81d9bbb43b4026ccce47bba2ebb60d1748b6af9",
+          "quotes": [
+            "项目负责人于11月20日前通过项目管理平台",
+            "项目负责人须为全日制普通本科二年级或三年级学生",
+            "团队人数不得超过5人"
+          ],
+          "scope": "核实公告所载日期与已列资格；不代表审核通过或实时接受报名。",
+          "monitorHash": "11663a4f00e96e9c29640d5c621d20e8d99508b290de94b583a7dbd8c5b155c3"
+        }
+      },
+      "eligibility": {
+        "schools": [
+          "重庆交通大学"
+        ],
+        "regions": [],
+        "degrees": [
+          "本科"
+        ],
+        "enrollmentYears": [],
+        "studyYears": [],
+        "majorGroups": [],
+        "enrolled": true,
+        "rulesComplete": false,
+        "basis": "2026-10-25 已阅读官方正文；仅将明确条件用于硬匹配，其余条件在资格路径中复核。",
+        "studyModes": [
+          "全日制"
+        ],
+        "leaderStudyYears": [
+          2,
+          3
+        ],
+        "teamSize": {
+          "min": null,
+          "max": 5
+        },
+        "requirements": [
+          {
+            "id": "team-formed",
+            "label": "已组成申报团队，且各成员分工明确",
+            "quote": "申请者必须是团队"
+          },
+          {
+            "id": "project-count",
+            "label": "计入本次申报后，我参与的项目不超过2项",
+            "quote": "每名学生最多参与2个项目"
+          },
+          {
+            "id": "leader-clear",
+            "label": "本人作为负责人只申报1项，且没有尚未结题的负责人在研项目",
+            "quote": "项目负责人在研项目未结题时不能作为负责人申报新的项目",
+            "whenRole": "负责人"
+          },
+          {
+            "id": "mentor",
+            "label": "已确认指导教师及其指导名额；创业实践项目已满足双导师要求",
+            "quote": "创业实践项目实施学校导师和企业导师的双导师制"
+          },
+          {
+            "id": "original-project",
+            "label": "项目未重复立项，也不是已参赛作品或毕业设计题目",
+            "quote": "已参加过各级各类竞赛的作品、已作为毕业设计（论文）进行的题目，不得申报"
+          }
+        ]
+      }
+    },
+    {
+      "name": "中国石油大学（华东）2027批次大创（创新训练·负责人申报）",
+      "cat": "科研",
+      "direction": "科技创新",
+      "org": "中国石油大学（华东）教务处",
+      "aud": "本校学生；原则上主要面向全日制本科二、三年级，例外需院部确认",
+      "field": "中国石油大学（华东）校内",
+      "a": 7.2,
+      "note": "本条节点是创新训练项目负责人填申报书：11月1—8日。学生选题及师生互选为10月23—31日；创业训练/实践的时间另行通知。原则性年级条件不作为绝对排除。",
+      "id": "fm-004",
+      "dates": {
+        "start": "2026-11-01",
+        "end": "2026-11-08",
+        "award": null,
+        "deadlineAt": null,
+        "timezone": "Asia/Shanghai",
+        "published": "2026-10-08"
+      },
+      "source": {
+        "url": "https://jwc.upc.edu.cn/2026/1008/c18523a502163/page.htm",
+        "kind": "official-notice",
+        "verification": "verified",
+        "verifiedAt": "2026-10-25",
+        "lastAttemptAt": "2026-10-25",
+        "lastAttemptResult": "http-200-body-reviewed",
+        "importedClaimedCheckedAt": "2026-10-24",
+        "importedClaimedStatus": "日期待核实",
+        "registrationOpenOn": null,
+        "evidence": {
+          "bodySha256": "af6384c5b4baca098d69577c921efe93e1bf669e83106ac5220e69137105a70b",
+          "quotes": [
+            "11 月 1 日-11 月 8 日",
+            "项目负责人填写申报书",
+            "10 月 23 日-10 月 31 日"
+          ],
+          "scope": "核实公告所载日期与已列资格；不代表审核通过或实时接受报名。",
+          "documentUrl": "https://jwc.upc.edu.cn/_upload/article/files/5b/e4/e6c864274535810713862774c4df/de72f1f1-7873-4881-80d9-1244c7abf652.pdf",
+          "monitorHash": "964c95d737da0b7c6c051c79791a8e10f364090c6015c6ce602efe9acab957dc"
+        }
+      },
+      "eligibility": {
+        "schools": [
+          "中国石油大学（华东）"
+        ],
+        "regions": [],
+        "degrees": [],
+        "enrollmentYears": [],
+        "studyYears": [],
+        "majorGroups": [],
+        "enrolled": null,
+        "rulesComplete": false,
+        "basis": "2026-10-25 已阅读官方正文；仅将明确条件用于硬匹配，其余条件在资格路径中复核。",
+        "studyModes": [],
+        "leaderStudyYears": [],
+        "teamSize": null,
+        "requirements": []
+      }
+    },
+    {
+      "name": "湖北省2026年度大学生创业扶持项目",
+      "cat": "创业",
+      "direction": "创业实践",
+      "org": "湖北省人力资源和社会保障厅等部门",
+      "aud": "创意组：湖北高校/技工院校在校生；创业组另含毕业5年内毕业生并有在鄂注册经营等条件",
+      "field": "湖北省",
+      "a": 9.6,
+      "note": "2026年申报窗口4月1日至5月15日，现已截止。创意组和创业组条件不同；未选组别时，不因就读省市或毕业身份直接判为不符。",
+      "id": "fm-005",
+      "dates": {
+        "start": "2026-04-01",
+        "end": "2026-05-15",
+        "award": null,
+        "deadlineAt": null,
+        "timezone": "Asia/Shanghai",
+        "published": "2026-03-31"
+      },
+      "source": {
+        "url": "https://rst.hubei.gov.cn/zfxxgk/zc/qtzdgkwj/202603/t20260331_5902664.shtml",
+        "kind": "official-notice",
+        "verification": "verified",
+        "verifiedAt": "2026-10-25",
+        "lastAttemptAt": "2026-10-25",
+        "lastAttemptResult": "http-200-body-reviewed",
+        "importedClaimedCheckedAt": "2026-10-24",
+        "importedClaimedStatus": "日期待核实",
+        "registrationOpenOn": null,
+        "evidence": {
+          "bodySha256": "5fda3c1320b17352d96d631de3bf13a71fae2f8eca1d92955386581371b3d3bb",
+          "quotes": [
+            "4月1日至5月15日期间",
+            "本项目设创意组、创业组"
+          ],
+          "scope": "核实公告所载日期与已列资格；不代表审核通过或实时接受报名。",
+          "monitorHash": "e7db13bca4c4d5bf7d18a69d6053cbacd21bec17043be8f92c5cd7b8b2665caf"
+        }
+      },
+      "eligibility": {
+        "schools": [],
+        "regions": [],
+        "degrees": [],
+        "enrollmentYears": [],
+        "studyYears": [],
+        "majorGroups": [],
+        "enrolled": null,
+        "rulesComplete": false,
+        "basis": "2026-10-25 已阅读官方正文；仅将明确条件用于硬匹配，其余条件在资格路径中复核。",
+        "studyModes": [],
+        "leaderStudyYears": [],
+        "teamSize": null,
+        "requirements": []
+      }
+    },
+    {
+      "name": "同济大学第二届大学生物理学术竞赛",
+      "cat": "竞赛",
+      "direction": "学术科研",
+      "org": "同济大学本科生院、创新创业学院（物理科学与工程学院承办）",
+      "aud": "仅2025级、2026级全校理工科专业学生；其他年级或专业不符合通知条件",
+      "field": "同济大学",
+      "a": 12.0,
+      "note": "初赛报名10月20—31日；作品11月30日截止；个人或团队均可，每队至多5人。仅校内网络/VPN能访问报名平台。复赛另有优胜与组队要求。",
+      "id": "fm-006",
+      "dates": {
+        "start": "2026-10-20",
+        "end": "2026-10-31",
+        "award": null,
+        "deadlineAt": null,
+        "timezone": "Asia/Shanghai",
+        "published": "2026-10-19"
+      },
+      "source": {
+        "url": "https://mphylab.tongji.edu.cn/page/home/info23622_INFO",
+        "kind": "official-notice",
+        "verification": "verified",
+        "verifiedAt": "2026-10-25",
+        "lastAttemptAt": "2026-10-25",
+        "lastAttemptResult": "http-200-body-reviewed",
+        "importedClaimedCheckedAt": "2026-10-24",
+        "importedClaimedStatus": "报名中（有资格限制）",
+        "registrationOpenOn": null,
+        "evidence": {
+          "bodySha256": "7febcb0e21a558f7369af919aa5df3dda9e66cf07f5d8528f8d4fb4462466406",
+          "quotes": [
+            "2025级和2026级全校理工科各专业学生。",
+            "报名时间：2026年10月20日 — 2026年10月31日",
+            "每队人数不超过5人"
+          ],
+          "scope": "核实公告所载日期与已列资格；不代表审核通过或实时接受报名。",
+          "monitorRegion": {
+            "start": "关于举办2026年第二届同济大学大学生物理学术竞赛（TJPT）的通知",
+            "end": "教学通知"
+          },
+          "monitorHash": "c5226ccd10d42025fa454cef3712d1134efedb08564ce2a3126842078eaa3a94"
+        }
+      },
+      "eligibility": {
+        "schools": [
+          "同济大学"
+        ],
+        "regions": [],
+        "degrees": [],
+        "enrollmentYears": [
+          2025,
+          2026
+        ],
+        "studyYears": [],
+        "majorGroups": [
+          "理工科"
+        ],
+        "enrolled": null,
+        "rulesComplete": true,
+        "basis": "已核验初赛对象与人数条件。仅用于初赛报名初筛；复赛另须初赛优胜并5人组队，须学校审核。",
+        "studyModes": [],
+        "leaderStudyYears": [],
+        "teamSize": {
+          "min": 1,
+          "max": 5
+        },
+        "requirements": []
+      }
+    },
+    {
+      "name": "2026年“AI+教育”创新应用技能大赛（同济大学学生组）",
+      "cat": "竞赛",
+      "direction": "科技创新",
+      "org": "同济大学信息化办公室",
+      "aud": "同济大学全日制在校学生，大学生AI创新创业组；教师校内选拔不适用于学生",
+      "field": "同济大学",
+      "a": 14.4,
+      "note": "学生组报名和材料提交10月15日已截止；不能把教师组校内选拔资格套给学生。11月12日为颁奖典礼，不冒充评奖结果发布日期。",
+      "id": "fm-007",
+      "dates": {
+        "start": "2026-09-15",
+        "end": "2026-10-15",
+        "award": null,
+        "deadlineAt": null,
+        "timezone": "Asia/Shanghai",
+        "published": "2026-09-15"
+      },
+      "source": {
+        "url": "https://nic.tongji.edu.cn/info/1029/1570.htm",
+        "kind": "official-notice",
+        "verification": "verified",
+        "verifiedAt": "2026-10-25",
+        "lastAttemptAt": "2026-10-25",
+        "lastAttemptResult": "http-200-body-reviewed",
+        "importedClaimedCheckedAt": "2026-10-24",
+        "importedClaimedStatus": "已截止",
+        "registrationOpenOn": null,
+        "evidence": {
+          "bodySha256": "73cfe36f23ee9998d39ccdce2b37c91c2f78004c54ca260a1511acf3d79f4e3d",
+          "quotes": [
+            "面向我校全日制在校学生",
+            "即日—2026年10月15日"
+          ],
+          "scope": "核实公告所载日期与已列资格；不代表审核通过或实时接受报名。",
+          "monitorHash": "bf04c48683559623138969bc37d9e356eb5b9b8a091e3f055acb484b4fe4d5d7"
+        }
+      },
+      "eligibility": {
+        "schools": [
+          "同济大学"
+        ],
+        "regions": [],
+        "degrees": [],
+        "enrollmentYears": [],
+        "studyYears": [],
+        "majorGroups": [],
+        "enrolled": true,
+        "rulesComplete": false,
+        "basis": "2026-10-25 已阅读官方正文；仅将明确条件用于硬匹配，其余条件在资格路径中复核。",
+        "studyModes": [
+          "全日制"
+        ],
+        "leaderStudyYears": [],
+        "teamSize": {
+          "min": 1,
+          "max": 5
+        },
+        "requirements": []
+      }
+    },
+    {
+      "name": "第二届全国人工智能应用创新大赛",
+      "cat": "竞赛",
+      "direction": "科技创新",
+      "org": "中国技术经济学会（人工智能应用专业委员会承办）",
+      "aud": "普通高校/高职学生及科研院所、企业、创业团队；队员1—3名，指导教师另计，分组和赛道另核",
+      "field": "全国",
+      "a": 16.8,
+      "note": "日期冲突待主办方澄清：公开接口 signEndDt 为2026-11-10，正式通知的报名/缴费/交作品窗口为2026-09-18至2026-10-20；首页代码默认2026-10-31不是正式延期公告。停止使用单一确定截止日期，在机会库保留记录。",
+      "id": "fm-008",
+      "dates": {
+        "start": "2026-09-18",
+        "end": null,
+        "award": null,
+        "deadlineAt": null,
+        "timezone": "Asia/Shanghai",
+        "published": null
+      },
+      "source": {
+        "url": "https://www.ai-race.com.cn/",
+        "kind": "organizer-site",
+        "verification": "pending",
+        "verifiedAt": null,
+        "lastAttemptAt": "2026-10-25",
+        "lastAttemptResult": "official-public-api-and-notice-deadline-conflict",
+        "importedClaimedCheckedAt": "2026-10-24",
+        "importedClaimedStatus": "报名窗口内（待复核）",
+        "registrationOpenOn": null,
+        "importedEnd": "2026-11-10",
+        "evidence": {
+          "bodySha256": "4ae322088bc77a37a37a6d6a0c9da6ed5b416e31a446eb650a070acce89545c0",
+          "quotes": [
+            "API报名截止：2026-11-10",
+            "2026年9月18日—10月20日",
+            "每支团队由1—3名参赛队员组成"
+          ],
+          "scope": "已读取官网公开接口和其中的正式通知，但报名截止存在冲突；此证据不构成当前可报名核验。",
+          "documentUrl": "https://www.ai-race.com.cn/prod-api/open/competition/detail"
+        }
+      },
+      "eligibility": {
+        "schools": [],
+        "regions": [],
+        "degrees": [],
+        "enrollmentYears": [],
+        "studyYears": [],
+        "majorGroups": [],
+        "enrolled": null,
+        "rulesComplete": false,
+        "basis": "官网公开信息可读取，但接口与正式通知日期冲突；仅保留一致的队员人数等信息，不判断为可报名。",
+        "studyModes": [],
+        "leaderStudyYears": [],
+        "teamSize": {
+          "min": 1,
+          "max": 3
+        },
+        "requirements": []
+      }
+    },
+    {
+      "name": "第十二届数维杯数学建模挑战赛（秋季赛）",
+      "cat": "竞赛",
+      "direction": "学术科研",
+      "org": "中国仿真学会、辽宁科技大学",
+      "aud": "全国普通高校全日制在校生，1–3人/队",
+      "field": "全国",
+      "a": 19.2,
+      "note": "官方正文确认核验日已开放报名，11月20日06:00截止；每队1—3人，允许跨校、不可重复组队，200元/队。2027年1月中旬公布成绩，没有具体日，不补造评奖日期。",
+      "id": "fm-009",
+      "dates": {
+        "start": null,
+        "end": "2026-11-20",
+        "award": null,
+        "deadlineAt": "2026-11-20T06:00:00+08:00",
+        "timezone": "Asia/Shanghai",
+        "published": null
+      },
+      "source": {
+        "url": "https://www.nmmcm.org.cn/Competition/",
+        "kind": "organizer-site",
+        "verification": "verified",
+        "verifiedAt": "2026-10-25",
+        "lastAttemptAt": "2026-10-25",
+        "lastAttemptResult": "http-200-body-reviewed",
+        "importedClaimedCheckedAt": "2026-10-24",
+        "importedClaimedStatus": "报名窗口内（待复核）",
+        "registrationOpenOn": "2026-10-25",
+        "evidence": {
+          "bodySha256": "3048b84137c9bef8a4d7a674bfea9b127180b62fcc73dcd411b2f77d46a609cc",
+          "quotes": [
+            "报名截止：即日起至2026年11月20日06:00",
+            "每队1–3名学生",
+            "普通高校全日制在校生"
+          ],
+          "scope": "核实公告所载日期与已列资格；不代表审核通过或实时接受报名。",
+          "monitorHash": "24550c6811efd05544ed6509b91b240614a298e21c423d656aa1ffb1e430d7f4"
+        }
+      },
+      "eligibility": {
+        "schools": [],
+        "regions": [],
+        "degrees": [
+          "专科",
+          "本科",
+          "硕士",
+          "博士"
+        ],
+        "enrollmentYears": [],
+        "studyYears": [],
+        "majorGroups": [],
+        "enrolled": true,
+        "rulesComplete": true,
+        "basis": "已核实普通高校全日制在校身份、学历分组、1—3人及不可重复组队等报名初筛规则；本人确认项单独标识，作品及材料要求仍按章程审核。",
+        "studyModes": [
+          "全日制"
+        ],
+        "leaderStudyYears": [],
+        "teamSize": {
+          "min": 1,
+          "max": 3
+        },
+        "requirements": [
+          {
+            "id": "one-team",
+            "label": "本人为普通高校全日制在校生，没有重复组队，且按学历组别报名",
+            "quote": "全国普通高校全日制在校生（分专科组、本科生组、研究生组）。以队为单位报名，每队1–3名学生，可设1名指导教师（允许跨校组队，不可重复组队），各校参赛队数不限。"
+          }
+        ]
+      }
+    },
+    {
+      "name": "第九届传智杯数智创新与AI应用大赛",
+      "cat": "竞赛",
+      "direction": "科技创新",
+      "org": "传智杯大赛组委会（西安交通大学教务处转发）",
+      "aud": "全国高校本专科生、研究生；分组要求",
+      "field": "全国",
+      "a": 21.6,
+      "note": "官网规则需按研究生/A/B/C组与赛点身份复核，不可向低组别填报；校内QQ群与联系人仅适用于西安交通大学。",
+      "id": "fm-010",
+      "dates": {
+        "start": "2026-09-01",
+        "end": "2026-11-18",
+        "award": null,
+        "deadlineAt": null,
+        "timezone": "Asia/Shanghai",
+        "published": "2026-10-09"
+      },
+      "source": {
+        "url": "https://jwc.xjtu.edu.cn/info/1172/10505.htm",
+        "kind": "official-notice",
+        "verification": "verified",
+        "verifiedAt": "2026-10-25",
+        "lastAttemptAt": "2026-10-25",
+        "lastAttemptResult": "http-200-body-reviewed",
+        "importedClaimedCheckedAt": "2026-10-24",
+        "importedClaimedStatus": "报名窗口内（待复核）",
+        "registrationOpenOn": null,
+        "evidence": {
+          "bodySha256": "ceff0b1fca52c1b9c315219d8d2435bbd905de0cc818f7cf2fc2e7036d307fcb",
+          "quotes": [
+            "报名时间：2026年9月1日—2026年11月18日",
+            "全国各高校的研究生及本、专科所有年级学生均可自愿报名参赛"
+          ],
+          "scope": "核实公告所载日期与已列资格；不代表审核通过或实时接受报名。",
+          "monitorHash": "c92fdc7ecabd7ca2e03e9c52b9bf35b031199127bbf201aa1bf82ac68ccc47e2"
+        }
+      },
+      "eligibility": {
+        "schools": [],
+        "regions": [],
+        "degrees": [
+          "专科",
+          "本科",
+          "硕士",
+          "博士"
+        ],
+        "enrollmentYears": [],
+        "studyYears": [],
+        "majorGroups": [],
+        "enrolled": true,
+        "rulesComplete": false,
+        "basis": "2026-10-25 已阅读官方正文；仅将明确条件用于硬匹配，其余条件在资格路径中复核。",
+        "studyModes": [],
+        "leaderStudyYears": [],
+        "teamSize": null,
+        "requirements": [
+          {
+            "id": "correct-group",
+            "label": "已核对院校/学历对应组别，不向低组别报名",
+            "quote": "不可向下填报"
+          },
+          {
+            "id": "preliminary",
+            "label": "已确认自己属于赛点或非赛点，并完成相应初赛安排",
+            "quote": "非赛点院校的参赛选手应在规定时间内参加初赛"
+          }
+        ]
+      }
+    },
+    {
+      "name": "第十八届蓝桥杯（人工智能赛等）",
+      "cat": "竞赛",
+      "direction": "科技创新",
+      "org": "蓝桥杯大赛组委会（开封职业学院转发）",
+      "aud": "参赛资格及赛项要求以官网为准",
+      "field": "全国",
+      "a": 24.0,
+      "note": "AI赛截止14:00；设计赛项截止另为2027-04-26；正式全日制学籍，具体科目/组别另核；2027年4月省赛、6月总决赛不是结果发布日期。",
+      "id": "fm-011",
+      "dates": {
+        "start": "2026-10-08",
+        "end": "2026-12-18",
+        "award": null,
+        "deadlineAt": "2026-12-18T14:00:00+08:00",
+        "timezone": "Asia/Shanghai",
+        "published": "2026-10-22"
+      },
+      "source": {
+        "url": "https://xxgcxy.kfvc.edu.cn/2026/1022/c206a11078/pagem.htm",
+        "kind": "official-notice",
+        "verification": "verified",
+        "verifiedAt": "2026-10-25",
+        "lastAttemptAt": "2026-10-25",
+        "lastAttemptResult": "http-200-body-reviewed",
+        "importedClaimedCheckedAt": "2026-10-24",
+        "importedClaimedStatus": "报名窗口内（待复核）",
+        "registrationOpenOn": null,
+        "evidence": {
+          "bodySha256": "adbca902fe91ec50a0a68313892b9646867db7068e4f6a48b163134e197302e7",
+          "quotes": [
+            "2026年10月8日10:00—2026年12月18日14:00",
+            "具有正式全日制学籍"
+          ],
+          "scope": "核实公告所载日期与已列资格；不代表审核通过或实时接受报名。",
+          "monitorHash": "bd365f987cf36bc8570c6b0bfbbfec14d6ec794a23d50ad77507098e2a79b2a9"
+        }
+      },
+      "eligibility": {
+        "schools": [],
+        "regions": [],
+        "degrees": [
+          "专科",
+          "本科",
+          "硕士",
+          "博士"
+        ],
+        "enrollmentYears": [],
+        "studyYears": [],
+        "majorGroups": [],
+        "enrolled": true,
+        "rulesComplete": false,
+        "basis": "2026-10-25 已阅读官方正文；仅将明确条件用于硬匹配，其余条件在资格路径中复核。",
+        "studyModes": [
+          "全日制"
+        ],
+        "leaderStudyYears": [],
+        "teamSize": null,
+        "requirements": [
+          {
+            "id": "subject-group",
+            "label": "已阅读目标科目和组别规则，确认当前学历/学校符合要求",
+            "quote": "符合相关科目报名要求"
+          },
+          {
+            "id": "schedule",
+            "label": "多科目报名不存在竞赛时间冲突；晋级决赛时按规定只选一科目",
+            "quote": "比赛时间相同的科目，参赛选手仅限选择其中一个科目报名"
+          }
+        ]
+      }
+    },
+    {
+      "name": "第十八届蓝桥杯（视觉艺术设计／数字科技创新赛）",
+      "cat": "竞赛",
+      "direction": "设计创意",
+      "org": "蓝桥杯大赛组委会（开封职业学院转发）",
+      "aud": "参赛资格及赛项要求以官网为准",
+      "field": "全国",
+      "a": 26.4,
+      "note": "作品提交截止14:00；以主办方最新公告为准；正式全日制学籍，具体科目/组别另核；2027年4月省赛、6月总决赛不是结果发布日期。",
+      "id": "fm-012",
+      "dates": {
+        "start": "2026-10-08",
+        "end": "2027-04-26",
+        "award": null,
+        "deadlineAt": "2027-04-26T14:00:00+08:00",
+        "timezone": "Asia/Shanghai",
+        "published": "2026-10-22"
+      },
+      "source": {
+        "url": "https://xxgcxy.kfvc.edu.cn/2026/1022/c206a11078/pagem.htm",
+        "kind": "official-notice",
+        "verification": "verified",
+        "verifiedAt": "2026-10-25",
+        "lastAttemptAt": "2026-10-25",
+        "lastAttemptResult": "http-200-body-reviewed",
+        "importedClaimedCheckedAt": "2026-10-24",
+        "importedClaimedStatus": "报名窗口内（待复核）",
+        "registrationOpenOn": null,
+        "evidence": {
+          "bodySha256": "adbca902fe91ec50a0a68313892b9646867db7068e4f6a48b163134e197302e7",
+          "quotes": [
+            "2026年10月8日10:00—2027年4月26日14:00",
+            "具有正式全日制学籍"
+          ],
+          "scope": "核实公告所载日期与已列资格；不代表审核通过或实时接受报名。",
+          "monitorHash": "bd365f987cf36bc8570c6b0bfbbfec14d6ec794a23d50ad77507098e2a79b2a9"
+        }
+      },
+      "eligibility": {
+        "schools": [],
+        "regions": [],
+        "degrees": [
+          "专科",
+          "本科",
+          "硕士",
+          "博士"
+        ],
+        "enrollmentYears": [],
+        "studyYears": [],
+        "majorGroups": [],
+        "enrolled": true,
+        "rulesComplete": false,
+        "basis": "2026-10-25 已阅读官方正文；仅将明确条件用于硬匹配，其余条件在资格路径中复核。",
+        "studyModes": [
+          "全日制"
+        ],
+        "leaderStudyYears": [],
+        "teamSize": null,
+        "requirements": [
+          {
+            "id": "subject-group",
+            "label": "已阅读目标科目和组别规则，确认当前学历/学校符合要求",
+            "quote": "符合相关科目报名要求"
+          },
+          {
+            "id": "schedule",
+            "label": "多科目报名不存在竞赛时间冲突；晋级决赛时按规定只选一科目",
+            "quote": "比赛时间相同的科目，参赛选手仅限选择其中一个科目报名"
+          }
+        ]
+      }
+    },
+    {
+      "name": "2027年第四届大学生数据要素素质大赛",
+      "cat": "竞赛",
+      "direction": "科技创新",
+      "org": "长沙理工大学数学与统计学院公告",
+      "aud": "本校本科生/研究生，每队3—5人、不可跨校；毕业2年内未就业校友另可与在校生组队",
+      "field": "长沙理工大学校内组织（全国赛事）",
+      "a": 2.1,
+      "note": "本条仅核验长沙理工大学组织通知，不外推为全国通用规则。11月1日—12月31日报名；需本校指导教师、赛区及每人仅一队等复核。",
+      "id": "fm-013",
+      "dates": {
+        "start": "2026-11-01",
+        "end": "2026-12-31",
+        "award": null,
+        "deadlineAt": null,
+        "timezone": "Asia/Shanghai",
+        "published": "2026-10-21"
+      },
+      "source": {
+        "url": "https://www.csust.edu.cn/stxy/info/1053/10965.htm",
+        "kind": "official-notice",
+        "verification": "verified",
+        "verifiedAt": "2026-10-25",
+        "lastAttemptAt": "2026-10-25",
+        "lastAttemptResult": "http-200-body-reviewed",
+        "importedClaimedCheckedAt": "2026-10-24",
+        "importedClaimedStatus": "尚未开始",
+        "registrationOpenOn": null,
+        "evidence": {
+          "bodySha256": "5eefaa9a0a6e7ecb294f062315733f2f66a472126482895b0097d213bb72de41",
+          "quotes": [
+            "参赛对象：我校全日制在校本科生、研究生",
+            "报名时间：2026 年 11 月 1 日—12 月 31 日",
+            "每队3—5 人",
+            "不得跨校"
+          ],
+          "scope": "核实公告所载日期与已列资格；不代表审核通过或实时接受报名。",
+          "monitorHash": "b0e153a30d1aece719f7b4e86deaf8ff7c5aa945052c7908422b198c1bc25098"
+        }
+      },
+      "eligibility": {
+        "schools": [
+          "长沙理工大学"
+        ],
+        "regions": [],
+        "degrees": [
+          "本科",
+          "硕士",
+          "博士"
+        ],
+        "enrollmentYears": [],
+        "studyYears": [],
+        "majorGroups": [],
+        "enrolled": null,
+        "rulesComplete": false,
+        "basis": "2026-10-25 已阅读官方正文；仅将明确条件用于硬匹配，其余条件在资格路径中复核。",
+        "studyModes": [
+          "全日制"
+        ],
+        "leaderStudyYears": [],
+        "teamSize": {
+          "min": 3,
+          "max": 5
+        },
+        "requirements": [
+          {
+            "id": "single-team",
+            "label": "本人只参加一队，所有队员符合不可跨校要求",
+            "quote": "每人限参加一队"
+          },
+          {
+            "id": "mentor",
+            "label": "已确定1—2名本校在职指导教师",
+            "quote": "每队配 1—2 名本校在职教师指导"
+          },
+          {
+            "id": "track",
+            "label": "已选择正确分赛区和赛道，不报名职业教育赛区",
+            "quote": "不得报名职业教育赛区"
+          }
+        ]
+      }
+    },
+    {
+      "name": "第十二届全国大学生生命科学竞赛（科学探究类）",
+      "cat": "竞赛",
+      "direction": "学术科研",
+      "org": "全国大学生生命科学竞赛组委会（温州大学转发）",
+      "aud": "生命科学相关团队，参赛资格需按赛事规则复核",
+      "field": "全国",
+      "a": 3.5,
+      "note": "正文确认2027年1月31日前完成网报，4月15日交材料；开始日期及完整学生/团队规则仍待附件核实。省赛、决赛日期不作为确定结果日。",
+      "id": "fm-014",
+      "dates": {
+        "start": null,
+        "end": "2027-01-31",
+        "award": null,
+        "deadlineAt": null,
+        "timezone": "Asia/Shanghai",
+        "published": "2026-09-22"
+      },
+      "source": {
+        "url": "https://shxy.wzu.edu.cn/info/1068/161351.htm",
+        "kind": "official-notice",
+        "verification": "verified",
+        "verifiedAt": "2026-10-25",
+        "lastAttemptAt": "2026-10-25",
+        "lastAttemptResult": "http-200-body-reviewed",
+        "importedClaimedCheckedAt": "2026-10-24",
+        "importedClaimedStatus": "报名窗口内（待复核）",
+        "registrationOpenOn": null,
+        "evidence": {
+          "bodySha256": "af4fd9b5c3bf99fc31da71776626e0ce0fc40bfc63a019dba76b432e3f576041",
+          "quotes": [
+            "2027年1月31日前",
+            "2027年4月15日，提交所有材料截止"
+          ],
+          "scope": "核实公告所载日期与已列资格；不代表审核通过或实时接受报名。",
+          "monitorHash": "1b4a8ca0e21092c7c41bf8a91801efe57301f3bd358e910ff329c6331bfae051"
+        }
+      },
+      "eligibility": {
+        "schools": [],
+        "regions": [],
+        "degrees": [],
+        "enrollmentYears": [],
+        "studyYears": [],
+        "majorGroups": [],
+        "enrolled": null,
+        "rulesComplete": false,
+        "basis": "2026-10-25 已阅读官方正文；仅将明确条件用于硬匹配，其余条件在资格路径中复核。",
+        "studyModes": [],
+        "leaderStudyYears": [],
+        "teamSize": null,
+        "requirements": []
+      }
+    },
+    {
+      "name": "第十八届蓝桥杯 · 智能装备数字化建模",
+      "cat": "竞赛",
+      "direction": "科技创新",
+      "org": "赛事组委会（西安交通大学教务处转发）",
+      "aud": "参见已核验条件及完整赛项规则",
+      "field": "全国",
+      "a": 28,
+      "note": "蓝桥杯数字科技创新具体赛项，非独立赛事总量。初赛报名与作品提交同一截止；使用MWORKS；决赛预计时间不是评奖结果日期。西安交大校内QQ群仅适用于该校。",
+      "id": "fm-015",
+      "dates": {
+        "start": "2026-10-08",
+        "end": "2027-04-26",
+        "award": null,
+        "deadlineAt": "2027-04-26T14:00:00+08:00",
+        "timezone": "Asia/Shanghai",
+        "published": "2026-10-19"
+      },
+      "source": {
+        "url": "https://jwc.xjtu.edu.cn/info/1172/10543.htm",
+        "kind": "official-notice",
+        "verification": "verified",
+        "verifiedAt": "2026-10-25",
+        "lastAttemptAt": "2026-10-25",
+        "lastAttemptResult": "http-200-body-reviewed",
+        "registrationOpenOn": null,
+        "evidence": {
+          "bodySha256": "bf970a7da52da6f19e76527d888e3d8b1143a7fce856e8f70c1a58d70f20549e",
+          "quotes": [
+            "全国选拔赛报名及作品提交时间：2026年10月8日10:00—2027年4月26日14:00。",
+            "每队由1—3名学生组成，不允许跨学校组队",
+            "具有正式全日制学籍并符合相关科目报名要求的研究生、本科生及高职高专学生"
+          ],
+          "scope": "已阅读官方高校通知；明确区分全国赛项要求与校内组织范围，不代表报名审核通过。",
+          "monitorHash": "b2b58f7df7be13c3be01a642e150d701f2a5efb6d89ee5d61bc65548180aae58"
+        },
+        "importedClaimedCheckedAt": null,
+        "importedClaimedStatus": "新核验记录，无V80导入声明"
+      },
+      "eligibility": {
+        "schools": [],
+        "regions": [],
+        "degrees": [
+          "专科",
+          "本科",
+          "硕士",
+          "博士"
+        ],
+        "enrollmentYears": [],
+        "studyYears": [],
+        "majorGroups": [],
+        "enrolled": true,
+        "rulesComplete": false,
+        "basis": "2026-10-25 人工阅读官方通知。未覆盖的赛项规则须继续核对；个人确认不是官方审查。",
+        "studyModes": [
+          "全日制"
+        ],
+        "leaderStudyYears": [],
+        "teamSize": {
+          "min": 1,
+          "max": 3
+        },
+        "requirements": [
+          {
+            "id": "same-school",
+            "label": "所有参赛学生来自同一学校",
+            "quote": "不允许跨学校组队"
+          },
+          {
+            "id": "group",
+            "label": "已按学历选择正确组别并核实完整赛项规则",
+            "quote": "职业院校组仅限高职高专学生"
+          }
+        ]
+      }
+    },
+    {
+      "name": "第十二届智能农业装备创新大赛 · 西安交大校内报名",
+      "cat": "竞赛",
+      "direction": "科技创新",
+      "org": "赛事组委会（西安交通大学教务处转发）",
+      "aud": "参见已核验条件及完整赛项规则",
+      "field": "西安交通大学校内",
+      "a": 29,
+      "note": "本记录仅为西安交通大学校内报名，10月30日不是全国截止。官网报名11月30日，作品12月20日；非全日制全脱产研究生有条件允许，不能按普通非全日制一律拒绝。",
+      "id": "fm-016",
+      "dates": {
+        "start": "2026-09-10",
+        "end": "2026-10-30",
+        "award": null,
+        "deadlineAt": null,
+        "timezone": "Asia/Shanghai",
+        "published": "2026-10-16"
+      },
+      "source": {
+        "url": "https://jwc.xjtu.edu.cn/info/1172/10541.htm",
+        "kind": "official-notice",
+        "verification": "verified",
+        "verifiedAt": "2026-10-25",
+        "lastAttemptAt": "2026-10-25",
+        "lastAttemptResult": "http-200-body-reviewed",
+        "registrationOpenOn": null,
+        "evidence": {
+          "bodySha256": "58261e558e0ed8b9231e66de403913bd7adc1bfdddd6104e7ddd91b4e4664faa",
+          "quotes": [
+            "校内报名截止日期：2026年10月30日。",
+            "大赛官网报名时间：2026年9月10日—11月30日。",
+            "每个参赛队学生人数2~5人，指导教师不多于3人。"
+          ],
+          "scope": "已阅读官方高校通知；明确区分全国赛项要求与校内组织范围，不代表报名审核通过。",
+          "monitorHash": "e3a63e1568ae8cacc375b0db8cdbef54a7dfe045a07fcfcc28f2990ba2db96a7"
+        },
+        "importedClaimedCheckedAt": null,
+        "importedClaimedStatus": "新核验记录，无V80导入声明"
+      },
+      "eligibility": {
+        "schools": [
+          "西安交通大学"
+        ],
+        "regions": [],
+        "degrees": [
+          "专科",
+          "本科",
+          "硕士",
+          "博士"
+        ],
+        "enrollmentYears": [],
+        "studyYears": [],
+        "majorGroups": [],
+        "enrolled": true,
+        "rulesComplete": false,
+        "basis": "2026-10-25 人工阅读官方通知。未覆盖的赛项规则须继续核对；个人确认不是官方审查。",
+        "studyModes": [],
+        "leaderStudyYears": [],
+        "teamSize": {
+          "min": 2,
+          "max": 5
+        },
+        "requirements": [
+          {
+            "id": "registered",
+            "label": "2026年9月前（含9月）已正式注册，属于公告规定的非成人教育学生",
+            "quote": "2026年9月前（含9月）正式注册"
+          },
+          {
+            "id": "study-track",
+            "label": "已核实学历、学习形式及A/B/C/D类别的队长和组别要求",
+            "quote": "全日制、非全日制（全脱产学习）研究生"
+          },
+          {
+            "id": "mentor",
+            "label": "指导教师不超过3人",
+            "quote": "指导教师不多于3人"
+          }
+        ]
+      }
+    }
+  ]
+}

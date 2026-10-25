@@ -1,0 +1,25 @@
+{
+  "checkedAt": "2026-10-25",
+  "id": "fm-008",
+  "conclusion": "unresolved-date-conflict",
+  "evidence": [
+    {
+      "kind": "official-public-api",
+      "url": "https://www.ai-race.com.cn/prod-api/open/competition/detail",
+      "field": "signEndDt",
+      "value": "2026-11-10"
+    },
+    {
+      "kind": "official-notice-in-public-api",
+      "url": "https://www.ai-race.com.cn/prod-api/open/competition/detail",
+      "quote": "2026年9月18日—10月20日",
+      "value": "2026-10-20"
+    },
+    {
+      "kind": "frontend-fallback-not-an-official-extension",
+      "url": "https://www.ai-race.com.cn/static/js/index-D47QhDwo.js",
+      "value": "2026-10-31"
+    }
+  ],
+  "action": "Keep record pending with null deadline; do not recommend a date until an unambiguous official update resolves the conflict."
+}

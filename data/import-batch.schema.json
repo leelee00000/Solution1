@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FlowMate opportunity batch v1",
+  "description": "JSON array or envelope. JSONL uses one opportunity per line. Semantic and manual-evidence checks also run in tools/catalogue.py.",
+  "oneOf": [
+    {"type":"array","items":{"$ref":"opportunity.schema.json#/$defs/opportunity"}},
+    {"type":"object","required":["opportunities"],"properties":{"schemaVersion":{"const":1},"baseline":{"const":"V80"},"description":{"type":"string"},"opportunities":{"type":"array","items":{"$ref":"opportunity.schema.json#/$defs/opportunity"}}}}
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "reviewedAt": "2026-10-25",
+  "reviews": [
+    {
+      "id": "fm-001",
+      "reviewedAt": "2026-10-25",
+      "url": "https://www.moe.gov.cn/srcsite/A08/s5672/202607/t20260731_1445670.html",
+      "bodySha256": "afb111d5dd7293faccce913108d624e731f34287cbf8eced91b832cda91cce9c",
+      "quotes": [
+        "报名系统开放时间为2026年8月10日，报名截止时间为9月25日12时。",
+        "参赛人员年龄不超过35岁"
+      ],
+      "scope": "核实公告所载日期与已列资格；不代表审核通过或实时接受报名。"
+    },
+    {
+      "id": "fm-002",
+      "reviewedAt": "2026-10-25",
+      "url": "https://www.cmit.cn/wap/index.html",
+      "bodySha256": "ed298997b38a1bc38fb15b45cb2e014774918636d9c3cc186c455ae9e2b18313",
+      "quotes": [
+        "⏰ 2026年10月23日23:59:59截止",
+        "每个参赛团队学生人数不超过5人"
+      ],
+      "scope": "核实公告所载日期与已列资格；不代表审核通过或实时接受报名。"
+    },
+    {
+      "id": "fm-003",
+      "reviewedAt": "2026-10-25",
+      "url": "https://jw.cqjtu.edu.cn/info/1074/11035.htm",
+      "bodySha256": "c9ff8b7ed8161ed5f51fca30e81d9bbb43b4026ccce47bba2ebb60d1748b6af9",
+      "quotes": [
+        "项目负责人于11月20日前通过项目管理平台",
+        "项目负责人须为全日制普通本科二年级或三年级学生",
+        "团队人数不得超过5人"
+      ],
+      "scope": "核实公告所载日期与已列资格；不代表审核通过或实时接受报名。"
+    },
+    {
+      "id": "fm-004",
+      "reviewedAt": "2026-10-25",
+      "url": "https://jwc.upc.edu.cn/2026/1008/c18523a502163/page.htm",
+      "bodySha256": "af6384c5b4baca098d69577c921efe93e1bf669e83106ac5220e69137105a70b",
+      "quotes": [
+        "11 月 1 日-11 月 8 日",
+        "项目负责人填写申报书",
+        "10 月 23 日-10 月 31 日"
+      ],
+      "scope": "核实公告所载日期与已列资格；不代表审核通过或实时接受报名。",
+      "documentUrl": "https://jwc.upc.edu.cn/_upload/article/files/5b/e4/e6c864274535810713862774c4df/de72f1f1-7873-4881-80d9-1244c7abf652.pdf",
+      "documentFormat": "pdf-text"
+    },
+    {
+      "id": "fm-005",
+      "reviewedAt": "2026-10-25",
+      "url": "https://rst.hubei.gov.cn/zfxxgk/zc/qtzdgkwj/202603/t20260331_5902664.shtml",
+      "bodySha256": "5fda3c1320b17352d96d631de3bf13a71fae2f8eca1d92955386581371b3d3bb",
+      "quotes": [
+        "4月1日至5月15日期间",
+        "本项目设创意组、创业组"
+      ],
+      "scope": "核实公告所载日期与已列资格；不代表审核通过或实时接受报名。"
+    },
+    {
+      "id": "fm-006",
+      "reviewedAt": "2026-10-25",
+      "url": "https://mphylab.tongji.edu.cn/page/home/info23622_INFO",
+      "bodySha256": "7febcb0e21a558f7369af919aa5df3dda9e66cf07f5d8528f8d4fb4462466406",
+      "quotes": [
+        "2025级和2026级全校理工科各专业学生。",
+        "报名时间：2026年10月20日 — 2026年10月31日",
+        "每队人数不超过5人"
+      ],
+      "scope": "核实公告所载日期与已列资格；不代表审核通过或实时接受报名。"
+    },
+    {
+      "id": "fm-007",
+      "reviewedAt": "2026-10-25",
+      "url": "https://nic.tongji.edu.cn/info/1029/1570.htm",
+      "bodySha256": "73cfe36f23ee9998d39ccdce2b37c91c2f78004c54ca260a1511acf3d79f4e3d",
+      "quotes": [
+        "面向我校全日制在校学生",
+        "即日—2026年10月15日"
+      ],
+      "scope": "核实公告所载日期与已列资格；不代表审核通过或实时接受报名。"
+    },
+    {
+      "id": "fm-009",
+      "reviewedAt": "2026-10-25",
+      "url": "https://www.nmmcm.org.cn/Competition/",
+      "bodySha256": "3048b84137c9bef8a4d7a674bfea9b127180b62fcc73dcd411b2f77d46a609cc",
+      "quotes": [
+        "报名截止：即日起至2026年11月20日06:00",
+        "每队1–3名学生",
+        "普通高校全日制在校生"
+      ],
+      "scope": "核实公告所载日期与已列资格；不代表审核通过或实时接受报名。"
+    },
+    {
+      "id": "fm-010",
+      "reviewedAt": "2026-10-25",
+      "url": "https://jwc.xjtu.edu.cn/info/1172/10505.htm",
+      "bodySha256": "ceff0b1fca52c1b9c315219d8d2435bbd905de0cc818f7cf2fc2e7036d307fcb",
+      "quotes": [
+        "报名时间：2026年9月1日—2026年11月18日",
+        "全国各高校的研究生及本、专科所有年级学生均可自愿报名参赛"
+      ],
+      "scope": "核实公告所载日期与已列资格；不代表审核通过或实时接受报名。"
+    },
+    {
+      "id": "fm-011",
+      "reviewedAt": "2026-10-25",
+      "url": "https://xxgcxy.kfvc.edu.cn/2026/1022/c206a11078/pagem.htm",
+      "bodySha256": "adbca902fe91ec50a0a68313892b9646867db7068e4f6a48b163134e197302e7",
+      "quotes": [
+        "2026年10月8日10:00—2026年12月18日14:00",
+        "具有正式全日制学籍"
+      ],
+      "scope": "核实公告所载日期与已列资格；不代表审核通过或实时接受报名。"
+    },
+    {
+      "id": "fm-012",
+      "reviewedAt": "2026-10-25",
+      "url": "https://xxgcxy.kfvc.edu.cn/2026/1022/c206a11078/pagem.htm",
+      "bodySha256": "adbca902fe91ec50a0a68313892b9646867db7068e4f6a48b163134e197302e7",
+      "quotes": [
+        "2026年10月8日10:00—2027年4月26日14:00",
+        "具有正式全日制学籍"
+      ],
+      "scope": "核实公告所载日期与已列资格；不代表审核通过或实时接受报名。"
+    },
+    {
+      "id": "fm-013",
+      "reviewedAt": "2026-10-25",
+      "url": "https://www.csust.edu.cn/stxy/info/1053/10965.htm",
+      "bodySha256": "5eefaa9a0a6e7ecb294f062315733f2f66a472126482895b0097d213bb72de41",
+      "quotes": [
+        "参赛对象：我校全日制在校本科生、研究生",
+        "报名时间：2026 年 11 月 1 日—12 月 31 日",
+        "每队3—5 人",
+        "不得跨校"
+      ],
+      "scope": "核实公告所载日期与已列资格；不代表审核通过或实时接受报名。"
+    },
+    {
+      "id": "fm-014",
+      "reviewedAt": "2026-10-25",
+      "url": "https://shxy.wzu.edu.cn/info/1068/161351.htm",
+      "bodySha256": "af4fd9b5c3bf99fc31da71776626e0ce0fc40bfc63a019dba76b432e3f576041",
+      "quotes": [
+        "2027年1月31日前",
+        "2027年4月15日，提交所有材料截止"
+      ],
+      "scope": "核实公告所载日期与已列资格；不代表审核通过或实时接受报名。"
+    },
+    {
+      "id": "fm-015",
+      "reviewedAt": "2026-10-25",
+      "url": "https://jwc.xjtu.edu.cn/info/1172/10543.htm",
+      "bodySha256": "bf970a7da52da6f19e76527d888e3d8b1143a7fce856e8f70c1a58d70f20549e",
+      "quotes": [
+        "全国选拔赛报名及作品提交时间：2026年10月8日10:00—2027年4月26日14:00。",
+        "每队由1—3名学生组成，不允许跨学校组队",
+        "具有正式全日制学籍并符合相关科目报名要求的研究生、本科生及高职高专学生"
+      ],
+      "scope": "已阅读官方高校通知；明确区分全国赛项要求与校内组织范围，不代表报名审核通过。"
+    },
+    {
+      "id": "fm-016",
+      "reviewedAt": "2026-10-25",
+      "url": "https://jwc.xjtu.edu.cn/info/1172/10541.htm",
+      "bodySha256": "58261e558e0ed8b9231e66de403913bd7adc1bfdddd6104e7ddd91b4e4664faa",
+      "quotes": [
+        "校内报名截止日期：2026年10月30日。",
+        "大赛官网报名时间：2026年9月10日—11月30日。",
+        "每个参赛队学生人数2~5人，指导教师不多于3人。"
+      ],
+      "scope": "已阅读官方高校通知；明确区分全国赛项要求与校内组织范围，不代表报名审核通过。"
+    }
+  ]
+}

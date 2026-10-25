@@ -1,0 +1,30 @@
+{
+  "name": "flowmate-v80",
+  "version": "0.1.0",
+  "private": true,
+  "description": "FlowMate V80 maintenance, offline opportunity exploration and eligibility matching",
+  "scripts": {
+    "start": "python tools/serve.py",
+    "build": "python tools/build.py",
+    "check:data": "python tools/build.py --check",
+    "test:browser": "node tests/browser.cjs",
+    "test:data": "python tests/data_test.py",
+    "test": "npm run test:data && npm run test:refresh && npm run test:browser && npm run test:labels && npm run test:product && npm run test:galaxy && npm run test:interaction && npm run test:visual && npm run test:exploration && npm run test:depth && npm run test:import && npm run test:scale && npm run test:live",
+    "test:labels": "node tests/orbit-labels.cjs",
+    "refresh:data": "python tools/refresh_data.py",
+    "test:refresh": "python tests/refresh_test.py",
+    "test:product": "node tests/product-readiness.cjs",
+    "test:galaxy": "node tests/galaxy-priority.cjs",
+    "test:interaction": "node tests/interaction-polish.cjs",
+    "test:visual": "node tests/visual-refinement.cjs",
+    "test:exploration": "node tests/galaxy-exploration.cjs",
+    "test:depth": "node tests/depth-order.cjs",
+    "import:data": "python tools/import_catalogue.py",
+    "test:import": "python tests/import_catalogue_test.py",
+    "test:scale": "node tests/catalogue-scale.cjs",
+    "test:live": "node tests/live-catalogue.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}
