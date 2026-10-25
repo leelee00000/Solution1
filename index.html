@@ -1539,9 +1539,9 @@ document.getElementById('savedCount').textContent=saved.size;const canvas=docume
  if(selected){ctx.beginPath();ctx.ellipse(x,y,r*1.52,r*.37,-.43,0,Math.PI);ctx.strokeStyle='#4963c76b';ctx.lineWidth=.8;ctx.stroke()}ctx.restore();
 }
 
-// One painter's order for the central star, planets, their rings and focus outlines.
+// Screen-space painter order: lower centres cover higher centres, including the star.
 function paintOrbitCenter(cx,cy,r){ctx.save();let g=ctx.createRadialGradient(cx-7,cy-8,1,cx,cy,43);g.addColorStop(0,'#fffdf4');g.addColorStop(.65,'#efe2c5');g.addColorStop(1,'#dddccf');ctx.fillStyle=g;ctx.beginPath();ctx.arc(cx,cy,r,0,TAU);ctx.fill();ctx.fillStyle='#2e45bd';ctx.font='25px Georgia';ctx.textAlign='center';ctx.fillText('✦',cx,cy+8);ctx.font='11px Georgia';ctx.fillText('FlowMate',cx,cy+(W<500?47:58));ctx.textAlign='left';ctx.restore();}
-function paintOrbitScene(objects){objects.sort((a,b)=>a.depth-b.depth||(a.type==='center'?-1:b.type==='center'?1:a.i-b.i));for(const body of objects){if(body.type==='center'){paintOrbitCenter(body.x,body.y,body.r);continue}const it=items[body.i];if(body.i===active||body.i===hover||body.i===keyboardPreview||galaxyInteraction.compared.includes(it.id)){ctx.save();ctx.beginPath();ctx.arc(body.x,body.y,body.r+4,0,TAU);ctx.strokeStyle='#6f83ca28';ctx.lineWidth=.7;ctx.stroke();ctx.restore()}planet(body.x,body.y,body.bodyRadius||body.r,it.direction,body.i===active,body.bright,ctx,body.i)}}
+function paintOrbitScene(objects){objects.sort((a,b)=>a.y-b.y||a.depth-b.depth||(a.type==='center'?-1:b.type==='center'?1:a.i-b.i));for(const body of objects){if(body.type==='center'){paintOrbitCenter(body.x,body.y,body.r);continue}const it=items[body.i];if(body.i===active||body.i===hover||body.i===keyboardPreview||galaxyInteraction.compared.includes(it.id)){ctx.save();ctx.beginPath();ctx.arc(body.x,body.y,body.r+4,0,TAU);ctx.strokeStyle='#6f83ca28';ctx.lineWidth=.7;ctx.stroke();ctx.restore()}planet(body.x,body.y,body.bodyRadius||body.r,it.direction,body.i===active,body.bright,ctx,body.i)}}
 
 // Persistent, readable labels. Orbital motion never decides whether text exists.
 const orbitMain=document.querySelector('.main');
@@ -1586,7 +1586,7 @@ function updateOrbitLabels(visible,geometry){
  // Identity badges replace leader lines. No long stroke connects a label to a planet.
  orbitBadges=[];const occupiedBadges=[];
  for(const p of positions){const it=items[p.i],size=9,anchorRadius=p.badgeR||p.r,opts=[[-1,-1],[1,-1],[-1,1],[1,1],[0,-1],[0,1]].map(([dx,dy])=>({x:p.x+dx*(anchorRadius+8),y:p.y+dy*(anchorRadius+8)}));
-  const blocked=q=>q.x<size||q.x>W-size||q.y<size||q.y>H-size||labelBoxes.some(b=>q.x+size>b.x&&q.x-size<b.x+b.w&&q.y+size>b.y&&q.y-size<b.y+b.h)||positions.some(other=>other.i!==p.i&&Math.hypot(q.x-other.x,q.y-other.y)<size+(other.badgeR||other.r))||occupiedBadges.some(other=>Math.hypot(q.x-other.x,q.y-other.y)<size*2+2)||Math.hypot(q.x-geometry.cx,q.y-geometry.cy)<(W<500?25:36)+size+6;
+  const blocked=q=>q.x<size||q.x>W-size||q.y<size||q.y>H-size||labelBoxes.some(b=>q.x+size>b.x&&q.x-size<b.x+b.w&&q.y+size>b.y&&q.y-size<b.y+b.h)||positions.some(other=>other.i!==p.i&&Math.hypot(q.x-other.x,q.y-other.y)<size+(other.badgeR||other.r))||occupiedBadges.some(other=>Math.hypot(q.x-other.x,q.y-other.y)<size*2+2)||Math.hypot(q.x-geometry.cx,q.y-geometry.cy)<(W<500?25:36)+size+6||(Math.abs(q.x-geometry.cx)<48&&Math.abs(q.y-(geometry.cy+(W<500?47:58)))<size+9);
   const q=opts.find(q=>!blocked(q))||opts[0];occupiedBadges.push(q);orbitBadges.push({...q,i:p.i,code:orbitCode(it)});
   const highlighted=p.i===active||p.i===hover||p.i===keyboardPreview||galaxyInteraction.compared.includes(it.id);
 
@@ -1784,7 +1784,7 @@ function findOrbitHit(x,y){
  // Follow the actual paint order. The opaque centre blocks hits on worlds behind it.
  for(let k=sceneObjects.length-1;k>=0;k--){const body=sceneObjects[k];if(Math.hypot(body.x-x,body.y-y)<=(body.bodyRadius||body.r))return body.type==='planet'?body:null}
  // Extra touch padding applies only outside painted bodies and excludes fully hidden worlds.
- return positions.filter(p=>!sceneObjects.some(front=>front.depth>p.depth&&Math.hypot(front.x-p.x,front.y-p.y)+(p.bodyRadius||p.r)<=(front.bodyRadius||front.r))).map(p=>({...p,d:Math.hypot(p.x-x,p.y-y)})).filter(p=>p.d<p.r+10).sort((a,b)=>a.d-b.d||b.depth-a.depth)[0]
+ return positions.filter(p=>!sceneObjects.some(front=>sceneObjects.indexOf(front)>sceneObjects.indexOf(p)&&Math.hypot(front.x-p.x,front.y-p.y)+(p.bodyRadius||p.r)<=(front.bodyRadius||front.r))).map(p=>({...p,d:Math.hypot(p.x-x,p.y-y)})).filter(p=>p.d<p.r+10).sort((a,b)=>a.d-b.d||b.y-a.y)[0]
 }
 
 
