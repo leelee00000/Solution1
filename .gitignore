@@ -12,3 +12,4 @@ artifacts/ai-*
 artifacts/import-backups/
 artifacts/load-test*/
 artifacts/qa-fixture/
+artifacts/qa-design-fixture/

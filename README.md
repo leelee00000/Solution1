@@ -8,7 +8,11 @@ V80延续版本：稳定ID生成行星外观，支持星系拖动、暂停、下
 
 [资料接入接口、导入命令与限制](docs/data-ingestion.md) · [规范数据](data/opportunities.json) · [JSON Schema](data/opportunity.schema.json)
 
-支持JSON、JSONL和公开HTTPS JSON；默认预检，显式apply才写入。官方核验需要原文证据与人工审校，不能从HTTP200推断。当前真实资料16条；5000条仅为隔离压力测试。
+支持JSON、JSONL和公开HTTPS JSON；默认预检，显式apply才写入。官方核验需要原文证据与人工审校，不能从HTTP200推断。当前真实资料21条；新增设计本科候选覆盖好创意、未来设计师NCDA和米兰设计周，赛制层级与校内认定分开记录。5000条仅为隔离压力测试。
+
+设计本科快捷入口：https://leelee00000.github.io/Solution1/?focus=design-bachelor
+
+[本批设计候选、日期与条件](docs/design-opportunities.md)
 
 ## 开发与验证
 

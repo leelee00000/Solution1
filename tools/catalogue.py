@@ -30,6 +30,9 @@ def validate_catalogue(data,reviews=None):
   req=rules['requirements']
   if len({r['id'] for r in req})!=len(req) or any(not r['quote'].strip() or not r['label'].strip() for r in req):raise ValueError(f'{ident}: duplicate or empty eligibility requirements')
   if rules['rulesComplete'] and source['verification']!='verified':raise ValueError(f'{ident}: pending source cannot have complete verified rules')
+  competition=row.get('competition',{})
+  for flag,basis,known in [('level','levelBasis',competition.get('level') in ('national','provincial')),('bachelorEntry','bachelorBasis',competition.get('bachelorEntry')=='allowed')]:
+   if known and (source['verification']!='verified' or not competition.get(basis) or competition[basis] not in source.get('evidence',{}).get('quotes',[])):raise ValueError(f'{ident}: competition {flag} needs verified quoted evidence')
   if source['verification']=='verified' and reviews is not None:
    review=registry.get(ident);evidence=source.get('evidence',{})
    if not review or any([review.get('url')!=source['url'],review.get('reviewedAt')!=source['verifiedAt'],review.get('bodySha256')!=evidence.get('bodySha256'),review.get('quotes')!=evidence.get('quotes')]):raise ValueError(f'{ident}: missing or mismatched manual review evidence')

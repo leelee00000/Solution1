@@ -427,6 +427,56 @@
             "requirements"
           ],
           "additionalProperties": false
+        },
+        "competition": {
+          "type": "object",
+          "properties": {
+            "seriesId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "seriesName": {
+              "type": "string",
+              "minLength": 1
+            },
+            "track": {
+              "type": "string",
+              "minLength": 1
+            },
+            "level": {
+              "enum": [
+                "national",
+                "provincial",
+                "unknown"
+              ]
+            },
+            "levelBasis": {
+              "type": "string"
+            },
+            "bachelorEntry": {
+              "enum": [
+                "allowed",
+                "unverified"
+              ]
+            },
+            "bachelorBasis": {
+              "type": "string"
+            },
+            "universityRecognition": {
+              "const": "unconfirmed"
+            }
+          },
+          "required": [
+            "seriesId",
+            "seriesName",
+            "track",
+            "level",
+            "levelBasis",
+            "bachelorEntry",
+            "bachelorBasis",
+            "universityRecognition"
+          ],
+          "additionalProperties": false
         }
       },
       "required": [

@@ -3,6 +3,7 @@ import argparse,concurrent.futures,hashlib,json,re,subprocess,urllib.request
 from datetime import datetime,timezone
 from html.parser import HTMLParser
 from pathlib import Path
+from urllib.parse import urlsplit
 ROOT=Path(__file__).resolve().parents[1]
 class Text(HTMLParser):
  def __init__(self):super().__init__();self.skip=0;self.chunks=[]
@@ -23,7 +24,7 @@ def fetch(url,referer=None):
 def check(row,capture):
  url=row['source']['url']
  try:
-  raw,final,status,charset=fetch(url)
+  parts=urlsplit(url);raw,final,status,charset=fetch(url,referer=parts.scheme+'://'+parts.netloc+'/')
   html=raw.decode(charset,errors='replace');title=re.search(r'<title[^>]*>(.*?)</title>',html,re.S|re.I)
   result={'id':row['id'],'url':url,'http':status,'finalUrl':final,'title':re.sub(r'\s+',' ',title[1]).strip() if title else None,'verification':'manual-content-review-required'}
   if capture:
@@ -36,7 +37,12 @@ def check(row,capture):
    else:
     file=target/(row['id']+'.html');file.write_bytes(raw);decoded=raw.decode(charset,errors='replace');parser=Text()
     if decoded.lstrip().startswith('{'):
-     payload=json.loads(decoded).get('data',{});parser.feed(payload.get('competitionInfo',''));body='\n'.join(x.strip() for x in ''.join(parser.chunks).splitlines() if x.strip());text='\n'.join([payload.get('competitionName',''),'API报名开始：'+str(payload.get('signStartDt','')),'API报名截止：'+str(payload.get('signEndDt','')),body])
+     payload=json.loads(decoded)
+     if payload.get('status')==1 and isinstance(payload.get('info',{}).get('rs'),dict):
+      article=payload['info']['rs'];parser.feed(article.get('content',''));body='\n'.join(x.strip() for x in ''.join(parser.chunks).splitlines() if x.strip());text=article.get('title','')+'\n'+body
+     elif isinstance(payload.get('data'),dict) and 'competitionInfo' in payload['data']:
+      payload=payload['data'];parser.feed(payload.get('competitionInfo',''));body='\n'.join(x.strip() for x in ''.join(parser.chunks).splitlines() if x.strip());text='\n'.join([payload.get('competitionName',''),'API报名开始：'+str(payload.get('signStartDt','')),'API报名截止：'+str(payload.get('signEndDt','')),body])
+     else:raise ValueError('Unsupported public JSON notice format')
     else:
      parser.feed(decoded);text='\n'.join(x.strip() for x in ''.join(parser.chunks).splitlines() if x.strip())
     (target/(row['id']+'.txt')).write_text(text)

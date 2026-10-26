@@ -9,7 +9,7 @@
     "check:data": "python tools/build.py --check",
     "test:browser": "node tests/browser.cjs",
     "test:data": "python tests/data_test.py",
-    "test": "npm run test:data && npm run test:refresh && npm run test:browser && npm run test:labels && npm run test:product && npm run test:galaxy && npm run test:interaction && npm run test:visual && npm run test:exploration && npm run test:depth && npm run test:import && npm run test:scale && npm run test:live",
+    "test": "npm run test:data && npm run test:refresh && npm run test:browser && npm run test:labels && npm run test:product && npm run test:galaxy && npm run test:interaction && npm run test:visual && npm run test:exploration && npm run test:depth && npm run test:import && npm run test:scale && npm run test:live && npm run test:design-data && npm run test:design && npm run test:capture",
     "test:labels": "node tests/orbit-labels.cjs",
     "refresh:data": "python tools/refresh_data.py",
     "test:refresh": "python tests/refresh_test.py",
@@ -22,7 +22,10 @@
     "import:data": "python tools/import_catalogue.py",
     "test:import": "python tests/import_catalogue_test.py",
     "test:scale": "node tests/catalogue-scale.cjs",
-    "test:live": "node tests/live-catalogue.cjs"
+    "test:live": "node tests/live-catalogue.cjs",
+    "test:design": "node tests/design-catalogue.cjs",
+    "test:design-data": "python tests/design_data_test.py",
+    "test:capture": "python tests/source_capture_test.py"
   },
   "devDependencies": {
     "playwright": "1.62.1"

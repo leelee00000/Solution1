@@ -272,10 +272,10 @@ aside{border-right-color:#dde1e799}.filters{border-color:#e6e2da80;background:#f
 .comparison-wrap{max-width:100%;overflow-x:auto}.comparison-table{border-collapse:collapse;width:100%;min-width:480px;font-size:12px;line-height:1.8;table-layout:fixed}.comparison-table th,.comparison-table td{text-align:left;vertical-align:top;padding:14px 12px;border-bottom:1px solid #e5e4de;overflow-wrap:anywhere}.comparison-table thead th{font-size:16px;color:#263a7d;font-weight:500}.comparison-table th:first-child{width:88px;font-size:11px;color:#8290a4;font-weight:400}.comparison-table td a{color:var(--blue)}.comparison-table td p{margin:5px 0}.comparison-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}.comparison-actions button{background:transparent;color:var(--blue);border:1px solid #d9deed;border-radius:24px;padding:10px 15px;font-size:12px}
 @media(min-width:791px) and (max-width:1100px){.orbit-heading{flex-wrap:nowrap}.orbit-heading .headline{flex:1;flex-basis:0}.orbit-heading .headline h1{font-size:21px}}
 @media(max-width:790px){.orbit-heading{gap:6px}.orbit-heading .key-panel{flex:0 0 40px;max-width:40px;width:40px}.galaxy-controls button{min-width:30px;height:36px}.galaxy-controls button:last-child{width:58px}.orbit-heading .bottom{margin-left:auto}.comparison-table{min-width:440px}.comparison-table th,.comparison-table td{padding:11px 8px}.comparison-table thead th{font-size:14px}}
-</style><style>.comparison-scroll-hint{display:none}@media(max-width:790px){.comparison-scroll-hint{display:block;color:#8993a9;font-size:11px}.galaxy-controls button{height:44px;min-width:34px;font-size:11px}}</style><style>.catalogue-pager{display:flex;align-items:center;justify-content:center;gap:14px;margin:14px 0;color:#8792a8;font-size:11px}.catalogue-pager[hidden]{display:none}.catalogue-pager button{border:1px solid #dce0ec;border-radius:18px;color:var(--blue);background:transparent;padding:7px 13px;font-size:11px}.catalogue-pager button:disabled{opacity:.35}.galaxy-pager{margin:6px 0 0}@media(max-width:790px){.catalogue-pager button{min-height:44px}}</style></head><body><div class="app"><aside><div><div class="brand">FlowMate</div><div class="tagline">FIND YOUR NEXT ORBIT.</div></div><nav class="nav"><button class="active" data-nav="探索"><span class="ico">◉</span><span>探索</span></button><button data-nav="机会库"><span class="ico">◇</span><span>机会库</span></button><button data-nav="我的轨迹"><span class="ico">◎</span><span>我的轨迹</span></button><button data-nav="日程"><span class="ico">▦</span><span>日程</span></button><button data-nav="收藏"><span class="ico">♡</span><span>收藏</span></button></nav><div class="aside-bottom"><button class="profile-inline" id="profileBtn">个人资格 ↗</button><br/>OPPORTUNITY<br/>FOR CURIOUS<br/>MINDS.</div></aside><main class="main"><div class="topbar"><div class="filters" id="filters"><button data-cat="全部">全部</button><button class="active" data-cat="竞赛">竞赛</button><button data-cat="科研">科研</button><button data-cat="项目">项目</button><button data-cat="创业">创业</button></div><button aria-label="搜索" class="search" id="searchBtn">⌕</button><div class="time-controls"><label for="rangeSelect">时间范围</label><select id="rangeSelect"><option value="6">未来半年</option><option selected="" value="12">未来一年</option><option value="custom" hidden>自定义</option><option value="24">未来两年</option></select><label for="dateMode">按</label><select id="dateMode"><option value="apply">报名截止</option><option value="award">评奖结果</option></select></div></div><div class="searchbox" id="searchbox"><input id="searchInput" placeholder="搜索名称、学校或方向…"/><button id="clearSearch">✕</button></div><div class="headline"><div class="kicker">YOUR OPPORTUNITY UNIVERSE / 2026</div><h1>发现下一次可能</h1></div><details class="key-panel"><summary>图例 · 颜色 / 大小</summary><strong>视觉图例 / VISUAL KEY</strong><div id="categoryLegend"></div><div class="key-scale"><i style="width:8px;height:8px"></i><i style="width:13px;height:13px"></i><i style="width:20px;height:20px"></i><span>尺寸随景深与焦点变化</span></div><div style="margin-top:8px">越靠近中心，时间越近</div><div style="margin-top:8px">编号对应行星与名称；尺寸不代表评级。悬停预览，点击固定详情。</div></details><div class="empty-note" hidden="" id="emptyNote">当前筛选暂无有已知节点的机会。可调整类别、时间或个人资格；未知日期与已截止记录见机会库。</div><div class="space" id="space"><canvas id="orbit" tabindex="0" aria-label="机会星系，悬停预览；使用左右方向键选择机会，回车查看详情"></canvas></div><div class="time-ruler candy-ruler" aria-label="未来时间范围控制"><div class="ruler-head"><span>TIME HORIZON / 时间视野</span><strong id="zoomValue">未来 12 个月</strong></div><div class="ruler-track"><div class="candy-row-label"><span>NOW · 此刻</span><span>FUTURE · 未来 ↗</span></div><div class="candy-track" id="candyTrack" aria-hidden="true"></div><input id="horizonSlider" type="range" min="1" max="36" step="0.5" value="12" aria-label="未来时间范围，单位月"><div class="ruler-ticks"><span>1月</span><span>6月</span><span>12月</span><span>18月</span><span>24月</span><span>36月</span></div></div></div><div class="bottom"><div class="stats"><div class="stat"><b id="total">08</b><span>筛选结果</span></div><div class="stat"><b id="savedCount">0</b><span>已收藏</span></div><div class="stat"><b id="highCount">0</b><span>待核实机会</span></div></div><div class="hint">DISCOVER<br/>FOCUS<br/>ACT ↗</div></div></main><section class="detail"><div class="detail-top"><small>OPPORTUNITY / 详情</small><button aria-label="下一个机会" id="next">↗</button></div><article class="card"><div class="planet-art"><span class="art-star">✦</span></div><h2 id="title"></h2><p class="planet-legend" id="planetLegend"></p><div class="badges"><span class="badge" id="category"></span><span class="badge urgent" id="urgency"></span><span class="badge" id="availability"></span></div><dl class="info"><dt>主办单位</dt><dd id="organizer"></dd><dt>面向对象</dt><dd id="audience"></dd><dt>报名时间</dt><dd id="apply"></dd><dt>所属领域</dt><dd id="field"></dd></dl><p id="eligibilitySummary" class="mini"></p><button id="editProfile" class="profile-inline">完善个人资格 ↗</button><a id="sourceLink" class="source-link" target="_blank" rel="noopener noreferrer">查看官方来源 ↗</a><details id="sourceEvidence" class="source-evidence"><summary>公告依据与限制</summary><div id="evidenceBody"></div></details><hr class="divider"/><div class="section">时间节点</div><div class="timeline" id="timeline"></div><button class="cta" id="simulateBtn">预演我的可能未来　↗</button><button class="secondary" id="pathBtn">查看资格路径　↗</button><button class="secondary" id="saveBtn">♡　收藏</button></article><p class="mini" id="sourceSummary"></p><details class="verification"><summary>机会来源清单 · 16 条（含已截止与待核记录）</summary><div class="verify-intro">星系展示所选时间范围内的已知日期样本，默认排除明确不符合个人条件的记录。待核实不等于可报名；完整清单保留未知日期和已截止记录。</div><div class="verify-list" id="verifyList"></div></details></section></div><div aria-hidden="true" class="future-overlay" id="futureOverlay"><section aria-labelledby="futureTitle" aria-modal="true" class="future-dialog" role="dialog"><header class="future-header"><div><small>FLOWMATE / POSSIBILITY STUDIO</small><h2 id="futureTitle">预演一种可能的未来</h2><p>不是预测结果，而是把期待变成可选择、可行动的路径。</p></div><button aria-label="关闭" id="closeFuture">✕</button></header><div class="future-layout"><div class="future-input"><div class="future-label">01 / 我想从这次机会得到什么</div><div class="goal-options" id="goalOptions"><button class="chosen" data-goal="作品集">完成一件代表作</button><button data-goal="能力">获得新的能力</button><button data-goal="连接">认识合作伙伴</button><button data-goal="突破">挑战更大的舞台</button></div><div class="future-label">02 / 我愿意投入多少</div><div class="range-row"><span>每周投入</span><strong id="hoursValue">6 小时</strong></div><input id="hoursRange" max="20" min="2" step="1" type="range" value="6"/><div class="range-row"><span>坚持多久</span><strong id="weeksValue">8 周</strong></div><input id="weeksRange" max="24" min="2" step="1" type="range" value="8"/><div class="future-label">03 / 目前最大的顾虑</div><div class="risk-options" id="riskOptions"><button class="chosen" data-risk="时间不够">时间不够</button><button data-risk="能力不足">能力不足</button><button data-risk="缺少伙伴">缺少伙伴</button></div><div class="future-note">所有场景均为假设性规划；不代表获奖、录取或成果承诺。</div></div><div class="future-outcome"><div class="future-eyebrow">A FUTURE YOU CAN WORK TOWARD</div><div class="future-sky"><div class="future-orbit one"></div><div class="future-orbit two"></div><div class="future-orbit three"></div><span class="future-world a"></span><span class="future-world b"></span><span class="future-world c"></span><span class="future-star">✦</span></div><h3 id="futureStory">八周后，你可能拥有一件可以讲述的作品。</h3><p id="futureSubtitle"></p><p id="futureBasis" class="mini"></p><div class="future-metrics"><div><b id="futureHours">48</b><small>计划投入小时</small></div><div><b id="futureSteps">4</b><small>行动节点</small></div></div><div class="future-road" id="futureRoad"></div><div class="next-orbit"><span>YOUR NEXT ORBIT / 下一站</span><strong id="nextOrbitTitle">从一次尝试，走向下一次机会</strong><p id="nextOrbitDetail">根据你希望获得的成长，推荐一种下一步探索方向。</p><button id="nextOrbitBtn" type="button">在星系中探索下一站 ↗</button></div><div class="future-action"><button id="commitFuture">把这条路径加入我的轨迹 →</button><button id="resetFuture">重新想象</button></div></div></div></section></div><div aria-hidden="true" class="future-overlay" id="panelOverlay"><section role="dialog" aria-modal="true" aria-labelledby="panelTitle" class="future-dialog panel-dialog"><header class="future-header"><h2 id="panelTitle"></h2><button aria-label="关闭面板" id="closePanel">✕</button></header><div class="panel-content" id="panelContent"></div></section></div><div class="toast" id="toast" role="status"></div><script id="opportunity-data" type="application/json">{
+</style><style>.comparison-scroll-hint{display:none}@media(max-width:790px){.comparison-scroll-hint{display:block;color:#8993a9;font-size:11px}.galaxy-controls button{height:44px;min-width:34px;font-size:11px}}</style><style>.catalogue-pager{display:flex;align-items:center;justify-content:center;gap:14px;margin:14px 0;color:#8792a8;font-size:11px}.catalogue-pager[hidden]{display:none}.catalogue-pager button{border:1px solid #dce0ec;border-radius:18px;color:var(--blue);background:transparent;padding:7px 13px;font-size:11px}.catalogue-pager button:disabled{opacity:.35}.galaxy-pager{margin:6px 0 0}@media(max-width:790px){.catalogue-pager button{min-height:44px}}</style><style>.library-controls .design-preset{border:1px solid #dce1ef;border-radius:18px;background:transparent;color:#596cb4;font-size:11px;padding:9px 12px}.library-controls .design-preset[aria-pressed=true]{background:#eef1fa;color:var(--blue)}@media(max-width:790px){.library-controls .design-preset{min-height:44px}}</style></head><body><div class="app"><aside><div><div class="brand">FlowMate</div><div class="tagline">FIND YOUR NEXT ORBIT.</div></div><nav class="nav"><button class="active" data-nav="探索"><span class="ico">◉</span><span>探索</span></button><button data-nav="机会库"><span class="ico">◇</span><span>机会库</span></button><button data-nav="我的轨迹"><span class="ico">◎</span><span>我的轨迹</span></button><button data-nav="日程"><span class="ico">▦</span><span>日程</span></button><button data-nav="收藏"><span class="ico">♡</span><span>收藏</span></button></nav><div class="aside-bottom"><button class="profile-inline" id="profileBtn">个人资格 ↗</button><br/>OPPORTUNITY<br/>FOR CURIOUS<br/>MINDS.</div></aside><main class="main"><div class="topbar"><div class="filters" id="filters"><button data-cat="全部">全部</button><button class="active" data-cat="竞赛">竞赛</button><button data-cat="科研">科研</button><button data-cat="项目">项目</button><button data-cat="创业">创业</button></div><button aria-label="搜索" class="search" id="searchBtn">⌕</button><div class="time-controls"><label for="rangeSelect">时间范围</label><select id="rangeSelect"><option value="6">未来半年</option><option selected="" value="12">未来一年</option><option value="custom" hidden>自定义</option><option value="24">未来两年</option></select><label for="dateMode">按</label><select id="dateMode"><option value="apply">报名截止</option><option value="award">评奖结果</option></select></div></div><div class="searchbox" id="searchbox"><input id="searchInput" placeholder="搜索名称、学校或方向…"/><button id="clearSearch">✕</button></div><div class="headline"><div class="kicker">YOUR OPPORTUNITY UNIVERSE / 2026</div><h1>发现下一次可能</h1></div><details class="key-panel"><summary>图例 · 颜色 / 大小</summary><strong>视觉图例 / VISUAL KEY</strong><div id="categoryLegend"></div><div class="key-scale"><i style="width:8px;height:8px"></i><i style="width:13px;height:13px"></i><i style="width:20px;height:20px"></i><span>尺寸随景深与焦点变化</span></div><div style="margin-top:8px">越靠近中心，时间越近</div><div style="margin-top:8px">编号对应行星与名称；尺寸不代表评级。悬停预览，点击固定详情。</div></details><div class="empty-note" hidden="" id="emptyNote">当前筛选暂无有已知节点的机会。可调整类别、时间或个人资格；未知日期与已截止记录见机会库。</div><div class="space" id="space"><canvas id="orbit" tabindex="0" aria-label="机会星系，悬停预览；使用左右方向键选择机会，回车查看详情"></canvas></div><div class="time-ruler candy-ruler" aria-label="未来时间范围控制"><div class="ruler-head"><span>TIME HORIZON / 时间视野</span><strong id="zoomValue">未来 12 个月</strong></div><div class="ruler-track"><div class="candy-row-label"><span>NOW · 此刻</span><span>FUTURE · 未来 ↗</span></div><div class="candy-track" id="candyTrack" aria-hidden="true"></div><input id="horizonSlider" type="range" min="1" max="36" step="0.5" value="12" aria-label="未来时间范围，单位月"><div class="ruler-ticks"><span>1月</span><span>6月</span><span>12月</span><span>18月</span><span>24月</span><span>36月</span></div></div></div><div class="bottom"><div class="stats"><div class="stat"><b id="total">08</b><span>筛选结果</span></div><div class="stat"><b id="savedCount">0</b><span>已收藏</span></div><div class="stat"><b id="highCount">0</b><span>待核实机会</span></div></div><div class="hint">DISCOVER<br/>FOCUS<br/>ACT ↗</div></div></main><section class="detail"><div class="detail-top"><small>OPPORTUNITY / 详情</small><button aria-label="下一个机会" id="next">↗</button></div><article class="card"><div class="planet-art"><span class="art-star">✦</span></div><h2 id="title"></h2><p class="planet-legend" id="planetLegend"></p><div class="badges"><span class="badge" id="category"></span><span class="badge urgent" id="urgency"></span><span class="badge" id="availability"></span></div><dl class="info"><dt>主办单位</dt><dd id="organizer"></dd><dt>面向对象</dt><dd id="audience"></dd><dt>报名时间</dt><dd id="apply"></dd><dt>所属领域</dt><dd id="field"></dd></dl><p id="eligibilitySummary" class="mini"></p><button id="editProfile" class="profile-inline">完善个人资格 ↗</button><a id="sourceLink" class="source-link" target="_blank" rel="noopener noreferrer">查看官方来源 ↗</a><details id="sourceEvidence" class="source-evidence"><summary>公告依据与限制</summary><div id="evidenceBody"></div></details><hr class="divider"/><div class="section">时间节点</div><div class="timeline" id="timeline"></div><button class="cta" id="simulateBtn">预演我的可能未来　↗</button><button class="secondary" id="pathBtn">查看资格路径　↗</button><button class="secondary" id="saveBtn">♡　收藏</button></article><p class="mini" id="sourceSummary"></p><details class="verification"><summary>机会来源清单 · 16 条（含已截止与待核记录）</summary><div class="verify-intro">星系展示所选时间范围内的已知日期样本，默认排除明确不符合个人条件的记录。待核实不等于可报名；完整清单保留未知日期和已截止记录。</div><div class="verify-list" id="verifyList"></div></details></section></div><div aria-hidden="true" class="future-overlay" id="futureOverlay"><section aria-labelledby="futureTitle" aria-modal="true" class="future-dialog" role="dialog"><header class="future-header"><div><small>FLOWMATE / POSSIBILITY STUDIO</small><h2 id="futureTitle">预演一种可能的未来</h2><p>不是预测结果，而是把期待变成可选择、可行动的路径。</p></div><button aria-label="关闭" id="closeFuture">✕</button></header><div class="future-layout"><div class="future-input"><div class="future-label">01 / 我想从这次机会得到什么</div><div class="goal-options" id="goalOptions"><button class="chosen" data-goal="作品集">完成一件代表作</button><button data-goal="能力">获得新的能力</button><button data-goal="连接">认识合作伙伴</button><button data-goal="突破">挑战更大的舞台</button></div><div class="future-label">02 / 我愿意投入多少</div><div class="range-row"><span>每周投入</span><strong id="hoursValue">6 小时</strong></div><input id="hoursRange" max="20" min="2" step="1" type="range" value="6"/><div class="range-row"><span>坚持多久</span><strong id="weeksValue">8 周</strong></div><input id="weeksRange" max="24" min="2" step="1" type="range" value="8"/><div class="future-label">03 / 目前最大的顾虑</div><div class="risk-options" id="riskOptions"><button class="chosen" data-risk="时间不够">时间不够</button><button data-risk="能力不足">能力不足</button><button data-risk="缺少伙伴">缺少伙伴</button></div><div class="future-note">所有场景均为假设性规划；不代表获奖、录取或成果承诺。</div></div><div class="future-outcome"><div class="future-eyebrow">A FUTURE YOU CAN WORK TOWARD</div><div class="future-sky"><div class="future-orbit one"></div><div class="future-orbit two"></div><div class="future-orbit three"></div><span class="future-world a"></span><span class="future-world b"></span><span class="future-world c"></span><span class="future-star">✦</span></div><h3 id="futureStory">八周后，你可能拥有一件可以讲述的作品。</h3><p id="futureSubtitle"></p><p id="futureBasis" class="mini"></p><div class="future-metrics"><div><b id="futureHours">48</b><small>计划投入小时</small></div><div><b id="futureSteps">4</b><small>行动节点</small></div></div><div class="future-road" id="futureRoad"></div><div class="next-orbit"><span>YOUR NEXT ORBIT / 下一站</span><strong id="nextOrbitTitle">从一次尝试，走向下一次机会</strong><p id="nextOrbitDetail">根据你希望获得的成长，推荐一种下一步探索方向。</p><button id="nextOrbitBtn" type="button">在星系中探索下一站 ↗</button></div><div class="future-action"><button id="commitFuture">把这条路径加入我的轨迹 →</button><button id="resetFuture">重新想象</button></div></div></div></section></div><div aria-hidden="true" class="future-overlay" id="panelOverlay"><section role="dialog" aria-modal="true" aria-labelledby="panelTitle" class="future-dialog panel-dialog"><header class="future-header"><h2 id="panelTitle"></h2><button aria-label="关闭面板" id="closePanel">✕</button></header><div class="panel-content" id="panelContent"></div></section></div><div class="toast" id="toast" role="status"></div><script id="opportunity-data" type="application/json">{
   "schemaVersion": 1,
   "baseline": "V80",
-  "description": "V80 baseline; 16 opportunity records including specific tracks and school registration stages, 15 official notices reviewed. fm-008 deadline conflict remains pending. Records are not counts of distinct national competitions.",
+  "description": "V80 基线资料库；机会记录包含具体届次、赛项和校内阶段，不代表独立全国赛事数量。公告核验与个人资格分开判断，未知日期不推算。",
   "opportunities": [
     {
       "name": "中国国际大学生创新大赛（2026）",
@@ -1358,84 +1358,541 @@ aside{border-right-color:#dde1e799}.filters{border-color:#e6e2da80;background:#f
           }
         ]
       }
+    },
+    {
+      "name": "第21届好创意暨全国数字艺术设计大赛 · 常规赛学生单元",
+      "cat": "竞赛",
+      "direction": "设计创意",
+      "org": "中国好创意暨全国数字艺术设计大赛组织委员会",
+      "aud": "公开规则允许本科参与；本人条件与具体赛项仍须确认",
+      "field": "全国高校 · 学生单元（校内截止另核）",
+      "note": "免费参赛与免费存证；全国投稿截止5月31日17:00，不能用首页校赛推优日期代替。院校校赛和推优可能提前，尚未核实同济学院截止与认定。每类别最多10件、全部常规类别不超过24件，严禁赛项间一稿多投。",
+      "id": "fm-017",
+      "dates": {
+        "start": "2026-10-20",
+        "end": "2027-05-31",
+        "award": null,
+        "deadlineAt": "2027-05-31T17:00:00+08:00",
+        "timezone": "Asia/Shanghai",
+        "published": "2026-07-01"
+      },
+      "source": {
+        "url": "https://www.cdec.org.cn/articleDetail/2363",
+        "kind": "official-notice",
+        "verification": "verified",
+        "verifiedAt": "2026-10-26",
+        "lastAttemptAt": "2026-10-26",
+        "lastAttemptResult": "http-200-body-reviewed",
+        "importedClaimedCheckedAt": null,
+        "importedClaimedStatus": "新收录，无历史导入声明",
+        "registrationOpenOn": null,
+        "evidence": {
+          "bodySha256": "3d8ba0939634c9cf6cc16a1cb46aac300f25f93ab7f9249e743fafcf68159dd7",
+          "quotes": [
+            "国赛评审时间：",
+            "（2）本科组",
+            "2026年10月20日-2027年5月31日17:00止（系统关闭）；",
+            "有校赛的学校，校内投稿时间截止后，凡使用非学校官方核定的二级学院名称提交参赛作品，均视为无效作品。",
+            "每个参赛者（或同一个参赛团队），每个类别限投10件（含10件作品），全部常规赛类别不超过24件作品。",
+            "！！请详细阅读每个投稿类别的诠释，不符合类别主题要求的一律不能获奖。"
+          ],
+          "scope": "人工阅读官方公开正文，核对本科参与、赛制奖项层级与所载日期；不代表同济校内认定或最终报名审核通过。",
+          "monitorHash": "4836f5e404618763b1a26d41bfd6b8efb4e445cd0f18b1ebfc782e9103be44af",
+          "monitorRegion": {
+            "start": "中国好创意暨全国数字艺术设计大赛",
+            "end": "请选择查询分类"
+          }
+        }
+      },
+      "eligibility": {
+        "schools": [],
+        "regions": [],
+        "degrees": [
+          "专科",
+          "本科",
+          "硕士",
+          "博士"
+        ],
+        "enrollmentYears": [],
+        "studyYears": [],
+        "majorGroups": [],
+        "enrolled": true,
+        "rulesComplete": false,
+        "basis": "已阅读公开原文。所建模的是本科可参与的通道；同济校内截稿、认定及其他未列规则另核。",
+        "studyModes": [],
+        "leaderStudyYears": [],
+        "teamSize": null,
+        "requirements": [
+          {
+            "id": "school-review",
+            "label": "已确认所属学院的校赛、管理员审核及更早截稿要求",
+            "quote": "有校赛的学校，校内投稿时间截止后，凡使用非学校官方核定的二级学院名称提交参赛作品，均视为无效作品。"
+          },
+          {
+            "id": "quota",
+            "label": "遵守每类别10件、全部常规类别24件的作者/团队投稿限制",
+            "quote": "每个参赛者（或同一个参赛团队），每个类别限投10件（含10件作品），全部常规赛类别不超过24件作品。"
+          },
+          {
+            "id": "category",
+            "label": "已阅读所选类别的主题诠释、提交格式和作者条件",
+            "quote": "！！请详细阅读每个投稿类别的诠释，不符合类别主题要求的一律不能获奖。"
+          }
+        ]
+      },
+      "competition": {
+        "seriesId": "cdec-21",
+        "seriesName": "第21届好创意暨全国数字艺术设计大赛",
+        "track": "常规赛学生单元",
+        "level": "national",
+        "levelBasis": "国赛评审时间：",
+        "bachelorEntry": "allowed",
+        "bachelorBasis": "（2）本科组",
+        "universityRecognition": "unconfirmed"
+      }
+    },
+    {
+      "name": "第4届红色文化创意设计专项赛 · 好创意学生通道",
+      "cat": "竞赛",
+      "direction": "设计创意",
+      "org": "中国好创意暨全国数字艺术设计大赛组织委员会",
+      "aud": "公开规则允许本科参与；本人条件与具体赛项仍须确认",
+      "field": "国内外高校 · 学生通道",
+      "note": "免费参赛，公开公告明确直入国赛评审、无需院校管理员审核；本条建模学生通道，教师通道另核。静态作者最多3人、动态最多8人，不统一按3人排除动态团队；存证、作品署名、原创及版权条款仍须确认。同济校内认定未核。",
+      "id": "fm-018",
+      "dates": {
+        "start": "2026-10-26",
+        "end": "2027-04-30",
+        "award": null,
+        "deadlineAt": "2027-04-30T17:00:00+08:00",
+        "timezone": "Asia/Shanghai",
+        "published": "2026-10-26"
+      },
+      "source": {
+        "url": "https://www.cdec.org.cn/articleDetail/2542",
+        "kind": "official-notice",
+        "verification": "verified",
+        "verifiedAt": "2026-10-26",
+        "lastAttemptAt": "2026-10-26",
+        "lastAttemptResult": "http-200-body-reviewed",
+        "importedClaimedCheckedAt": null,
+        "importedClaimedStatus": "新收录，无历史导入声明",
+        "registrationOpenOn": null,
+        "evidence": {
+          "bodySha256": "d9220e58227c600a8546bffaf09c74ea7da37d9d6d9c449c424e9fa4e40ce8cf",
+          "quotes": [
+            "*本专项赛无需院校管理员审核，参赛作品提交数量不限，作品直接进入国赛评审环节。",
+            "国内外普通高校、高等职业院校的在校学生及教师均可参赛。",
+            "2026年10月26日—2027年4月30日17:00",
+            "(六)静态作品创作团队人数不超过3人，指导教师不超过2人；动态作品创作团队 人数不超过8人，指导教师不超过3人；",
+            "(七)一件作品，最多不超过3所合作院校（含本校）；",
+            "*专项赛免费参赛；所有参赛作品须完成免费版权存证后再提交投稿，投稿成功即代表完成作品存证，作品著作权归参赛作者及创作团队所有。"
+          ],
+          "scope": "人工阅读官方公开正文，核对本科参与、赛制奖项层级与所载日期；不代表同济校内认定或最终报名审核通过。",
+          "monitorHash": "c38a28f7e228e34d69265f2530c6cbb8cd493c003105443a5057f3f55ccd12ff",
+          "monitorRegion": {
+            "start": "好创意大赛介绍",
+            "end": "请选择查询分类"
+          }
+        }
+      },
+      "eligibility": {
+        "schools": [],
+        "regions": [],
+        "degrees": [
+          "专科",
+          "本科",
+          "硕士",
+          "博士"
+        ],
+        "enrollmentYears": [],
+        "studyYears": [],
+        "majorGroups": [],
+        "enrolled": true,
+        "rulesComplete": false,
+        "basis": "已阅读公开原文。所建模的是本科可参与的通道；同济校内截稿、认定及其他未列规则另核。",
+        "studyModes": [],
+        "leaderStudyYears": [],
+        "teamSize": {
+          "min": null,
+          "max": 8
+        },
+        "requirements": [
+          {
+            "id": "format-team",
+            "label": "已按作品类型核对人数：静态不超过3人、动态不超过8人，教师不计入参赛学生人数",
+            "quote": "(六)静态作品创作团队人数不超过3人，指导教师不超过2人；动态作品创作团队 人数不超过8人，指导教师不超过3人；"
+          },
+          {
+            "id": "cross-school",
+            "label": "最多3所合作院校，已取得团队成员授权",
+            "quote": "(七)一件作品，最多不超过3所合作院校（含本校）；"
+          },
+          {
+            "id": "rights",
+            "label": "已阅读红色文化命题、版权与免费存证要求，未跨赛项重复投稿",
+            "quote": "*专项赛免费参赛；所有参赛作品须完成免费版权存证后再提交投稿，投稿成功即代表完成作品存证，作品著作权归参赛作者及创作团队所有。"
+          }
+        ]
+      },
+      "competition": {
+        "seriesId": "cdec-21",
+        "seriesName": "第21届好创意暨全国数字艺术设计大赛",
+        "track": "红色文化创意专项",
+        "level": "national",
+        "levelBasis": "*本专项赛无需院校管理员审核，参赛作品提交数量不限，作品直接进入国赛评审环节。",
+        "bachelorEntry": "allowed",
+        "bachelorBasis": "国内外普通高校、高等职业院校的在校学生及教师均可参赛。",
+        "universityRecognition": "unconfirmed"
+      }
+    },
+    {
+      "name": "第5届老字号·新国潮创新设计专项赛 · 好创意",
+      "cat": "竞赛",
+      "direction": "设计创意",
+      "org": "中国好创意暨全国数字艺术设计大赛组织委员会（华东理工大学承办）",
+      "aud": "公开规则允许本科参与；本人条件与具体赛项仍须确认",
+      "field": "国内外院校/工作室（品牌包装、IP与文创）",
+      "note": "免费参赛，直接国赛评选，无需院校管理员审核；华东理工承办，不限上海或该校。命题包括大白兔、沈大成、光明谷锦、上海牌麦乳精。公告列同济为高校联盟单位，但不据此推断学分/推免认定。具体命题授权、版权及存证条款须核，不能从同一主赛事常规规则推导专项截止。",
+      "id": "fm-019",
+      "dates": {
+        "start": "2026-09-22",
+        "end": "2027-05-01",
+        "award": null,
+        "deadlineAt": "2027-05-01T17:00:00+08:00",
+        "timezone": "Asia/Shanghai",
+        "published": "2026-09-22"
+      },
+      "source": {
+        "url": "https://www.cdec.org.cn/articleDetail/2527",
+        "kind": "official-notice",
+        "verification": "verified",
+        "verifiedAt": "2026-10-26",
+        "lastAttemptAt": "2026-10-26",
+        "lastAttemptResult": "http-200-body-reviewed",
+        "importedClaimedCheckedAt": null,
+        "importedClaimedStatus": "新收录，无历史导入声明",
+        "registrationOpenOn": null,
+        "evidence": {
+          "bodySha256": "7e953d7fe836558d691c529a2dcb8f7aa0e96725e1f2cffe7786f226c4a3f40a",
+          "quotes": [
+            "*获奖者由好创意大赛组委会统一颁发国赛获奖证书。",
+            "国内外院校个人及团队、工作室、实验室、联合创作室等均可参加。",
+            "报名投稿时间：自大赛简章发布之日起至 2027年5月1日17:00截止。",
+            "(五)静态作品创作团队人数不超过3人，指导教师不超过2人；动态作品创作团队 人数不超过8人，指导教师不超过3人，跨校合作，最多不超过3所合作院校（含本校）；",
+            "*老字号所有命题参赛作品必须先存证（存证免费，版权归命题方）再投稿。",
+            "决赛答辩：初赛入围选手统一进行决赛答辩（答辩地点待定，答辩期间的差旅、住宿等，自行承担），不参加决赛答辩的作品，自动降级到优秀奖。"
+          ],
+          "scope": "人工阅读官方公开正文，核对本科参与、赛制奖项层级与所载日期；不代表同济校内认定或最终报名审核通过。",
+          "monitorHash": "507bb08b054f1fcc56c62dfa5ad790905e6cf4c8653773038ccb129f1fb4f0e6",
+          "monitorRegion": {
+            "start": "中国好创意暨全国数字艺术设计大赛",
+            "end": "请选择查询分类"
+          }
+        }
+      },
+      "eligibility": {
+        "schools": [],
+        "regions": [],
+        "degrees": [],
+        "enrollmentYears": [],
+        "studyYears": [],
+        "majorGroups": [],
+        "enrolled": null,
+        "rulesComplete": false,
+        "basis": "已阅读公开原文。所建模的是本科可参与的通道；同济校内截稿、认定及其他未列规则另核。",
+        "studyModes": [],
+        "leaderStudyYears": [],
+        "teamSize": {
+          "min": null,
+          "max": 8
+        },
+        "requirements": [
+          {
+            "id": "format-team",
+            "label": "静态作者不超过3人、动态不超过8人；指导教师与合作院校条件已逐项核对",
+            "quote": "(五)静态作品创作团队人数不超过3人，指导教师不超过2人；动态作品创作团队 人数不超过8人，指导教师不超过3人，跨校合作，最多不超过3所合作院校（含本校）；"
+          },
+          {
+            "id": "topic-rights",
+            "label": "已核对所选品牌的素材、原创和版权条款，并完成提交前免费存证",
+            "quote": "*老字号所有命题参赛作品必须先存证（存证免费，版权归命题方）再投稿。"
+          },
+          {
+            "id": "defence",
+            "label": "了解入围后答辩及费用安排；不参加答辩可能降级",
+            "quote": "决赛答辩：初赛入围选手统一进行决赛答辩（答辩地点待定，答辩期间的差旅、住宿等，自行承担），不参加决赛答辩的作品，自动降级到优秀奖。"
+          }
+        ]
+      },
+      "competition": {
+        "seriesId": "cdec-21",
+        "seriesName": "第21届好创意暨全国数字艺术设计大赛",
+        "track": "老字号·新国潮专项",
+        "level": "national",
+        "levelBasis": "*获奖者由好创意大赛组委会统一颁发国赛获奖证书。",
+        "bachelorEntry": "allowed",
+        "bachelorBasis": "国内外院校个人及团队、工作室、实验室、联合创作室等均可参加。",
+        "universityRecognition": "unconfirmed"
+      }
+    },
+    {
+      "name": "未来设计师NCDA · AI漫剧出海OPC优才选拔（2026）",
+      "cat": "竞赛",
+      "direction": "设计创意",
+      "org": "未来设计师大赛组委会、湖南九韶算法应用技术产业园发展有限公司",
+      "aud": "公开规则允许本科参与；本人条件与具体赛项仍须确认",
+      "field": "全国普通高校（每校名额另核）",
+      "note": "省赛征稿10月31日截止，准确时刻未公布；只提交60–120秒片花，不是3集正片，后者为国赛预赛阶段。每校限30件，个人最多参与3件；需确认同济校内名额。仅接受官方剧本库，获奖作品著作权归命题单位；省赛公示11月10日、12月12日决赛不是本条最终结果发布日期。",
+      "id": "fm-020",
+      "dates": {
+        "start": null,
+        "end": "2026-10-31",
+        "award": null,
+        "deadlineAt": null,
+        "timezone": "Asia/Shanghai",
+        "published": null
+      },
+      "source": {
+        "url": "https://www.ncda.org.cn/dsjs/dsnr/mtsd/9C3/",
+        "kind": "official-notice",
+        "verification": "verified",
+        "verifiedAt": "2026-10-26",
+        "lastAttemptAt": "2026-10-26",
+        "lastAttemptResult": "http-200-body-reviewed",
+        "importedClaimedCheckedAt": null,
+        "importedClaimedStatus": "新收录，无历史导入声明",
+        "registrationOpenOn": "2026-10-26",
+        "evidence": {
+          "bodySha256": "cc7cffdacc6b40ae7709e15b95871a6ed4a24c34270a720432af5e968b22eac5",
+          "quotes": [
+            "2、全国赛：设一二三等奖及总奖金￥30万元，颁发全国总决赛获奖证书，",
+            "【参赛对象】普通高校在读研究生（硕士、博士）、本科生、专科生；个人/团队（最多5名创作人员、2名指导教师）均可参赛。",
+            "1、省赛征稿：即日起－2026年10月31日，线上提交省赛全套物料。",
+            "每校限投30件作品，每人最多参与投稿（不分作者排序）三件作品。",
+            "3、不接受选手自行创作的原创剧本参赛。",
+            "3、知识产权：获奖作品的著作权归命题单位，作者保留署名权、展览展示权。"
+          ],
+          "scope": "人工阅读官方公开正文，核对本科参与、赛制奖项层级与所载日期；不代表同济校内认定或最终报名审核通过。",
+          "monitorHash": "bc25207714e9f1fa6462e519ac9e6254b139c83e764a01571b868371cb0f9738",
+          "monitorRegion": {
+            "start": "2026未来设计师NCDA创新创业赛之",
+            "end": "联系方式"
+          }
+        }
+      },
+      "eligibility": {
+        "schools": [],
+        "regions": [],
+        "degrees": [
+          "专科",
+          "本科",
+          "硕士",
+          "博士"
+        ],
+        "enrollmentYears": [],
+        "studyYears": [],
+        "majorGroups": [],
+        "enrolled": true,
+        "rulesComplete": false,
+        "basis": "已阅读公开原文。所建模的是本科可参与的通道；同济校内截稿、认定及其他未列规则另核。",
+        "studyModes": [],
+        "leaderStudyYears": [],
+        "teamSize": {
+          "min": 1,
+          "max": 5
+        },
+        "requirements": [
+          {
+            "id": "school-quota",
+            "label": "已确认每校30件名额及个人最多参与3件的限制",
+            "quote": "每校限投30件作品，每人最多参与投稿（不分作者排序）三件作品。"
+          },
+          {
+            "id": "script",
+            "label": "使用官方指定剧本，不以自写剧本投稿，并核对省赛片花物料",
+            "quote": "3、不接受选手自行创作的原创剧本参赛。"
+          },
+          {
+            "id": "rights",
+            "label": "已理解获奖作品著作权归命题单位，认可相应参赛条款",
+            "quote": "3、知识产权：获奖作品的著作权归命题单位，作者保留署名权、展览展示权。"
+          }
+        ]
+      },
+      "competition": {
+        "seriesId": "ncda-2026",
+        "seriesName": "未来设计师·全国高校数字艺术设计大赛（2026）",
+        "track": "AI漫剧出海·OPC创新创业赛",
+        "level": "national",
+        "levelBasis": "2、全国赛：设一二三等奖及总奖金￥30万元，颁发全国总决赛获奖证书，",
+        "bachelorEntry": "allowed",
+        "bachelorBasis": "【参赛对象】普通高校在读研究生（硕士、博士）、本科生、专科生；个人/团队（最多5名创作人员、2名指导教师）均可参赛。",
+        "universityRecognition": "unconfirmed"
+      }
+    },
+    {
+      "name": "2027米兰设计周高校设计作品展 · 非命题（截止日待明确）",
+      "cat": "竞赛",
+      "direction": "设计创意",
+      "org": "米兰设计周高校设计作品展组委会",
+      "aud": "公开规则允许本科参与；本人条件与具体赛项仍须确认",
+      "field": "面向全球 · 本科/研究生组及其他开放组别",
+      "note": "公开章程确认本科可参与，非命题采用省赛/国赛。2027官方简介（https://milan-aap.org.cn/api/cms?c=content&id=2537）目前仅列2027年4月，未写截止日，故日期字段保持未知，不能据此确认可报名或推断4月30日。具体组别、费用、团队人数和策略单另核；本条不把高校在职教师、专业设计师排除在整个赛事之外。",
+      "id": "fm-021",
+      "dates": {
+        "start": null,
+        "end": null,
+        "award": null,
+        "deadlineAt": null,
+        "timezone": "Asia/Shanghai",
+        "published": null
+      },
+      "source": {
+        "url": "https://milan-aap.org.cn/",
+        "kind": "organizer-site",
+        "verification": "verified",
+        "verifiedAt": "2026-10-26",
+        "lastAttemptAt": "2026-10-26",
+        "lastAttemptResult": "http-200-body-reviewed",
+        "importedClaimedCheckedAt": null,
+        "importedClaimedStatus": "新收录，无历史导入声明",
+        "registrationOpenOn": null,
+        "evidence": {
+          "bodySha256": "f44dfbc770b691ccf1bbed87b3d8444860e11e7a435d5128e784a12f546cbdc4",
+          "quotes": [
+            "2. 国赛奖项：组委会遴选全国知名专家对进入国赛作品创作类进行评审，评选出一、二、三等奖。国赛获等级奖比例一般不超过参赛作品总数的 7％（一、二、三等奖分别为1%、2%、4%）。各赛道可根据实际情况增设单项奖。",
+            "面向全球广泛征集设计作品，凡在校及毕业五年内的博士、硕士研究生、本科生及专科生，高校在职教师（含行业导师、兼职教师），以及专业设计师与设计爱好者均可报名参赛。",
+            "为确保评审的专业性与针对性，各赛项可设立独立的参赛作品要求，详见各赛场及赛项的具体参赛信息。",
+            "各校可根据实际情况，在评选优秀学生奖学金及推荐免试研究生时，对获奖的参赛学生予以适当考虑；"
+          ],
+          "scope": "人工阅读官方公开正文，核对本科参与、赛制奖项层级与所载日期；不代表同济校内认定或最终报名审核通过。 章程及2027简介已阅读；简介只给出2027年4月，精确截止日未知，不确认报名窗口。",
+          "monitorHash": "faba460f8fa96f9df6ca9e1503e2c0390379afdb1391d8350c87e0e4e75cec6e",
+          "documentUrl": "https://milan-aap.org.cn/api/cms?c=content&id=2534"
+        }
+      },
+      "eligibility": {
+        "schools": [],
+        "regions": [],
+        "degrees": [],
+        "enrollmentYears": [],
+        "studyYears": [],
+        "majorGroups": [],
+        "enrolled": null,
+        "rulesComplete": false,
+        "basis": "已阅读公开原文。所建模的是本科可参与的通道；同济校内截稿、认定及其他未列规则另核。",
+        "studyModes": [],
+        "leaderStudyYears": [],
+        "teamSize": null,
+        "requirements": [
+          {
+            "id": "track",
+            "label": "已查阅2027目标赛项的具体策略单、费用及作品要求",
+            "quote": "为确保评审的专业性与针对性，各赛项可设立独立的参赛作品要求，详见各赛场及赛项的具体参赛信息。"
+          },
+          {
+            "id": "school-policy",
+            "label": "已另外确认学校对该赛项的认定、推免或学分政策",
+            "quote": "各校可根据实际情况，在评选优秀学生奖学金及推荐免试研究生时，对获奖的参赛学生予以适当考虑；"
+          }
+        ]
+      },
+      "competition": {
+        "seriesId": "milan-2027",
+        "seriesName": "第十一届米兰设计周高校设计作品展（2027）",
+        "track": "非命题作品创作",
+        "level": "national",
+        "levelBasis": "2. 国赛奖项：组委会遴选全国知名专家对进入国赛作品创作类进行评审，评选出一、二、三等奖。国赛获等级奖比例一般不超过参赛作品总数的 7％（一、二、三等奖分别为1%、2%、4%）。各赛道可根据实际情况增设单项奖。",
+        "bachelorEntry": "allowed",
+        "bachelorBasis": "面向全球广泛征集设计作品，凡在校及毕业五年内的博士、硕士研究生、本科生及专科生，高校在职教师（含行业导师、兼职教师），以及专业设计师与设计爱好者均可报名参赛。",
+        "universityRecognition": "unconfirmed"
+      }
     }
   ]
 }</script>
 <script id="source-health-data" type="application/json">{
   "schemaVersion": 1,
-  "checkedAt": "2026-10-25T13:24:31.499640+00:00",
-  "nextCheckAfter": "2026-10-26T13:24:31.499640+00:00",
+  "checkedAt": "2026-10-26T14:51:11.655073+00:00",
+  "nextCheckAfter": "2026-10-27T14:51:11.655073+00:00",
+  "checkedCount": 1,
   "description": "自动检查仅比较官方正文快照；不自动修改日期、资格或人工核验结论。",
   "results": [
     {
       "id": "fm-001",
       "url": "https://www.moe.gov.cn/srcsite/A08/s5672/202607/t20260731_1445670.html",
       "reviewedAt": "2026-10-25",
+      "reviewedBodyHash": "afb111d5dd7293faccce913108d624e731f34287cbf8eced91b832cda91cce9c",
+      "referenceHash": "0ad4adbf6277cbd54327455868354fe0f84520908f25db370d6b6ac3928b3a26",
       "status": "unchanged",
       "contentHash": "0ad4adbf6277cbd54327455868354fe0f84520908f25db370d6b6ac3928b3a26",
       "message": "与已核验正文快照一致；不等于报名审核通过",
-      "reviewedBodyHash": "afb111d5dd7293faccce913108d624e731f34287cbf8eced91b832cda91cce9c",
-      "referenceHash": "0ad4adbf6277cbd54327455868354fe0f84520908f25db370d6b6ac3928b3a26"
+      "checkedAt": "2026-10-25T15:07:52.986655+00:00"
     },
     {
       "id": "fm-002",
       "url": "https://www.cmit.cn/wap/index.html",
       "reviewedAt": "2026-10-25",
+      "reviewedBodyHash": "ed298997b38a1bc38fb15b45cb2e014774918636d9c3cc186c455ae9e2b18313",
+      "referenceHash": "0c5ec46fa26cb47a4dad8363a9f1a7baca5fa99bc6ad26903003772cb0dffbd9",
       "status": "unchanged",
       "contentHash": "0c5ec46fa26cb47a4dad8363a9f1a7baca5fa99bc6ad26903003772cb0dffbd9",
       "message": "与已核验正文快照一致；不等于报名审核通过",
-      "reviewedBodyHash": "ed298997b38a1bc38fb15b45cb2e014774918636d9c3cc186c455ae9e2b18313",
-      "referenceHash": "0c5ec46fa26cb47a4dad8363a9f1a7baca5fa99bc6ad26903003772cb0dffbd9"
+      "checkedAt": "2026-10-25T15:07:52.986655+00:00"
     },
     {
       "id": "fm-003",
       "url": "https://jw.cqjtu.edu.cn/info/1074/11035.htm",
       "reviewedAt": "2026-10-25",
+      "reviewedBodyHash": "c9ff8b7ed8161ed5f51fca30e81d9bbb43b4026ccce47bba2ebb60d1748b6af9",
+      "referenceHash": "11663a4f00e96e9c29640d5c621d20e8d99508b290de94b583a7dbd8c5b155c3",
       "status": "unchanged",
       "contentHash": "11663a4f00e96e9c29640d5c621d20e8d99508b290de94b583a7dbd8c5b155c3",
       "message": "与已核验正文快照一致；不等于报名审核通过",
-      "reviewedBodyHash": "c9ff8b7ed8161ed5f51fca30e81d9bbb43b4026ccce47bba2ebb60d1748b6af9",
-      "referenceHash": "11663a4f00e96e9c29640d5c621d20e8d99508b290de94b583a7dbd8c5b155c3"
+      "checkedAt": "2026-10-25T15:07:52.986655+00:00"
     },
     {
       "id": "fm-004",
       "url": "https://jwc.upc.edu.cn/2026/1008/c18523a502163/page.htm",
       "reviewedAt": "2026-10-25",
-      "status": "unchanged",
-      "contentHash": "964c95d737da0b7c6c051c79791a8e10f364090c6015c6ce602efe9acab957dc",
-      "message": "与已核验正文快照一致；不等于报名审核通过",
       "reviewedBodyHash": "af6384c5b4baca098d69577c921efe93e1bf669e83106ac5220e69137105a70b",
-      "referenceHash": "964c95d737da0b7c6c051c79791a8e10f364090c6015c6ce602efe9acab957dc"
+      "referenceHash": "964c95d737da0b7c6c051c79791a8e10f364090c6015c6ce602efe9acab957dc",
+      "status": "unreachable",
+      "message": "未能完成来源检查，保留历史核验资料",
+      "error": "\u003curlopen error Tunnel connection failed: 403 Forbidden>",
+      "checkedAt": "2026-10-25T15:07:52.986655+00:00"
     },
     {
       "id": "fm-005",
       "url": "https://rst.hubei.gov.cn/zfxxgk/zc/qtzdgkwj/202603/t20260331_5902664.shtml",
       "reviewedAt": "2026-10-25",
+      "reviewedBodyHash": "5fda3c1320b17352d96d631de3bf13a71fae2f8eca1d92955386581371b3d3bb",
+      "referenceHash": "e7db13bca4c4d5bf7d18a69d6053cbacd21bec17043be8f92c5cd7b8b2665caf",
       "status": "unchanged",
       "contentHash": "e7db13bca4c4d5bf7d18a69d6053cbacd21bec17043be8f92c5cd7b8b2665caf",
       "message": "与已核验正文快照一致；不等于报名审核通过",
-      "reviewedBodyHash": "5fda3c1320b17352d96d631de3bf13a71fae2f8eca1d92955386581371b3d3bb",
-      "referenceHash": "e7db13bca4c4d5bf7d18a69d6053cbacd21bec17043be8f92c5cd7b8b2665caf"
+      "checkedAt": "2026-10-25T15:07:52.986655+00:00"
     },
     {
       "id": "fm-006",
       "url": "https://mphylab.tongji.edu.cn/page/home/info23622_INFO",
       "reviewedAt": "2026-10-25",
+      "reviewedBodyHash": "7febcb0e21a558f7369af919aa5df3dda9e66cf07f5d8528f8d4fb4462466406",
+      "referenceHash": "c5226ccd10d42025fa454cef3712d1134efedb08564ce2a3126842078eaa3a94",
       "status": "unchanged",
       "contentHash": "c5226ccd10d42025fa454cef3712d1134efedb08564ce2a3126842078eaa3a94",
       "message": "与已核验正文快照一致；不等于报名审核通过",
-      "reviewedBodyHash": "7febcb0e21a558f7369af919aa5df3dda9e66cf07f5d8528f8d4fb4462466406",
-      "referenceHash": "c5226ccd10d42025fa454cef3712d1134efedb08564ce2a3126842078eaa3a94"
+      "checkedAt": "2026-10-25T15:07:52.986655+00:00"
     },
     {
       "id": "fm-007",
       "url": "https://nic.tongji.edu.cn/info/1029/1570.htm",
       "reviewedAt": "2026-10-25",
+      "reviewedBodyHash": "73cfe36f23ee9998d39ccdce2b37c91c2f78004c54ca260a1511acf3d79f4e3d",
+      "referenceHash": "bf04c48683559623138969bc37d9e356eb5b9b8a091e3f055acb484b4fe4d5d7",
       "status": "unchanged",
       "contentHash": "bf04c48683559623138969bc37d9e356eb5b9b8a091e3f055acb484b4fe4d5d7",
       "message": "与已核验正文快照一致；不等于报名审核通过",
-      "reviewedBodyHash": "73cfe36f23ee9998d39ccdce2b37c91c2f78004c54ca260a1511acf3d79f4e3d",
-      "referenceHash": "bf04c48683559623138969bc37d9e356eb5b9b8a091e3f055acb484b4fe4d5d7"
+      "checkedAt": "2026-10-25T15:07:52.986655+00:00"
     },
     {
       "id": "fm-008",
@@ -1445,67 +1902,150 @@ aside{border-right-color:#dde1e799}.filters{border-color:#e6e2da80;background:#f
       "referenceHash": null,
       "status": "unreviewed",
       "message": "已读取官网信息，但报名截止冲突尚未澄清",
-      "checkedAt": "2026-10-25T13:43:49.600000+00:00"
+      "checkedAt": "2026-10-25T15:07:52.986655+00:00"
     },
     {
       "id": "fm-009",
       "url": "https://www.nmmcm.org.cn/Competition/",
       "reviewedAt": "2026-10-25",
+      "reviewedBodyHash": "3048b84137c9bef8a4d7a674bfea9b127180b62fcc73dcd411b2f77d46a609cc",
+      "referenceHash": "24550c6811efd05544ed6509b91b240614a298e21c423d656aa1ffb1e430d7f4",
       "status": "unchanged",
       "contentHash": "24550c6811efd05544ed6509b91b240614a298e21c423d656aa1ffb1e430d7f4",
       "message": "与已核验正文快照一致；不等于报名审核通过",
-      "reviewedBodyHash": "3048b84137c9bef8a4d7a674bfea9b127180b62fcc73dcd411b2f77d46a609cc",
-      "referenceHash": "24550c6811efd05544ed6509b91b240614a298e21c423d656aa1ffb1e430d7f4"
+      "checkedAt": "2026-10-25T15:07:52.986655+00:00"
     },
     {
       "id": "fm-010",
       "url": "https://jwc.xjtu.edu.cn/info/1172/10505.htm",
       "reviewedAt": "2026-10-25",
+      "reviewedBodyHash": "ceff0b1fca52c1b9c315219d8d2435bbd905de0cc818f7cf2fc2e7036d307fcb",
+      "referenceHash": "c92fdc7ecabd7ca2e03e9c52b9bf35b031199127bbf201aa1bf82ac68ccc47e2",
       "status": "unchanged",
       "contentHash": "c92fdc7ecabd7ca2e03e9c52b9bf35b031199127bbf201aa1bf82ac68ccc47e2",
       "message": "与已核验正文快照一致；不等于报名审核通过",
-      "reviewedBodyHash": "ceff0b1fca52c1b9c315219d8d2435bbd905de0cc818f7cf2fc2e7036d307fcb",
-      "referenceHash": "c92fdc7ecabd7ca2e03e9c52b9bf35b031199127bbf201aa1bf82ac68ccc47e2"
+      "checkedAt": "2026-10-25T15:07:52.986655+00:00"
     },
     {
       "id": "fm-011",
       "url": "https://xxgcxy.kfvc.edu.cn/2026/1022/c206a11078/pagem.htm",
       "reviewedAt": "2026-10-25",
+      "reviewedBodyHash": "adbca902fe91ec50a0a68313892b9646867db7068e4f6a48b163134e197302e7",
+      "referenceHash": "bd365f987cf36bc8570c6b0bfbbfec14d6ec794a23d50ad77507098e2a79b2a9",
       "status": "unchanged",
       "contentHash": "bd365f987cf36bc8570c6b0bfbbfec14d6ec794a23d50ad77507098e2a79b2a9",
       "message": "与已核验正文快照一致；不等于报名审核通过",
-      "reviewedBodyHash": "adbca902fe91ec50a0a68313892b9646867db7068e4f6a48b163134e197302e7",
-      "referenceHash": "bd365f987cf36bc8570c6b0bfbbfec14d6ec794a23d50ad77507098e2a79b2a9"
+      "checkedAt": "2026-10-25T15:07:52.986655+00:00"
     },
     {
       "id": "fm-012",
       "url": "https://xxgcxy.kfvc.edu.cn/2026/1022/c206a11078/pagem.htm",
       "reviewedAt": "2026-10-25",
+      "reviewedBodyHash": "adbca902fe91ec50a0a68313892b9646867db7068e4f6a48b163134e197302e7",
+      "referenceHash": "bd365f987cf36bc8570c6b0bfbbfec14d6ec794a23d50ad77507098e2a79b2a9",
       "status": "unchanged",
       "contentHash": "bd365f987cf36bc8570c6b0bfbbfec14d6ec794a23d50ad77507098e2a79b2a9",
       "message": "与已核验正文快照一致；不等于报名审核通过",
-      "reviewedBodyHash": "adbca902fe91ec50a0a68313892b9646867db7068e4f6a48b163134e197302e7",
-      "referenceHash": "bd365f987cf36bc8570c6b0bfbbfec14d6ec794a23d50ad77507098e2a79b2a9"
+      "checkedAt": "2026-10-25T15:07:52.986655+00:00"
     },
     {
       "id": "fm-013",
       "url": "https://www.csust.edu.cn/stxy/info/1053/10965.htm",
       "reviewedAt": "2026-10-25",
+      "reviewedBodyHash": "5eefaa9a0a6e7ecb294f062315733f2f66a472126482895b0097d213bb72de41",
+      "referenceHash": "b0e153a30d1aece719f7b4e86deaf8ff7c5aa945052c7908422b198c1bc25098",
       "status": "unchanged",
       "contentHash": "b0e153a30d1aece719f7b4e86deaf8ff7c5aa945052c7908422b198c1bc25098",
       "message": "与已核验正文快照一致；不等于报名审核通过",
-      "reviewedBodyHash": "5eefaa9a0a6e7ecb294f062315733f2f66a472126482895b0097d213bb72de41",
-      "referenceHash": "b0e153a30d1aece719f7b4e86deaf8ff7c5aa945052c7908422b198c1bc25098"
+      "checkedAt": "2026-10-25T15:07:52.986655+00:00"
     },
     {
       "id": "fm-014",
       "url": "https://shxy.wzu.edu.cn/info/1068/161351.htm",
       "reviewedAt": "2026-10-25",
+      "reviewedBodyHash": "af4fd9b5c3bf99fc31da71776626e0ce0fc40bfc63a019dba76b432e3f576041",
+      "referenceHash": "1b4a8ca0e21092c7c41bf8a91801efe57301f3bd358e910ff329c6331bfae051",
       "status": "unchanged",
       "contentHash": "1b4a8ca0e21092c7c41bf8a91801efe57301f3bd358e910ff329c6331bfae051",
       "message": "与已核验正文快照一致；不等于报名审核通过",
-      "reviewedBodyHash": "af4fd9b5c3bf99fc31da71776626e0ce0fc40bfc63a019dba76b432e3f576041",
-      "referenceHash": "1b4a8ca0e21092c7c41bf8a91801efe57301f3bd358e910ff329c6331bfae051"
+      "checkedAt": "2026-10-25T15:07:52.986655+00:00"
+    },
+    {
+      "id": "fm-015",
+      "url": "https://jwc.xjtu.edu.cn/info/1172/10543.htm",
+      "reviewedAt": "2026-10-25",
+      "reviewedBodyHash": "bf970a7da52da6f19e76527d888e3d8b1143a7fce856e8f70c1a58d70f20549e",
+      "referenceHash": "b2b58f7df7be13c3be01a642e150d701f2a5efb6d89ee5d61bc65548180aae58",
+      "status": "unchanged",
+      "contentHash": "b2b58f7df7be13c3be01a642e150d701f2a5efb6d89ee5d61bc65548180aae58",
+      "message": "与已核验正文快照一致；不等于报名审核通过",
+      "checkedAt": "2026-10-25T15:07:52.986655+00:00"
+    },
+    {
+      "id": "fm-016",
+      "url": "https://jwc.xjtu.edu.cn/info/1172/10541.htm",
+      "reviewedAt": "2026-10-25",
+      "reviewedBodyHash": "58261e558e0ed8b9231e66de403913bd7adc1bfdddd6104e7ddd91b4e4664faa",
+      "referenceHash": "e3a63e1568ae8cacc375b0db8cdbef54a7dfe045a07fcfcc28f2990ba2db96a7",
+      "status": "unchanged",
+      "contentHash": "e3a63e1568ae8cacc375b0db8cdbef54a7dfe045a07fcfcc28f2990ba2db96a7",
+      "message": "与已核验正文快照一致；不等于报名审核通过",
+      "checkedAt": "2026-10-25T15:07:52.986655+00:00"
+    },
+    {
+      "id": "fm-017",
+      "url": "https://www.cdec.org.cn/articleDetail/2363",
+      "reviewedAt": "2026-10-26",
+      "reviewedBodyHash": "3d8ba0939634c9cf6cc16a1cb46aac300f25f93ab7f9249e743fafcf68159dd7",
+      "referenceHash": "4836f5e404618763b1a26d41bfd6b8efb4e445cd0f18b1ebfc782e9103be44af",
+      "status": "unchanged",
+      "contentHash": "4836f5e404618763b1a26d41bfd6b8efb4e445cd0f18b1ebfc782e9103be44af",
+      "message": "与已核验正文快照一致；不等于报名审核通过",
+      "checkedAt": "2026-10-26T14:41:28.812316+00:00"
+    },
+    {
+      "id": "fm-018",
+      "url": "https://www.cdec.org.cn/articleDetail/2542",
+      "reviewedAt": "2026-10-26",
+      "reviewedBodyHash": "d9220e58227c600a8546bffaf09c74ea7da37d9d6d9c449c424e9fa4e40ce8cf",
+      "referenceHash": "c38a28f7e228e34d69265f2530c6cbb8cd493c003105443a5057f3f55ccd12ff",
+      "status": "unchanged",
+      "contentHash": "c38a28f7e228e34d69265f2530c6cbb8cd493c003105443a5057f3f55ccd12ff",
+      "message": "与已核验正文快照一致；不等于报名审核通过",
+      "checkedAt": "2026-10-26T14:51:11.655073+00:00"
+    },
+    {
+      "id": "fm-019",
+      "url": "https://www.cdec.org.cn/articleDetail/2527",
+      "reviewedAt": "2026-10-26",
+      "reviewedBodyHash": "7e953d7fe836558d691c529a2dcb8f7aa0e96725e1f2cffe7786f226c4a3f40a",
+      "referenceHash": "507bb08b054f1fcc56c62dfa5ad790905e6cf4c8653773038ccb129f1fb4f0e6",
+      "status": "unchanged",
+      "contentHash": "507bb08b054f1fcc56c62dfa5ad790905e6cf4c8653773038ccb129f1fb4f0e6",
+      "message": "与已核验正文快照一致；不等于报名审核通过",
+      "checkedAt": "2026-10-26T14:41:37.681840+00:00"
+    },
+    {
+      "id": "fm-020",
+      "url": "https://www.ncda.org.cn/dsjs/dsnr/mtsd/9C3/",
+      "reviewedAt": "2026-10-26",
+      "reviewedBodyHash": "cc7cffdacc6b40ae7709e15b95871a6ed4a24c34270a720432af5e968b22eac5",
+      "referenceHash": "bc25207714e9f1fa6462e519ac9e6254b139c83e764a01571b868371cb0f9738",
+      "status": "unchanged",
+      "contentHash": "bc25207714e9f1fa6462e519ac9e6254b139c83e764a01571b868371cb0f9738",
+      "message": "与已核验正文快照一致；不等于报名审核通过",
+      "checkedAt": "2026-10-26T14:41:41.365711+00:00"
+    },
+    {
+      "id": "fm-021",
+      "url": "https://milan-aap.org.cn/",
+      "reviewedAt": "2026-10-26",
+      "reviewedBodyHash": "f44dfbc770b691ccf1bbed87b3d8444860e11e7a435d5128e784a12f546cbdc4",
+      "referenceHash": "faba460f8fa96f9df6ca9e1503e2c0390379afdb1391d8350c87e0e4e75cec6e",
+      "status": "unchanged",
+      "contentHash": "faba460f8fa96f9df6ca9e1503e2c0390379afdb1391d8350c87e0e4e75cec6e",
+      "message": "与已核验正文快照一致；不等于报名审核通过",
+      "checkedAt": "2026-10-26T14:46:03.436216+00:00"
     }
   ]
 }</script>
@@ -1569,7 +2109,7 @@ const orbitLabelLayer=document.createElement('div');orbitLabelLayer.className='o
 const orbitPreview=document.createElement('section');orbitPreview.id='orbitPreview';orbitPreview.className='orbit-preview';orbitPreview.setAttribute('role','tooltip');orbitPreview.hidden=true;document.querySelector('.detail').insertBefore(orbitPreview,document.querySelector('.card'));
 space.append(document.getElementById('emptyNote'));
 const shortOrbitNames={
- 'fm-001':'中国国际大学生创新大赛','fm-002':'数字媒体科技与创意竞赛','fm-003':'重庆交大 · 大创培育','fm-004':'石油大学（华东）· 大创','fm-005':'湖北大学生创业扶持','fm-006':'同济物理学术竞赛','fm-007':'同济 · AI+教育学生组','fm-008':'人工智能应用创新大赛','fm-009':'数维杯数学建模','fm-010':'传智杯 · 数智与AI','fm-011':'蓝桥杯 · AI等赛项','fm-012':'蓝桥杯 · 设计与创新','fm-013':'大学生数据要素大赛','fm-014':'生命科学 · 科学探究','fm-015':'蓝桥杯 · 装备数字建模','fm-016':'西安交大 · 智能农装'
+ 'fm-001':'中国国际大学生创新大赛','fm-002':'数字媒体科技与创意竞赛','fm-003':'重庆交大 · 大创培育','fm-004':'石油大学（华东）· 大创','fm-005':'湖北大学生创业扶持','fm-006':'同济物理学术竞赛','fm-007':'同济 · AI+教育学生组','fm-008':'人工智能应用创新大赛','fm-009':'数维杯数学建模','fm-010':'传智杯 · 数智与AI','fm-011':'蓝桥杯 · AI等赛项','fm-012':'蓝桥杯 · 设计与创新','fm-013':'大学生数据要素大赛','fm-014':'生命科学 · 科学探究','fm-015':'蓝桥杯 · 装备数字建模','fm-016':'西安交大 · 智能农装','fm-017':'好创意 · 常规赛','fm-018':'好创意 · 红色文化','fm-019':'好创意 · 老字号新国潮','fm-020':'NCDA · AI漫剧出海','fm-021':'米兰设计周 · 非命题'
 };
 let orbitLabelLayoutKey='',orbitLabelNodes=new Map(),keyboardPreview=-1,orbitTime=0,lastOrbitFrame=null;const planetEmphasis=new Map();
 function orbitCode(it){return it.id.replace('fm-','').replace(/^0/,'')}
@@ -1634,8 +2174,8 @@ const fullNodes=[document.querySelector('.info'),document.getElementById('source
 detailMore.addEventListener('toggle',()=>detailCard.classList.toggle('inspecting',detailMore.open));
 function animateOpportunity(node){if(!matchMedia('(prefers-reduced-motion: reduce)').matches)node.animate([{opacity:.45,transform:'translateY(5px)'},{opacity:1,transform:'translateY(0)'}],{duration:180,easing:'ease-out'})}function inspectOpportunity(i){hideOrbitPreview();const index=matchingItems().findIndex(row=>row.i===i);if(index>=0)galaxyPage=Math.floor(index/galaxyPageSize);select(i);detailMore.open=true;document.querySelector('.detail').scrollTop=0;animateOpportunity(detailCard)}
 
-function clearSelection(){active=-1;document.getElementById('title').textContent='暂无符合筛选的机会';document.getElementById('detailQuickDeadline').textContent='';for(const id of ['category','urgency','organizer','audience','apply','field','planetLegend','eligibilitySummary','availability'])document.getElementById(id).textContent='—';document.getElementById('timeline').replaceChildren();document.getElementById('sourceLink').hidden=true;document.getElementById('sourceEvidence').hidden=true;for(const id of ['simulateBtn','pathBtn','saveBtn','next'])document.getElementById(id).disabled=true}
-function select(i){if(!items[i])return;if(active!==i)document.querySelector('.detail').scrollTop=0;active=i;let it=items[i];for(const id of ['simulateBtn','pathBtn','saveBtn','next'])document.getElementById(id).disabled=false;const source=document.getElementById('sourceLink');source.hidden=false;source.href=it.url;source.textContent=sourceReviewState(it).needsReview?(it.verified?'原核验公告':'登记来源')+' ↗ · '+sourceReviewState(it).label:it.verified?'官方公告 ↗ · '+it.checked+' 核验':'查看登记来源 ↗ · 正文待核实';renderEvidence(it);document.getElementById('planetLegend').textContent=it.direction+' · 中性大小，未评级';const assessment=matchProfile(it);document.getElementById('eligibilitySummary').textContent=assessment.label;document.getElementById('availability').textContent=availability(it).label;document.getElementById('detailQuickDeadline').textContent=deadlineText(it)+' · '+it.field;document.getElementById('title').textContent=it.name;renderDetailArtwork(it);document.getElementById('category').textContent=it.cat;document.getElementById('urgency').textContent=(keyDate(it)?((dateMode==='apply'&&availability(it).code==='closed')||daysUntil(keyDate(it))<0?'已截止':daysUntil(keyDate(it))===0?'今天'+(dateMode==='award'?'评奖':'截止'):daysUntil(keyDate(it))+'天后'+(dateMode==='award'?'评奖':'截止')):'日期待核实');document.getElementById('organizer').textContent=it.org.split('（')[0];document.getElementById('organizer').title=it.org;document.getElementById('audience').textContent=it.aud;document.querySelectorAll('.info dt')[2].textContent=sourceReviewState(it).needsReview?'原登记时间':'报名时间';document.querySelector('.detail .section').textContent=sourceReviewState(it).needsReview?'原登记节点（需复核）':'时间节点';document.getElementById('apply').textContent=(it.start?fmt(it.start):'开始日未列明')+' — '+deadlineText(it);document.getElementById('field').textContent=it.field;let ev=[['报名开始',fmt(it.start)],['报名截止',fmt(it.end)],['评奖结果',fmt(it.award)]];document.getElementById('timeline').innerHTML=ev.map((e,j)=>'<div class="event '+(j===1?'hot':'')+'"><span class="point"></span><span>'+e[0]+'</span><time>'+e[1]+'</time></div>').join('');let b=document.getElementById('saveBtn');b.textContent=saved.has(items[i].id)?'♥　已收藏':'♡　收藏';b.classList.toggle('saved',saved.has(items[i].id))}select(0);canvas.addEventListener('click',e=>{if(suppressClick){suppressClick=false;return;}let rect=canvas.getBoundingClientRect(),x=e.clientX-rect.left,y=e.clientY-rect.top;let hit=findOrbitHit(x,y);if(hit){if(galaxyInteraction.compareMode)toggleGalaxyComparison(hit.i);else{inspectOpportunity(hit.i);if(matchMedia('(pointer:coarse)').matches)document.querySelector('.detail').scrollIntoView({behavior:'smooth',block:'start'})}}});canvas.addEventListener('mousemove',e=>{if(galaxyInteraction.dragging)return;const r=canvas.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;const hit=findOrbitHit(x,y);const next=hit?hit.i:-1;canvas.style.cursor=hit?'pointer':'grab';if(next!==hover){hover=next;if(hit)showOrbitPreview(hit.i,{x,y});else if(keyboardPreview<0)hideOrbitPreview()}});document.querySelectorAll('[data-cat]').forEach(b=>b.addEventListener('click',()=>{cat=b.dataset.cat;document.querySelectorAll('[data-cat]').forEach(x=>x.classList.toggle('active',x===b));updateStats()}));document.getElementById('next').onclick=()=>{let v=visibleItems();if(v.length){let n=v.findIndex(x=>x.i===active);select(v[(n+1)%v.length].i)}};document.getElementById('saveBtn').onclick=()=>{saved.has(items[active].id)?saved.delete(items[active].id):saved.add(items[active].id);document.getElementById('savedCount').textContent=saved.size;const persisted=store('flowmate_saved',[...saved]);select(active);if(persisted)toast(saved.has(items[active].id)?'已加入收藏':'已取消收藏')};function toast(t){let el=document.getElementById('toast');el.textContent=t;el.classList.add('show');clearTimeout(window._toast);window._toast=setTimeout(()=>el.classList.remove('show'),2200)}document.getElementById('pathBtn').onclick=()=>showPath(active);document.querySelectorAll('[data-nav]').forEach(b=>b.onclick=()=>openNavigation(b.dataset.nav));const searchButton=document.getElementById('searchBtn'),searchBox=document.getElementById('searchbox'),searchField=document.getElementById('searchInput');searchButton.setAttribute('aria-controls','searchbox');searchButton.setAttribute('aria-expanded','false');searchField.setAttribute('aria-label','搜索名称、学校或方向');document.getElementById('clearSearch').setAttribute('aria-label','清除搜索并关闭');searchButton.onclick=()=>{if(searchBox.classList.contains('open')){document.getElementById('clearSearch').click();return}searchBox.classList.add('open');searchButton.setAttribute('aria-expanded','true');searchField.focus()};searchField.addEventListener('keydown',e=>{if(e.key==='Escape'){e.stopPropagation();document.getElementById('clearSearch').click()}});document.getElementById('searchInput').oninput=e=>{query=e.target.value;updateStats()};document.getElementById('clearSearch').onclick=()=>{query='';document.getElementById('searchInput').value='';document.getElementById('searchbox').classList.remove('open');searchButton.setAttribute('aria-expanded','false');updateStats();searchButton.focus()};
+function clearSelection(){active=-1;document.getElementById('title').textContent='暂无符合筛选的机会';document.getElementById('detailQuickDeadline').textContent='';for(const id of ['category','urgency','organizer','audience','apply','field','planetLegend','eligibilitySummary','availability','competitionLevel']){const node=document.getElementById(id);if(node)node.textContent='—'}document.getElementById('timeline').replaceChildren();document.getElementById('sourceLink').hidden=true;document.getElementById('sourceEvidence').hidden=true;for(const id of ['simulateBtn','pathBtn','saveBtn','next'])document.getElementById(id).disabled=true}
+function select(i){if(!items[i])return;if(active!==i)document.querySelector('.detail').scrollTop=0;active=i;let it=items[i];for(const id of ['simulateBtn','pathBtn','saveBtn','next'])document.getElementById(id).disabled=false;const source=document.getElementById('sourceLink');source.hidden=false;source.href=it.url;source.textContent=sourceReviewState(it).needsReview?(it.verified?'原核验公告':'登记来源')+' ↗ · '+sourceReviewState(it).label:it.verified?'官方公告 ↗ · '+it.checked+' 核验':'查看登记来源 ↗ · 正文待核实';renderEvidence(it);document.getElementById('planetLegend').textContent=it.direction+' · 中性大小，未评级';const assessment=matchProfile(it);document.getElementById('eligibilitySummary').textContent=assessment.label;document.getElementById('availability').textContent=availability(it).label;document.getElementById('detailQuickDeadline').textContent=deadlineText(it)+' · '+it.field;document.getElementById('title').textContent=it.name;renderDetailArtwork(it);document.getElementById('category').textContent=it.cat;document.getElementById('urgency').textContent=(keyDate(it)?((dateMode==='apply'&&availability(it).code==='closed')||daysUntil(keyDate(it))<0?'已截止':daysUntil(keyDate(it))===0?'今天'+(dateMode==='award'?'评奖':'截止'):daysUntil(keyDate(it))+'天后'+(dateMode==='award'?'评奖':'截止')):'日期待核实');document.getElementById('organizer').textContent=it.org.split('（')[0];document.getElementById('organizer').title=it.org;document.getElementById('audience').textContent=it.aud;document.querySelectorAll('.info dt')[2].textContent=sourceReviewState(it).needsReview?'原登记时间':'报名时间';document.querySelector('.detail .section').textContent=sourceReviewState(it).needsReview?'原登记节点（需复核）':'时间节点';document.getElementById('apply').textContent=(it.start?fmt(it.start):'开始日未列明')+' — '+deadlineText(it);document.getElementById('field').textContent=it.field;const levelNode=document.getElementById('competitionLevel');if(levelNode)levelNode.textContent=competitionLevelText(it);let ev=[['报名开始',fmt(it.start)],['报名截止',fmt(it.end)],['评奖结果',fmt(it.award)]];document.getElementById('timeline').innerHTML=ev.map((e,j)=>'<div class="event '+(j===1?'hot':'')+'"><span class="point"></span><span>'+e[0]+'</span><time>'+e[1]+'</time></div>').join('');let b=document.getElementById('saveBtn');b.textContent=saved.has(items[i].id)?'♥　已收藏':'♡　收藏';b.classList.toggle('saved',saved.has(items[i].id))}select(0);canvas.addEventListener('click',e=>{if(suppressClick){suppressClick=false;return;}let rect=canvas.getBoundingClientRect(),x=e.clientX-rect.left,y=e.clientY-rect.top;let hit=findOrbitHit(x,y);if(hit){if(galaxyInteraction.compareMode)toggleGalaxyComparison(hit.i);else{inspectOpportunity(hit.i);if(matchMedia('(pointer:coarse)').matches)document.querySelector('.detail').scrollIntoView({behavior:'smooth',block:'start'})}}});canvas.addEventListener('mousemove',e=>{if(galaxyInteraction.dragging)return;const r=canvas.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;const hit=findOrbitHit(x,y);const next=hit?hit.i:-1;canvas.style.cursor=hit?'pointer':'grab';if(next!==hover){hover=next;if(hit)showOrbitPreview(hit.i,{x,y});else if(keyboardPreview<0)hideOrbitPreview()}});document.querySelectorAll('[data-cat]').forEach(b=>b.addEventListener('click',()=>{cat=b.dataset.cat;document.querySelectorAll('[data-cat]').forEach(x=>x.classList.toggle('active',x===b));updateStats()}));document.getElementById('next').onclick=()=>{let v=visibleItems();if(v.length){let n=v.findIndex(x=>x.i===active);select(v[(n+1)%v.length].i)}};document.getElementById('saveBtn').onclick=()=>{saved.has(items[active].id)?saved.delete(items[active].id):saved.add(items[active].id);document.getElementById('savedCount').textContent=saved.size;const persisted=store('flowmate_saved',[...saved]);select(active);if(persisted)toast(saved.has(items[active].id)?'已加入收藏':'已取消收藏')};function toast(t){let el=document.getElementById('toast');el.textContent=t;el.classList.add('show');clearTimeout(window._toast);window._toast=setTimeout(()=>el.classList.remove('show'),2200)}document.getElementById('pathBtn').onclick=()=>showPath(active);document.querySelectorAll('[data-nav]').forEach(b=>b.onclick=()=>openNavigation(b.dataset.nav));const searchButton=document.getElementById('searchBtn'),searchBox=document.getElementById('searchbox'),searchField=document.getElementById('searchInput');searchButton.setAttribute('aria-controls','searchbox');searchButton.setAttribute('aria-expanded','false');searchField.setAttribute('aria-label','搜索名称、学校或方向');document.getElementById('clearSearch').setAttribute('aria-label','清除搜索并关闭');searchButton.onclick=()=>{if(searchBox.classList.contains('open')){document.getElementById('clearSearch').click();return}searchBox.classList.add('open');searchButton.setAttribute('aria-expanded','true');searchField.focus()};searchField.addEventListener('keydown',e=>{if(e.key==='Escape'){e.stopPropagation();document.getElementById('clearSearch').click()}});document.getElementById('searchInput').oninput=e=>{query=e.target.value;updateStats()};document.getElementById('clearSearch').onclick=()=>{query='';document.getElementById('searchInput').value='';document.getElementById('searchbox').classList.remove('open');searchButton.setAttribute('aria-expanded','false');updateStats();searchButton.focus()};
 document.getElementById('rangeSelect').onchange=e=>{if(e.target.value==='custom')return;setRange(Number(e.target.value))};
 // Time horizon is a single state, controlled by a range slider or the mouse wheel.
 const rangeSelect=document.getElementById('rangeSelect');
@@ -1744,8 +2284,10 @@ function availability(it,now=new Date()){
  if(!it.start&&it.source.registrationOpenOn!==today)return {code:'unverified',label:'报名开始日期待核实'};
  return {code:'open',label:'报名窗口内 · 仍须核实资格'};
 }
+function competitionLevelText(it){const level=it.competition?.level;return (level==='national'?'全国赛制':level==='provincial'?'省级赛制':'赛制层级待核')+' · 校内认定另核'}
+function bachelorEntryAllowed(it){return it.verified&&(it.competition?.bachelorEntry==='allowed'||it.eligibility.degrees.includes('本科'))}
 function deadlineText(it){if(!it.end)return '截止日期待核实';const t=it.dates.deadlineAt;return fmt(it.end)+(t?' '+t.slice(11,16)+'（北京时间）':'')}
-function renderEvidence(it){const box=document.getElementById('sourceEvidence'),body=document.getElementById('evidenceBody');box.hidden=false;body.replaceChildren();body.append(textNode('p',it.note),textNode('p',it.eligibility.basis));if(it.source.evidence){body.append(textNode('p',it.verified?'公告正文核验：'+it.checked:'已读取公开信息，但存在冲突，尚未确认可报名'));if(it.source.evidence.documentUrl){const original=textNode('a','查看原始公告／公开数据 ↗');original.href=it.source.evidence.documentUrl;original.target='_blank';original.rel='noopener noreferrer';body.append(original)}for(const quote of it.source.evidence.quotes)body.append(textNode('blockquote',quote))}else body.append(textNode('p','当前仅保留登记信息；动态站点正文未完成核验。'))}
+function renderEvidence(it){const box=document.getElementById('sourceEvidence'),body=document.getElementById('evidenceBody');box.hidden=false;body.replaceChildren();body.append(textNode('p',it.note),textNode('p',it.eligibility.basis));if(it.competition)body.append(textNode('p','赛系：'+it.competition.seriesName+' · '+it.competition.track),textNode('p',competitionLevelText(it)),textNode('p','本科参与依据：'+it.competition.bachelorBasis),textNode('p','省/全国赛制依据：'+it.competition.levelBasis));if(it.source.evidence){body.append(textNode('p',it.verified?'公告正文核验：'+it.checked:'已读取公开信息，但存在冲突，尚未确认可报名'));if(it.source.evidence.documentUrl){const original=textNode('a','查看原始公告／公开数据 ↗');original.href=it.source.evidence.documentUrl;original.target='_blank';original.rel='noopener noreferrer';body.append(original)}for(const quote of it.source.evidence.quotes)body.append(textNode('blockquote',quote))}else body.append(textNode('p','当前仅保留登记信息；动态站点正文未完成核验。'))}
 function renderVerification(){const root=document.getElementById('verifyList');root.replaceChildren();const verified=items.filter(it=>it.verified).length;document.getElementById('sourceSummary').textContent='官方正文已核验 '+verified+' 条，来源待核 '+(items.length-verified)+' 条。公告核验与个人资格分开判断；行星大小未评级。';document.querySelector('.verification>summary').textContent='机会来源清单 · '+items.length+' 条（含已截止与待核记录）';for(const it of items.slice(0,50)){const row=document.createElement('div');row.className='verify-row';row.append(textNode('strong',it.name),textNode('span',it.cat+' · '+availability(it).label+' · '+it.field),textNode('p',matchProfile(it).label));const link=textNode('a',it.verified?'公告已核验 '+it.checked+' ↗':'登记来源 · 待核实 ↗');link.href=it.url;link.target='_blank';link.rel='noopener noreferrer';row.append(link);root.append(row)}if(items.length>50){const all=textNode('button','在机会库查看全部 '+items.length+' 条');all.className='profile-inline';all.onclick=()=>openNavigation('机会库');root.append(all)}const healthButton=textNode('button','查看数据更新记录 ↗');healthButton.className='profile-inline';healthButton.onclick=showSourceHealth;root.prepend(healthButton);document.getElementById('sourceSummary').textContent+=' '+sourceHealthSummary()}
 function openProfile(){
  showPanel('个人资格');
@@ -1771,11 +2313,14 @@ document.getElementById('profileBtn').onclick=openProfile;document.getElementByI
 
 function renderLibrary(){
  const form=document.createElement('div');form.className='library-controls';form.innerHTML='<input aria-label="搜索机会库" placeholder="搜索名称、学校或方向"><select aria-label="机会库状态"><option value="all">全部状态</option><option value="open">报名窗口内</option><option value="upcoming">未开始</option><option value="closed">已截止</option><option value="unverified">日期待核实</option></select><select aria-label="机会方向"><option value="all">全部方向</option></select><select aria-label="机会排序"><option value="deadline">优先近期截止</option><option value="published">最近发布</option></select><label><input type="checkbox">仅看初筛通过</label>';
+ const levelSelect=document.createElement('select');levelSelect.setAttribute('aria-label','赛事层级');for(const [value,label] of [['all','全部层级'],['provincial-plus','省级及以上（已核对）'],['national','全国赛制'],['provincial','省级赛制'],['unknown','层级待核']]){const option=textNode('option',label);option.value=value;levelSelect.append(option)}
+ const bachelorOnly=document.createElement('input');bachelorOnly.type='checkbox';bachelorOnly.id='bachelorEntryOnly';const bachelorLabel=document.createElement('label');bachelorLabel.append(bachelorOnly,textNode('span','本科可参与'));bachelorLabel.title='按公告公开参与范围筛选，不表示本人资格已通过';
+ const designPreset=textNode('button','本科设计 · 省级及以上');designPreset.type='button';designPreset.id='designBachelorPreset';designPreset.className='design-preset';form.append(levelSelect,bachelorLabel,designPreset);
  const directionSelect=form.querySelector('[aria-label="机会方向"]');for(const direction of Object.keys(colors)){const option=textNode('option',direction);option.value=direction;directionSelect.append(option)}
  let libraryPage=0;const pager=document.createElement('div');pager.className='catalogue-pager';const count=textNode('p',''),list=document.createElement('div');list.id='libraryResults';count.setAttribute('role','status');panelContent.append(form,count,list,pager);
- function render(){const query=form.querySelector('input').value.trim().toLocaleLowerCase(),state=form.querySelector('[aria-label="机会库状态"]').value,direction=directionSelect.value,sort=form.querySelector('[aria-label="机会排序"]').value,only=form.querySelector('[type=checkbox]').checked;const rank={eligible:0,pending:1,ineligible:2};const matches=items.map((it,i)=>({it,i,match:matchProfile(it),status:availability(it)})).filter(({it,match,status})=>([it.name,it.field,it.direction].join(' ').toLocaleLowerCase().includes(query))&&(state==='all'||status.code===state)&&(direction==='all'||it.direction===direction)&&(!only||match.code==='eligible')).sort((a,b)=>{if(sort==='published')return (b.it.dates.published||'').localeCompare(a.it.dates.published||'')||a.it.id.localeCompare(b.it.id);const statusRank={open:0,upcoming:1,unverified:2,closed:3};return (statusRank[a.status.code]-statusRank[b.status.code])||((a.it.end||'9999').localeCompare(b.it.end||'9999'))||rank[a.match.code]-rank[b.match.code]||a.it.id.localeCompare(b.it.id)});count.textContent=matches.length+' 条结果 · 初筛通过仍须主办方审核';list.replaceChildren();if(!matches.length)list.append(textNode('p','暂无符合筛选的机会。可调整条件或完善个人资格。'));libraryPage=Math.min(libraryPage,Math.max(0,Math.ceil(matches.length/50)-1));for(const {it,i} of matches.slice(libraryPage*50,(libraryPage+1)*50))list.append(rowFor(it,i));pager.replaceChildren();if(matches.length>50){const prev=textNode('button','上一页'),next=textNode('button','下一页');prev.disabled=libraryPage===0;next.disabled=(libraryPage+1)*50>=matches.length;prev.onclick=()=>{libraryPage--;render();list.scrollIntoView({block:'start'})};next.onclick=()=>{libraryPage++;render();list.scrollIntoView({block:'start'})};pager.append(prev,textNode('span',(libraryPage+1)+' / '+Math.ceil(matches.length/50)+' 页'),next)}}
+ function render(){const query=form.querySelector('input').value.trim().toLocaleLowerCase(),state=form.querySelector('[aria-label="机会库状态"]').value,direction=directionSelect.value,sort=form.querySelector('[aria-label="机会排序"]').value,level=levelSelect.value,bachelor=bachelorOnly.checked,only=form.querySelector('[type=checkbox]').checked;const rank={eligible:0,pending:1,ineligible:2};const matches=items.map((it,i)=>({it,i,match:matchProfile(it),status:availability(it)})).filter(({it,match,status})=>([it.name,it.field,it.direction].join(' ').toLocaleLowerCase().includes(query))&&(state==='all'||status.code===state)&&(direction==='all'||it.direction===direction)&&(!only||match.code==='eligible')&&(!bachelor||bachelorEntryAllowed(it))&&(level==='all'||(level==='unknown'?!it.competition||it.competition.level==='unknown':it.verified&&(level==='provincial-plus'?['national','provincial'].includes(it.competition?.level):it.competition?.level===level)))).sort((a,b)=>{if(sort==='published')return (b.it.dates.published||'').localeCompare(a.it.dates.published||'')||a.it.id.localeCompare(b.it.id);const statusRank={open:0,upcoming:1,unverified:2,closed:3};return (statusRank[a.status.code]-statusRank[b.status.code])||((a.it.end||'9999').localeCompare(b.it.end||'9999'))||rank[a.match.code]-rank[b.match.code]||a.it.id.localeCompare(b.it.id)});designPreset.setAttribute('aria-pressed',String(direction==='设计创意'&&level==='provincial-plus'&&bachelor));count.textContent=matches.length+' 条结果 · 省/全国赛制不等于校内加分认定；本人仍须资格审核';list.replaceChildren();if(!matches.length)list.append(textNode('p','暂无符合筛选的机会。可调整条件或完善个人资格。'));libraryPage=Math.min(libraryPage,Math.max(0,Math.ceil(matches.length/50)-1));for(const {it,i} of matches.slice(libraryPage*50,(libraryPage+1)*50))list.append(rowFor(it,i));pager.replaceChildren();if(matches.length>50){const prev=textNode('button','上一页'),next=textNode('button','下一页');prev.disabled=libraryPage===0;next.disabled=(libraryPage+1)*50>=matches.length;prev.onclick=()=>{libraryPage--;render();list.scrollIntoView({block:'start'})};next.onclick=()=>{libraryPage++;render();list.scrollIntoView({block:'start'})};pager.append(prev,textNode('span',(libraryPage+1)+' / '+Math.ceil(matches.length/50)+' 页'),next)}}
  // Native input events cover search, selects and checkboxes; blur/change must not replace a button mid-click.
- form.addEventListener('input',()=>{libraryPage=0;render()});render();
+ designPreset.onclick=()=>{const active=designPreset.getAttribute('aria-pressed')==='true';directionSelect.value=active?'all':'设计创意';levelSelect.value=active?'all':'provincial-plus';bachelorOnly.checked=!active;form.querySelector('input').value='';form.querySelector('[type=checkbox]').checked=false;form.querySelector('[aria-label="机会库状态"]').value='all';form.querySelector('[aria-label="机会排序"]').value='deadline';form.dispatchEvent(new Event('input',{bubbles:true}))};form.addEventListener('input',()=>{libraryPage=0;render()});render();
 }
 
 
@@ -1839,7 +2384,7 @@ function syncGalaxyControls(){
  compare.textContent=state.compareMode?(state.compared.length?'已选 1/2':'选两项'):state.compared.length===2?'对比 2项':'对比';compare.setAttribute('aria-pressed',String(state.compareMode));compare.setAttribute('aria-label',state.compareMode?'取消机会对比，已选'+state.compared.length+'项':state.compared.length===2?'重新查看两项机会对比':'选择两项机会进行对比');
  const purpose=document.querySelector('.orbit-purpose');if(purpose)purpose.textContent=state.compareMode?'依次选择两颗星球 · 再点一次可取消':'越近中心越临近'+(dateMode==='award'?'结果日期':'截止')+' · 拖动转动星系';
 }
-function reconcileGalaxyComparison(){if(!galaxyInteraction.compared.length)return;const visible=new Set(visibleItems().map(({it})=>it.id));const previous=galaxyInteraction.compared.length;galaxyInteraction.compared=galaxyInteraction.compared.filter(id=>visible.has(id));if(previous!==galaxyInteraction.compared.length){const status=document.getElementById('galaxyStatus');if(status)status.textContent='筛选已变更，已移除不在当前星系中的对比项'}if(!galaxyInteraction.compareMode&&galaxyInteraction.compared.length!==2)galaxyInteraction.compared=[]}
+function reconcileGalaxyComparison(){if(!galaxyInteraction.compared.length)return;const visible=new Set(matchingItems().map(({it})=>it.id));const previous=galaxyInteraction.compared.length;galaxyInteraction.compared=galaxyInteraction.compared.filter(id=>visible.has(id));if(previous!==galaxyInteraction.compared.length){const status=document.getElementById('galaxyStatus');if(status)status.textContent='筛选已变更，已移除不在当前星系中的对比项'}if(!galaxyInteraction.compareMode&&galaxyInteraction.compared.length!==2)galaxyInteraction.compared=[]}
 pauseGalaxy.onclick=()=>{galaxyInteraction.paused=!galaxyInteraction.paused;syncGalaxyControls();galaxyStatus.textContent=galaxyInteraction.paused?'星系已暂停，仍可拖动和选择机会':'星系继续公转'};
 resetGalaxy.onclick=()=>{galaxyInteraction.rotation=0;syncGalaxyControls();galaxyStatus.textContent='已恢复默认朝向，时间范围和筛选保留'};
 compareGalaxy.onclick=()=>{if(galaxyInteraction.compared.length===2&&!galaxyInteraction.compareMode){openGalaxyComparison();return}galaxyInteraction.compareMode=!galaxyInteraction.compareMode;galaxyInteraction.compared=[];hideOrbitPreview();hover=-1;keyboardPreview=-1;syncGalaxyControls();if(galaxyInteraction.compareMode)toast('依次点击两颗星球或下方名称，查看对比')};
@@ -1849,7 +2394,7 @@ function openGalaxyComparison(){
  panelContent.append(textNode('p','对照官方登记与当前个人资料；初筛结果不代表主办方审核通过。'));
  const scrollHint=textNode('p','左右滑动查看两项，向下查看完整条件');scrollHint.className='comparison-scroll-hint';panelContent.append(scrollHint);const wrap=textNode('div','');wrap.className='comparison-wrap';const table=document.createElement('table');table.className='comparison-table';const caption=textNode('caption','两项机会的截止、范围及个人资格');caption.className='galaxy-status';table.append(caption);
  const head=document.createElement('thead'),heading=document.createElement('tr');for(const text of ['比较项',...chosen.map(it=>it.name)]){const cell=textNode('th',text);cell.scope='col';heading.append(cell)}head.append(heading);table.append(head);const body=document.createElement('tbody');
- const fields=[['报名截止',it=>deadlineText(it)],['当前状态',it=>availability(it).label],['适用范围',it=>{const school=it.eligibility.schools.join('、');return school&&!it.field.includes(school)?it.field+' · '+school:it.field}],['个人资格',it=>{const match=matchProfile(it);return match.label+'：'+match.reasons.join('；')}],['队伍人数',it=>{const team=it.eligibility.teamSize;if(!team)return '人数要求需核实';return team.min===null?'最多'+team.max+'名参赛学生':team.max===null?'至少'+team.min+'名参赛学生':team.min===team.max?team.min+'名参赛学生':team.min+'–'+team.max+'名参赛学生'}],['补充条件',it=>(it.eligibility.requirements||[]).map(r=>r.label).join('；')||it.eligibility.basis],['来源核验',it=>(it.verified?'正文核验 '+it.checked:'正文待核实')+' · '+sourceReviewState(it).label]];
+ const fields=[['赛事层级',it=>competitionLevelText(it)],['报名截止',it=>deadlineText(it)],['当前状态',it=>availability(it).label],['适用范围',it=>{const school=it.eligibility.schools.join('、');return school&&!it.field.includes(school)?it.field+' · '+school:it.field}],['个人资格',it=>{const match=matchProfile(it);return match.label+'：'+match.reasons.join('；')}],['队伍人数',it=>{const team=it.eligibility.teamSize;if(!team)return '人数要求需核实';return team.min===null?'最多'+team.max+'名参赛学生':team.max===null?'至少'+team.min+'名参赛学生':team.min===team.max?team.min+'名参赛学生':team.min+'–'+team.max+'名参赛学生'}],['补充条件',it=>(it.eligibility.requirements||[]).map(r=>r.label).join('；')||it.eligibility.basis],['来源核验',it=>(it.verified?'正文核验 '+it.checked:'正文待核实')+' · '+sourceReviewState(it).label]];
  for(const [name,value] of fields){const row=document.createElement('tr'),title=textNode('th',name);title.scope='row';row.append(title);for(const it of chosen)row.append(textNode('td',value(it)));body.append(row)}
  const links=document.createElement('tr'),title=textNode('th','官方公告');title.scope='row';links.append(title);for(const it of chosen){const cell=document.createElement('td'),link=textNode('a','查看原文 ↗');link.href=it.url;link.target='_blank';link.rel='noopener noreferrer';cell.append(link);links.append(cell)}body.append(links);table.append(body);wrap.append(table);panelContent.append(wrap);
  const actions=document.createElement('div');actions.className='comparison-actions';for(const [index,it] of chosen.entries()){const button=textNode('button','查看'+(index===0?'左':'右')+'侧机会详情');button.onclick=()=>{closeModal(panelOverlay);inspectOpportunity(items.indexOf(it));if(innerWidth<=790)document.querySelector('.detail').scrollIntoView({behavior:'smooth',block:'start'})};actions.append(button)}const restart=textNode('button','重新选择');restart.onclick=()=>{closeModal(panelOverlay);galaxyInteraction.compared=[];galaxyInteraction.compareMode=true;syncGalaxyControls();canvas.focus({preventScroll:true});if(innerWidth<=790)space.scrollIntoView({behavior:'smooth',block:'center'})};actions.append(restart);panelContent.append(actions)
@@ -1870,5 +2415,8 @@ function turnGalaxyPage(step){const pages=Math.ceil(matchingItems().length/galax
 galaxyPrev.onclick=()=>turnGalaxyPage(-1);galaxyNext.onclick=()=>turnGalaxyPage(1);syncGalaxyPagination();
 
 function appendOpportunityPages(entries,parent=panelContent,renderEntry=entry=>rowFor(entry.it,entry.i)){let page=0;const rows=document.createElement('div'),pager=document.createElement('div');pager.className='catalogue-pager';parent.append(rows,pager);function render(){rows.replaceChildren();pager.replaceChildren();for(const entry of entries.slice(page*50,(page+1)*50))rows.append(renderEntry(entry));if(entries.length>50){const prev=textNode('button','上一页'),next=textNode('button','下一页');prev.disabled=page===0;next.disabled=(page+1)*50>=entries.length;prev.onclick=()=>{page--;render();rows.scrollIntoView({block:'start'})};next.onclick=()=>{page++;render();rows.scrollIntoView({block:'start'})};pager.append(prev,textNode('span',(page+1)+' / '+Math.ceil(entries.length/50)+' 页'),next)}}render()}
+
+const competitionLevelTerm=textNode('dt','赛事层级'),competitionLevelValue=textNode('dd','');competitionLevelValue.id='competitionLevel';document.querySelector('.info').append(competitionLevelTerm,competitionLevelValue);if(items[active])competitionLevelValue.textContent=competitionLevelText(items[active]);
+if(new URLSearchParams(location.search).get('focus')==='design-bachelor'){openNavigation('机会库');document.getElementById('designBachelorPreset')?.click()}
 </script></body></html>
 

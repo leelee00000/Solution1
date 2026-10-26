@@ -1,7 +1,8 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-25T15:07:52.986655+00:00",
-  "nextCheckAfter": "2026-10-26T15:07:52.986655+00:00",
+  "checkedAt": "2026-10-26T14:51:11.655073+00:00",
+  "nextCheckAfter": "2026-10-27T14:51:11.655073+00:00",
+  "checkedCount": 1,
   "description": "自动检查仅比较官方正文快照；不自动修改日期、资格或人工核验结论。",
   "results": [
     {
@@ -12,7 +13,8 @@
       "referenceHash": "0ad4adbf6277cbd54327455868354fe0f84520908f25db370d6b6ac3928b3a26",
       "status": "unchanged",
       "contentHash": "0ad4adbf6277cbd54327455868354fe0f84520908f25db370d6b6ac3928b3a26",
-      "message": "与已核验正文快照一致；不等于报名审核通过"
+      "message": "与已核验正文快照一致；不等于报名审核通过",
+      "checkedAt": "2026-10-25T15:07:52.986655+00:00"
     },
     {
       "id": "fm-002",
@@ -22,7 +24,8 @@
       "referenceHash": "0c5ec46fa26cb47a4dad8363a9f1a7baca5fa99bc6ad26903003772cb0dffbd9",
       "status": "unchanged",
       "contentHash": "0c5ec46fa26cb47a4dad8363a9f1a7baca5fa99bc6ad26903003772cb0dffbd9",
-      "message": "与已核验正文快照一致；不等于报名审核通过"
+      "message": "与已核验正文快照一致；不等于报名审核通过",
+      "checkedAt": "2026-10-25T15:07:52.986655+00:00"
     },
     {
       "id": "fm-003",
@@ -32,7 +35,8 @@
       "referenceHash": "11663a4f00e96e9c29640d5c621d20e8d99508b290de94b583a7dbd8c5b155c3",
       "status": "unchanged",
       "contentHash": "11663a4f00e96e9c29640d5c621d20e8d99508b290de94b583a7dbd8c5b155c3",
-      "message": "与已核验正文快照一致；不等于报名审核通过"
+      "message": "与已核验正文快照一致；不等于报名审核通过",
+      "checkedAt": "2026-10-25T15:07:52.986655+00:00"
     },
     {
       "id": "fm-004",
@@ -42,7 +46,8 @@
       "referenceHash": "964c95d737da0b7c6c051c79791a8e10f364090c6015c6ce602efe9acab957dc",
       "status": "unreachable",
       "message": "未能完成来源检查，保留历史核验资料",
-      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+      "checkedAt": "2026-10-25T15:07:52.986655+00:00"
     },
     {
       "id": "fm-005",
@@ -52,7 +57,8 @@
       "referenceHash": "e7db13bca4c4d5bf7d18a69d6053cbacd21bec17043be8f92c5cd7b8b2665caf",
       "status": "unchanged",
       "contentHash": "e7db13bca4c4d5bf7d18a69d6053cbacd21bec17043be8f92c5cd7b8b2665caf",
-      "message": "与已核验正文快照一致；不等于报名审核通过"
+      "message": "与已核验正文快照一致；不等于报名审核通过",
+      "checkedAt": "2026-10-25T15:07:52.986655+00:00"
     },
     {
       "id": "fm-006",
@@ -62,7 +68,8 @@
       "referenceHash": "c5226ccd10d42025fa454cef3712d1134efedb08564ce2a3126842078eaa3a94",
       "status": "unchanged",
       "contentHash": "c5226ccd10d42025fa454cef3712d1134efedb08564ce2a3126842078eaa3a94",
-      "message": "与已核验正文快照一致；不等于报名审核通过"
+      "message": "与已核验正文快照一致；不等于报名审核通过",
+      "checkedAt": "2026-10-25T15:07:52.986655+00:00"
     },
     {
       "id": "fm-007",
@@ -72,7 +79,8 @@
       "referenceHash": "bf04c48683559623138969bc37d9e356eb5b9b8a091e3f055acb484b4fe4d5d7",
       "status": "unchanged",
       "contentHash": "bf04c48683559623138969bc37d9e356eb5b9b8a091e3f055acb484b4fe4d5d7",
-      "message": "与已核验正文快照一致；不等于报名审核通过"
+      "message": "与已核验正文快照一致；不等于报名审核通过",
+      "checkedAt": "2026-10-25T15:07:52.986655+00:00"
     },
     {
       "id": "fm-008",
@@ -81,7 +89,8 @@
       "reviewedBodyHash": "4ae322088bc77a37a37a6d6a0c9da6ed5b416e31a446eb650a070acce89545c0",
       "referenceHash": null,
       "status": "unreviewed",
-      "message": "已读取官网信息，但报名截止冲突尚未澄清"
+      "message": "已读取官网信息，但报名截止冲突尚未澄清",
+      "checkedAt": "2026-10-25T15:07:52.986655+00:00"
     },
     {
       "id": "fm-009",
@@ -91,7 +100,8 @@
       "referenceHash": "24550c6811efd05544ed6509b91b240614a298e21c423d656aa1ffb1e430d7f4",
       "status": "unchanged",
       "contentHash": "24550c6811efd05544ed6509b91b240614a298e21c423d656aa1ffb1e430d7f4",
-      "message": "与已核验正文快照一致；不等于报名审核通过"
+      "message": "与已核验正文快照一致；不等于报名审核通过",
+      "checkedAt": "2026-10-25T15:07:52.986655+00:00"
     },
     {
       "id": "fm-010",
@@ -101,7 +111,8 @@
       "referenceHash": "c92fdc7ecabd7ca2e03e9c52b9bf35b031199127bbf201aa1bf82ac68ccc47e2",
       "status": "unchanged",
       "contentHash": "c92fdc7ecabd7ca2e03e9c52b9bf35b031199127bbf201aa1bf82ac68ccc47e2",
-      "message": "与已核验正文快照一致；不等于报名审核通过"
+      "message": "与已核验正文快照一致；不等于报名审核通过",
+      "checkedAt": "2026-10-25T15:07:52.986655+00:00"
     },
     {
       "id": "fm-011",
@@ -111,7 +122,8 @@
       "referenceHash": "bd365f987cf36bc8570c6b0bfbbfec14d6ec794a23d50ad77507098e2a79b2a9",
       "status": "unchanged",
       "contentHash": "bd365f987cf36bc8570c6b0bfbbfec14d6ec794a23d50ad77507098e2a79b2a9",
-      "message": "与已核验正文快照一致；不等于报名审核通过"
+      "message": "与已核验正文快照一致；不等于报名审核通过",
+      "checkedAt": "2026-10-25T15:07:52.986655+00:00"
     },
     {
       "id": "fm-012",
@@ -121,7 +133,8 @@
       "referenceHash": "bd365f987cf36bc8570c6b0bfbbfec14d6ec794a23d50ad77507098e2a79b2a9",
       "status": "unchanged",
       "contentHash": "bd365f987cf36bc8570c6b0bfbbfec14d6ec794a23d50ad77507098e2a79b2a9",
-      "message": "与已核验正文快照一致；不等于报名审核通过"
+      "message": "与已核验正文快照一致；不等于报名审核通过",
+      "checkedAt": "2026-10-25T15:07:52.986655+00:00"
     },
     {
       "id": "fm-013",
@@ -131,7 +144,8 @@
       "referenceHash": "b0e153a30d1aece719f7b4e86deaf8ff7c5aa945052c7908422b198c1bc25098",
       "status": "unchanged",
       "contentHash": "b0e153a30d1aece719f7b4e86deaf8ff7c5aa945052c7908422b198c1bc25098",
-      "message": "与已核验正文快照一致；不等于报名审核通过"
+      "message": "与已核验正文快照一致；不等于报名审核通过",
+      "checkedAt": "2026-10-25T15:07:52.986655+00:00"
     },
     {
       "id": "fm-014",
@@ -141,7 +155,8 @@
       "referenceHash": "1b4a8ca0e21092c7c41bf8a91801efe57301f3bd358e910ff329c6331bfae051",
       "status": "unchanged",
       "contentHash": "1b4a8ca0e21092c7c41bf8a91801efe57301f3bd358e910ff329c6331bfae051",
-      "message": "与已核验正文快照一致；不等于报名审核通过"
+      "message": "与已核验正文快照一致；不等于报名审核通过",
+      "checkedAt": "2026-10-25T15:07:52.986655+00:00"
     },
     {
       "id": "fm-015",
@@ -151,7 +166,8 @@
       "referenceHash": "b2b58f7df7be13c3be01a642e150d701f2a5efb6d89ee5d61bc65548180aae58",
       "status": "unchanged",
       "contentHash": "b2b58f7df7be13c3be01a642e150d701f2a5efb6d89ee5d61bc65548180aae58",
-      "message": "与已核验正文快照一致；不等于报名审核通过"
+      "message": "与已核验正文快照一致；不等于报名审核通过",
+      "checkedAt": "2026-10-25T15:07:52.986655+00:00"
     },
     {
       "id": "fm-016",
@@ -161,7 +177,63 @@
       "referenceHash": "e3a63e1568ae8cacc375b0db8cdbef54a7dfe045a07fcfcc28f2990ba2db96a7",
       "status": "unchanged",
       "contentHash": "e3a63e1568ae8cacc375b0db8cdbef54a7dfe045a07fcfcc28f2990ba2db96a7",
-      "message": "与已核验正文快照一致；不等于报名审核通过"
+      "message": "与已核验正文快照一致；不等于报名审核通过",
+      "checkedAt": "2026-10-25T15:07:52.986655+00:00"
+    },
+    {
+      "id": "fm-017",
+      "url": "https://www.cdec.org.cn/articleDetail/2363",
+      "reviewedAt": "2026-10-26",
+      "reviewedBodyHash": "3d8ba0939634c9cf6cc16a1cb46aac300f25f93ab7f9249e743fafcf68159dd7",
+      "referenceHash": "4836f5e404618763b1a26d41bfd6b8efb4e445cd0f18b1ebfc782e9103be44af",
+      "status": "unchanged",
+      "contentHash": "4836f5e404618763b1a26d41bfd6b8efb4e445cd0f18b1ebfc782e9103be44af",
+      "message": "与已核验正文快照一致；不等于报名审核通过",
+      "checkedAt": "2026-10-26T14:41:28.812316+00:00"
+    },
+    {
+      "id": "fm-018",
+      "url": "https://www.cdec.org.cn/articleDetail/2542",
+      "reviewedAt": "2026-10-26",
+      "reviewedBodyHash": "d9220e58227c600a8546bffaf09c74ea7da37d9d6d9c449c424e9fa4e40ce8cf",
+      "referenceHash": "c38a28f7e228e34d69265f2530c6cbb8cd493c003105443a5057f3f55ccd12ff",
+      "status": "unchanged",
+      "contentHash": "c38a28f7e228e34d69265f2530c6cbb8cd493c003105443a5057f3f55ccd12ff",
+      "message": "与已核验正文快照一致；不等于报名审核通过",
+      "checkedAt": "2026-10-26T14:51:11.655073+00:00"
+    },
+    {
+      "id": "fm-019",
+      "url": "https://www.cdec.org.cn/articleDetail/2527",
+      "reviewedAt": "2026-10-26",
+      "reviewedBodyHash": "7e953d7fe836558d691c529a2dcb8f7aa0e96725e1f2cffe7786f226c4a3f40a",
+      "referenceHash": "507bb08b054f1fcc56c62dfa5ad790905e6cf4c8653773038ccb129f1fb4f0e6",
+      "status": "unchanged",
+      "contentHash": "507bb08b054f1fcc56c62dfa5ad790905e6cf4c8653773038ccb129f1fb4f0e6",
+      "message": "与已核验正文快照一致；不等于报名审核通过",
+      "checkedAt": "2026-10-26T14:41:37.681840+00:00"
+    },
+    {
+      "id": "fm-020",
+      "url": "https://www.ncda.org.cn/dsjs/dsnr/mtsd/9C3/",
+      "reviewedAt": "2026-10-26",
+      "reviewedBodyHash": "cc7cffdacc6b40ae7709e15b95871a6ed4a24c34270a720432af5e968b22eac5",
+      "referenceHash": "bc25207714e9f1fa6462e519ac9e6254b139c83e764a01571b868371cb0f9738",
+      "status": "unchanged",
+      "contentHash": "bc25207714e9f1fa6462e519ac9e6254b139c83e764a01571b868371cb0f9738",
+      "message": "与已核验正文快照一致；不等于报名审核通过",
+      "checkedAt": "2026-10-26T14:41:41.365711+00:00"
+    },
+    {
+      "id": "fm-021",
+      "url": "https://milan-aap.org.cn/",
+      "reviewedAt": "2026-10-26",
+      "reviewedBodyHash": "f44dfbc770b691ccf1bbed87b3d8444860e11e7a435d5128e784a12f546cbdc4",
+      "referenceHash": "faba460f8fa96f9df6ca9e1503e2c0390379afdb1391d8350c87e0e4e75cec6e",
+      "status": "unchanged",
+      "contentHash": "faba460f8fa96f9df6ca9e1503e2c0390379afdb1391d8350c87e0e4e75cec6e",
+      "message": "与已核验正文快照一致；不等于报名审核通过",
+      "checkedAt": "2026-10-26T14:46:03.436216+00:00"
     }
   ]
 }

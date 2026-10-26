@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "baseline": "V80",
-  "description": "V80 baseline; 16 opportunity records including specific tracks and school registration stages, 15 official notices reviewed. fm-008 deadline conflict remains pending. Records are not counts of distinct national competitions.",
+  "description": "V80 基线资料库；机会记录包含具体届次、赛项和校内阶段，不代表独立全国赛事数量。公告核验与个人资格分开判断，未知日期不推算。",
   "opportunities": [
     {
       "name": "中国国际大学生创新大赛（2026）",
@@ -1083,6 +1083,455 @@
             "quote": "指导教师不多于3人"
           }
         ]
+      }
+    },
+    {
+      "name": "第21届好创意暨全国数字艺术设计大赛 · 常规赛学生单元",
+      "cat": "竞赛",
+      "direction": "设计创意",
+      "org": "中国好创意暨全国数字艺术设计大赛组织委员会",
+      "aud": "公开规则允许本科参与；本人条件与具体赛项仍须确认",
+      "field": "全国高校 · 学生单元（校内截止另核）",
+      "note": "免费参赛与免费存证；全国投稿截止5月31日17:00，不能用首页校赛推优日期代替。院校校赛和推优可能提前，尚未核实同济学院截止与认定。每类别最多10件、全部常规类别不超过24件，严禁赛项间一稿多投。",
+      "id": "fm-017",
+      "dates": {
+        "start": "2026-10-20",
+        "end": "2027-05-31",
+        "award": null,
+        "deadlineAt": "2027-05-31T17:00:00+08:00",
+        "timezone": "Asia/Shanghai",
+        "published": "2026-07-01"
+      },
+      "source": {
+        "url": "https://www.cdec.org.cn/articleDetail/2363",
+        "kind": "official-notice",
+        "verification": "verified",
+        "verifiedAt": "2026-10-26",
+        "lastAttemptAt": "2026-10-26",
+        "lastAttemptResult": "http-200-body-reviewed",
+        "importedClaimedCheckedAt": null,
+        "importedClaimedStatus": "新收录，无历史导入声明",
+        "registrationOpenOn": null,
+        "evidence": {
+          "bodySha256": "3d8ba0939634c9cf6cc16a1cb46aac300f25f93ab7f9249e743fafcf68159dd7",
+          "quotes": [
+            "国赛评审时间：",
+            "（2）本科组",
+            "2026年10月20日-2027年5月31日17:00止（系统关闭）；",
+            "有校赛的学校，校内投稿时间截止后，凡使用非学校官方核定的二级学院名称提交参赛作品，均视为无效作品。",
+            "每个参赛者（或同一个参赛团队），每个类别限投10件（含10件作品），全部常规赛类别不超过24件作品。",
+            "！！请详细阅读每个投稿类别的诠释，不符合类别主题要求的一律不能获奖。"
+          ],
+          "scope": "人工阅读官方公开正文，核对本科参与、赛制奖项层级与所载日期；不代表同济校内认定或最终报名审核通过。",
+          "monitorHash": "4836f5e404618763b1a26d41bfd6b8efb4e445cd0f18b1ebfc782e9103be44af",
+          "monitorRegion": {
+            "start": "中国好创意暨全国数字艺术设计大赛",
+            "end": "请选择查询分类"
+          }
+        }
+      },
+      "eligibility": {
+        "schools": [],
+        "regions": [],
+        "degrees": [
+          "专科",
+          "本科",
+          "硕士",
+          "博士"
+        ],
+        "enrollmentYears": [],
+        "studyYears": [],
+        "majorGroups": [],
+        "enrolled": true,
+        "rulesComplete": false,
+        "basis": "已阅读公开原文。所建模的是本科可参与的通道；同济校内截稿、认定及其他未列规则另核。",
+        "studyModes": [],
+        "leaderStudyYears": [],
+        "teamSize": null,
+        "requirements": [
+          {
+            "id": "school-review",
+            "label": "已确认所属学院的校赛、管理员审核及更早截稿要求",
+            "quote": "有校赛的学校，校内投稿时间截止后，凡使用非学校官方核定的二级学院名称提交参赛作品，均视为无效作品。"
+          },
+          {
+            "id": "quota",
+            "label": "遵守每类别10件、全部常规类别24件的作者/团队投稿限制",
+            "quote": "每个参赛者（或同一个参赛团队），每个类别限投10件（含10件作品），全部常规赛类别不超过24件作品。"
+          },
+          {
+            "id": "category",
+            "label": "已阅读所选类别的主题诠释、提交格式和作者条件",
+            "quote": "！！请详细阅读每个投稿类别的诠释，不符合类别主题要求的一律不能获奖。"
+          }
+        ]
+      },
+      "competition": {
+        "seriesId": "cdec-21",
+        "seriesName": "第21届好创意暨全国数字艺术设计大赛",
+        "track": "常规赛学生单元",
+        "level": "national",
+        "levelBasis": "国赛评审时间：",
+        "bachelorEntry": "allowed",
+        "bachelorBasis": "（2）本科组",
+        "universityRecognition": "unconfirmed"
+      }
+    },
+    {
+      "name": "第4届红色文化创意设计专项赛 · 好创意学生通道",
+      "cat": "竞赛",
+      "direction": "设计创意",
+      "org": "中国好创意暨全国数字艺术设计大赛组织委员会",
+      "aud": "公开规则允许本科参与；本人条件与具体赛项仍须确认",
+      "field": "国内外高校 · 学生通道",
+      "note": "免费参赛，公开公告明确直入国赛评审、无需院校管理员审核；本条建模学生通道，教师通道另核。静态作者最多3人、动态最多8人，不统一按3人排除动态团队；存证、作品署名、原创及版权条款仍须确认。同济校内认定未核。",
+      "id": "fm-018",
+      "dates": {
+        "start": "2026-10-26",
+        "end": "2027-04-30",
+        "award": null,
+        "deadlineAt": "2027-04-30T17:00:00+08:00",
+        "timezone": "Asia/Shanghai",
+        "published": "2026-10-26"
+      },
+      "source": {
+        "url": "https://www.cdec.org.cn/articleDetail/2542",
+        "kind": "official-notice",
+        "verification": "verified",
+        "verifiedAt": "2026-10-26",
+        "lastAttemptAt": "2026-10-26",
+        "lastAttemptResult": "http-200-body-reviewed",
+        "importedClaimedCheckedAt": null,
+        "importedClaimedStatus": "新收录，无历史导入声明",
+        "registrationOpenOn": null,
+        "evidence": {
+          "bodySha256": "d9220e58227c600a8546bffaf09c74ea7da37d9d6d9c449c424e9fa4e40ce8cf",
+          "quotes": [
+            "*本专项赛无需院校管理员审核，参赛作品提交数量不限，作品直接进入国赛评审环节。",
+            "国内外普通高校、高等职业院校的在校学生及教师均可参赛。",
+            "2026年10月26日—2027年4月30日17:00",
+            "(六)静态作品创作团队人数不超过3人，指导教师不超过2人；动态作品创作团队 人数不超过8人，指导教师不超过3人；",
+            "(七)一件作品，最多不超过3所合作院校（含本校）；",
+            "*专项赛免费参赛；所有参赛作品须完成免费版权存证后再提交投稿，投稿成功即代表完成作品存证，作品著作权归参赛作者及创作团队所有。"
+          ],
+          "scope": "人工阅读官方公开正文，核对本科参与、赛制奖项层级与所载日期；不代表同济校内认定或最终报名审核通过。",
+          "monitorHash": "c38a28f7e228e34d69265f2530c6cbb8cd493c003105443a5057f3f55ccd12ff",
+          "monitorRegion": {
+            "start": "好创意大赛介绍",
+            "end": "请选择查询分类"
+          }
+        }
+      },
+      "eligibility": {
+        "schools": [],
+        "regions": [],
+        "degrees": [
+          "专科",
+          "本科",
+          "硕士",
+          "博士"
+        ],
+        "enrollmentYears": [],
+        "studyYears": [],
+        "majorGroups": [],
+        "enrolled": true,
+        "rulesComplete": false,
+        "basis": "已阅读公开原文。所建模的是本科可参与的通道；同济校内截稿、认定及其他未列规则另核。",
+        "studyModes": [],
+        "leaderStudyYears": [],
+        "teamSize": {
+          "min": null,
+          "max": 8
+        },
+        "requirements": [
+          {
+            "id": "format-team",
+            "label": "已按作品类型核对人数：静态不超过3人、动态不超过8人，教师不计入参赛学生人数",
+            "quote": "(六)静态作品创作团队人数不超过3人，指导教师不超过2人；动态作品创作团队 人数不超过8人，指导教师不超过3人；"
+          },
+          {
+            "id": "cross-school",
+            "label": "最多3所合作院校，已取得团队成员授权",
+            "quote": "(七)一件作品，最多不超过3所合作院校（含本校）；"
+          },
+          {
+            "id": "rights",
+            "label": "已阅读红色文化命题、版权与免费存证要求，未跨赛项重复投稿",
+            "quote": "*专项赛免费参赛；所有参赛作品须完成免费版权存证后再提交投稿，投稿成功即代表完成作品存证，作品著作权归参赛作者及创作团队所有。"
+          }
+        ]
+      },
+      "competition": {
+        "seriesId": "cdec-21",
+        "seriesName": "第21届好创意暨全国数字艺术设计大赛",
+        "track": "红色文化创意专项",
+        "level": "national",
+        "levelBasis": "*本专项赛无需院校管理员审核，参赛作品提交数量不限，作品直接进入国赛评审环节。",
+        "bachelorEntry": "allowed",
+        "bachelorBasis": "国内外普通高校、高等职业院校的在校学生及教师均可参赛。",
+        "universityRecognition": "unconfirmed"
+      }
+    },
+    {
+      "name": "第5届老字号·新国潮创新设计专项赛 · 好创意",
+      "cat": "竞赛",
+      "direction": "设计创意",
+      "org": "中国好创意暨全国数字艺术设计大赛组织委员会（华东理工大学承办）",
+      "aud": "公开规则允许本科参与；本人条件与具体赛项仍须确认",
+      "field": "国内外院校/工作室（品牌包装、IP与文创）",
+      "note": "免费参赛，直接国赛评选，无需院校管理员审核；华东理工承办，不限上海或该校。命题包括大白兔、沈大成、光明谷锦、上海牌麦乳精。公告列同济为高校联盟单位，但不据此推断学分/推免认定。具体命题授权、版权及存证条款须核，不能从同一主赛事常规规则推导专项截止。",
+      "id": "fm-019",
+      "dates": {
+        "start": "2026-09-22",
+        "end": "2027-05-01",
+        "award": null,
+        "deadlineAt": "2027-05-01T17:00:00+08:00",
+        "timezone": "Asia/Shanghai",
+        "published": "2026-09-22"
+      },
+      "source": {
+        "url": "https://www.cdec.org.cn/articleDetail/2527",
+        "kind": "official-notice",
+        "verification": "verified",
+        "verifiedAt": "2026-10-26",
+        "lastAttemptAt": "2026-10-26",
+        "lastAttemptResult": "http-200-body-reviewed",
+        "importedClaimedCheckedAt": null,
+        "importedClaimedStatus": "新收录，无历史导入声明",
+        "registrationOpenOn": null,
+        "evidence": {
+          "bodySha256": "7e953d7fe836558d691c529a2dcb8f7aa0e96725e1f2cffe7786f226c4a3f40a",
+          "quotes": [
+            "*获奖者由好创意大赛组委会统一颁发国赛获奖证书。",
+            "国内外院校个人及团队、工作室、实验室、联合创作室等均可参加。",
+            "报名投稿时间：自大赛简章发布之日起至 2027年5月1日17:00截止。",
+            "(五)静态作品创作团队人数不超过3人，指导教师不超过2人；动态作品创作团队 人数不超过8人，指导教师不超过3人，跨校合作，最多不超过3所合作院校（含本校）；",
+            "*老字号所有命题参赛作品必须先存证（存证免费，版权归命题方）再投稿。",
+            "决赛答辩：初赛入围选手统一进行决赛答辩（答辩地点待定，答辩期间的差旅、住宿等，自行承担），不参加决赛答辩的作品，自动降级到优秀奖。"
+          ],
+          "scope": "人工阅读官方公开正文，核对本科参与、赛制奖项层级与所载日期；不代表同济校内认定或最终报名审核通过。",
+          "monitorHash": "507bb08b054f1fcc56c62dfa5ad790905e6cf4c8653773038ccb129f1fb4f0e6",
+          "monitorRegion": {
+            "start": "中国好创意暨全国数字艺术设计大赛",
+            "end": "请选择查询分类"
+          }
+        }
+      },
+      "eligibility": {
+        "schools": [],
+        "regions": [],
+        "degrees": [],
+        "enrollmentYears": [],
+        "studyYears": [],
+        "majorGroups": [],
+        "enrolled": null,
+        "rulesComplete": false,
+        "basis": "已阅读公开原文。所建模的是本科可参与的通道；同济校内截稿、认定及其他未列规则另核。",
+        "studyModes": [],
+        "leaderStudyYears": [],
+        "teamSize": {
+          "min": null,
+          "max": 8
+        },
+        "requirements": [
+          {
+            "id": "format-team",
+            "label": "静态作者不超过3人、动态不超过8人；指导教师与合作院校条件已逐项核对",
+            "quote": "(五)静态作品创作团队人数不超过3人，指导教师不超过2人；动态作品创作团队 人数不超过8人，指导教师不超过3人，跨校合作，最多不超过3所合作院校（含本校）；"
+          },
+          {
+            "id": "topic-rights",
+            "label": "已核对所选品牌的素材、原创和版权条款，并完成提交前免费存证",
+            "quote": "*老字号所有命题参赛作品必须先存证（存证免费，版权归命题方）再投稿。"
+          },
+          {
+            "id": "defence",
+            "label": "了解入围后答辩及费用安排；不参加答辩可能降级",
+            "quote": "决赛答辩：初赛入围选手统一进行决赛答辩（答辩地点待定，答辩期间的差旅、住宿等，自行承担），不参加决赛答辩的作品，自动降级到优秀奖。"
+          }
+        ]
+      },
+      "competition": {
+        "seriesId": "cdec-21",
+        "seriesName": "第21届好创意暨全国数字艺术设计大赛",
+        "track": "老字号·新国潮专项",
+        "level": "national",
+        "levelBasis": "*获奖者由好创意大赛组委会统一颁发国赛获奖证书。",
+        "bachelorEntry": "allowed",
+        "bachelorBasis": "国内外院校个人及团队、工作室、实验室、联合创作室等均可参加。",
+        "universityRecognition": "unconfirmed"
+      }
+    },
+    {
+      "name": "未来设计师NCDA · AI漫剧出海OPC优才选拔（2026）",
+      "cat": "竞赛",
+      "direction": "设计创意",
+      "org": "未来设计师大赛组委会、湖南九韶算法应用技术产业园发展有限公司",
+      "aud": "公开规则允许本科参与；本人条件与具体赛项仍须确认",
+      "field": "全国普通高校（每校名额另核）",
+      "note": "省赛征稿10月31日截止，准确时刻未公布；只提交60–120秒片花，不是3集正片，后者为国赛预赛阶段。每校限30件，个人最多参与3件；需确认同济校内名额。仅接受官方剧本库，获奖作品著作权归命题单位；省赛公示11月10日、12月12日决赛不是本条最终结果发布日期。",
+      "id": "fm-020",
+      "dates": {
+        "start": null,
+        "end": "2026-10-31",
+        "award": null,
+        "deadlineAt": null,
+        "timezone": "Asia/Shanghai",
+        "published": null
+      },
+      "source": {
+        "url": "https://www.ncda.org.cn/dsjs/dsnr/mtsd/9C3/",
+        "kind": "official-notice",
+        "verification": "verified",
+        "verifiedAt": "2026-10-26",
+        "lastAttemptAt": "2026-10-26",
+        "lastAttemptResult": "http-200-body-reviewed",
+        "importedClaimedCheckedAt": null,
+        "importedClaimedStatus": "新收录，无历史导入声明",
+        "registrationOpenOn": "2026-10-26",
+        "evidence": {
+          "bodySha256": "cc7cffdacc6b40ae7709e15b95871a6ed4a24c34270a720432af5e968b22eac5",
+          "quotes": [
+            "2、全国赛：设一二三等奖及总奖金￥30万元，颁发全国总决赛获奖证书，",
+            "【参赛对象】普通高校在读研究生（硕士、博士）、本科生、专科生；个人/团队（最多5名创作人员、2名指导教师）均可参赛。",
+            "1、省赛征稿：即日起－2026年10月31日，线上提交省赛全套物料。",
+            "每校限投30件作品，每人最多参与投稿（不分作者排序）三件作品。",
+            "3、不接受选手自行创作的原创剧本参赛。",
+            "3、知识产权：获奖作品的著作权归命题单位，作者保留署名权、展览展示权。"
+          ],
+          "scope": "人工阅读官方公开正文，核对本科参与、赛制奖项层级与所载日期；不代表同济校内认定或最终报名审核通过。",
+          "monitorHash": "bc25207714e9f1fa6462e519ac9e6254b139c83e764a01571b868371cb0f9738",
+          "monitorRegion": {
+            "start": "2026未来设计师NCDA创新创业赛之",
+            "end": "联系方式"
+          }
+        }
+      },
+      "eligibility": {
+        "schools": [],
+        "regions": [],
+        "degrees": [
+          "专科",
+          "本科",
+          "硕士",
+          "博士"
+        ],
+        "enrollmentYears": [],
+        "studyYears": [],
+        "majorGroups": [],
+        "enrolled": true,
+        "rulesComplete": false,
+        "basis": "已阅读公开原文。所建模的是本科可参与的通道；同济校内截稿、认定及其他未列规则另核。",
+        "studyModes": [],
+        "leaderStudyYears": [],
+        "teamSize": {
+          "min": 1,
+          "max": 5
+        },
+        "requirements": [
+          {
+            "id": "school-quota",
+            "label": "已确认每校30件名额及个人最多参与3件的限制",
+            "quote": "每校限投30件作品，每人最多参与投稿（不分作者排序）三件作品。"
+          },
+          {
+            "id": "script",
+            "label": "使用官方指定剧本，不以自写剧本投稿，并核对省赛片花物料",
+            "quote": "3、不接受选手自行创作的原创剧本参赛。"
+          },
+          {
+            "id": "rights",
+            "label": "已理解获奖作品著作权归命题单位，认可相应参赛条款",
+            "quote": "3、知识产权：获奖作品的著作权归命题单位，作者保留署名权、展览展示权。"
+          }
+        ]
+      },
+      "competition": {
+        "seriesId": "ncda-2026",
+        "seriesName": "未来设计师·全国高校数字艺术设计大赛（2026）",
+        "track": "AI漫剧出海·OPC创新创业赛",
+        "level": "national",
+        "levelBasis": "2、全国赛：设一二三等奖及总奖金￥30万元，颁发全国总决赛获奖证书，",
+        "bachelorEntry": "allowed",
+        "bachelorBasis": "【参赛对象】普通高校在读研究生（硕士、博士）、本科生、专科生；个人/团队（最多5名创作人员、2名指导教师）均可参赛。",
+        "universityRecognition": "unconfirmed"
+      }
+    },
+    {
+      "name": "2027米兰设计周高校设计作品展 · 非命题（截止日待明确）",
+      "cat": "竞赛",
+      "direction": "设计创意",
+      "org": "米兰设计周高校设计作品展组委会",
+      "aud": "公开规则允许本科参与；本人条件与具体赛项仍须确认",
+      "field": "面向全球 · 本科/研究生组及其他开放组别",
+      "note": "公开章程确认本科可参与，非命题采用省赛/国赛。2027官方简介（https://milan-aap.org.cn/api/cms?c=content&id=2537）目前仅列2027年4月，未写截止日，故日期字段保持未知，不能据此确认可报名或推断4月30日。具体组别、费用、团队人数和策略单另核；本条不把高校在职教师、专业设计师排除在整个赛事之外。",
+      "id": "fm-021",
+      "dates": {
+        "start": null,
+        "end": null,
+        "award": null,
+        "deadlineAt": null,
+        "timezone": "Asia/Shanghai",
+        "published": null
+      },
+      "source": {
+        "url": "https://milan-aap.org.cn/",
+        "kind": "organizer-site",
+        "verification": "verified",
+        "verifiedAt": "2026-10-26",
+        "lastAttemptAt": "2026-10-26",
+        "lastAttemptResult": "http-200-body-reviewed",
+        "importedClaimedCheckedAt": null,
+        "importedClaimedStatus": "新收录，无历史导入声明",
+        "registrationOpenOn": null,
+        "evidence": {
+          "bodySha256": "f44dfbc770b691ccf1bbed87b3d8444860e11e7a435d5128e784a12f546cbdc4",
+          "quotes": [
+            "2. 国赛奖项：组委会遴选全国知名专家对进入国赛作品创作类进行评审，评选出一、二、三等奖。国赛获等级奖比例一般不超过参赛作品总数的 7％（一、二、三等奖分别为1%、2%、4%）。各赛道可根据实际情况增设单项奖。",
+            "面向全球广泛征集设计作品，凡在校及毕业五年内的博士、硕士研究生、本科生及专科生，高校在职教师（含行业导师、兼职教师），以及专业设计师与设计爱好者均可报名参赛。",
+            "为确保评审的专业性与针对性，各赛项可设立独立的参赛作品要求，详见各赛场及赛项的具体参赛信息。",
+            "各校可根据实际情况，在评选优秀学生奖学金及推荐免试研究生时，对获奖的参赛学生予以适当考虑；"
+          ],
+          "scope": "人工阅读官方公开正文，核对本科参与、赛制奖项层级与所载日期；不代表同济校内认定或最终报名审核通过。 章程及2027简介已阅读；简介只给出2027年4月，精确截止日未知，不确认报名窗口。",
+          "monitorHash": "faba460f8fa96f9df6ca9e1503e2c0390379afdb1391d8350c87e0e4e75cec6e",
+          "documentUrl": "https://milan-aap.org.cn/api/cms?c=content&id=2534"
+        }
+      },
+      "eligibility": {
+        "schools": [],
+        "regions": [],
+        "degrees": [],
+        "enrollmentYears": [],
+        "studyYears": [],
+        "majorGroups": [],
+        "enrolled": null,
+        "rulesComplete": false,
+        "basis": "已阅读公开原文。所建模的是本科可参与的通道；同济校内截稿、认定及其他未列规则另核。",
+        "studyModes": [],
+        "leaderStudyYears": [],
+        "teamSize": null,
+        "requirements": [
+          {
+            "id": "track",
+            "label": "已查阅2027目标赛项的具体策略单、费用及作品要求",
+            "quote": "为确保评审的专业性与针对性，各赛项可设立独立的参赛作品要求，详见各赛场及赛项的具体参赛信息。"
+          },
+          {
+            "id": "school-policy",
+            "label": "已另外确认学校对该赛项的认定、推免或学分政策",
+            "quote": "各校可根据实际情况，在评选优秀学生奖学金及推荐免试研究生时，对获奖的参赛学生予以适当考虑；"
+          }
+        ]
+      },
+      "competition": {
+        "seriesId": "milan-2027",
+        "seriesName": "第十一届米兰设计周高校设计作品展（2027）",
+        "track": "非命题作品创作",
+        "level": "national",
+        "levelBasis": "2. 国赛奖项：组委会遴选全国知名专家对进入国赛作品创作类进行评审，评选出一、二、三等奖。国赛获等级奖比例一般不超过参赛作品总数的 7％（一、二、三等奖分别为1%、2%、4%）。各赛道可根据实际情况增设单项奖。",
+        "bachelorEntry": "allowed",
+        "bachelorBasis": "面向全球广泛征集设计作品，凡在校及毕业五年内的博士、硕士研究生、本科生及专科生，高校在职教师（含行业导师、兼职教师），以及专业设计师与设计爱好者均可报名参赛。",
+        "universityRecognition": "unconfirmed"
       }
     }
   ]

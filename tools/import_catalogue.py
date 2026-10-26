@@ -30,7 +30,7 @@ def prepare(root,rows,mode='upsert',supplied_reviews=None,allow_identity_change=
  original=json.loads((root/'data/opportunities.json').read_text());reviews=json.loads((root/'data/source-reviews.json').read_text())
  supplied={r['id']:r for r in (supplied_reviews or {}).get('reviews',[])}
  if len(supplied)!=len((supplied_reviews or {}).get('reviews',[])):raise ValueError('Duplicate review ID')
- review_index={r['id']:r for r in reviews['reviews']};review_index.update(supplied);reviews['reviews']=list(review_index.values())
+ review_index={r['id']:r for r in reviews['reviews']};review_index.update(supplied);reviews['reviews']=list(review_index.values());reviews['reviewedAt']=max((r.get('reviewedAt','') for r in reviews['reviews']),default=reviews.get('reviewedAt',''))
  incoming={};old={r['id']:r for r in original['opportunities']}
  for row in rows:
   ident=row.get('id')
@@ -40,7 +40,7 @@ def prepare(root,rows,mode='upsert',supplied_reviews=None,allow_identity_change=
   if ident in old and row.get('source',{}).get('verification')=='verified' and facts(row)!=facts(old[ident]) and ident not in supplied:raise ValueError(f'{ident}: changed verified facts need an explicitly supplied manual review')
   incoming[ident]=copy.deepcopy(row)
  merged={} if mode=='replace' else dict(old);merged.update(incoming)
- candidate={**original,'opportunities':list(merged.values())};validate_catalogue(candidate,reviews)
+ candidate={**original,'description':'V80 基线资料库；机会记录包含具体届次、赛项和校内阶段，不代表独立全国赛事数量。公告核验与个人资格分开判断，未知日期不推算。','opportunities':list(merged.values())};validate_catalogue(candidate,reviews)
  added=[i for i in merged if i not in old];updated=[i for i in merged if i in old and merged[i]!=old[i]];removed=[i for i in old if i not in merged]
  report={'mode':mode,'incoming':len(rows),'before':len(old),'after':len(merged),'added':added,'updated':updated,'removed':removed,'unchanged':len(merged)-len(added)-len(updated),'verification':'Schema/identity checks only; manual review is not inferred from HTTP success.'}
  health=json.loads((root/'data/source-health.json').read_text());existing={r['id']:r for r in health.get('results',[])};changed=set(added+updated)
