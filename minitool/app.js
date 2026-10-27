@@ -58,7 +58,7 @@ const orbitLabelLayer=document.createElement('div');orbitLabelLayer.className='o
 const orbitPreview=document.createElement('section');orbitPreview.id='orbitPreview';orbitPreview.className='orbit-preview';orbitPreview.setAttribute('role','tooltip');orbitPreview.hidden=true;document.querySelector('.detail').insertBefore(orbitPreview,document.querySelector('.card'));
 space.append(document.getElementById('emptyNote'));
 const shortOrbitNames={
- 'fm-001':'中国国际大学生创新大赛','fm-002':'数字媒体科技与创意竞赛','fm-003':'重庆交大 · 大创培育','fm-004':'石油大学（华东）· 大创','fm-005':'湖北大学生创业扶持','fm-006':'同济物理学术竞赛','fm-007':'同济 · AI+教育学生组','fm-008':'人工智能应用创新大赛','fm-009':'数维杯数学建模','fm-010':'传智杯 · 数智与AI','fm-011':'蓝桥杯 · AI等赛项','fm-012':'蓝桥杯 · 设计与创新','fm-013':'大学生数据要素大赛','fm-014':'生命科学 · 科学探究','fm-015':'蓝桥杯 · 装备数字建模','fm-016':'西安交大 · 智能农装','fm-017':'好创意 · 常规赛','fm-018':'好创意 · 红色文化','fm-019':'好创意 · 老字号新国潮','fm-020':'NCDA · AI漫剧出海','fm-021':'米兰设计周 · 非命题'
+ 'fm-001':'中国国际大学生创新大赛','fm-002':'数字媒体科技与创意竞赛','fm-003':'重庆交大 · 大创培育','fm-004':'石油大学（华东）· 大创','fm-005':'湖北大学生创业扶持','fm-008':'人工智能应用创新大赛','fm-009':'数维杯数学建模','fm-010':'传智杯 · 数智与AI','fm-011':'蓝桥杯 · AI等赛项','fm-012':'蓝桥杯 · 设计与创新','fm-013':'大学生数据要素大赛','fm-014':'生命科学 · 科学探究','fm-015':'蓝桥杯 · 装备数字建模','fm-016':'西安交大 · 智能农装','fm-017':'好创意 · 常规赛','fm-018':'好创意 · 红色文化','fm-019':'好创意 · 老字号新国潮','fm-020':'NCDA · AI漫剧出海','fm-021':'米兰设计周 · 非命题'
 };
 let orbitLabelLayoutKey='',orbitLabelNodes=new Map(),keyboardPreview=-1,orbitTime=0,lastOrbitFrame=null;const planetEmphasis=new Map();
 function orbitCode(it){return it.id.replace('fm-','').replace(/^0/,'')}
@@ -241,7 +241,7 @@ function renderVerification(){const root=document.getElementById('verifyList');r
 function openProfile(){
  showPanel('个人资格');
  panelContent.innerHTML=`<p>资料仅保存在本机浏览器，用于排除明确不符的机会。留空会显示待核实，不会默认认定符合。</p><form id="profileForm" class="profile-form">
- <label>就读学校<input name="school" placeholder="例如：同济大学" maxlength="100"></label>
+ <label>就读学校<input name="school" placeholder="输入学校名称" maxlength="100"></label>
  <label>就读省市<input name="region" placeholder="例如：上海市、湖北省" maxlength="100"></label>
  <label>专业名称<input name="major" placeholder="按实际专业填写" maxlength="100"></label>
  <label>专业类别<select name="majorGroup"><option value="">未填写</option><option>理工科</option><option>人文社科</option><option>艺术设计</option><option>其他</option></select></label>
@@ -367,3 +367,56 @@ function appendOpportunityPages(entries,parent=panelContent,renderEntry=entry=>r
 
 const competitionLevelTerm=textNode('dt','赛事层级'),competitionLevelValue=textNode('dd','');competitionLevelValue.id='competitionLevel';document.querySelector('.info').append(competitionLevelTerm,competitionLevelValue);if(items[active])competitionLevelValue.textContent=competitionLevelText(items[active]);
 if(new URLSearchParams(location.search).get('focus')==='design-bachelor'){openNavigation('机会库');(document.getElementById('designBachelorPreset') && document.getElementById('designBachelorPreset').click())}
+
+// Home: personal criteria are explicit, optional, and saved only locally.
+const personalBar=document.createElement('form');personalBar.id='personalFilter';personalBar.className='personal-filter';
+personalBar.innerHTML='<strong>先填个人信息，找到适合你的比赛</strong><p>可选填写，仅保存在本机；留空的条件仍需自行核实。</p><div class="personal-fields"><label>学校<input name="school" placeholder="输入学校名称" maxlength="100"></label><label>专业<input name="major" placeholder="输入专业名称" maxlength="100"></label><label>学历<select name="degree"><option value="">不限 / 未填</option><option>本科</option><option>专科</option><option>硕士</option><option>博士</option></select></label><label>年级<select name="studyYear"><option value="">未填</option><option value="1">一年级</option><option value="2">二年级</option><option value="3">三年级</option><option value="4">四年级</option><option value="5">五年级</option></select></label><button type="submit">按我的条件筛选</button><button type="button" id="morePersonal">更多资格条件</button></div><p id="personalFilterStatus" role="status"></p>';
+document.querySelector('.topbar').prepend(personalBar);
+for(const name of ['school','major','degree','studyYear'])personalBar.elements[name].value=profile[name]||'';
+personalBar.addEventListener('submit',e=>{e.preventDefault();const next=Object.assign({},profile);for(const name of ['school','major','degree','studyYear'])next[name]=personalBar.elements[name].value;next.showIneligible=false;profile=normalizeProfile(next);store('flowmate_profile',profile);updateStats();renderVerification();document.getElementById('personalFilterStatus').textContent='已按个人条件排除明确不符的机会；其余仍须核实资格。';});
+document.getElementById('morePersonal').addEventListener('click',openProfile);
+const savedProfileOpen=openProfile;openProfile=function(){savedProfileOpen();document.getElementById('profileForm').addEventListener('submit',()=>{for(const name of ['school','major','degree','studyYear'])personalBar.elements[name].value=profile[name]||'';});};
+// Legend stays by its control, rather than in the detail column.
+legendDisclosure.append(legendExplanation);legendExplanation.setAttribute('role','region');
+// The time ruler directly follows the galaxy; quick names stay below it.
+space.insertAdjacentElement('afterend',document.querySelector('.time-ruler'));
+const previousNavigation=openNavigation;
+openNavigation=function(nav){
+ if(nav==='日程'){renderWeekSchedule();return;}
+ previousNavigation(nav);
+ if(nav==='机会库')panelContent.prepend(textNode('p','完整资料检索：包含已截止、日期未知和待核记录。首页用于探索近期机会；这里适合按层级、资格、方向查询和核对来源。'));
+ if(nav==='我的轨迹'){
+  const start=textNode('button','＋ 预演未来，规划一条新轨迹');start.className='cta';start.id='trajectoryPreview';start.addEventListener('click',()=>{
+   showPanel('选择一项机会，预演未来');panelContent.append(textNode('p','选择后可设定目标、每周投入与计划周期。'));
+   const options=items.map((it,i)=>({it,i})).filter(x=>x.it.end&&dateOf(x.it.end)>=TODAY&&matchProfile(x.it).code!=='ineligible').sort((a,b)=>a.it.end.localeCompare(b.it.end));
+   if(!options.length)panelContent.append(textNode('p','暂无可规划的近期机会，请先调整个人资格。'));
+   appendOpportunityPages(options,panelContent,entry=>{const row=textNode('article','');row.className='panel-row';const choose=textNode('button','用这项机会预演未来');choose.addEventListener('click',()=>{select(entry.i);closeModal(panelOverlay);openFuture();});row.append(textNode('h3',entry.it.name),textNode('p',deadlineText(entry.it)+' · '+matchProfile(entry.it).label),choose);return row;});
+  });panelContent.prepend(start);
+ }
+};
+let scheduleWeek=0;
+function renderWeekSchedule(){
+ showPanel('每周日程');
+ const header=document.createElement('div');header.className='week-controls';const prev=textNode('button','← 上一周'),now=textNode('button','本周'),next=textNode('button','下一周 →');header.append(prev,now,next);panelContent.append(header);
+ prev.addEventListener('click',()=>{scheduleWeek--;renderWeekSchedule();});next.addEventListener('click',()=>{scheduleWeek++;renderWeekSchedule();});now.addEventListener('click',()=>{scheduleWeek=0;renderWeekSchedule();});
+ const monday=new Date(TODAY);monday.setDate(monday.getDate()-((monday.getDay()+6)%7)+scheduleWeek*7);
+ panelContent.append(textNode('p','按周查看已收藏竞赛的报名节点，以及已保存轨迹的规划任务。此处不重复展示完整赛事库。'));
+ const grid=document.createElement('div');grid.className='week-grid';panelContent.append(grid);
+ function key(date){return date.getFullYear()+'-'+String(date.getMonth()+1).padStart(2,'0')+'-'+String(date.getDate()).padStart(2,'0');}
+ for(let day=0;day<7;day++){
+  const date=new Date(monday);date.setDate(monday.getDate()+day);const dateKey=key(date);const col=textNode('section','');col.className='week-day';if(dateKey===CURRENT_DATE)col.classList.add('today');col.append(textNode('h3',['周一','周二','周三','周四','周五','周六','周日'][day]),textNode('small',fmt(dateKey)));let count=0;
+  for(const it of items){if(!saved.has(it.id))continue;for(const pair of [['报名开始',it.start],['报名截止',it.end]])if(pair[1]===dateKey){const b=textNode('button',pair[0]+' · '+it.name);b.className='week-event';b.addEventListener('click',()=>{closeModal(panelOverlay);inspectOpportunity(items.indexOf(it));document.querySelector('.detail').scrollIntoView({block:'start'});});col.append(b);count++;}}
+  for(const plan of futurePlans){const created=new Date(plan.created);if(!Number.isFinite(created.getTime()))continue;const start=new Date(created.getFullYear(),created.getMonth(),created.getDate());const diff=Math.round((date-start)/DAY);if(diff>=0&&diff%7===0&&diff<plan.weeks*7){col.append(textNode('p','规划 · '+plan.name+'：本周投入 '+plan.hours+' 小时，目标 '+plan.goal));count++;}}
+  if(!count)col.append(textNode('p','暂无安排'));grid.append(col);
+ }
+ const add=textNode('button','去我的轨迹添加规划');add.addEventListener('click',()=>openNavigation('我的轨迹'));panelContent.append(add);
+}
+
+// Mobile detail drawer preserves the galaxy's scroll position.
+const mobileDetail=document.querySelector('.detail');const drawerClose=textNode('button','关闭详情 · 返回星系 ×');drawerClose.className='drawer-close';drawerClose.type='button';mobileDetail.prepend(drawerClose);let galaxyScrollY=0;
+const inspectBeforeDrawer=inspectOpportunity;
+function closeDetailDrawer(){if(!mobileDetail.classList.contains('drawer-open'))return;mobileDetail.classList.remove('drawer-open');mobileDetail.removeAttribute('role');mobileDetail.removeAttribute('aria-modal');document.body.style.overflow='';window.scrollTo(0,galaxyScrollY);canvas.focus({preventScroll:true});}
+inspectOpportunity=function(i){if(innerWidth<=790){galaxyScrollY=window.scrollY;mobileDetail.classList.add('drawer-open');mobileDetail.setAttribute('role','dialog');mobileDetail.setAttribute('aria-modal','true');mobileDetail.setAttribute('aria-label','机会详情');document.body.style.overflow='hidden';}inspectBeforeDrawer(i);if(innerWidth<=790)drawerClose.focus({preventScroll:true});};
+drawerClose.addEventListener('click',closeDetailDrawer);returnOrbit.onclick=()=>{if(mobileDetail.classList.contains('drawer-open'))closeDetailDrawer();else{space.scrollIntoView({block:'center'});canvas.focus({preventScroll:true});}};
+document.addEventListener('keydown',e=>{if(!mobileDetail.classList.contains('drawer-open')||modalOpen)return;if(e.key==='Escape'){e.preventDefault();closeDetailDrawer();}if(e.key==='Tab'){const focusable=Array.from(mobileDetail.querySelectorAll('button,input,select,a[role=button],summary')).filter(el=>!el.disabled&&el.getClientRects().length);const first=focusable[0],last=focusable[focusable.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}});
+window.addEventListener('resize',()=>{if(innerWidth>790)closeDetailDrawer();});

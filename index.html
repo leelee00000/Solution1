@@ -272,7 +272,10 @@ aside{border-right-color:#dde1e799}.filters{border-color:#e6e2da80;background:#f
 .comparison-wrap{max-width:100%;overflow-x:auto}.comparison-table{border-collapse:collapse;width:100%;min-width:480px;font-size:12px;line-height:1.8;table-layout:fixed}.comparison-table th,.comparison-table td{text-align:left;vertical-align:top;padding:14px 12px;border-bottom:1px solid #e5e4de;overflow-wrap:anywhere}.comparison-table thead th{font-size:16px;color:#263a7d;font-weight:500}.comparison-table th:first-child{width:88px;font-size:11px;color:#8290a4;font-weight:400}.comparison-table td a{color:var(--blue)}.comparison-table td p{margin:5px 0}.comparison-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}.comparison-actions button{background:transparent;color:var(--blue);border:1px solid #d9deed;border-radius:24px;padding:10px 15px;font-size:12px}
 @media(min-width:791px) and (max-width:1100px){.orbit-heading{flex-wrap:nowrap}.orbit-heading .headline{flex:1;flex-basis:0}.orbit-heading .headline h1{font-size:21px}}
 @media(max-width:790px){.orbit-heading{gap:6px}.orbit-heading .key-panel{flex:0 0 40px;max-width:40px;width:40px}.galaxy-controls button{min-width:30px;height:36px}.galaxy-controls button:last-child{width:58px}.orbit-heading .bottom{margin-left:auto}.comparison-table{min-width:440px}.comparison-table th,.comparison-table td{padding:11px 8px}.comparison-table thead th{font-size:14px}}
-</style><style>.comparison-scroll-hint{display:none}@media(max-width:790px){.comparison-scroll-hint{display:block;color:#8993a9;font-size:11px}.galaxy-controls button{height:44px;min-width:34px;font-size:11px}}</style><style>.catalogue-pager{display:flex;align-items:center;justify-content:center;gap:14px;margin:14px 0;color:#8792a8;font-size:11px}.catalogue-pager[hidden]{display:none}.catalogue-pager button{border:1px solid #dce0ec;border-radius:18px;color:var(--blue);background:transparent;padding:7px 13px;font-size:11px}.catalogue-pager button:disabled{opacity:.35}.galaxy-pager{margin:6px 0 0}@media(max-width:790px){.catalogue-pager button{min-height:44px}}</style><style>.library-controls .design-preset{border:1px solid #dce1ef;border-radius:18px;background:transparent;color:#596cb4;font-size:11px;padding:9px 12px}.library-controls .design-preset[aria-pressed=true]{background:#eef1fa;color:var(--blue)}@media(max-width:790px){.library-controls .design-preset{min-height:44px}}</style><style>.beta-notice{flex:0 0 100%;order:-1;position:relative;z-index:5;margin:8px 0;padding:9px 12px;border:1px solid #d6ddf4;border-radius:12px;background:#f6f4ec;color:#4b5778;font-size:11px;line-height:1.65}.beta-notice strong{display:block;color:#3049cc;font-size:12px}.beta-notice span{display:block}</style></head><body><div class="app"><aside><div><div class="brand">FlowMate</div><div class="tagline">FIND YOUR NEXT ORBIT.</div></div><nav class="nav"><button class="active" data-nav="探索"><span class="ico">◉</span><span>探索</span></button><button data-nav="机会库"><span class="ico">◇</span><span>机会库</span></button><button data-nav="我的轨迹"><span class="ico">◎</span><span>我的轨迹</span></button><button data-nav="日程"><span class="ico">▦</span><span>日程</span></button><button data-nav="收藏"><span class="ico">♡</span><span>收藏</span></button></nav><div class="aside-bottom"><button class="profile-inline" id="profileBtn">个人资格 ↗</button><br/>OPPORTUNITY<br/>FOR CURIOUS<br/>MINDS.</div></aside><main class="main"><div class="topbar"><div class="beta-notice" role="note"><strong>测试版 · 时效有限</strong><span>资料更新于 2026 年 10 月 27 日，为静态快照，不保证实时完整。报名时间、资格及赛事安排可能变化，请以主办方最新通知为准；待核记录不代表已确认可报名。</span></div><div class="filters" id="filters"><button data-cat="全部">全部</button><button class="active" data-cat="竞赛">竞赛</button><button data-cat="科研">科研</button><button data-cat="项目">项目</button><button data-cat="创业">创业</button></div><button aria-label="搜索" class="search" id="searchBtn">⌕</button><div class="time-controls"><label for="rangeSelect">时间范围</label><select id="rangeSelect"><option value="0.5">未来半个月</option><option selected="" value="1">未来一个月</option><option value="2">未来两个月</option><option value="3">未来三个月</option><option value="custom" hidden>自定义</option></select><label for="dateMode">按</label><select id="dateMode"><option value="apply">报名截止</option><option value="award">评奖结果</option></select></div></div><div class="searchbox" id="searchbox"><input id="searchInput" placeholder="搜索名称、学校或方向…"/><button id="clearSearch">✕</button></div><div class="headline"><div class="kicker">YOUR OPPORTUNITY UNIVERSE / 2026</div><h1>发现下一次可能</h1></div><details class="key-panel"><summary>图例 · 颜色 / 大小</summary><strong>视觉图例 / VISUAL KEY</strong><div id="categoryLegend"></div><div class="key-scale"><i style="width:8px;height:8px"></i><i style="width:13px;height:13px"></i><i style="width:20px;height:20px"></i><span>尺寸随景深与焦点变化</span></div><div style="margin-top:8px">越靠近中心，时间越近</div><div style="margin-top:8px">编号对应行星与名称；尺寸不代表评级。悬停预览，点击固定详情。</div></details><div class="empty-note" hidden="" id="emptyNote">当前筛选暂无有已知节点的机会。可调整类别、时间或个人资格；未知日期与已截止记录见机会库。</div><div class="space" id="space"><canvas id="orbit" tabindex="0" aria-label="机会星系，悬停预览；使用左右方向键选择机会，回车查看详情"></canvas></div><div class="time-ruler candy-ruler" aria-label="未来时间范围控制"><div class="ruler-head"><span>TIME HORIZON / 时间视野</span><strong id="zoomValue">未来 1 个月</strong></div><div class="ruler-track"><div class="candy-row-label"><span>NOW · 此刻</span><span>FUTURE · 未来 ↗</span></div><div class="candy-track" id="candyTrack" aria-hidden="true"></div><input id="horizonSlider" type="range" min="0.5" max="3" step="0.5" value="1" aria-label="未来时间范围，单位月"><div class="ruler-ticks"><span>半月</span><span>1月</span><span>1.5月</span><span>2月</span><span>2.5月</span><span>3月</span></div></div></div><div class="bottom"><div class="stats"><div class="stat"><b id="total">08</b><span>筛选结果</span></div><div class="stat"><b id="savedCount">0</b><span>已收藏</span></div><div class="stat"><b id="highCount">0</b><span>待核实机会</span></div></div><div class="hint">DISCOVER<br/>FOCUS<br/>ACT ↗</div></div></main><section class="detail"><div class="detail-top"><small>OPPORTUNITY / 详情</small><button aria-label="下一个机会" id="next">↗</button></div><article class="card"><div class="planet-art"><span class="art-star">✦</span></div><h2 id="title"></h2><p class="planet-legend" id="planetLegend"></p><div class="badges"><span class="badge" id="category"></span><span class="badge urgent" id="urgency"></span><span class="badge" id="availability"></span></div><dl class="info"><dt>主办单位</dt><dd id="organizer"></dd><dt>面向对象</dt><dd id="audience"></dd><dt>报名时间</dt><dd id="apply"></dd><dt>所属领域</dt><dd id="field"></dd></dl><p id="eligibilitySummary" class="mini"></p><button id="editProfile" class="profile-inline">完善个人资格 ↗</button><a id="sourceLink" class="source-link" target="_blank" rel="noopener noreferrer">查看官方来源 ↗</a><details id="sourceEvidence" class="source-evidence"><summary>公告依据与限制</summary><div id="evidenceBody"></div></details><hr class="divider"/><div class="section">时间节点</div><div class="timeline" id="timeline"></div><button class="cta" id="simulateBtn">预演我的可能未来　↗</button><button class="secondary" id="pathBtn">查看资格路径　↗</button><button class="secondary" id="saveBtn">♡　收藏</button></article><p class="mini" id="sourceSummary"></p><details class="verification"><summary>机会来源清单 · 16 条（含已截止与待核记录）</summary><div class="verify-intro">星系展示所选时间范围内的已知日期样本，默认排除明确不符合个人条件的记录。待核实不等于可报名；完整清单保留未知日期和已截止记录。</div><div class="verify-list" id="verifyList"></div></details></section></div><div aria-hidden="true" class="future-overlay" id="futureOverlay"><section aria-labelledby="futureTitle" aria-modal="true" class="future-dialog" role="dialog"><header class="future-header"><div><small>FLOWMATE / POSSIBILITY STUDIO</small><h2 id="futureTitle">预演一种可能的未来</h2><p>不是预测结果，而是把期待变成可选择、可行动的路径。</p></div><button aria-label="关闭" id="closeFuture">✕</button></header><div class="future-layout"><div class="future-input"><div class="future-label">01 / 我想从这次机会得到什么</div><div class="goal-options" id="goalOptions"><button class="chosen" data-goal="作品集">完成一件代表作</button><button data-goal="能力">获得新的能力</button><button data-goal="连接">认识合作伙伴</button><button data-goal="突破">挑战更大的舞台</button></div><div class="future-label">02 / 我愿意投入多少</div><div class="range-row"><span>每周投入</span><strong id="hoursValue">6 小时</strong></div><input id="hoursRange" max="20" min="2" step="1" type="range" value="6"/><div class="range-row"><span>坚持多久</span><strong id="weeksValue">8 周</strong></div><input id="weeksRange" max="24" min="2" step="1" type="range" value="8"/><div class="future-label">03 / 目前最大的顾虑</div><div class="risk-options" id="riskOptions"><button class="chosen" data-risk="时间不够">时间不够</button><button data-risk="能力不足">能力不足</button><button data-risk="缺少伙伴">缺少伙伴</button></div><div class="future-note">所有场景均为假设性规划；不代表获奖、录取或成果承诺。</div></div><div class="future-outcome"><div class="future-eyebrow">A FUTURE YOU CAN WORK TOWARD</div><div class="future-sky"><div class="future-orbit one"></div><div class="future-orbit two"></div><div class="future-orbit three"></div><span class="future-world a"></span><span class="future-world b"></span><span class="future-world c"></span><span class="future-star">✦</span></div><h3 id="futureStory">八周后，你可能拥有一件可以讲述的作品。</h3><p id="futureSubtitle"></p><p id="futureBasis" class="mini"></p><div class="future-metrics"><div><b id="futureHours">48</b><small>计划投入小时</small></div><div><b id="futureSteps">4</b><small>行动节点</small></div></div><div class="future-road" id="futureRoad"></div><div class="next-orbit"><span>YOUR NEXT ORBIT / 下一站</span><strong id="nextOrbitTitle">从一次尝试，走向下一次机会</strong><p id="nextOrbitDetail">根据你希望获得的成长，推荐一种下一步探索方向。</p><button id="nextOrbitBtn" type="button">在星系中探索下一站 ↗</button></div><div class="future-action"><button id="commitFuture">把这条路径加入我的轨迹 →</button><button id="resetFuture">重新想象</button></div></div></div></section></div><div aria-hidden="true" class="future-overlay" id="panelOverlay"><section role="dialog" aria-modal="true" aria-labelledby="panelTitle" class="future-dialog panel-dialog"><header class="future-header"><h2 id="panelTitle"></h2><button aria-label="关闭面板" id="closePanel">✕</button></header><div class="panel-content" id="panelContent"></div></section></div><div class="toast" id="toast" role="status"></div><script id="opportunity-data" type="application/json">{
+</style><style>.comparison-scroll-hint{display:none}@media(max-width:790px){.comparison-scroll-hint{display:block;color:#8993a9;font-size:11px}.galaxy-controls button{height:44px;min-width:34px;font-size:11px}}</style><style>.catalogue-pager{display:flex;align-items:center;justify-content:center;gap:14px;margin:14px 0;color:#8792a8;font-size:11px}.catalogue-pager[hidden]{display:none}.catalogue-pager button{border:1px solid #dce0ec;border-radius:18px;color:var(--blue);background:transparent;padding:7px 13px;font-size:11px}.catalogue-pager button:disabled{opacity:.35}.galaxy-pager{margin:6px 0 0}@media(max-width:790px){.catalogue-pager button{min-height:44px}}</style><style>.library-controls .design-preset{border:1px solid #dce1ef;border-radius:18px;background:transparent;color:#596cb4;font-size:11px;padding:9px 12px}.library-controls .design-preset[aria-pressed=true]{background:#eef1fa;color:var(--blue)}@media(max-width:790px){.library-controls .design-preset{min-height:44px}}</style><style>.beta-notice{flex:0 0 100%;order:-1;position:relative;z-index:5;margin:8px 0;padding:9px 12px;border:1px solid #d6ddf4;border-radius:12px;background:#f6f4ec;color:#4b5778;font-size:11px;line-height:1.65}.beta-notice strong{display:block;color:#3049cc;font-size:12px}.beta-notice span{display:block}</style><style>.personal-filter{flex:0 0 100%;order:-2;background:#f0f2ff;border:1px solid #cdd5fa;border-radius:16px;padding:14px;color:#283eaf}.personal-filter strong{font-size:17px}.personal-filter p{font-size:11px;line-height:1.6;margin:5px 0}.personal-fields{display:flex;flex-wrap:wrap;gap:9px;align-items:end}.personal-fields label{font-size:11px;display:flex;flex-direction:column;gap:4px;flex:1;min-width:100px}.personal-fields input,.personal-fields select{width:100%;min-height:38px;border:1px solid #ccd5ef;border-radius:8px;background:#fffdf8;padding:7px;color:#29365b}.personal-fields button,.week-controls button{border:1px solid #c6d0f0;border-radius:9px;padding:10px;background:#fffdf8;color:#3049cc}.personal-fields button[type=submit]{background:#3049cc;color:white}.time-ruler.candy-ruler{grid-row:4!important}.orbit-index{grid-row:5!important}.candy-bead{width:8px!important;height:8px!important;min-width:8px!important;box-shadow:none!important;transform:none!important}.candy-track{height:14px!important;min-height:14px!important;align-items:center!important}.candy-row-label{margin-bottom:6px!important}.ruler-ticks{margin-top:8px!important}.key-panel{position:relative!important;overflow:visible!important}.key-panel .legend-explanation{position:absolute!important;top:36px!important;right:0!important;bottom:auto!important;left:auto!important;width:260px!important;max-width:80vw;z-index:70;box-shadow:0 12px 35px #243baa22;background:#fffdf7;border:1px solid #ccd5ef;border-radius:12px;padding:14px}.key-panel .legend-explanation[hidden]{display:none!important}.key-panel[open]{overflow:visible!important}.week-controls{display:flex;gap:10px;margin-bottom:16px}.week-grid{display:grid;grid-template-columns:repeat(7,minmax(110px,1fr));gap:8px;overflow:auto;margin:15px 0}.week-day{border:1px solid #dce1ef;border-radius:10px;min-height:180px;padding:10px;background:#fffdf8}.week-day.today{border-color:#3049cc;background:#f0f2ff}.week-day h3{font-size:13px;margin:0 0 6px}.week-day small,.week-day p{font-size:11px;line-height:1.7;color:#6a7694}.week-event{display:block;text-align:left;font-size:11px;line-height:1.7;margin:10px 0;padding:7px;border:1px solid #d5dcf4;border-radius:7px;background:#f3f5ff;color:#3049cc}#trajectoryPreview{margin-bottom:18px}@media(max-width:790px){.personal-filter{padding:12px}.personal-filter strong{font-size:15px}.personal-fields label{flex-basis:40%}.personal-fields button{flex:1}.key-panel .legend-explanation{right:-8px!important}.week-grid{grid-template-columns:1fr;overflow:visible}.week-day{min-height:80px}.week-day h3{display:inline-block;margin-right:10px}}
+</style><style>.drawer-close{display:none}@media(max-width:790px){.detail{display:none!important}.detail.drawer-open{display:block!important;position:fixed!important;z-index:65;top:0;right:0;bottom:0;left:0;width:100%!important;height:100%!important;max-height:100%!important;overflow-y:auto!important;-webkit-overflow-scrolling:touch;background:#fbf8f1;padding:14px!important;padding-top:calc(14px + var(--safe-area-inset-top,0px))!important;padding-bottom:calc(24px + var(--safe-area-inset-bottom,0px))!important}.drawer-close{display:block;position:sticky;top:0;z-index:6;width:100%;border:1px solid #c9d2f3;border-radius:12px;background:#fffdf7;color:#3049cc;font-size:13px;padding:13px;margin-bottom:12px;box-shadow:0 3px 12px #243baa14}.detail.drawer-open .card{margin-bottom:20px}.drawer-open .return-orbit{display:none!important}}
+</style><style>.personal-fields{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;align-items:end}.personal-fields label{min-width:0!important}.personal-fields button{grid-column:span 2;width:100%;min-width:0;white-space:normal;line-height:1.5}.candy-ruler .candy-track{display:none!important}.candy-ruler #horizonSlider{position:relative!important;left:auto!important;right:auto!important;top:auto!important;opacity:1!important;height:5px!important;margin:9px 0 12px!important}.candy-ruler #horizonSlider::-webkit-slider-thumb{width:13px;height:13px;border-width:3px}.candy-ruler #horizonSlider::-moz-range-thumb{width:9px;height:9px;border-width:2px}@media(max-width:790px){.personal-fields{grid-template-columns:repeat(2,minmax(0,1fr))}.personal-fields button{grid-column:auto;font-size:12px}}
+</style></head><body><div class="app"><aside><div><div class="brand">FlowMate</div><div class="tagline">FIND YOUR NEXT ORBIT.</div></div><nav class="nav"><button class="active" data-nav="探索"><span class="ico">◉</span><span>探索</span></button><button data-nav="机会库"><span class="ico">◇</span><span>机会库</span></button><button data-nav="我的轨迹"><span class="ico">◎</span><span>我的轨迹</span></button><button data-nav="日程"><span class="ico">▦</span><span>日程</span></button><button data-nav="收藏"><span class="ico">♡</span><span>收藏</span></button></nav><div class="aside-bottom"><button class="profile-inline" id="profileBtn">个人资格 ↗</button><br/>OPPORTUNITY<br/>FOR CURIOUS<br/>MINDS.</div></aside><main class="main"><div class="topbar"><div class="beta-notice" role="note"><strong>测试版 · 时效有限</strong><span>资料更新于 2026 年 10 月 27 日，为静态快照，不保证实时完整。报名时间、资格及赛事安排可能变化，请以主办方最新通知为准；待核记录不代表已确认可报名。</span></div><div class="filters" id="filters"><button data-cat="全部">全部</button><button class="active" data-cat="竞赛">竞赛</button><button data-cat="科研">科研</button><button data-cat="项目">项目</button><button data-cat="创业">创业</button></div><button aria-label="搜索" class="search" id="searchBtn">⌕</button><div class="time-controls"><label for="rangeSelect">时间范围</label><select id="rangeSelect"><option value="0.5">未来半个月</option><option selected="" value="1">未来一个月</option><option value="2">未来两个月</option><option value="3">未来三个月</option><option value="custom" hidden>自定义</option></select><label for="dateMode">按</label><select id="dateMode"><option value="apply">报名截止</option><option value="award">评奖结果</option></select></div></div><div class="searchbox" id="searchbox"><input id="searchInput" placeholder="搜索名称、学校或方向…"/><button id="clearSearch">✕</button></div><div class="headline"><div class="kicker">YOUR OPPORTUNITY UNIVERSE / 2026</div><h1>发现下一次可能</h1></div><details class="key-panel"><summary>图例 · 颜色 / 大小</summary><strong>视觉图例 / VISUAL KEY</strong><div id="categoryLegend"></div><div class="key-scale"><i style="width:8px;height:8px"></i><i style="width:13px;height:13px"></i><i style="width:20px;height:20px"></i><span>尺寸随景深与焦点变化</span></div><div style="margin-top:8px">越靠近中心，时间越近</div><div style="margin-top:8px">编号对应行星与名称；尺寸不代表评级。悬停预览，点击固定详情。</div></details><div class="empty-note" hidden="" id="emptyNote">当前筛选暂无有已知节点的机会。可调整类别、时间或个人资格；未知日期与已截止记录见机会库。</div><div class="space" id="space"><canvas id="orbit" tabindex="0" aria-label="机会星系，悬停预览；使用左右方向键选择机会，回车查看详情"></canvas></div><div class="time-ruler candy-ruler" aria-label="未来时间范围控制"><div class="ruler-head"><span>TIME HORIZON / 时间视野</span><strong id="zoomValue">未来 1 个月</strong></div><div class="ruler-track"><div class="candy-row-label"><span>NOW · 此刻</span><span>FUTURE · 未来 ↗</span></div><div class="candy-track" id="candyTrack" aria-hidden="true"></div><input id="horizonSlider" type="range" min="0.5" max="3" step="0.5" value="1" aria-label="未来时间范围，单位月"><div class="ruler-ticks"><span>半月</span><span>1月</span><span>1.5月</span><span>2月</span><span>2.5月</span><span>3月</span></div></div></div><div class="bottom"><div class="stats"><div class="stat"><b id="total">08</b><span>筛选结果</span></div><div class="stat"><b id="savedCount">0</b><span>已收藏</span></div><div class="stat"><b id="highCount">0</b><span>待核实机会</span></div></div><div class="hint">DISCOVER<br/>FOCUS<br/>ACT ↗</div></div></main><section class="detail"><div class="detail-top"><small>OPPORTUNITY / 详情</small><button aria-label="下一个机会" id="next">↗</button></div><article class="card"><div class="planet-art"><span class="art-star">✦</span></div><h2 id="title"></h2><p class="planet-legend" id="planetLegend"></p><div class="badges"><span class="badge" id="category"></span><span class="badge urgent" id="urgency"></span><span class="badge" id="availability"></span></div><dl class="info"><dt>主办单位</dt><dd id="organizer"></dd><dt>面向对象</dt><dd id="audience"></dd><dt>报名时间</dt><dd id="apply"></dd><dt>所属领域</dt><dd id="field"></dd></dl><p id="eligibilitySummary" class="mini"></p><button id="editProfile" class="profile-inline">完善个人资格 ↗</button><a id="sourceLink" class="source-link" target="_blank" rel="noopener noreferrer">查看官方来源 ↗</a><details id="sourceEvidence" class="source-evidence"><summary>公告依据与限制</summary><div id="evidenceBody"></div></details><hr class="divider"/><div class="section">时间节点</div><div class="timeline" id="timeline"></div><button class="cta" id="simulateBtn">预演我的可能未来　↗</button><button class="secondary" id="pathBtn">查看资格路径　↗</button><button class="secondary" id="saveBtn">♡　收藏</button></article><p class="mini" id="sourceSummary"></p><details class="verification"><summary>机会来源清单 · 16 条（含已截止与待核记录）</summary><div class="verify-intro">星系展示所选时间范围内的已知日期样本，默认排除明确不符合个人条件的记录。待核实不等于可报名；完整清单保留未知日期和已截止记录。</div><div class="verify-list" id="verifyList"></div></details></section></div><div aria-hidden="true" class="future-overlay" id="futureOverlay"><section aria-labelledby="futureTitle" aria-modal="true" class="future-dialog" role="dialog"><header class="future-header"><div><small>FLOWMATE / POSSIBILITY STUDIO</small><h2 id="futureTitle">预演一种可能的未来</h2><p>不是预测结果，而是把期待变成可选择、可行动的路径。</p></div><button aria-label="关闭" id="closeFuture">✕</button></header><div class="future-layout"><div class="future-input"><div class="future-label">01 / 我想从这次机会得到什么</div><div class="goal-options" id="goalOptions"><button class="chosen" data-goal="作品集">完成一件代表作</button><button data-goal="能力">获得新的能力</button><button data-goal="连接">认识合作伙伴</button><button data-goal="突破">挑战更大的舞台</button></div><div class="future-label">02 / 我愿意投入多少</div><div class="range-row"><span>每周投入</span><strong id="hoursValue">6 小时</strong></div><input id="hoursRange" max="20" min="2" step="1" type="range" value="6"/><div class="range-row"><span>坚持多久</span><strong id="weeksValue">8 周</strong></div><input id="weeksRange" max="24" min="2" step="1" type="range" value="8"/><div class="future-label">03 / 目前最大的顾虑</div><div class="risk-options" id="riskOptions"><button class="chosen" data-risk="时间不够">时间不够</button><button data-risk="能力不足">能力不足</button><button data-risk="缺少伙伴">缺少伙伴</button></div><div class="future-note">所有场景均为假设性规划；不代表获奖、录取或成果承诺。</div></div><div class="future-outcome"><div class="future-eyebrow">A FUTURE YOU CAN WORK TOWARD</div><div class="future-sky"><div class="future-orbit one"></div><div class="future-orbit two"></div><div class="future-orbit three"></div><span class="future-world a"></span><span class="future-world b"></span><span class="future-world c"></span><span class="future-star">✦</span></div><h3 id="futureStory">八周后，你可能拥有一件可以讲述的作品。</h3><p id="futureSubtitle"></p><p id="futureBasis" class="mini"></p><div class="future-metrics"><div><b id="futureHours">48</b><small>计划投入小时</small></div><div><b id="futureSteps">4</b><small>行动节点</small></div></div><div class="future-road" id="futureRoad"></div><div class="next-orbit"><span>YOUR NEXT ORBIT / 下一站</span><strong id="nextOrbitTitle">从一次尝试，走向下一次机会</strong><p id="nextOrbitDetail">根据你希望获得的成长，推荐一种下一步探索方向。</p><button id="nextOrbitBtn" type="button">在星系中探索下一站 ↗</button></div><div class="future-action"><button id="commitFuture">把这条路径加入我的轨迹 →</button><button id="resetFuture">重新想象</button></div></div></div></section></div><div aria-hidden="true" class="future-overlay" id="panelOverlay"><section role="dialog" aria-modal="true" aria-labelledby="panelTitle" class="future-dialog panel-dialog"><header class="future-header"><h2 id="panelTitle"></h2><button aria-label="关闭面板" id="closePanel">✕</button></header><div class="panel-content" id="panelContent"></div></section></div><div class="toast" id="toast" role="status"></div><script id="opportunity-data" type="application/json">{
   "schemaVersion": 1,
   "baseline": "V80",
   "description": "本科竞赛资料批量接入；包含具体赛项、学校通道、已截止与待核记录；条数不是独立主赛事数量。未知日期、层级与资格不推定。",
@@ -588,136 +591,6 @@ aside{border-right-color:#dde1e799}.filters{border-color:#e6e2da80;background:#f
         "studyModes": [],
         "leaderStudyYears": [],
         "teamSize": null,
-        "requirements": []
-      }
-    },
-    {
-      "name": "同济大学第二届大学生物理学术竞赛",
-      "cat": "竞赛",
-      "direction": "学术科研",
-      "org": "同济大学本科生院、创新创业学院（物理科学与工程学院承办）",
-      "aud": "仅2025级、2026级全校理工科专业学生；其他年级或专业不符合通知条件",
-      "field": "同济大学",
-      "a": 12.0,
-      "note": "初赛报名10月20—31日；作品11月30日截止；个人或团队均可，每队至多5人。仅校内网络/VPN能访问报名平台。复赛另有优胜与组队要求。",
-      "id": "fm-006",
-      "dates": {
-        "start": "2026-10-20",
-        "end": "2026-10-31",
-        "award": null,
-        "deadlineAt": null,
-        "timezone": "Asia/Shanghai",
-        "published": "2026-10-19"
-      },
-      "source": {
-        "url": "https://mphylab.tongji.edu.cn/page/home/info23622_INFO",
-        "kind": "official-notice",
-        "verification": "verified",
-        "verifiedAt": "2026-10-25",
-        "lastAttemptAt": "2026-10-25",
-        "lastAttemptResult": "http-200-body-reviewed",
-        "importedClaimedCheckedAt": "2026-10-24",
-        "importedClaimedStatus": "报名中（有资格限制）",
-        "registrationOpenOn": null,
-        "evidence": {
-          "bodySha256": "7febcb0e21a558f7369af919aa5df3dda9e66cf07f5d8528f8d4fb4462466406",
-          "quotes": [
-            "2025级和2026级全校理工科各专业学生。",
-            "报名时间：2026年10月20日 — 2026年10月31日",
-            "每队人数不超过5人"
-          ],
-          "scope": "核实公告所载日期与已列资格；不代表审核通过或实时接受报名。",
-          "monitorRegion": {
-            "start": "关于举办2026年第二届同济大学大学生物理学术竞赛（TJPT）的通知",
-            "end": "教学通知"
-          },
-          "monitorHash": "c5226ccd10d42025fa454cef3712d1134efedb08564ce2a3126842078eaa3a94"
-        }
-      },
-      "eligibility": {
-        "schools": [
-          "同济大学"
-        ],
-        "regions": [],
-        "degrees": [],
-        "enrollmentYears": [
-          2025,
-          2026
-        ],
-        "studyYears": [],
-        "majorGroups": [
-          "理工科"
-        ],
-        "enrolled": null,
-        "rulesComplete": true,
-        "basis": "已核验初赛对象与人数条件。仅用于初赛报名初筛；复赛另须初赛优胜并5人组队，须学校审核。",
-        "studyModes": [],
-        "leaderStudyYears": [],
-        "teamSize": {
-          "min": 1,
-          "max": 5
-        },
-        "requirements": []
-      }
-    },
-    {
-      "name": "2026年“AI+教育”创新应用技能大赛（同济大学学生组）",
-      "cat": "竞赛",
-      "direction": "科技创新",
-      "org": "同济大学信息化办公室",
-      "aud": "同济大学全日制在校学生，大学生AI创新创业组；教师校内选拔不适用于学生",
-      "field": "同济大学",
-      "a": 14.4,
-      "note": "学生组报名和材料提交10月15日已截止；不能把教师组校内选拔资格套给学生。11月12日为颁奖典礼，不冒充评奖结果发布日期。",
-      "id": "fm-007",
-      "dates": {
-        "start": "2026-09-15",
-        "end": "2026-10-15",
-        "award": null,
-        "deadlineAt": null,
-        "timezone": "Asia/Shanghai",
-        "published": "2026-09-15"
-      },
-      "source": {
-        "url": "https://nic.tongji.edu.cn/info/1029/1570.htm",
-        "kind": "official-notice",
-        "verification": "verified",
-        "verifiedAt": "2026-10-25",
-        "lastAttemptAt": "2026-10-25",
-        "lastAttemptResult": "http-200-body-reviewed",
-        "importedClaimedCheckedAt": "2026-10-24",
-        "importedClaimedStatus": "已截止",
-        "registrationOpenOn": null,
-        "evidence": {
-          "bodySha256": "73cfe36f23ee9998d39ccdce2b37c91c2f78004c54ca260a1511acf3d79f4e3d",
-          "quotes": [
-            "面向我校全日制在校学生",
-            "即日—2026年10月15日"
-          ],
-          "scope": "核实公告所载日期与已列资格；不代表审核通过或实时接受报名。",
-          "monitorHash": "bf04c48683559623138969bc37d9e356eb5b9b8a091e3f055acb484b4fe4d5d7"
-        }
-      },
-      "eligibility": {
-        "schools": [
-          "同济大学"
-        ],
-        "regions": [],
-        "degrees": [],
-        "enrollmentYears": [],
-        "studyYears": [],
-        "majorGroups": [],
-        "enrolled": true,
-        "rulesComplete": false,
-        "basis": "2026-10-25 已阅读官方正文；仅将明确条件用于硬匹配，其余条件在资格路径中复核。",
-        "studyModes": [
-          "全日制"
-        ],
-        "leaderStudyYears": [],
-        "teamSize": {
-          "min": 1,
-          "max": 5
-        },
         "requirements": []
       }
     },
@@ -9080,28 +8953,6 @@ aside{border-right-color:#dde1e799}.filters{border-color:#e6e2da80;background:#f
       "checkedAt": "2026-10-25T15:07:52.986655+00:00"
     },
     {
-      "id": "fm-006",
-      "url": "https://mphylab.tongji.edu.cn/page/home/info23622_INFO",
-      "reviewedAt": "2026-10-25",
-      "reviewedBodyHash": "7febcb0e21a558f7369af919aa5df3dda9e66cf07f5d8528f8d4fb4462466406",
-      "referenceHash": "c5226ccd10d42025fa454cef3712d1134efedb08564ce2a3126842078eaa3a94",
-      "status": "unchanged",
-      "contentHash": "c5226ccd10d42025fa454cef3712d1134efedb08564ce2a3126842078eaa3a94",
-      "message": "与已核验正文快照一致；不等于报名审核通过",
-      "checkedAt": "2026-10-25T15:07:52.986655+00:00"
-    },
-    {
-      "id": "fm-007",
-      "url": "https://nic.tongji.edu.cn/info/1029/1570.htm",
-      "reviewedAt": "2026-10-25",
-      "reviewedBodyHash": "73cfe36f23ee9998d39ccdce2b37c91c2f78004c54ca260a1511acf3d79f4e3d",
-      "referenceHash": "bf04c48683559623138969bc37d9e356eb5b9b8a091e3f055acb484b4fe4d5d7",
-      "status": "unchanged",
-      "contentHash": "bf04c48683559623138969bc37d9e356eb5b9b8a091e3f055acb484b4fe4d5d7",
-      "message": "与已核验正文快照一致；不等于报名审核通过",
-      "checkedAt": "2026-10-25T15:07:52.986655+00:00"
-    },
-    {
       "id": "fm-008",
       "url": "https://www.ai-race.com.cn/",
       "reviewedAt": null,
@@ -10550,7 +10401,7 @@ const orbitLabelLayer=document.createElement('div');orbitLabelLayer.className='o
 const orbitPreview=document.createElement('section');orbitPreview.id='orbitPreview';orbitPreview.className='orbit-preview';orbitPreview.setAttribute('role','tooltip');orbitPreview.hidden=true;document.querySelector('.detail').insertBefore(orbitPreview,document.querySelector('.card'));
 space.append(document.getElementById('emptyNote'));
 const shortOrbitNames={
- 'fm-001':'中国国际大学生创新大赛','fm-002':'数字媒体科技与创意竞赛','fm-003':'重庆交大 · 大创培育','fm-004':'石油大学（华东）· 大创','fm-005':'湖北大学生创业扶持','fm-006':'同济物理学术竞赛','fm-007':'同济 · AI+教育学生组','fm-008':'人工智能应用创新大赛','fm-009':'数维杯数学建模','fm-010':'传智杯 · 数智与AI','fm-011':'蓝桥杯 · AI等赛项','fm-012':'蓝桥杯 · 设计与创新','fm-013':'大学生数据要素大赛','fm-014':'生命科学 · 科学探究','fm-015':'蓝桥杯 · 装备数字建模','fm-016':'西安交大 · 智能农装','fm-017':'好创意 · 常规赛','fm-018':'好创意 · 红色文化','fm-019':'好创意 · 老字号新国潮','fm-020':'NCDA · AI漫剧出海','fm-021':'米兰设计周 · 非命题'
+ 'fm-001':'中国国际大学生创新大赛','fm-002':'数字媒体科技与创意竞赛','fm-003':'重庆交大 · 大创培育','fm-004':'石油大学（华东）· 大创','fm-005':'湖北大学生创业扶持','fm-008':'人工智能应用创新大赛','fm-009':'数维杯数学建模','fm-010':'传智杯 · 数智与AI','fm-011':'蓝桥杯 · AI等赛项','fm-012':'蓝桥杯 · 设计与创新','fm-013':'大学生数据要素大赛','fm-014':'生命科学 · 科学探究','fm-015':'蓝桥杯 · 装备数字建模','fm-016':'西安交大 · 智能农装','fm-017':'好创意 · 常规赛','fm-018':'好创意 · 红色文化','fm-019':'好创意 · 老字号新国潮','fm-020':'NCDA · AI漫剧出海','fm-021':'米兰设计周 · 非命题'
 };
 let orbitLabelLayoutKey='',orbitLabelNodes=new Map(),keyboardPreview=-1,orbitTime=0,lastOrbitFrame=null;const planetEmphasis=new Map();
 function orbitCode(it){return it.id.replace('fm-','').replace(/^0/,'')}
@@ -10733,7 +10584,7 @@ function renderVerification(){const root=document.getElementById('verifyList');r
 function openProfile(){
  showPanel('个人资格');
  panelContent.innerHTML=`<p>资料仅保存在本机浏览器，用于排除明确不符的机会。留空会显示待核实，不会默认认定符合。</p><form id="profileForm" class="profile-form">
- <label>就读学校<input name="school" placeholder="例如：同济大学" maxlength="100"></label>
+ <label>就读学校<input name="school" placeholder="输入学校名称" maxlength="100"></label>
  <label>就读省市<input name="region" placeholder="例如：上海市、湖北省" maxlength="100"></label>
  <label>专业名称<input name="major" placeholder="按实际专业填写" maxlength="100"></label>
  <label>专业类别<select name="majorGroup"><option value="">未填写</option><option>理工科</option><option>人文社科</option><option>艺术设计</option><option>其他</option></select></label>
@@ -10859,5 +10710,58 @@ function appendOpportunityPages(entries,parent=panelContent,renderEntry=entry=>r
 
 const competitionLevelTerm=textNode('dt','赛事层级'),competitionLevelValue=textNode('dd','');competitionLevelValue.id='competitionLevel';document.querySelector('.info').append(competitionLevelTerm,competitionLevelValue);if(items[active])competitionLevelValue.textContent=competitionLevelText(items[active]);
 if(new URLSearchParams(location.search).get('focus')==='design-bachelor'){openNavigation('机会库');document.getElementById('designBachelorPreset')?.click()}
+
+// Home: personal criteria are explicit, optional, and saved only locally.
+const personalBar=document.createElement('form');personalBar.id='personalFilter';personalBar.className='personal-filter';
+personalBar.innerHTML='<strong>先填个人信息，找到适合你的比赛</strong><p>可选填写，仅保存在本机；留空的条件仍需自行核实。</p><div class="personal-fields"><label>学校<input name="school" placeholder="输入学校名称" maxlength="100"></label><label>专业<input name="major" placeholder="输入专业名称" maxlength="100"></label><label>学历<select name="degree"><option value="">不限 / 未填</option><option>本科</option><option>专科</option><option>硕士</option><option>博士</option></select></label><label>年级<select name="studyYear"><option value="">未填</option><option value="1">一年级</option><option value="2">二年级</option><option value="3">三年级</option><option value="4">四年级</option><option value="5">五年级</option></select></label><button type="submit">按我的条件筛选</button><button type="button" id="morePersonal">更多资格条件</button></div><p id="personalFilterStatus" role="status"></p>';
+document.querySelector('.topbar').prepend(personalBar);
+for(const name of ['school','major','degree','studyYear'])personalBar.elements[name].value=profile[name]||'';
+personalBar.addEventListener('submit',e=>{e.preventDefault();const next=Object.assign({},profile);for(const name of ['school','major','degree','studyYear'])next[name]=personalBar.elements[name].value;next.showIneligible=false;profile=normalizeProfile(next);store('flowmate_profile',profile);updateStats();renderVerification();document.getElementById('personalFilterStatus').textContent='已按个人条件排除明确不符的机会；其余仍须核实资格。';});
+document.getElementById('morePersonal').addEventListener('click',openProfile);
+const savedProfileOpen=openProfile;openProfile=function(){savedProfileOpen();document.getElementById('profileForm').addEventListener('submit',()=>{for(const name of ['school','major','degree','studyYear'])personalBar.elements[name].value=profile[name]||'';});};
+// Legend stays by its control, rather than in the detail column.
+legendDisclosure.append(legendExplanation);legendExplanation.setAttribute('role','region');
+// The time ruler directly follows the galaxy; quick names stay below it.
+space.insertAdjacentElement('afterend',document.querySelector('.time-ruler'));
+const previousNavigation=openNavigation;
+openNavigation=function(nav){
+ if(nav==='日程'){renderWeekSchedule();return;}
+ previousNavigation(nav);
+ if(nav==='机会库')panelContent.prepend(textNode('p','完整资料检索：包含已截止、日期未知和待核记录。首页用于探索近期机会；这里适合按层级、资格、方向查询和核对来源。'));
+ if(nav==='我的轨迹'){
+  const start=textNode('button','＋ 预演未来，规划一条新轨迹');start.className='cta';start.id='trajectoryPreview';start.addEventListener('click',()=>{
+   showPanel('选择一项机会，预演未来');panelContent.append(textNode('p','选择后可设定目标、每周投入与计划周期。'));
+   const options=items.map((it,i)=>({it,i})).filter(x=>x.it.end&&dateOf(x.it.end)>=TODAY&&matchProfile(x.it).code!=='ineligible').sort((a,b)=>a.it.end.localeCompare(b.it.end));
+   if(!options.length)panelContent.append(textNode('p','暂无可规划的近期机会，请先调整个人资格。'));
+   appendOpportunityPages(options,panelContent,entry=>{const row=textNode('article','');row.className='panel-row';const choose=textNode('button','用这项机会预演未来');choose.addEventListener('click',()=>{select(entry.i);closeModal(panelOverlay);openFuture();});row.append(textNode('h3',entry.it.name),textNode('p',deadlineText(entry.it)+' · '+matchProfile(entry.it).label),choose);return row;});
+  });panelContent.prepend(start);
+ }
+};
+let scheduleWeek=0;
+function renderWeekSchedule(){
+ showPanel('每周日程');
+ const header=document.createElement('div');header.className='week-controls';const prev=textNode('button','← 上一周'),now=textNode('button','本周'),next=textNode('button','下一周 →');header.append(prev,now,next);panelContent.append(header);
+ prev.addEventListener('click',()=>{scheduleWeek--;renderWeekSchedule();});next.addEventListener('click',()=>{scheduleWeek++;renderWeekSchedule();});now.addEventListener('click',()=>{scheduleWeek=0;renderWeekSchedule();});
+ const monday=new Date(TODAY);monday.setDate(monday.getDate()-((monday.getDay()+6)%7)+scheduleWeek*7);
+ panelContent.append(textNode('p','按周查看已收藏竞赛的报名节点，以及已保存轨迹的规划任务。此处不重复展示完整赛事库。'));
+ const grid=document.createElement('div');grid.className='week-grid';panelContent.append(grid);
+ function key(date){return date.getFullYear()+'-'+String(date.getMonth()+1).padStart(2,'0')+'-'+String(date.getDate()).padStart(2,'0');}
+ for(let day=0;day<7;day++){
+  const date=new Date(monday);date.setDate(monday.getDate()+day);const dateKey=key(date);const col=textNode('section','');col.className='week-day';if(dateKey===CURRENT_DATE)col.classList.add('today');col.append(textNode('h3',['周一','周二','周三','周四','周五','周六','周日'][day]),textNode('small',fmt(dateKey)));let count=0;
+  for(const it of items){if(!saved.has(it.id))continue;for(const pair of [['报名开始',it.start],['报名截止',it.end]])if(pair[1]===dateKey){const b=textNode('button',pair[0]+' · '+it.name);b.className='week-event';b.addEventListener('click',()=>{closeModal(panelOverlay);inspectOpportunity(items.indexOf(it));document.querySelector('.detail').scrollIntoView({block:'start'});});col.append(b);count++;}}
+  for(const plan of futurePlans){const created=new Date(plan.created);if(!Number.isFinite(created.getTime()))continue;const start=new Date(created.getFullYear(),created.getMonth(),created.getDate());const diff=Math.round((date-start)/DAY);if(diff>=0&&diff%7===0&&diff<plan.weeks*7){col.append(textNode('p','规划 · '+plan.name+'：本周投入 '+plan.hours+' 小时，目标 '+plan.goal));count++;}}
+  if(!count)col.append(textNode('p','暂无安排'));grid.append(col);
+ }
+ const add=textNode('button','去我的轨迹添加规划');add.addEventListener('click',()=>openNavigation('我的轨迹'));panelContent.append(add);
+}
+
+// Mobile detail drawer preserves the galaxy's scroll position.
+const mobileDetail=document.querySelector('.detail');const drawerClose=textNode('button','关闭详情 · 返回星系 ×');drawerClose.className='drawer-close';drawerClose.type='button';mobileDetail.prepend(drawerClose);let galaxyScrollY=0;
+const inspectBeforeDrawer=inspectOpportunity;
+function closeDetailDrawer(){if(!mobileDetail.classList.contains('drawer-open'))return;mobileDetail.classList.remove('drawer-open');mobileDetail.removeAttribute('role');mobileDetail.removeAttribute('aria-modal');document.body.style.overflow='';window.scrollTo(0,galaxyScrollY);canvas.focus({preventScroll:true});}
+inspectOpportunity=function(i){if(innerWidth<=790){galaxyScrollY=window.scrollY;mobileDetail.classList.add('drawer-open');mobileDetail.setAttribute('role','dialog');mobileDetail.setAttribute('aria-modal','true');mobileDetail.setAttribute('aria-label','机会详情');document.body.style.overflow='hidden';}inspectBeforeDrawer(i);if(innerWidth<=790)drawerClose.focus({preventScroll:true});};
+drawerClose.addEventListener('click',closeDetailDrawer);returnOrbit.onclick=()=>{if(mobileDetail.classList.contains('drawer-open'))closeDetailDrawer();else{space.scrollIntoView({block:'center'});canvas.focus({preventScroll:true});}};
+document.addEventListener('keydown',e=>{if(!mobileDetail.classList.contains('drawer-open')||modalOpen)return;if(e.key==='Escape'){e.preventDefault();closeDetailDrawer();}if(e.key==='Tab'){const focusable=Array.from(mobileDetail.querySelectorAll('button,input,select,a[role=button],summary')).filter(el=>!el.disabled&&el.getClientRects().length);const first=focusable[0],last=focusable[focusable.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}});
+window.addEventListener('resize',()=>{if(innerWidth>790)closeDetailDrawer();});
 </script></body></html>
 

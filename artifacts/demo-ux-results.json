@@ -1,0 +1,14 @@
+{
+  "widths": [
+    390,
+    1440
+  ],
+  "privacyRecordRemoval": true,
+  "personalFilter": true,
+  "rulerOrder": true,
+  "localLegend": true,
+  "trajectoryPreview": true,
+  "weeklySchedule": true,
+  "mobileDrawer": true,
+  "platformDeviceValidation": "pending"
+}

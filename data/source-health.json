@@ -61,28 +61,6 @@
       "checkedAt": "2026-10-25T15:07:52.986655+00:00"
     },
     {
-      "id": "fm-006",
-      "url": "https://mphylab.tongji.edu.cn/page/home/info23622_INFO",
-      "reviewedAt": "2026-10-25",
-      "reviewedBodyHash": "7febcb0e21a558f7369af919aa5df3dda9e66cf07f5d8528f8d4fb4462466406",
-      "referenceHash": "c5226ccd10d42025fa454cef3712d1134efedb08564ce2a3126842078eaa3a94",
-      "status": "unchanged",
-      "contentHash": "c5226ccd10d42025fa454cef3712d1134efedb08564ce2a3126842078eaa3a94",
-      "message": "与已核验正文快照一致；不等于报名审核通过",
-      "checkedAt": "2026-10-25T15:07:52.986655+00:00"
-    },
-    {
-      "id": "fm-007",
-      "url": "https://nic.tongji.edu.cn/info/1029/1570.htm",
-      "reviewedAt": "2026-10-25",
-      "reviewedBodyHash": "73cfe36f23ee9998d39ccdce2b37c91c2f78004c54ca260a1511acf3d79f4e3d",
-      "referenceHash": "bf04c48683559623138969bc37d9e356eb5b9b8a091e3f055acb484b4fe4d5d7",
-      "status": "unchanged",
-      "contentHash": "bf04c48683559623138969bc37d9e356eb5b9b8a091e3f055acb484b4fe4d5d7",
-      "message": "与已核验正文快照一致；不等于报名审核通过",
-      "checkedAt": "2026-10-25T15:07:52.986655+00:00"
-    },
-    {
       "id": "fm-008",
       "url": "https://www.ai-race.com.cn/",
       "reviewedAt": null,

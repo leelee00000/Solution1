@@ -1,10 +1,10 @@
 {
   "skill": "minitool-zip-builder 1.8.0",
   "snapshotDate": "2026-10-27",
-  "records": 141,
+  "records": 139,
   "zip": "FlowMate-minitool-20261027.zip",
-  "zipBytes": 96435,
-  "sha256": "ca60c2854329a384b6d7f589c439a46ee9dd290cf7e30c3c44b664580801643f",
+  "zipBytes": 99697,
+  "sha256": "2ea130c9484c262fb22067a8e68bb5bf10aa5c1fbbf84f50bbdddede48eecb36",
   "officialDirectoryAudit": "PASS: 5 files, 0 warnings",
   "officialZipAudit": "PASS: 5 files, 0 warnings",
   "syntax": "node --check passed for app.js and runtime.js",
@@ -28,5 +28,19 @@
   "sliderHorizonMonths": [
     0.5,
     3
-  ]
+  ],
+  "uxRegression": {
+    "widths": [
+      390,
+      1440
+    ],
+    "privacyRecordRemoval": true,
+    "personalFilter": true,
+    "rulerOrder": true,
+    "localLegend": true,
+    "trajectoryPreview": true,
+    "weeklySchedule": true,
+    "mobileDrawer": true,
+    "platformDeviceValidation": "pending"
+  }
 }
