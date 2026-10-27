@@ -1,0 +1,1628 @@
+[
+  {
+    "url": "https://12umic.hit.edu.cn/2026/0915/c20012a401561/page.htm",
+    "resolvedUrl": "https://12umic.hit.edu.cn/2026/0915/c20012a401561/page.htm",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "4fefc7212d1e0b51c2188bc05b27366b9b13b8a4b509f3b377f460437ce9bfdf",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1063"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://ahmath.ustc.edu.cn/2026/0824/c33094a750983/page.htm",
+    "resolvedUrl": "https://ahmath.ustc.edu.cn/2026/0824/c33094a750983/page.htm",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "a488a071c02372341a43c4f4056aa3ae37316a9e6e6eb7e5028d45a0b90ddacf",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1086"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://bksy.swjtu.edu.cn/info/1431/94841.htm",
+    "resolvedUrl": "https://bksy.swjtu.edu.cn/info/1431/94841.htm",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "d8c03e6b3ba4d521c45d73d0bfe888772e99237b884d493e37cd334c59621fda",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1074"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://chem.dlut.edu.cn/info/1010/13800.htm",
+    "resolvedUrl": "https://chem.dlut.edu.cn/info/1010/13800.htm",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "46b87abc4295bdc33c0126aa93df75bcf88c845495dd1568cd05b332be631788",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1045"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://cxcyxy.cdu.edu.cn/info/1019/4340.htm",
+    "resolvedUrl": "https://cxcyxy.cdu.edu.cn/info/1019/4340.htm",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "a721024b2d32917be5888874af549d372723b9ef0e4d11c9b1a5d4cc515f6c22",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1076"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://cxxy.lntu.edu.cn/info/1134/5655.htm",
+    "resolvedUrl": "https://cxxy.lntu.edu.cn/info/1134/5655.htm",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "0a94b31e33889fedfc45c6ed29c7c1550341499a53e4aa03852d2e923f075acb",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1040"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://cxxy.lntu.edu.cn/info/1134/5675.htm",
+    "resolvedUrl": "https://cxxy.lntu.edu.cn/info/1134/5675.htm",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "844d2928cfe8482e3b4dc44b3af7b94253feb1ac81349b29e257ff6adcf984cc",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1057"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://dasai.lanqiao.cn/pages/v7/dasai/competition/individual_competition.html",
+    "resolvedUrl": "https://dasai.lanqiao.cn/pages/v7/dasai/competition/individual_competition.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "882c1e72cb3e4ad7221639269eea6ad94571ba3dee62403fa8158855822f2c08",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1001",
+      "fm-1002",
+      "fm-1003"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://due.xjtu.edu.cn/info/1172/10541.htm",
+    "resolvedUrl": "https://due.xjtu.edu.cn/info/1172/10541.htm",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "ff533d5cca4d863a234b75ef61db5a12301982480e76faf70d05b221fb24cb56",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1026"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://dy.nfu.edu.cn/info/1441/7192.htm",
+    "resolvedUrl": "https://dy.nfu.edu.cn/info/1441/7192.htm",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "b7495b7377d158831270c4ab40c49ca95abcbc11875b67ad829d2eafb6088d2d",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1050"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://jgxy.xatu.edu.cn/info/1056/8595.htm",
+    "resolvedUrl": "https://jgxy.xatu.edu.cn/info/1056/8595.htm",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "52baa3f658a729ef684a651e608d31ed774ee4434bf1dac6db6af3a410babecf",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1069"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://jgy.njtech.edu.cn/info/1012/6045.htm",
+    "resolvedUrl": "https://jgy.njtech.edu.cn/info/1012/6045.htm",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "9b69806d4798a742f63a5673c80b9407e638d6225c50eae7a95bf2387f474b28",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1047",
+      "fm-1048"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://jky.yangtzeu.edu.cn/info/1026/3563.htm",
+    "resolvedUrl": "https://jky.yangtzeu.edu.cn/info/1026/3563.htm",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "866f6c1374e38e29d1e0129ccd95be53bb67ff304732352c8f2d298119e220b9",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1041"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://jnds.gdut.edu.cn/info/1023/1283.htm",
+    "resolvedUrl": "https://jnds.gdut.edu.cn/info/1023/1283.htm",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "fb8e878efe9cd7f8531af135145a4efb6f88401c204686454e4a106faafcacb1",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1073"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://jw.beijing.gov.cn/gjc/tzgg_15688/202606/t20260623_4711507.html",
+    "resolvedUrl": "https://jw.beijing.gov.cn/gjc/tzgg_15688/202606/t20260623_4711507.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "dde4d351bddeb79b228394ff7e78d64c077e13aed8d6dd7d1cef2d909232c8b1",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1080"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://jw.beijing.gov.cn/gjc/tzgg_15688/202608/t20260818_4827425.html",
+    "resolvedUrl": "https://jw.beijing.gov.cn/gjc/tzgg_15688/202608/t20260818_4827425.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "01965f3e2a18a86f382b9fcc4b4099a625b357b11c66e528fc39d8164a1f32f9",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1079"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://jw.beijing.gov.cn/gjc/tzgg_15688/202610/t20261010_4895831.html",
+    "resolvedUrl": "https://jw.beijing.gov.cn/gjc/tzgg_15688/202610/t20261010_4895831.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "49d04c23366193c35c87970725053f5903258b497e4995899ffa35924e3f0881",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1044"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://jwb.bit.edu.cn/xs/pyfa_2/tzgg__26/92c0d995fa3a4e5180339fc6940d35b0.htm",
+    "resolvedUrl": "https://jwb.bit.edu.cn/xs/pyfa_2/tzgg__26/92c0d995fa3a4e5180339fc6940d35b0.htm",
+    "checkedAt": "2026-10-27",
+    "httpStatus": null,
+    "sha256": "f851159993fd1310ae5a03ebf266b40d00cb5a3d8898d175cc2375c10ec0b9b6",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1027"
+    ],
+    "captureMethod": "web-extracted-text",
+    "sha256Basis": "UTF-8 extracted text; not HTTP response bytes"
+  },
+  {
+    "url": "https://jwc.hdu.edu.cn/2026/0921/c13022a300537/page.htm",
+    "resolvedUrl": "https://jwc.hdu.edu.cn/2026/0921/c13022a300537/page.htm",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "f481efe515902cb2262e01d0152abbae0fa84ce3286989dfc87b9fd7c702a500",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1084"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://jwc.tiangong.edu.cn/2026/1020/c1328a118418/page.htm",
+    "resolvedUrl": "https://jwc.tiangong.edu.cn/2026/1020/c1328a118418/page.htm",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "af301e0d9cd968e4bb9b5eb7680e390e47ee23403a3d1c1d05839a52bd377879",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1082"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://jwc.xjtu.edu.cn/info/1172/10505.htm",
+    "resolvedUrl": "https://jwc.xjtu.edu.cn/info/1172/10505.htm",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "7118ce6b140c329eb25dede8d1ec8545a05d9c2b5c24f0cd23236e619d09754c",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1023"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://jwc.xjtu.edu.cn/info/1172/10507.htm",
+    "resolvedUrl": "https://jwc.xjtu.edu.cn/info/1172/10507.htm",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "11ef165068de343da3890c127f180236571066d792c73001a62c60ea640727f8",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1004",
+      "fm-1005",
+      "fm-1006",
+      "fm-1007"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://jwc.ynu.edu.cn/info/1009/4382.htm",
+    "resolvedUrl": "https://jwc.ynu.edu.cn/info/1009/4382.htm",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "fd72349fc07952fcb32106b50a84efcfbe45858b48266f4398d85363f603b427",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1046"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://jwc.zafu.edu.cn/info/1012/9919.htm",
+    "resolvedUrl": "https://jwc.zafu.edu.cn/info/1012/9919.htm",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "ff5cc69a948c8a487f1b87bcf242c98930ec448b74dd70a695e274cb24d00470",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1083"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://jwc.zafu.edu.cn/info/1012/9967.htm",
+    "resolvedUrl": "https://jwc.zafu.edu.cn/info/1012/9967.htm",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "8ba865ef0adc8a65a7c1e543ccdd76b8a9dc185e0687956141b2939d1a7ebcdb",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1059"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://jyt.ln.gov.cn/jyt/gk/zxtz/2026102110290659632/index.shtml",
+    "resolvedUrl": "https://jyt.ln.gov.cn/jyt/gk/zxtz/2026102110290659632/index.shtml",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "65355fab2fc6f6aeea503a972d5edd5621adffd50514e7b1745f660f8612e0ab",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1030"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://lib.cdut.edu.cn/info/1022/4869.htm",
+    "resolvedUrl": null,
+    "checkedAt": "2026-10-27",
+    "httpStatus": null,
+    "sha256": null,
+    "readStatus": "正文未抓取",
+    "error": "HTTP Error 412: Precondition Failed",
+    "records": [
+      "fm-1077"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://newoaa.shisu.edu.cn/3c/b9/c6353a212153/page.htm",
+    "resolvedUrl": "https://newoaa.shisu.edu.cn/3c/b9/c6353a212153/page.htm",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "c3b942b4735fef10f40712ecb2b0d32248ffb25373e8eb01801090d16a5c9aa8",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1024"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://pec.xjtu.edu.cn/info/1191/5551.htm",
+    "resolvedUrl": "https://pec.xjtu.edu.cn/info/1191/5551.htm",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "878edc1d8208c99f61f9e658935808ae2ba7756ccb002f0e777283a9842721f4",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1013",
+      "fm-1014",
+      "fm-1015",
+      "fm-1016",
+      "fm-1017"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://sci.upc.edu.cn/2026/1010/c6838a502286/page.htm",
+    "resolvedUrl": "https://sci.upc.edu.cn/2026/1010/c6838a502286/page.htm",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "a81dac14d5df176d068cb1ce6e08d7d3f9af742694a52e0a8a1030a38a969334",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1042"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://sem.buct.edu.cn/2026/0909/c10347a222654/page.htm",
+    "resolvedUrl": "https://sem.buct.edu.cn/2026/0909/c10347a222654/page.htm",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "761f6a5e6dd8ca9e28d29f9638fda2dd53abc955fa9fac2a3490da1bbf4187a1",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1081"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://spft.swufe.edu.cn/info/1089/35303.htm",
+    "resolvedUrl": "https://spft.swufe.edu.cn/info/1089/35303.htm",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "eab1b524afd66ca8a49b705da276cadd230ab72939853d4fe371e94b4c9f1981",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1078"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.cdaglobal.com/article/551.html",
+    "resolvedUrl": "https://www.cdaglobal.com/article/551.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "67132e4adfbf831ae5dca536f617dda75612ebbf2c0e9629ca9dfcb459c758aa",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1049"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.cdec.org.cn/articleDetail/2299",
+    "resolvedUrl": "https://www.cdec.org.cn/articleDetail/2299",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "b54f5059850b193453f2d74f488023917f795e4eef635814da985855ca077338",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1065"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.cdec.org.cn/articleDetail/2327",
+    "resolvedUrl": "https://www.cdec.org.cn/articleDetail/2327",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "fb3e81aa4d24fe6ea71de10d3936fc6a9eb55a5e11de8d557a7658067a7114f2",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1130"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.cdec.org.cn/articleDetail/2328",
+    "resolvedUrl": "https://www.cdec.org.cn/articleDetail/2328",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "e7c564e663064415bcce21e72a176e101ca3a3a4fcc7758e120790eaea48e8b3",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1129"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.cdec.org.cn/articleDetail/2331",
+    "resolvedUrl": "https://www.cdec.org.cn/articleDetail/2331",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "84d2438b16216eef2e0b79f679effaa7fcb252582cc2109150bfa795d296ea3b",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1067"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.cdec.org.cn/articleDetail/2363",
+    "resolvedUrl": "https://www.cdec.org.cn/articleDetail/2363",
+    "checkedAt": "2026-10-27",
+    "httpStatus": null,
+    "sha256": "9de57a9fb5947f48369f4a23fe203994535371e48a49aa1da96de87f3b58d481",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1031"
+    ],
+    "captureMethod": "web-extracted-text",
+    "sha256Basis": "UTF-8 extracted text; not HTTP response bytes"
+  },
+  {
+    "url": "https://www.cdec.org.cn/articleDetail/2364",
+    "resolvedUrl": "https://www.cdec.org.cn/articleDetail/2364",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "6e98fdf0baa2ab4391ff7822d79a227f93a05c13624bb2558b92709d261f9d5c",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1066"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.cdec.org.cn/articleDetail/2424",
+    "resolvedUrl": "https://www.cdec.org.cn/articleDetail/2424",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "4bcaa4421d611852c156dd6ae4857902910e6625f7ede3c452f03a9b2173fd44",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1131"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.cdec.org.cn/articleDetail/2527",
+    "resolvedUrl": "https://www.cdec.org.cn/articleDetail/2527",
+    "checkedAt": "2026-10-27",
+    "httpStatus": null,
+    "sha256": "07c64b457626a803edeb8f58db9c90e80e81244acabbc3641efc7036ac8907d6",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1033"
+    ],
+    "captureMethod": "web-extracted-text",
+    "sha256Basis": "UTF-8 extracted text; not HTTP response bytes"
+  },
+  {
+    "url": "https://www.cdec.org.cn/articleDetail/2542",
+    "resolvedUrl": "https://www.cdec.org.cn/articleDetail/2542",
+    "checkedAt": "2026-10-27",
+    "httpStatus": null,
+    "sha256": "0ae7cc449c43593b769cdc1323f82b74179b58976d7dc88d5a0094e76091eb71",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1032"
+    ],
+    "captureMethod": "web-extracted-text",
+    "sha256Basis": "UTF-8 extracted text; not HTTP response bytes"
+  },
+  {
+    "url": "https://www.cecmath.com/",
+    "resolvedUrl": "https://www.cecmath.com/",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "d238950aa5cb9d75ca235388c77bb358e7abd33e66f92a45db52fb47630221c6",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1055"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.cmit.cn/uploadfile/2026/1012/45828.html",
+    "resolvedUrl": "https://www.cmit.cn/uploadfile/2026/1012/45828.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "ef5f4a3a80bb1dea1e913e19fea15872863e0978e55347b414f03faae0b21cfe",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1037"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.cnccac.com/hlw",
+    "resolvedUrl": "https://www.cnccac.com/hlw",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "c39a4de06c22956d103bba50a057d64c95ae72b810b56e9356fe6ff822eedd89",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1062"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.csust.edu.cn/jwc/info/1101/8207.htm",
+    "resolvedUrl": "https://www.csust.edu.cn/jwc/info/1101/8207.htm",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "843ae22ae41054fdb1fdf6925e56bf943947a6a6e6d91eef4942e6a29aa0a577",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1085"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.csust.edu.cn/stxy/info/1053/10965.htm",
+    "resolvedUrl": "https://www.csust.edu.cn/stxy/info/1053/10965.htm",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "a6ceb25a4d5a50148103567cc3b2129046d852cf90a852f0e3812d23bdcb83df",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1061"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.cuit.edu.cn/info/1006/16974.htm",
+    "resolvedUrl": "https://www.cuit.edu.cn/info/1006/16974.htm",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "b3d58c899adb41ff4dcaabe764818ad6a0b4e8f76457b1e8e5eefe5c07175a51",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1075"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.cuit.edu.cn/info/1006/17092.htm",
+    "resolvedUrl": "https://www.cuit.edu.cn/info/1006/17092.htm",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "2cb7cbe82ba59d47568e1a1e76ff42f133690cf3c3fd9435306199b2540b1891",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1018",
+      "fm-1019",
+      "fm-1020",
+      "fm-1021"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.czu.cn/_t454/2026/1008/c6a178013/pagem.htm",
+    "resolvedUrl": "https://www.czu.cn/_t454/2026/1008/c6a178013/pagem.htm",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "4c64a580f5d36a688a5ae6fe72e2889e7aff1e2ecebd24892c5cf48d1bf2d560",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1028"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.e-cffex.com.cn/web/zxgg/20260807/2593.html",
+    "resolvedUrl": "https://www.e-cffex.com.cn/web/zxgg/20260807/2593.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "e84963791d22085182fea8e7ff1820a6d919d787fae7de06ead79ac71356ed94",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1025"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.gxmu.edu.cn/xwgk/wwtz/t239484.html",
+    "resolvedUrl": "https://www.gxmu.edu.cn/xwgk/wwtz/t239484.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "d54e1d622ac494963402250780b820fb3b8be39679afa91da44b9f81609c0c07",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1071",
+      "fm-1072"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.hfuu.edu.cn/tw/77/d3/c284a161747/page.htm",
+    "resolvedUrl": "https://www.hfuu.edu.cn/tw/77/d3/c284a161747/page.htm",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "8047c509b74bdbc18dc39b11e6b1a83231e6c36fef149a7ef7d4361cdf63605e",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1064"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/28603.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/28603.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "8385aebb931adb4b624f1e978e2bb4976d3f61676b95eb584fe56c3e9c90d381",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1087"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/28625.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/28625.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "881e833413833364548b7de1964dbb30541594ad07941323a8790a0da4fb10fb",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1088"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/28648.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/28648.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "bbc84678675283d23a8494d9a512be28f60c57af1a0323c72c6618a08120b4ac",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1089"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/28662.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/28662.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "0a4c750cee6e93f368c97cabf18ef645987f97a586107b445da64746a235eb4a",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1090"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/28676.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/28676.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "19ae77057d96ce8a5ffe969e2e77bed1eed079f683ed6c171befd6c1958ad871",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1091"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/28712.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/28712.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "2062199abfe8e8d3d590f9babbd930d6305f954388601b3096819b55ad4ca9c6",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1092"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/28713.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/28713.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "b67d54f1fe0db52bc074b22d701efcdcfdd7cf2495d5f9996c409f38719d7b72",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1093"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/28724.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/28724.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "00ec805b030b034c382e9e5ba9146e0f6f90de1b667a9ef9e84b3d81dd841232",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1094"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/28751.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/28751.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "d7b48582dd158891e4fdfeba381fc834284136fa9aa7ff67d6b74554c9bfed2a",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1095"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/28760.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/28760.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "c887e0ffcfbdf92dbe990aca5c5640abf9daf58e56049fdf03a71bde141463ce",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1096"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/28766.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/28766.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "e498bdcaf9abf0f43402677c25f9229754679785246a6bb84ad26bc2a684295d",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1097"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/28795.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/28795.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "003c7b1768870b2c01b0bc5b82633d73625f7c13559e47ccd36eb3cadc87b588",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1098"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/28797.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/28797.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "e454adef9605d0b98648d4456ba23214b5932c76942a6a45d099363e384eedc9",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1099"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/28801.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/28801.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "3241bd621bbaece0b00e54be89ac2690715fd5432f0d45d3a4a4964874621658",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1100"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/28808.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/28808.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "94be922b773fc3c9e93d258970acd3a86a150a81dff487034de1597b96dd529e",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1101"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/28810.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/28810.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "c82f5b523447099b1a146afbc149654dfe73b5d6de2f1684bd849d241be7f73b",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1102"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/28812.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/28812.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "b53182b6acaff207bf8d729103cafb9776c199d71421e142ebb1fd3ebdda2dbe",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1103"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/28817.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/28817.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "60a153b38ba3fba124729441d7b95a49514ff6d1ba5fa708bcbded9f39ecb98f",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1104"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/28838.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/28838.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "73b2c44937622994840c7d0a912565a00310fe5d56d4c9e78f73767b5a4edd74",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1105"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/28841.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/28841.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "4b4a16f9f48c8046e0220b466472e251089ccea8a2a75955da2074e1e812ed8b",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1106"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/28848.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/28848.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "f9472cc369b0d2529819ebeac0dae46c825e95cebff792c24a20856ece367d57",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1107"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/28849.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/28849.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "31cc9f3e3b10a596511dbec533caaff36d25856b44d66486573d26bacd9e65ac",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1108"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/28868.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/28868.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "77f30d40e903dba42724274c6f25f9c63e30b840006b368683b965b7be7086fe",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1109"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/28877.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/28877.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "79cdd59ce802801c4fb6e5fa0f3a297b64538401fe3a7ce9e46d54ed195783f7",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1110"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/28888.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/28888.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "367faa887fa79f19a0b681eb3a35f56a03ca4fd690aa7e1bff17798466a81fc6",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1111"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/28911.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/28911.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "afa4cdfb160660321d72f70f138f9959f9edb2559f031d90157defeb4154c543",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1112"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/28912.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/28912.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "3e002cef9e69d9c1906c659302473c463adb1cf31c88f6d6ceb3f288b8fdf89b",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1113"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/28913.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/28913.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "d99e9f57a7c1d0dfadf17cacc062f6ddd68ad8ad7ce204807fa4b5e45429b2c7",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1114"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/28922.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/28922.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "b48216c10718ae54326fe8059e04d1a0eb22dfb26ef7a86baf6b848d6dfc414f",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1115"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/28949.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/28949.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "b49a6f08a9e6756e49d9231baa5c220c9ae2a73a30d803ce832c5d660e3b446b",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1116"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/28964.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/28964.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "6d8a2e9c57d97e50c15d70de7a1de22cf2534e4872f0d4658d3cb4e190da9118",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1117"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/28969.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/28969.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "711e3ce32b17f5229d195ca868b0e3596fb3a32b2fec68be9a7cdab1078c1ced",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1118"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/28973.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/28973.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "4005a4e604ab98ecb05830821eef028be8baba963b36db2795a434feea7ca2bc",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1119"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/28994.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/28994.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "d0a582bfd400e338c1c97e57f7d10a17980a76951d5f8c3260f20394b304fa4d",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1120"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/28996.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/28996.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "82388ed38b8d8df368822e8335573168c1752ec008e1a36f37d5270e05cfbb21",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1121"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/28998.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/28998.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "5b71531ec57699d6da0003236f6f1ebb60fdc8ec6b96660b01f2fc733af6c196",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1122"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/29011.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/29011.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "0b10e064a04b6efc703a360d4b75c68d2f48fa4a24f2ab609b0c9a124f3fab32",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1123"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/29014.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/29014.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "4082eb368e0c73c4ead47693ea0f6a55262c7a60ab4c3262f4fa0a5d27dd59d6",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1124"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/29016.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/29016.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "249aa40f9fd316c4fdf9caf9bc167257a78564fec7368e1283fcd0d1430ea4f8",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1125"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/29062.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/29062.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "8e0b01939e2fb036d59ae37cc2bf699574d67575a61d74ac881aab17f31d461f",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1126"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/29072.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/29072.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "635854d35e1279a08f6d7ccbb9dd6a80b4d013d1279a533c35478bea6aa1152a",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1127"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/29078.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/29078.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "759961e122ceb7f89a6711cc40d3259f21ed1646382550083a5030100845de6b",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1128"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/29091.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/29091.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "731509958e311d480e1c57007c7500e299735c47914e0593fe8c9fd01b8007f2",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1035"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/29094.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/29094.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "dcad97a16af4c3b3921ed81a6f8ad0229100844a1ee0b88cd1ee06a8a37355f8",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1036"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/29098.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/29098.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "a8b2702b6cdada5cbac7e29f6678786b7248388bcb5566426d663a8de4e28b2f",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1060"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/29153.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/29153.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "b084bcbda2e20a1b0de66c7b5b8e1d661cab55983fa1da080f6e32ef2ff7d52c",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1039"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/29171.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/29171.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "14681c0bd99f8ba2d700b4e61d5a88af7e4769c3fb80ef2d80a8eda09409e613",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1038"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.lncu.edu.cn/cxcyxy/29175.html",
+    "resolvedUrl": "https://www.lncu.edu.cn/cxcyxy/29175.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "d0668fab0b702dab54d5e0ec8a5001f3ebc5eef06b6a3515b57e54204793fed5",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1058"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.moe.gov.cn/srcsite/A15/s7063/202610/t20261010_1453481.html",
+    "resolvedUrl": "http://www.moe.gov.cn/srcsite/A15/s7063/202610/t20261010_1453481.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "e51822d8ee27699362282ed4ce261dc95ece880c19cba79e502d0fcf1ea7a2ac",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1029"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.ncccu.org.cn/index/Paper/case1.html",
+    "resolvedUrl": "https://www.ncccu.org.cn/index/Paper/case1.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "65a9e07b894abeffd106111645eed90c0eeb10c666d3380a7f8c4f1e89c920c5",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1008"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.ncccu.org.cn/index/Paper/case2.html",
+    "resolvedUrl": "https://www.ncccu.org.cn/index/Paper/case2.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "8f815dee18b707b7926baa86ce3e41a2a746002b519426a1506e593043b91658",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1009"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.ncccu.org.cn/index/Paper/case3.html",
+    "resolvedUrl": "https://www.ncccu.org.cn/index/Paper/case3.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "9e8bf30c703a1aa011e88a50f311a806450e8dd86b008338ddada448e3ddfa3f",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1010"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.ncccu.org.cn/index/Paper/case4.html",
+    "resolvedUrl": "https://www.ncccu.org.cn/index/Paper/case4.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "6016e018ec14b3949805e4a118b0887ce69ba19299510fb042f78b429b376581",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1011"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.ncccu.org.cn/index/Paper/case7.html",
+    "resolvedUrl": "https://www.ncccu.org.cn/index/Paper/case7.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "5401f6035ebd81436934f6a824edc4028449323f31565685cd4b88b5704a4f30",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1012"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.ncda.org.cn/dsjs/dsnr/mtsd/9C3/",
+    "resolvedUrl": "https://www.ncda.org.cn/dsjs/dsnr/mtsd/9C3/",
+    "checkedAt": "2026-10-27",
+    "httpStatus": null,
+    "sha256": "af3ad6b2998367c7310fb19ca707658395534ec038e78ae11141ba1174414a48",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1034"
+    ],
+    "captureMethod": "web-extracted-text",
+    "sha256Basis": "UTF-8 extracted text; not HTTP response bytes"
+  },
+  {
+    "url": "https://www.neau.edu.cn/info/1057/37731.htm",
+    "resolvedUrl": "https://www.neau.edu.cn/info/1057/37731.htm",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "f8ec0762adaec9e2af6db5f3d7455654f21f74eaf4f6d144cb655c3a39ae7847",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1070"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.nmmcm.org.cn/News/198.html",
+    "resolvedUrl": "https://www.nmmcm.org.cn/News/198.html",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "a1ae5cd31a8d40731b62ef3f5f145045ce3f08c58b5ade699174fa5e08333adf",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1022"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.sspu.edu.cn/2026/1023/c3028a172893/page.htm",
+    "resolvedUrl": "https://www.sspu.edu.cn/2026/1023/c3028a172893/page.htm",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "9b621e143a020a337b9863e21f829132ec04bfa2e40db17371b62435f86bde33",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1043"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.whhxit.edu.cn/wgy/info/1054/209973.htm",
+    "resolvedUrl": "https://www.whhxit.edu.cn/wgy/info/1054/209973.htm",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "3acb6139dbd4dbf772ede05b0c3292a5ac87ba23226ee1f2162a3a6f2503d813",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1052",
+      "fm-1053",
+      "fm-1054"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www.wwj.org.cn/index/index/subject?rand=223&subject_id=1",
+    "resolvedUrl": "https://www.wwj.org.cn/index/index/subject?rand=223&subject_id=1",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "38ac21f8f137d5b17a6cb06161945bf9e21a87662931cf024fc0103aad534cdf",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1051"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://www5.zzu.edu.cn/jwc/info/1283/5224.htm",
+    "resolvedUrl": "https://www5.zzu.edu.cn/jwc/info/1283/5224.htm",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "6b02902dbfcf539430a41ca41d991f9d6578d0abd04adde780f117bd7caf85dd",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1068"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  },
+  {
+    "url": "https://xupt.edu.cn/info/2104/87127.htm",
+    "resolvedUrl": "https://xupt.edu.cn/info/2104/87127.htm",
+    "checkedAt": "2026-10-27",
+    "httpStatus": 200,
+    "sha256": "7228cf6c5ef0d1387612830225bf344d5e1d4466e25a0df2e77b61ce6a0371ed",
+    "readStatus": "正文已抓取",
+    "error": null,
+    "records": [
+      "fm-1056"
+    ],
+    "captureMethod": "HTTP响应解码并提取可见文字",
+    "sha256Basis": "HTTP响应原始字节"
+  }
+]

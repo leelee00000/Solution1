@@ -1,0 +1,27 @@
+{
+  "totalRecords": 131,
+  "recentEligibleRecords": 51,
+  "recentEligibleSeries": 26,
+  "groups": {
+    "已核对报名项目": 51,
+    "待核候选": 21,
+    "已截止归档": 59
+  },
+  "statuses": {
+    "公告报名窗口内": 55,
+    "即将开放": 2,
+    "报名中，学校截止另定": 1,
+    "今日截止（24:00）": 1,
+    "冲突待核": 4,
+    "日期待核": 9,
+    "已截止": 59
+  },
+  "uniqueFetchedPages": 992,
+  "fetchSucceeded": 861,
+  "deadlineWithinWindow": 40,
+  "currentlyOpenWithLaterDeadline": 10,
+  "schoolDeadlineVaries": 1,
+  "scopedToSchool": 7,
+  "nationalFormat": 43,
+  "provincialFormat": 8
+}
