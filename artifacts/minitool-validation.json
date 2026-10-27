@@ -1,0 +1,27 @@
+{
+  "skill": "minitool-zip-builder 1.8.0",
+  "snapshotDate": "2026-10-27",
+  "records": 141,
+  "zip": "FlowMate-minitool-20261027.zip",
+  "zipBytes": 96434,
+  "sha256": "b1679d8df0b02aabae9e0a55bc5c97e042d2a3c54b530d64d680d598b5039589",
+  "officialDirectoryAudit": "PASS: 5 files, 0 warnings",
+  "officialZipAudit": "PASS: 5 files, 0 warnings",
+  "syntax": "node --check passed for app.js and runtime.js",
+  "dataSchemaTests": "11 passed",
+  "browserRegression": {
+    "auxiliaryBrowserRegression": "passed",
+    "widths": [
+      390,
+      1440
+    ],
+    "platformApiMock": "passed",
+    "platformSimulator": "pending",
+    "android": "pending",
+    "ios": "pending"
+  },
+  "platformSimulator": "pending user validation",
+  "android": "pending user validation",
+  "ios": "pending user validation",
+  "chrome61Compatibility": "not device-tested"
+}

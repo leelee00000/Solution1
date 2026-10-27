@@ -1,0 +1,920 @@
+{
+  "schemaVersion": 1,
+  "records": [
+    {
+      "researchKey": "lanqiao18-software",
+      "researchId": "fm-1001",
+      "id": "fm-1001",
+      "verified": true,
+      "level": "provincial"
+    },
+    {
+      "researchKey": "lanqiao18-electronics",
+      "researchId": "fm-1002",
+      "id": "fm-1002",
+      "verified": true,
+      "level": "provincial"
+    },
+    {
+      "researchKey": "lanqiao18-harmony",
+      "researchId": "fm-1003",
+      "id": "fm-1003",
+      "verified": true,
+      "level": "provincial"
+    },
+    {
+      "researchKey": "lanqiao18-ai",
+      "researchId": "fm-1004",
+      "id": "fm-011",
+      "verified": true,
+      "level": "national"
+    },
+    {
+      "researchKey": "lanqiao18-visual",
+      "researchId": "fm-1005",
+      "id": "fm-012",
+      "verified": true,
+      "level": "national"
+    },
+    {
+      "researchKey": "lanqiao18-digital",
+      "researchId": "fm-1006",
+      "id": "fm-1006",
+      "verified": true,
+      "level": "national"
+    },
+    {
+      "researchKey": "lanqiao18-ip",
+      "researchId": "fm-1007",
+      "id": "fm-1007",
+      "verified": true,
+      "level": "national"
+    },
+    {
+      "researchKey": "ncccu8-case1",
+      "researchId": "fm-1008",
+      "id": "fm-1008",
+      "verified": true,
+      "level": "provincial"
+    },
+    {
+      "researchKey": "ncccu8-case2",
+      "researchId": "fm-1009",
+      "id": "fm-1009",
+      "verified": true,
+      "level": "provincial"
+    },
+    {
+      "researchKey": "ncccu8-case3",
+      "researchId": "fm-1010",
+      "id": "fm-1010",
+      "verified": true,
+      "level": "provincial"
+    },
+    {
+      "researchKey": "ncccu8-case4",
+      "researchId": "fm-1011",
+      "id": "fm-1011",
+      "verified": true,
+      "level": "provincial"
+    },
+    {
+      "researchKey": "ncccu8-case7",
+      "researchId": "fm-1012",
+      "id": "fm-1012",
+      "verified": true,
+      "level": "provincial"
+    },
+    {
+      "researchKey": "huawei11-practice",
+      "researchId": "fm-1013",
+      "id": "fm-1013",
+      "verified": true,
+      "level": "national"
+    },
+    {
+      "researchKey": "huawei11-challenge",
+      "researchId": "fm-1014",
+      "id": "fm-1014",
+      "verified": true,
+      "level": "national"
+    },
+    {
+      "researchKey": "huawei11-elite",
+      "researchId": "fm-1015",
+      "id": "fm-1015",
+      "verified": true,
+      "level": "national"
+    },
+    {
+      "researchKey": "huawei11-innovation",
+      "researchId": "fm-1016",
+      "id": "fm-1016",
+      "verified": true,
+      "level": "national"
+    },
+    {
+      "researchKey": "huawei11-programming",
+      "researchId": "fm-1017",
+      "id": "fm-1017",
+      "verified": true,
+      "level": "national"
+    },
+    {
+      "researchKey": "softwaretest11-dev",
+      "researchId": "fm-1018",
+      "id": "fm-1018",
+      "verified": true,
+      "level": "national"
+    },
+    {
+      "researchKey": "softwaretest11-web",
+      "researchId": "fm-1019",
+      "id": "fm-1019",
+      "verified": true,
+      "level": "national"
+    },
+    {
+      "researchKey": "softwaretest11-embedded",
+      "researchId": "fm-1020",
+      "id": "fm-1020",
+      "verified": true,
+      "level": "national"
+    },
+    {
+      "researchKey": "softwaretest11-xiaowei",
+      "researchId": "fm-1021",
+      "id": "fm-1021",
+      "verified": true,
+      "level": "national"
+    },
+    {
+      "researchKey": "swb12-autumn",
+      "researchId": "fm-1022",
+      "id": "fm-009",
+      "verified": true,
+      "level": "national"
+    },
+    {
+      "researchKey": "chuanzhi9",
+      "researchId": "fm-1023",
+      "id": "fm-010",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "market17-bachelor",
+      "researchId": "fm-1024",
+      "id": "fm-1024",
+      "verified": true,
+      "level": "national"
+    },
+    {
+      "researchKey": "cffex12",
+      "researchId": "fm-1025",
+      "id": "fm-1025",
+      "verified": true,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "agri12",
+      "researchId": "fm-1026",
+      "id": "fm-1026",
+      "verified": true,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "dataelements4",
+      "researchId": "fm-1027",
+      "id": "fm-1027",
+      "verified": true,
+      "level": "national"
+    },
+    {
+      "researchKey": "lifescience12-research",
+      "researchId": "fm-1028",
+      "id": "fm-014",
+      "verified": true,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "career4",
+      "researchId": "fm-1029",
+      "id": "fm-1029",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "career4-liaoning",
+      "researchId": "fm-1030",
+      "id": "fm-1030",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "cdec21-regular",
+      "researchId": "fm-1031",
+      "id": "fm-017",
+      "verified": true,
+      "level": "national"
+    },
+    {
+      "researchKey": "cdec21-red",
+      "researchId": "fm-1032",
+      "id": "fm-018",
+      "verified": true,
+      "level": "national"
+    },
+    {
+      "researchKey": "cdec21-brand",
+      "researchId": "fm-1033",
+      "id": "fm-019",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "ncda2026-ai-drama",
+      "researchId": "fm-1034",
+      "id": "fm-020",
+      "verified": true,
+      "level": "national"
+    },
+    {
+      "researchKey": "huacan2026-creative",
+      "researchId": "fm-1035",
+      "id": "fm-1035",
+      "verified": true,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "huacan2026-target",
+      "researchId": "fm-1036",
+      "id": "fm-1036",
+      "verified": true,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "cmit14-opc",
+      "researchId": "fm-1037",
+      "id": "fm-1037",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "liaoning-ocean2026",
+      "researchId": "fm-1038",
+      "id": "fm-1038",
+      "verified": true,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "liaoning-animation2026",
+      "researchId": "fm-1039",
+      "id": "fm-1039",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "liaoning-leadership2026",
+      "researchId": "fm-1040",
+      "id": "fm-1040",
+      "verified": true,
+      "level": "provincial"
+    },
+    {
+      "researchKey": "hubei-xinchuang5",
+      "researchId": "fm-1041",
+      "id": "fm-1041",
+      "verified": true,
+      "level": "provincial"
+    },
+    {
+      "researchKey": "shandong-physics2026",
+      "researchId": "fm-1042",
+      "id": "fm-1042",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "shanghai-chem1",
+      "researchId": "fm-1043",
+      "id": "fm-1043",
+      "verified": true,
+      "level": "provincial"
+    },
+    {
+      "researchKey": "beijing-biology13",
+      "researchId": "fm-1044",
+      "id": "fm-1044",
+      "verified": true,
+      "level": "provincial"
+    },
+    {
+      "researchKey": "chem6-dlut",
+      "researchId": "fm-1045",
+      "id": "fm-1045",
+      "verified": true,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "chem6-ynu",
+      "researchId": "fm-1046",
+      "id": "fm-1046",
+      "verified": true,
+      "level": "national"
+    },
+    {
+      "researchKey": "business2027-njtech-brand",
+      "researchId": "fm-1047",
+      "id": "fm-1047",
+      "verified": true,
+      "level": "national"
+    },
+    {
+      "researchKey": "business2027-njtech-marketing",
+      "researchId": "fm-1048",
+      "id": "fm-1048",
+      "verified": true,
+      "level": "national"
+    },
+    {
+      "researchKey": "data-practice2026",
+      "researchId": "fm-1049",
+      "id": "fm-1049",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "netc2026",
+      "researchId": "fm-1050",
+      "id": "fm-1050",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "foreign2026-translation",
+      "researchId": "fm-1051",
+      "id": "fm-1051",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "chuangyan5-vocabulary",
+      "researchId": "fm-1052",
+      "id": "fm-1052",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "chuangyan5-translation",
+      "researchId": "fm-1053",
+      "id": "fm-1053",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "chuangyan5-writing",
+      "researchId": "fm-1054",
+      "id": "fm-1054",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "huajiao9",
+      "researchId": "fm-1055",
+      "id": "fm-1055",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "xinji16",
+      "researchId": "fm-1056",
+      "id": "fm-1056",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "ln-hr2026",
+      "researchId": "fm-1057",
+      "id": "fm-1057",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "ln-japanese2026",
+      "researchId": "fm-1058",
+      "id": "fm-1058",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "zhejiang-digital25",
+      "researchId": "fm-1059",
+      "id": "fm-1059",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "milan11",
+      "id": "fm-021",
+      "action": "preserved-official-cms-record"
+    },
+    {
+      "researchKey": "dataelements4-csust",
+      "researchId": "fm-1061",
+      "id": "fm-013",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "digital-skills-internet2026",
+      "researchId": "fm-1062",
+      "id": "fm-1062",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "mech12-digitaltwin",
+      "researchId": "fm-1063",
+      "id": "fm-1063",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "anhuiaigc2026",
+      "researchId": "fm-1064",
+      "id": "fm-1064",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "cdec-special-dinosaur",
+      "researchId": "fm-1065",
+      "id": "fm-1065",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "cdec-special-hippo",
+      "researchId": "fm-1066",
+      "id": "fm-1066",
+      "verified": true,
+      "level": "national"
+    },
+    {
+      "researchKey": "cdec-special-shanxi",
+      "researchId": "fm-1067",
+      "id": "fm-1067",
+      "verified": true,
+      "level": "national"
+    },
+    {
+      "researchKey": "sanchuang16",
+      "researchId": "fm-1068",
+      "id": "fm-1068",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "keyun11-xatu",
+      "researchId": "fm-1069",
+      "id": "fm-1069",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "baidie12-neau",
+      "researchId": "fm-1070",
+      "id": "fm-1070",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "gxtranslation6",
+      "researchId": "fm-1071",
+      "id": "fm-1071",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "gxwriting4",
+      "researchId": "fm-1072",
+      "id": "fm-1072",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "gd-experiment2026",
+      "researchId": "fm-1073",
+      "id": "fm-1073",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "sc-sunxunfang11",
+      "researchId": "fm-1074",
+      "id": "fm-1074",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "sc-supply4",
+      "researchId": "fm-1075",
+      "id": "fm-1075",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "sc-agent2026",
+      "researchId": "fm-1076",
+      "id": "fm-1076",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "sc-information2026",
+      "researchId": "fm-1077",
+      "id": "fm-1077",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "sc-business-tax2026",
+      "researchId": "fm-1078",
+      "id": "fm-1078",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "beijing-transport2026",
+      "researchId": "fm-1079",
+      "id": "fm-1079",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "beijing-digital2026",
+      "researchId": "fm-1080",
+      "id": "fm-1080",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "beijing-finai2026",
+      "researchId": "fm-1081",
+      "id": "fm-1081",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "tianjin-engineer2026",
+      "researchId": "fm-1082",
+      "id": "fm-1082",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "zhejiang-ai2",
+      "researchId": "fm-1083",
+      "id": "fm-1083",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "zhejiang-network9",
+      "researchId": "fm-1084",
+      "id": "fm-1084",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "hunan-writing11",
+      "researchId": "fm-1085",
+      "id": "fm-1085",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "anhui-math2026",
+      "researchId": "fm-1086",
+      "id": "fm-1086",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "lncu-notice-29bf8d1ee3e4170b",
+      "researchId": "fm-1087",
+      "id": "fm-1087",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "lncu-notice-d2765e4f571ec9fb",
+      "researchId": "fm-1088",
+      "id": "fm-1088",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "lncu-notice-60977dc78cc1b422",
+      "researchId": "fm-1089",
+      "id": "fm-1089",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "lncu-notice-f5a6f71175b30dbc",
+      "researchId": "fm-1090",
+      "id": "fm-1090",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "lncu-notice-7a066a90b6d95b85",
+      "researchId": "fm-1091",
+      "id": "fm-1091",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "lncu-notice-db72326a474730ab",
+      "researchId": "fm-1092",
+      "id": "fm-1092",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "lncu-notice-7bddf2e51f558f2b",
+      "researchId": "fm-1093",
+      "id": "fm-1093",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "lncu-notice-b735d827007d83ce",
+      "researchId": "fm-1094",
+      "id": "fm-1094",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "lncu-notice-e862130bdde7b54d",
+      "researchId": "fm-1095",
+      "id": "fm-1095",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "lncu-notice-056c723c96fc200a",
+      "researchId": "fm-1096",
+      "id": "fm-1096",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "lncu-notice-905c23952a82c5ed",
+      "researchId": "fm-1097",
+      "id": "fm-1097",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "lncu-notice-efd8d755ceba0e72",
+      "researchId": "fm-1098",
+      "id": "fm-1098",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "lncu-notice-fc6480bd5503a18a",
+      "researchId": "fm-1099",
+      "id": "fm-1099",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "lncu-notice-d36f33a5af24599f",
+      "researchId": "fm-1100",
+      "id": "fm-1100",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "lncu-notice-be23a5d9f3e162c0",
+      "researchId": "fm-1101",
+      "id": "fm-1101",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "lncu-notice-1770279b6549858b",
+      "researchId": "fm-1102",
+      "id": "fm-1102",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "lncu-notice-224ed744c80b759d",
+      "researchId": "fm-1103",
+      "id": "fm-1103",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "lncu-notice-467e7d79025e9c83",
+      "researchId": "fm-1104",
+      "id": "fm-1104",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "lncu-notice-3d5da7293daff37f",
+      "researchId": "fm-1105",
+      "id": "fm-1105",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "lncu-notice-302e8134a38a1955",
+      "researchId": "fm-1106",
+      "id": "fm-1106",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "lncu-notice-551de55169035fc5",
+      "researchId": "fm-1107",
+      "id": "fm-1107",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "lncu-notice-902776a165c9876e",
+      "researchId": "fm-1108",
+      "id": "fm-1108",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "lncu-notice-15fa9859c1365c33",
+      "researchId": "fm-1109",
+      "id": "fm-1109",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "lncu-notice-5921b6b89cb7956a",
+      "researchId": "fm-1110",
+      "id": "fm-1110",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "lncu-notice-14476372e839b956",
+      "researchId": "fm-1111",
+      "id": "fm-1111",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "lncu-notice-afdd29ade62d1031",
+      "researchId": "fm-1112",
+      "id": "fm-1112",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "lncu-notice-aa53bae4e02465e4",
+      "researchId": "fm-1113",
+      "id": "fm-1113",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "lncu-notice-1ae58ae1418b90df",
+      "researchId": "fm-1114",
+      "id": "fm-1114",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "lncu-notice-1279c3305657d4ea",
+      "researchId": "fm-1115",
+      "id": "fm-1115",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "lncu-notice-85b918e72004c5cf",
+      "researchId": "fm-1116",
+      "id": "fm-1116",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "lncu-notice-6924dab2cd296aef",
+      "researchId": "fm-1117",
+      "id": "fm-1117",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "lncu-notice-61747310e9be6cd2",
+      "researchId": "fm-1118",
+      "id": "fm-1118",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "lncu-notice-09a5f6bc9ea42f0d",
+      "researchId": "fm-1119",
+      "id": "fm-1119",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "lncu-notice-33367eddf6c836ba",
+      "researchId": "fm-1120",
+      "id": "fm-1120",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "lncu-notice-6207c4715eb26d6c",
+      "researchId": "fm-1121",
+      "id": "fm-1121",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "lncu-notice-52122ce65b7f18ee",
+      "researchId": "fm-1122",
+      "id": "fm-1122",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "lncu-notice-f285a1a3462ff901",
+      "researchId": "fm-1123",
+      "id": "fm-1123",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "lncu-notice-bba6da3c500800b7",
+      "researchId": "fm-1124",
+      "id": "fm-1124",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "lncu-notice-d2fe1f31a6c75bd7",
+      "researchId": "fm-1125",
+      "id": "fm-1125",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "lncu-notice-da17506579154ab1",
+      "researchId": "fm-1126",
+      "id": "fm-1126",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "lncu-notice-b94aaeb2a3a2709d",
+      "researchId": "fm-1127",
+      "id": "fm-1127",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "lncu-notice-bfe0efd63d5781d2",
+      "researchId": "fm-1128",
+      "id": "fm-1128",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "cdec-archive-duck",
+      "researchId": "fm-1129",
+      "id": "fm-1129",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "cdec-archive-rural",
+      "researchId": "fm-1130",
+      "id": "fm-1130",
+      "verified": false,
+      "level": "unknown"
+    },
+    {
+      "researchKey": "cdec-archive-ha ning",
+      "researchId": "fm-1131",
+      "id": "fm-1131",
+      "verified": false,
+      "level": "unknown"
+    }
+  ]
+}

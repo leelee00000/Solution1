@@ -1,0 +1,11 @@
+{
+  "auxiliaryBrowserRegression": "passed",
+  "widths": [
+    390,
+    1440
+  ],
+  "platformApiMock": "passed",
+  "platformSimulator": "pending",
+  "android": "pending",
+  "ios": "pending"
+}

@@ -1,0 +1,28 @@
+# FlowMate 小红书小工具测试版
+
+资料快照日期：2026-10-27。赛事日期、资格、费用及安排可能变化，报名之前请以主办方最新通知为准。本包不能联网更新，不承诺完整覆盖，不将待核记录视为已确认可报名。首页常驻展示上述测试版与时效提醒。
+
+当前资料库共141条记录，含具体赛项、学校报名通道、历史已截止和待核记录；不等于141个独立且当前可报名的赛事。新增研究库131条映射到既有收藏ID，11条复用原有ID，原21条保留。研究库中的43条具备当前转换器要求的日期和本科依据；其余按证据不足保守标为待核，层级无法证明则为未知。
+
+## 构建
+
+在仓库根目录运行：
+
+```
+python tools/build.py --check
+python tools/build_minitool.py
+python .codex/minitool-zip-builder/scripts/audit_artifact.py artifacts/minitool-dist
+python .codex/minitool-zip-builder/scripts/audit_artifact.py artifacts/FlowMate-minitool-20261027.zip
+```
+
+ZIP根目录包含 index.html、data.js、runtime.js、app.js、compat.css。无在线脚本或运行时数据请求；来源地址在内部弹层以文本展示，不跳转外部网页。客户端9.46及以上优先使用平台缓存API，低版本或普通浏览器使用可失败的localStorage兼容路径；只有实际写入成功才提示保存成功。9.49及以上使用窗口信息API处理安全区和顶部按钮避让。
+
+app.js为独立ES2017适配源，与网站内联脚本并非自动同步。后续改动网站交互时必须同时维护并回归小工具源。数据由构建器自动从canonical JSON读取。
+
+## 校验边界
+
+使用用户提供的官方 minitool-zip-builder 1.8.0 skill，核对了2026-10-27获取的在线规范。目录与最终ZIP通过官方体积/结构辅助审计（均无警告）；另检查语法、脚本外置、离线资源、禁用能力及数据嵌入一致性。普通浏览器390px/1440px辅助回归检查了初始化、测试版提醒、列表分页、收藏与来源弹层，模拟平台API检查了缓存和安全区调用。普通浏览器结果不能作为小工具验收。
+
+以下均待用户用同一ZIP完成：创服平台模拟器完整功能验证、Android真机扫码、iOS真机扫码。Chrome61/Android8.1的JS/CSS兼容性及设备性能未实测；代码已提供新语法/DOM/CSS能力的必要基线和局部回退，但不宣称已在旧内核或真机通过。
+
+平台验证后再发布小工具。当前成果位于独立工作分支，未替换GitHub Pages线上主分支。
