@@ -9,7 +9,7 @@ function sourceHealthRow(id){if(sourceIndexRef!==sourceHealth||sourceIndexLength
 let galaxyMatchCache=new Map();const galaxyPageSize=12;let galaxyPage=0;
 
 const items=catalogue.opportunities.map(it=>Object.assign({},it,{appearance:opportunityAppearance(it.id),a:opportunityAppearance(it.id).phase,start:it.dates.start,end:it.dates.end,award:it.dates.award,url:it.source.url,verified:it.source.verification==='verified',checked:it.source.verifiedAt}));
-const dateOf=s=>s?new Date(s+'T00:00:00'):null;const fmt=s=>s?s.split('-').join('.'): '待公布';const daysUntil=s=>s?Math.round((dateOf(s)-TODAY)/DAY):null;let rangeMonths=12,dateMode='apply';function keyDate(it){return dateMode==='award'?it.award:it.end}function horizon(months=rangeMonths){let d=new Date(TODAY);d.setDate(d.getDate()+Math.round(months*30.4375));return d}function matchingItems(months=rangeMonths){const now=Date.now(),key=JSON.stringify([months,cat,query,dateMode,CURRENT_DATE,profile,eligibilityAnswers]);const cached=galaxyMatchCache.get(key);if(cached&&cached.health===sourceHealth&&now<cached.until)return cached.rows;const rows=items.map((it,i)=>({it,i})).filter(({it})=>{let d=dateOf(keyDate(it));return (cat==='全部'||it.cat===cat)&&[it.name,it.field,it.direction].join(' ').toLocaleLowerCase().includes(query.trim().toLocaleLowerCase())&&d&&d>=TODAY&&d<=horizon(months)&&(dateMode!=='apply'||!it.dates.deadlineAt||new Date(it.dates.deadlineAt)>new Date())&&(profile.showIneligible||matchProfile(it).code!=='ineligible')});let until=now+1000;if(dateMode==='apply')for(const {it} of rows){const deadline=Date.parse(it.dates.deadlineAt);if(deadline>now)until=Math.min(until,deadline)}galaxyMatchCache.set(key,{health:sourceHealth,rows,until});if(galaxyMatchCache.size>16)galaxyMatchCache.delete(galaxyMatchCache.keys().next().value);return rows}
+const dateOf=s=>s?new Date(s+'T00:00:00'):null;const fmt=s=>s?s.split('-').join('.'): '待公布';const daysUntil=s=>s?Math.round((dateOf(s)-TODAY)/DAY):null;let rangeMonths=1,dateMode='apply';function keyDate(it){return dateMode==='award'?it.award:it.end}function horizon(months=rangeMonths){let d=new Date(TODAY);d.setDate(d.getDate()+Math.round(months*30.4375));return d}function matchingItems(months=rangeMonths){const now=Date.now(),key=JSON.stringify([months,cat,query,dateMode,CURRENT_DATE,profile,eligibilityAnswers]);const cached=galaxyMatchCache.get(key);if(cached&&cached.health===sourceHealth&&now<cached.until)return cached.rows;const rows=items.map((it,i)=>({it,i})).filter(({it})=>{let d=dateOf(keyDate(it));return (cat==='全部'||it.cat===cat)&&[it.name,it.field,it.direction].join(' ').toLocaleLowerCase().includes(query.trim().toLocaleLowerCase())&&d&&d>=TODAY&&d<=horizon(months)&&(dateMode!=='apply'||!it.dates.deadlineAt||new Date(it.dates.deadlineAt)>new Date())&&(profile.showIneligible||matchProfile(it).code!=='ineligible')});let until=now+1000;if(dateMode==='apply')for(const {it} of rows){const deadline=Date.parse(it.dates.deadlineAt);if(deadline>now)until=Math.min(until,deadline)}galaxyMatchCache.set(key,{health:sourceHealth,rows,until});if(galaxyMatchCache.size>16)galaxyMatchCache.delete(galaxyMatchCache.keys().next().value);return rows}
 function visibleItems(months=rangeMonths){const rows=matchingItems(months),maxPage=Math.max(0,Math.ceil(rows.length/galaxyPageSize)-1);if(months===rangeMonths)galaxyPage=Math.min(galaxyPage,maxPage);const page=Math.min(galaxyPage,maxPage);return rows.slice(page*galaxyPageSize,(page+1)*galaxyPageSize)}
 var galleryFilterKey='';function updateStats(){const filterKey=JSON.stringify([cat,query,dateMode,rangeMonths,profile,eligibilityAnswers,sourceHealth.checkedAt,sourceHealth.catalogueRevision]);if(filterKey!==galleryFilterKey){galaxyPage=0;galleryFilterKey=filterKey}const purpose=document.querySelector('.orbit-purpose');if(purpose)purpose.textContent='越近中心越临近'+(dateMode==='award'?'结果日期':'截止')+' · 颜色表示方向';let v=visibleItems();document.getElementById('total').textContent=String(matchingItems().length).padStart(2,'0');document.getElementById('highCount').textContent=String(v.filter(x=>!x.it.verified||matchProfile(x.it).code!=='eligible').length).padStart(2,'0');document.getElementById('emptyNote').hidden=v.length!==0;if(v.length){select(v.some(x=>x.i===active)?active:v[0].i)}else{clearSelection()}reconcileGalaxyComparison();syncGalaxyControls()}document.getElementById('categoryLegend').innerHTML=Object.entries(colors).map(([k,v])=>`<div class="key-line"><i class="key-dot" style="background:${v[0]}"></i>${k}</div>`).join('');
 function readStored(key,fallback){return window.FMStorage.read(key,fallback)}
@@ -131,24 +131,24 @@ const rangeSelect=document.getElementById('rangeSelect');
 const zoomValue=document.getElementById('zoomValue');
 const horizonSlider=document.getElementById('horizonSlider');
 const candyTrack=document.getElementById('candyTrack');
-candyTrack.innerHTML=Array.from({length:36},(_,i)=>'<span class="candy-bead" data-month="'+(i+1)+'"></span>').join('');
-function updateCandy(){candyTrack.querySelectorAll('.candy-bead').forEach((bead,i)=>{const m=i+1;bead.classList.toggle('past',m<=rangeMonths);bead.classList.toggle('current',m===Math.round(rangeMonths));const t=i/35;const a=[174,188,242],b=[35,55,188];const rgb=a.map((v,k)=>Math.round(v+(b[k]-v)*t));bead.style.setProperty('--bead-color','rgb('+rgb.join(',')+')');});}
+candyTrack.innerHTML=Array.from({length:6},(_,i)=>'<span class="candy-bead" data-month="'+((i+1)/2)+'"></span>').join('');
+function updateCandy(){candyTrack.querySelectorAll('.candy-bead').forEach((bead,i)=>{const m=(i+1)/2;bead.classList.toggle('past',m<=rangeMonths);bead.classList.toggle('current',m===rangeMonths);const t=i/5;const a=[174,188,242],b=[35,55,188];const rgb=a.map((v,k)=>Math.round(v+(b[k]-v)*t));bead.style.setProperty('--bead-color','rgb('+rgb.join(',')+')');});}
 
 function setRange(months){
- const next=Math.max(1,Math.min(36,Math.round(months*2)/2));
+ const next=Math.max(.5,Math.min(3,Math.round(months*2)/2));
  if(Math.abs(next-rangeMonths)<.001)return;
  rangeMonths=next;
- const nearest=[6,12,24].find(x=>Math.abs(x-rangeMonths)<.05);
+ const nearest=[.5,1,2,3].find(x=>Math.abs(x-rangeMonths)<.05);
  rangeSelect.value=nearest?String(nearest):'custom';
  rangeSelect.querySelector('[value=custom]').textContent='未来 '+rangeMonths+' 个月';
  zoomValue.textContent='未来 '+rangeMonths+' 个月';
  horizonSlider.value=String(rangeMonths);
- horizonSlider.style.setProperty('--progress',((rangeMonths-1)/35*100)+'%');
+ horizonSlider.style.setProperty('--progress',((rangeMonths-.5)/2.5*100)+'%');
  updateCandy();
  updateStats();
 }
 horizonSlider.addEventListener('input',e=>setRange(Number(e.target.value)));
-horizonSlider.style.setProperty('--progress',((rangeMonths-1)/35*100)+'%');
+horizonSlider.style.setProperty('--progress',((rangeMonths-.5)/2.5*100)+'%');
 updateCandy();
 canvas.style.cursor='default';canvas.style.touchAction='auto';
 // Wheel zoom applies only while hovering the time ruler; elsewhere the page scrolls normally.
