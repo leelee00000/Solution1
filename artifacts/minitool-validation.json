@@ -3,8 +3,8 @@
   "snapshotDate": "2026-10-27",
   "records": 139,
   "zip": "FlowMate-minitool-20261027.zip",
-  "zipBytes": 99697,
-  "sha256": "2ea130c9484c262fb22067a8e68bb5bf10aa5c1fbbf84f50bbdddede48eecb36",
+  "zipBytes": 100238,
+  "sha256": "7cb8a633102c3d874f422e5aee9c9c2bcef23cf5a0fc4138043e8858b12a55dd",
   "officialDirectoryAudit": "PASS: 5 files, 0 warnings",
   "officialZipAudit": "PASS: 5 files, 0 warnings",
   "syntax": "node --check passed for app.js and runtime.js",
@@ -42,5 +42,6 @@
     "weeklySchedule": true,
     "mobileDrawer": true,
     "platformDeviceValidation": "pending"
-  }
+  },
+  "planetSelectionRegression": "passed: touch selects and promotes first blue/bold row; text opens drawer; legend fits 390px viewport"
 }
