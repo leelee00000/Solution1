@@ -1,0 +1,28 @@
+name: Review delivered portfolio site (read-only)
+on:
+  push:
+    branches: [review-work-portfolio-site-20261117]
+    paths: [".github/workflows/review-site.yml", "portfolio/site_review/**"]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inspect-site:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: |
+          python -m pip install playwright==1.62.0
+          python -m playwright install --with-deps chromium
+      - run: python portfolio/site_review/review.py
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: portfolio-site-inspection-${{ github.run_id }}
+          path: portfolio/site_review/output/
+          if-no-files-found: warn
+          retention-days: 7
