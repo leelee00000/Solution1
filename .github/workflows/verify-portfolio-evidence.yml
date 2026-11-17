@@ -1,0 +1,40 @@
+name: Verify FlowMate portfolio screenshots
+
+on:
+  push:
+    branches:
+      - portfolio-evidence-capture-20261117
+    paths:
+      - '.github/workflows/verify-portfolio-evidence.yml'
+      - 'portfolio/evidence/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  capture-and-match:
+    name: Capture real UI + match written claims
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install Playwright
+        run: |
+          python -m pip install playwright==1.62.1
+          python -m playwright install --with-deps chromium
+      - name: Screenshot and evidence checks
+        run: python portfolio/evidence/capture.py
+      - name: Store screenshots and evidence even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: flowmate-evidence-${{ github.run_id }}
+          path: portfolio/evidence/output/
+          retention-days: 14
+          if-no-files-found: warn
