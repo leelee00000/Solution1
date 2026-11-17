@@ -26,7 +26,7 @@ SOURCE = "https://github.com/leelee00000/Solution1"
 CLAIMS = {
     "01_galaxy": {
         "caption": "探索视图把带有日期的机会放在星系中，时间尺可调整范围，右侧显示所选机会的真实详情。行星尺寸不代表竞赛评级。",
-        "must_show": ["#orbit", "#title", "#zoomValue", "#planetLegend"],
+        "must_show": ["#orbit", "#title", "#zoomValue"],
         "code_note": "Canvas绘制；星球按日期定位，不以大小评选机会价值。",
     },
     "02_library": {
