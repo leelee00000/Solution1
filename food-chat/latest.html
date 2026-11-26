@@ -399,27 +399,27 @@ function currentDiagnosis(s){let photo=s.lines?.find(m=>m.photo);return mealDiag
 
 /* Visible evidence-based character clues; no hidden motives are shown before dialogue. */
 const CLUE_RULES=[
-{key:'ease',label:'图省事',type:'倾向',re:/不想出去|一锅面省事|一起下锅，?省事|不用排队|省了排队|这样方便|带着吃也方便|水果配汤，简单|水果加碗汤，省事|不用另外开锅|不用另外点|不想再洗|不用洗锅|省得临时找|不多洗锅|省得等室友|不用排两[次回]|省得单点|顺手能做的话/},
-{key:'price',label:'看重节约',type:'倾向',re:/值了|省一顿外卖|早餐剩的粥|家里的菜还没吃完|昨天买的西兰花还在|西兰花还没用完|不浪费|省得剩|券用掉|先用上也好/},
-{key:'warm',label:'偏爱热食',type:'口味',re:/喝汤舒服|喝点热的挺好|热一热舒服|热乎的吃着舒服|粥趁热喝|粥喝着舒服|熬了一锅粥，喝着舒服|还是自己做饭舒服|终于吃到热的/},
-{key:'soup',label:'喜欢喝汤',type:'口味',re:/汤都喝完了|鱼汤(?:拿来拌饭好吃|给我留点)|给我留点鱼汤拌饭|喝汤舒服/},
-{key:'egg',label:'偏爱加蛋',type:'口味',re:/今天两个蛋，值了|我也爱吃.*鸡蛋|鸡蛋好，我也爱吃|我就喜欢这家的双蛋煎饼/},
-{key:'light',label:'偏爱清爽',type:'口味',re:/今天吃得好清爽|今天就想吃点凉的|这会儿就想吃清爽的|我就喜欢.*清淡|走太久就想吃凉的/},
-{key:'meat',label:'喜欢肉食',type:'口味',re:/今天红烧肉不错|第一锅嘛，先试试我最爱吃的|这家炸鸡不错/},
-{key:'sweet',label:'甜食奖励',type:'倾向',re:/交完作业了，奖励一下|终于逛到网红甜品店|我们今天就是约了吃蛋糕|今天就想多尝几个/},
-{key:'care',label:'关心家人',type:'倾向',re:/给你装的苹果|给你带个鸡蛋|我给你蒸个蛋|我来洗菜|我来炒|我留点菜|晚上回来吃，我留|车上记得吃|我包里还有茶叶蛋|回来吃饭/},
-{key:'autonomy',label:'喜欢自己选',type:'倾向',re:/我自己加辣椒|我吃多少自己加|我自己盛|我就想吃这个|还按我喜欢的来/},
-{key:'busy',label:'时间紧张',type:'当下',re:/图书馆不想出去|景区排队好久|车站太赶|赶课|赶作业|书包里实在塞不下/},
-{key:'appetite',label:'胃口一般',type:'当下',re:/今天胃口一般|今天没胃口|这会儿胃口一般/},
-{key:'tired',label:'暂时疲惫',type:'当下',re:/好想睡觉|今天太累了/}
+{key:'ease',label:'省事第一',meaning:'图省事',type:'倾向',re:/不想出去|一锅面省事|一起下锅，?省事|不用排队|省了排队|这样方便|带着吃也方便|水果配汤，简单|水果加碗汤，省事|不用另外开锅|不用另外点|不想再洗|不用洗锅|省得临时找|不多洗锅|省得等室友|不用排两[次回]|省得单点|顺手能做的话/},
+{key:'price',label:'能省则省',meaning:'看重节约',type:'倾向',re:/值了|省一顿外卖|早餐剩的粥|家里的菜还没吃完|昨天买的西兰花还在|西兰花还没用完|不浪费|省得剩|券用掉|先用上也好/},
+{key:'warm',label:'热乎党',meaning:'偏爱热食',type:'口味',re:/喝汤舒服|喝点热的挺好|热一热舒服|热乎的吃着舒服|粥趁热喝|粥喝着舒服|熬了一锅粥，喝着舒服|还是自己做饭舒服|终于吃到热的/},
+{key:'soup',label:'汤碗见底派',meaning:'喜欢喝汤',type:'口味',re:/汤都喝完了|鱼汤(?:拿来拌饭好吃|给我留点)|给我留点鱼汤拌饭|喝汤舒服/},
+{key:'egg',label:'加蛋派',meaning:'偏爱加蛋',type:'口味',re:/今天两个蛋，值了|我也爱吃.*鸡蛋|鸡蛋好，我也爱吃|我就喜欢这家的双蛋煎饼/},
+{key:'light',label:'清爽派',meaning:'偏爱清爽',type:'口味',re:/今天吃得好清爽|今天就想吃点凉的|这会儿就想吃清爽的|我就喜欢.*清淡|走太久就想吃凉的/},
+{key:'meat',label:'肉食选手',meaning:'喜欢肉食',type:'口味',re:/今天红烧肉不错|第一锅嘛，先试试我最爱吃的|这家炸鸡不错/},
+{key:'sweet',label:'甜品庆功',meaning:'甜食奖励',type:'倾向',re:/交完作业了，奖励一下|终于逛到网红甜品店|我们今天就是约了吃蛋糕|今天就想多尝几个/},
+{key:'care',label:'投喂担当',meaning:'关心家人',type:'倾向',re:/给你装的苹果|给你带个鸡蛋|我给你蒸个蛋|我来洗菜|我来炒|我留点菜|晚上回来吃，我留|车上记得吃|我包里还有茶叶蛋|回来吃饭/},
+{key:'autonomy',label:'我的饭我做主',meaning:'喜欢自己选',type:'倾向',re:/我自己加辣椒|我吃多少自己加|我自己盛|我就想吃这个|还按我喜欢的来/},
+{key:'busy',label:'赶饭模式',meaning:'时间紧张',type:'当下',re:/图书馆不想出去|景区排队好久|车站太赶|赶课|赶作业|书包里实在塞不下/},
+{key:'appetite',label:'胃口掉线',meaning:'胃口一般',type:'当下',re:/今天胃口一般|今天没胃口|这会儿胃口一般/},
+{key:'tired',label:'电量不足',meaning:'暂时疲惫',type:'当下',re:/好想睡觉|今天太累了/}
 ];
 const clueNew=wnew;wnew=function(...args){let s=clueNew(...args);s.clues=Object.fromEntries(wmembers(s).map(p=>[p,{}]));return s};
 function clueEscape(t){return String(t??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function clueObserve(s,m){if(!m||m.clueRead||m.feedback||m.p===3||!s.clues?.[m.p])return;m.clueRead=true;let book=s.clues[m.p],fresh=[];let text=m.text||'';
-for(let r of CLUE_RULES){if(!text||!r.re.test(text))continue;let prev=book[r.key];if(!prev){book[r.key]={key:r.key,label:r.label,type:r.type,evidence:text,at:s.i};fresh.push(r.key)}else if(r.type==='当下'){prev.at=s.i;prev.evidence=text}}
+for(let r of CLUE_RULES){if(!text||!r.re.test(text))continue;let prev=book[r.key];if(!prev){book[r.key]={key:r.key,label:r.label,meaning:r.meaning,type:r.type,evidence:text,at:s.i};fresh.push(r.key)}else if(r.type==='当下'){prev.at=s.i;prev.evidence=text}}
 if(m.mis){let rule=KR.find(r=>r.id===m.mis),key='mis:'+m.mis;if(rule){if(!book[key]||book[key].type==='已纠正'){book[key]={key,label:rule.name,type:'误解',evidence:text,at:s.i};fresh.push(key)}}}
 if(m.corrected){let key='mis:'+m.corrected;if(book[key]){book[key]={...book[key],type:'已纠正',evidence:text,at:s.i};fresh.push(key)}}
 m.clueNew=fresh;m.clueView=Object.values(book).filter(x=>x.type!=='当下'||x.at===s.i).map(x=>({...x}));}
-function clueHTML(m){let a=m.clueView||[];if(!a.length)return '';return '<span class="cluechips">'+a.map(x=>'<span class="cluechip '+(x.type==='误解'?'mis':x.type==='已纠正'?'fixed':x.type==='当下'?'state':'')+(m.clueNew?.includes(x.key)?' new':'')+'" title="'+clueEscape(x.type+'：'+x.evidence)+'">'+(m.clueNew?.includes(x.key)?'✦ ':'')+clueEscape(x.type==='已纠正'?'已纠正·'+x.label:x.label)+'</span>').join('')+'</span>'}
+function clueHTML(m){let a=m.clueView||[];if(!a.length)return '';return '<span class="cluechips">'+a.map(x=>'<span class="cluechip '+(x.type==='误解'?'mis':x.type==='已纠正'?'fixed':x.type==='当下'?'state':'')+(m.clueNew?.includes(x.key)?' new':'')+'" title="'+clueEscape(x.type+' · '+(x.meaning||x.label)+'：'+x.evidence)+'">'+(m.clueNew?.includes(x.key)?'✦ ':'')+clueEscape(x.type==='已纠正'?'已纠正·'+x.label:x.label)+'</span>').join('')+'</span>'}
 whome();
 </script></body></html>
