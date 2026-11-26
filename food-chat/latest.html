@@ -948,10 +948,10 @@ const tagMsg=wmsg;wmsg=function(m,i,active){return tagMsg(m,i,active)+tagChangeH
 
 /* Distinct conversational needs. The visible utterance is the evidence, not a hidden random answer. */
 const NEED_LINES={
-curious:['这两样搭着到底有什么区别？我还真有点想弄明白。','我有点拿不准，这么吃到底漏了什么？'],
+curious:['这些说法到底有什么区别？我还真想弄明白。','我有点拿不准，这么吃到底漏了什么？'],
 proud:['我可是特意挑的，觉得这次搭得挺有讲究。','今天这个搭配我自己琢磨了半天。'],
 busy:['等会儿还有事，能顺手解决最好。','今天没多少时间，有没有简单点的搭法？'],
-uncertain:['我也不知道这么搭算不算合适，平时都是凭感觉。','其实我也没仔细想过，就是顺手这么选了。'],
+uncertain:['我也不知道这么搭算不算合适，平时都是凭感觉。','其实我也没仔细想过，自己也说不上为什么。'],
 settled:['这顿吃得挺舒服，今天就这样吧。','今天这顿挺合胃口，没什么想改的。']
 };
 function needFor(s,lines){let p=E[s.i].p,id=lines.find(m=>m.photo)?.photo,mis=lines.find(m=>m.mis),cause=currentCause(s,p),h=rHash(s,p,s.i),options;
@@ -961,14 +961,15 @@ else if(cause.type==='ease'||cause.type==='price')options=['busy','busy','uncert
 else if(cause.type==='comfort')options=['settled','uncertain','busy'];
 else options=['curious','proud','uncertain'];
 return options[h%options.length]}
-const needRecord=wrecord;wrecord=function(s){let lines=needRecord(s);let c=s.roundTalk,p=E[s.i].p,id=lines.find(m=>m.photo)?.photo,need=needFor(s,lines);c.need=need;c.connection=0;c.resolvedNeed=false;c.mis=lines.find(m=>m.mis)?.mis||null;c.history=[];c.entry=s.willing[p];c.originalCause=currentCause(s,p);if(s.i<12){let t=NEED_LINES[need][(s.seed+s.i)%2];if(!s.Vseen.has(vnorm(t))){s.Vseen.add(vnorm(t));lines.splice(2,0,{p,text:t,needCue:true});}if(need==='curious'&&c.mis){let f=VFIX[c.mis],r=KR.find(x=>x.id===c.mis);let j=s.points.findIndex(q=>q[3]==='知识');s.points[j]=[f[0],f[1],{},'知识',r.parents[0],true,r.id]}}
+const needRecord=wrecord;wrecord=function(s){let lines=needRecord(s);let c=s.roundTalk,p=E[s.i].p,id=lines.find(m=>m.photo)?.photo,need=needFor(s,lines);c.need=need;c.connection=0;c.resolvedNeed=false;c.mis=lines.find(m=>m.mis)?.mis||null;c.history=[];c.entry=s.willing[p];c.originalCause=currentCause(s,p);if(s.i<12){let t=NEED_LINES[need][(s.seed+s.i)%2];s.Vseen.add(vnorm(t));lines.splice(2,0,{p,text:t,needCue:true});if(need==='busy'){let [rows]=auditedScene(s),missing=['s','p','v'].filter(k=>!M[id][1].includes(k));let options=rows.filter(q=>q[3]&&[...q[3]].some(k=>missing.includes(k))).map(q=>[q[0],q[1],q[2],'建议',null,false,null,{reply:q[4],self:q[5]}]);options.sort((x,y)=>explicitFit(s,y,c.originalCause)-explicitFit(s,x,c.originalCause)||vres(p,y)-vres(p,x));let j=s.points.findIndex(q=>q[3]==='建议');if(options.length&&j>=0)s.points[j]=options[0]}if(need==='curious'&&c.mis){let f=VFIX[c.mis],r=KR.find(x=>x.id===c.mis);let j=s.points.findIndex(q=>q[3]==='知识');s.points[j]=[f[0],f[1],{},'知识',r.parents[0],true,r.id]}}
 return lines};
-function needMatch(s,q){let c=s.roundTalk,p=E[s.i].p,n=c.need||'uncertain',t=q[3],cause=c.originalCause||currentCause(s,p);if(t==='探问')return n==='uncertain'?.98:n==='proud'?.48:n==='curious'?.10:n==='busy'?-.75:-.65;
-if(t==='肯定')return n==='proud'?1:n==='settled'?.8:n==='uncertain'?.12:n==='curious'?-.35:-.55;
-if(t==='建议'){let fit=explicitFit(s,q,cause);return n==='busy'?(fit>=.95?1:.55):n==='settled'?-.75:n==='curious'&&!c.resolvedNeed?-.40:n==='proud'&&!c.resolvedNeed?-.40:fit>=.95?.65:.1}
-if(t==='知识')return n==='curious'?1:n==='uncertain'?(c.resolvedNeed?.9:-.35):n==='proud'?(c.resolvedNeed?.85:-.65):n==='busy'?(c.resolvedNeed?.55:-.9):-.65;return 0}
+function needMatch(s,q){let c=s.roundTalk,p=E[s.i].p,n=c.need||'uncertain',t=q[3],cause=c.originalCause||currentCause(s,p),met=c.resolvedNeed;
+if(t==='探问')return met?-.65:n==='uncertain'?.98:n==='proud'?-.45:n==='curious'?-.8:n==='busy'?-.9:-.7;
+if(t==='肯定')return met?-.35:n==='proud'?1:n==='settled'?.8:n==='uncertain'?-.30:n==='curious'?-.7:-.8;
+if(t==='建议'){let fit=explicitFit(s,q,cause);return n==='busy'?(fit>=.95?1:.60):n==='settled'?-.85:n==='curious'&&!met?-.6:n==='proud'&&!met?-.55:fit>=.95?.65:.1}
+if(t==='知识')return n==='curious'?(met?.75:1):n==='uncertain'?(met?.9:-.45):n==='proud'?(met?.85:-.7):n==='busy'?(met?.55:-.95):-.65;return 0}
 const contextualAttention=attentionDelta;attentionDelta=function(s,q){let c=s.roundTalk;if(c.used[roundKey(q)])return contextualAttention(s,q);let m=needMatch(s,q),t=q[3],p=E[s.i].p;
-if(t==='探问'||t==='肯定')return Math.round(m>0?m*13-2:m*13-7);
+if(t==='探问'||t==='肯定')return Math.round(m>0?m*13-2:m*18-9);
 if(t==='建议')return Math.round(m>0?m*21-7:m*12-14);
 return Math.round(m>0?-28+m*20:-28+m*5)};
 receptive=function(s,p,k){let c=s.roundTalk;if(!c?.need)return 1;let n=c.need,open=PERSON_OPEN[p].open;let base=n==='curious'?.95:n==='settled'?.10:n==='busy'?.08:n==='proud'?.06:.08;let unlocked=c.resolvedNeed?(n==='busy'?.62:n==='settled'?.0:.85):0;return Math.min(1.15,base+unlocked+.13*open+.04*s.willing[p]/100)};
@@ -978,7 +979,7 @@ if((c.need==='uncertain'&&q[3]==='探问')||(c.need==='proud'&&q[3]==='肯定')|
 c.history.push(q[3]);c.last.match=m;c.last.opened=!oldNeed&&c.resolvedNeed;
 };
 const needReply=wreply;wreply=function(s,ids){let c=s.roundTalk,p=E[s.i].p,q=s.points[ids[0]],out=needReply(s,ids);if(c.last?.repeat||!c.last||c.last.type!==q?.[3]||s.willing[p]<=0)return out;let t;
-if(c.last.opened){t=c.need==='uncertain'?'这么一想，我好像是把两件事当成一回事了。':c.need==='proud'?'对，我就是这么考虑的。别的搭法也可以聊聊。':c.need==='busy'?'这个要是顺手能办到，我倒愿意试试。':'这个区别我想明白一点了。'}
+if(c.last.opened){t=c.need==='uncertain'?'这么一说，我倒是想起来自己为什么这么选了。':c.need==='proud'?'对，我就是这么考虑的。别的搭法也可以聊聊。':c.need==='busy'?'这个要是顺手能办到，我倒愿意试试。':'这个区别我想再琢磨琢磨。'}
 else if(c.last.match<-.3&&!out.some(m=>m.p===p)){t=c.need==='busy'?'我先看看今天能买到什么。':c.need==='curious'?'我主要是想弄明白这个区别。':c.need==='proud'?'我主要还是觉得原来那样有道理。':c.need==='settled'?'今天先这样吃就好。':'我还没太想清楚。'}
 if(t&&!s.Vseen.has(vnorm(t))&&!out.some(m=>m.corrected&&m.p===p)){s.Vseen.add(vnorm(t));out.push({p,text:t})}return out};
 whome();
