@@ -271,10 +271,10 @@ const VK={
  oil:["能少放点油当然可以。","少油归少油，食材和份量也得看。"],
  regular:["忙的时候提前备点吃的，省得凑合。","方便是一回事，搭配够不够是另一回事。"],
  moderation:["偶尔吃点喜欢的也没什么。","不能吃了点菜，就把别的都当抵消了。"]};
-const VMO=['口味','方便','节约','健康','舒适','关心家人','自主选择'];
+const VMO=['原有口味','省事做法','节约做法','营养搭配','舒服的吃法','照顾家人','自主选择'];
 function vreasons(p,q){let m=VM[p]||VM[0];return vtags(q).slice().sort((a,b)=>m[b]-m[a]).map(i=>VMO[i])[0]}
 function vdialog(s,a,q){let e=E[s.i],c=WREPLIES[s.i],j=s.points.filter(x=>x[3]==='建议').indexOf(q);if(q[3]==='知识')return VK[q[4]]?.[q[5]?1:0]||c.know[0];if(q[3]==='肯定'){if(a===c.a)return c.praise;let nm=M[s.meals.at(-1)[e.p]||e.base]?.[0]||M[e.base][0];if(/粥|汤/.test(nm))return a===4?'热乎的吃着舒服。':'这口热乎的倒不错。';if(/水果|沙拉/.test(nm))return '看着挺新鲜的。';if(/蛋糕|奶茶/.test(nm))return '这个看着挺好吃的。';return c.praise;}if(a===c.a&&c.yes[j])return c.yes[j];let g=WGUEST.findIndex(x=>x.event.p===e.p);let x=WX.findIndex(x=>x.event.caption===e.caption);let arr=g>=0?VR_G[g]:x>=0?VR_X[x]:s.mode==='travel'?VR_T[s.i]:VR_D[s.i];return arr?.[j]||c.yes[j]||c.yes[0]}
 function vself(s,q){let c=WREPLIES[s.i],j=s.points.filter(x=>x[3]==='建议').indexOf(q);if(j===0)return c.self;let t=q[0];if(/水果|苹果/.test(t))return '那我下回留点到下午。';if(/轮换|不同|换/.test(t))return '行，下回换个口味。';if(/简餐|备餐|提前|便携|携带|准备/.test(t))return '下回出门前记得带。';if(/分享|自行|各自/.test(t))return '行，下回分着来。';if(/口味|保留|清淡/.test(t))return '那还按我喜欢的来。';if(/菜|搭配|套餐/.test(t))return '下回看看有没有合适的。';return c.self}
-function vwhy(before,s){let after=wimpactSnapshot(s),reason=[],k=0,u=0,b=0;for(let i=0;i<after.length;i++){for(let x of Object.keys(after[i].u||{}))u+=Math.max(0,after[i].u[x]-(before[i].u[x]||0));for(let x of Object.keys(after[i].k))k+=Math.max(0,after[i].k[x]-(before[i].k[x]||0));for(let x of Object.keys(after[i].b))b+=Math.abs(after[i].b[x]-(before[i].b[x]||0))}if(u>=1)reason.push('理解知识边界');else if(k>=1)reason.push('了解新知识');if(b>=.3)reason.push('调整后续选择');return reason.join(' · ')}
+function vwhy(before,s){let after=wimpactSnapshot(s),reason=[],k=0,u=0,b=0;for(let i=0;i<after.length;i++){for(let x of Object.keys(after[i].u||{}))u+=Math.max(0,after[i].u[x]-(before[i].u[x]||0));for(let x of Object.keys(after[i].k))k+=Math.max(0,after[i].k[x]-(before[i].k[x]||0));for(let x of Object.keys(after[i].b))b+=Math.abs(after[i].b[x]-(before[i].b[x]||0))}if(u>=1)reason.push('理解知识边界');else if(k>=1)reason.push('了解新知识');if(b>=.3)reason.push('调整行动倾向');return reason.join(' · ')}
 whome();
 </script></body></html>
