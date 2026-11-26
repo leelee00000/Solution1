@@ -170,7 +170,7 @@ let wm={xp:0,up:[],attempt:0,best:0,found:[],passed:false};try{let z=JSON.parse(
 let wr=null,wtimer=null,wmode=true;const wn=['老妈','老爸','女儿','管家','奶奶','爷爷'],ws=['妈','爸','女','助','奶','爷'];
 function wsave(){try{localStorage.setItem('food-photo-week-v2-experiment',JSON.stringify(wm))}catch(e){}$('xp').textContent='✦ '+wm.xp}
 function wstop(){clearTimeout(wtimer);wtimer=null}
-function whome(){wstop();wr=null;wsave();app.innerHTML='<div class="hero"><small>家庭健康管家 · 最新版</small><h1>这一周，吃了什么？</h1><p>一家人都觉得自己吃得挺健康。观察他们的理由，发现被忽略的条件，再决定怎样回应。</p><div class="receipt"><div class="row"><b>日常周 · 观念探索</b><small>目标 81 / 126</small></div><p>选择一个关键词探索，或组合两个关键词建立关联。发现家人的饮食推理，促成观念与行为改变。食材覆盖目标81分，每人至少24分；85分为进阶挑战。</p><div class="actions"><button class="primary" onclick="wstart()">进入日常周 →</button></div></div><div class="receipt"><div class="row"><b>旅行周</b><small>'+(wm.up.includes('travel')?'已解锁':'尚未解锁')+'</small></div><p>高铁、景区、夜市、民宿。排队、便携餐与旅途中容易出现的饮食误解。</p><div class="actions"><button '+(wm.up.includes('travel')?'onclick="wstart(\'travel\')"':'onclick="wshop()"')+'>'+(wm.up.includes('travel')?'进入旅行周 →':'前往局外成长')+'</button></div></div></div><div class="actions"><button onclick="location.href=&#39;./&#39;">返回原版</button><button onclick="wshop()">局外成长</button><button onclick="walbum()">观察档案 '+wm.found.filter(id=>KR.some(r=>r.id===id)).length+'/12</button><button onclick="wprofiles()">家庭成员</button></div>'}
+function whome(){wstop();wr=null;wsave();app.innerHTML='<div class="hero"><small>家庭健康管家 · 最新版</small><h1>这一周，吃了什么？</h1><p>一家人都觉得自己吃得挺健康。观察他们的理由，发现被忽略的条件，再决定怎样回应。</p><div class="receipt"><div class="row"><b>日常周 · 观念探索</b><small>目标 81 / 126</small></div><p>点击关键词分享知识或建议，也可组合两个关键词深入交流。发现家人的饮食推理，促成观念与行为改变。食材覆盖目标81分，每人至少24分；85分为进阶挑战。</p><div class="actions"><button class="primary" onclick="wstart()">进入日常周 →</button></div></div><div class="receipt"><div class="row"><b>旅行周</b><small>'+(wm.up.includes('travel')?'已解锁':'尚未解锁')+'</small></div><p>高铁、景区、夜市、民宿。排队、便携餐与旅途中容易出现的饮食误解。</p><div class="actions"><button '+(wm.up.includes('travel')?'onclick="wstart(\'travel\')"':'onclick="wshop()"')+'>'+(wm.up.includes('travel')?'进入旅行周 →':'前往局外成长')+'</button></div></div></div><div class="actions"><button onclick="location.href=&#39;./&#39;">返回原版</button><button onclick="wshop()">局外成长</button><button onclick="walbum()">观察档案 '+wm.found.filter(id=>KR.some(r=>r.id===id)).length+'/12</button><button onclick="wprofiles()">家庭成员</button></div>'}
 function wprofiles(){wstop();app.innerHTML='<div class="end"><h1>家庭成员</h1>'+[...people,...WG.filter(g=>wm.up.includes(g.key))].map(p=>'<div class="person"><h2>'+p.name+' · '+p.age+'岁</h2><p>'+p.history+'</p><p>喜欢：'+p.taste+'</p><p>相信：'+p.belief+'</p></div>').join('')+'<div class="actions"><button onclick="whome()">返回</button></div></div>'}
 function wstart(mode='daily'){if(mode==='travel'&&!wm.up.includes('travel'))return;wstop();wsetup(mode,wm.up,wm.attempt);wr=wnew(wm.attempt%2,wm.up,mode);wr.rng=(1234567+wm.attempt*7919)>>>0;wr.scenarioSeed=wm.attempt;wr.history=[];wbegin()}
 function wbegin(){wstop();while(true){wr.lines=wrecord(wr);if(keyRound(wr,wr.lines)){if(wr.i<12)wr.focusCount++;break}fastArchive(wr,wr.lines);wr.i++}wr.shown=0;wr.done=false;wr.pending=false;wr.selected=[];wreveal()}
@@ -1023,14 +1023,66 @@ function kwRelation(s){let m=s.roundTalk.mis;return m&&WORD_REL[m]}
 function kwWords(s){let c=s.roundTalk,id=c.kwId,rel=kwRelation(s),food=[...new Set(M[id][2].map(x=>FOOD_WORD[x]).filter(Boolean))],cause=CAUSE_WORD[c.originalCause?.type]||'口味';let items=rel?[...food,rel.a,cause,...rel.more.filter(x=>x!=='份量').slice(0,1),...(food.includes(rel.b)||s.kwSeen[rel.b]?[rel.b]:[]),...c.kwUnlocked]:[...food,cause,!M[id][1].includes('p')?'蛋白质':!M[id][1].includes('v')?'蔬菜':'多样性','份量','油盐',...c.kwUnlocked];return [...new Set(items)].slice(0,9)}
 function kwAdvice(s,words){let id=s.roundTalk.kwId,[rows]=auditedScene(s),missing=['s','p','v'].filter(k=>!M[id][1].includes(k));let target=words.slice().sort((a,b)=>Number(['时间','价格','胃口','便捷'].includes(b))-Number(['时间','价格','胃口','便捷'].includes(a))||Number(!M[id][2].map(x=>FOOD_WORD[x]).includes(b))-Number(!M[id][2].map(x=>FOOD_WORD[x]).includes(a))||a.localeCompare(b)).find(w=>['蔬菜','鸡蛋','豆腐','鱼肉','主食','便捷','时间','价格','胃口'].includes(w));if(!target)return null;let rx={'蔬菜':/青菜|蔬菜|生菜|黄瓜|西兰花/,'鸡蛋':/蛋/,'豆腐':/豆腐|豆干/,'鱼肉':/鱼|肉/,'主食':/米饭|饭团|面包|主食/,'便捷':/提前|顺手|一锅|套餐|带|方便/,'时间':/提前|顺手|一锅|套餐|带|方便/,'价格':/实惠|价格|豆腐|豆干|蛋/,'胃口':/软|嫩|胃口|粥/}[target];let rows2=rows.filter(q=>rx.test(q[0]+q[1])&&(!q[3]||[...q[3]].some(k=>missing.includes(k))));if(!rows2.length)return null;let opts=rows2.map(q=>[q[0],q[1],q[2],'建议',null,false,null,{reply:q[4],self:q[5]}]);let cause=s.roundTalk.originalCause;opts.sort((a,b)=>explicitFit(s,b,cause)-explicitFit(s,a,cause)||vres(E[s.i].p,b)-vres(E[s.i].p,a));return opts[0]}
 function kwPairKind(s,words){let c=s.roundTalk,rel=kwRelation(s),key=kwKey(words);if(rel&&((s.C[E[s.i].p].m[c.mis]||0)>=40)&&[ [rel.a,rel.b],...rel.alt].some(a=>kwKey(a)===key))return 'insight';let cause=CAUSE_WORD[c.originalCause?.type],foods=M[c.kwId][2].map(x=>FOOD_WORD[x]),practical=['蔬菜','鸡蛋','豆腐','鱼肉','主食','便捷','时间','价格','胃口'];if(words.some(w=>foods.includes(w)||w===cause)&&words.some(w=>practical.includes(w))&&kwAdvice(s,words))return 'plan';if(words.every(w=>WORD_TOPIC[w])&&(WORD_TOPIC[words[0]]===WORD_TOPIC[words[1]]||words.includes('份量')))return 'fact';return 'miss'}
-function kwDraft(s,words){if(words.length===1){let w=words[0],rel=kwRelation(s),c=s.roundTalk;return rel&&[rel.a,rel.b,...rel.more].includes(w)?'关于'+w+'，你是怎么考虑的？':w==='价格'?'这顿大概是什么价位？':w==='时间'||w==='便捷'?'今天是不是想省点时间？':w==='胃口'?'今天胃口怎么样？':w==='口味'?'这个口味合你胃口吗？':'这顿选'+w+'，有什么特别的原因吗？'}
-let kind=kwPairKind(s,words),rel=kwRelation(s);if(kind==='insight')return SCI_FIX[s.roundTalk.mis];if(kind==='plan')return voiceLine(s,kwAdvice(s,words));if(kind==='fact')return SCI_K[WORD_TOPIC[words.find(w=>w!=='份量')||words[0]]][1];return '说到'+words.join('和')+'，你觉得它们有什么关系？'}
+
+/* Single words introduce relevant information or practical options; questions are reserved for missing context. */
+const SINGLE_WORD_FACT={
+'鸡蛋':'鸡蛋能提供蛋白质，蛋黄也含胆碱。一般成人一周蛋类参考量为300–350克。',
+'汤':'炖煮时部分营养物质会进入汤，汤的浓白或鲜味却不能说明营养含量。',
+'面':'面条主要提供碳水化合物。面食之外搭些蛋肉豆和蔬菜，营养来源会更丰富。',
+'米饭':'米饭是谷类主食，可以和杂粮轮换，份量还要结合全天饮食。',
+'肉':'肉类能提供蛋白质和铁等营养，肥瘦比例和烹调方式也有影响。',
+'鱼肉':'鱼能提供蛋白质，不少鱼类还含不饱和脂肪酸。一般成人每周鱼类参考300–500克。',
+'豆腐':'豆腐是大豆制品，可以提供蛋白质，不同豆腐含水量不同，营养含量也有差别。',
+'蔬菜':'一般成人每天蔬菜至少300克，其中深色蔬菜约占一半，这是全天参考。',
+'水果':'鲜果能提供膳食纤维和多种微量营养素。一般成人每天参考200–350克。',
+'维生素':'不同食物提供的维生素种类和含量不同，不能仅凭一种营养素判断整餐。',
+'蛋白质':'鱼、蛋、肉和大豆制品都是蛋白质来源，实际摄入量取决于食材种类和份量。',
+'多样性':'膳食指南建议平均每天至少12种、一周至少25种食物，不要求每顿都凑齐。',
+'调料':'葱、芝麻和香菜可以提味，也各有营养成分，不过实际使用的量通常很少。',
+'份量':'食物名称不能代表实际摄入量，最好结合真正吃到的食材重量来判断。',
+'清淡':'清淡饮食强调油、盐、糖适量。食物种类丰富，口味也可以清淡。',
+'油盐':'一般成人全天食盐不超过5克、烹调油25–30克，调味料中的盐也要算进去。',
+'粥':'粥的主要营养来自谷物。稀稠不同，同样一碗粥含有的谷物重量也不同。',
+'主食':'一般成人每天谷类200–300克，其中全谷物和杂豆50–150克，均为原料重量参考。',
+'菜包':'菜包的面皮属于主食，馅料的种类和实际重量因做法而异。',
+'煎饼':'煎饼的面糊提供主食，鸡蛋、配菜和酱料的用量会影响整份搭配。',
+'面包':'面包属于主食。全谷物含量、添加糖和盐可以结合配料表判断。',
+'脂肪':'脂肪既来自烹调油，也来自食物本身。少放油不一定意味着整顿饭低脂。',
+'空气炸锅':'空气炸锅可以减少额外加油，但食物原有的脂肪、裹粉和调味仍在。',
+'炸鸡':'鸡肉能提供蛋白质，裹粉、油脂和调味也会影响这份食物的营养组成。',
+'薯条':'土豆属于薯类，做成薯条后仍要考虑炸制用油、盐和实际份量。',
+'咸菜':'咸菜经过腌制，钠含量可能较高，适合少量搭配。',
+'便捷':'便捷餐也能兼顾不同食物类别，提前准备时还可以用冰袋给易腐食品保冷。',
+'三明治':'三明治的面包属于主食，馅料和配菜决定它能提供哪些其他食物类别。',
+'甜品':'甜品可以适量享受。添加糖每天建议不超过50克，最好少于25克。',
+'添加糖':'添加糖的全天摄入来自各种餐食和饮品，具体克数要结合配方和份量判断。',
+'奶茶':'奶茶的添加糖和奶含量因配方而异，无糖选项通常能减少额外添加的糖。',
+'频率':'喜欢的食物可以适量安排，回顾一段时间的实际摄入比只看单次更有参考价值。'
+};
+function singleContent(s,w){let c=s.roundTalk,id=c.kwId,rel=kwRelation(s),food=M[id][2].map(x=>FOOD_WORD[x]),focus=rel&&[rel.a,rel.b,...rel.more].includes(w),cause=CAUSE_WORD[c.originalCause?.type];
+if(focus&&SINGLE_WORD_FACT[w])return {text:SINGLE_WORD_FACT[w],topic:WORD_TOPIC[w],mode:'fact',focus:true};
+let q=kwAdvice(s,[w]);if(q&&(!food.includes(w)||['时间','价格','胃口','便捷'].includes(w))){return {text:voiceLine(s,q),q,mode:'plan'}}
+if(SINGLE_WORD_FACT[w])return {text:SINGLE_WORD_FACT[w],topic:WORD_TOPIC[w],mode:'fact',focus:!!focus};
+if(w==='价格')return {text:'要是想省点饭钱，豆腐、鸡蛋和当季蔬菜也可以作为日常搭配的选择。',mode:'context'};
+if(w==='时间')return {text:'忙的时候，提前备好方便携带的正餐也不错。',mode:'context'};
+if(w==='胃口')return {text:'胃口一般的话，可以按自己的情况选软一些、好入口的食物。',mode:'context'};
+if(w==='口味')return {text:'喜欢的口味可以保留，换换配菜就能增加食物的多样性。',mode:'context'};
+return {text:'平时是怎么考虑这个搭配的？',mode:'ask'}}
+function kwDraft(s,words){if(words.length===1)return singleContent(s,words[0]).text;
+let kind=kwPairKind(s,words);if(kind==='insight')return SCI_FIX[s.roundTalk.mis];if(kind==='plan')return voiceLine(s,kwAdvice(s,words));if(kind==='fact')return SCI_K[WORD_TOPIC[words.find(w=>w!=='份量')||words[0]]][1];return '这两个方面可以分开考虑，还是要看具体食材和实际份量。'}
 function kwNotice(s,label,delta,p,kind){return {attNotice:true,delta:delta/10,after:s.willing[p]/10,p,kw:true,label,kind}}
 function kwSend(s,words){let c=s.roundTalk,p=E[s.i].p;if(!words.length||words.length>2||s.willing[p]<words.length*10||words.some(w=>!kwWords(s).includes(w)))return null;s.correctionResult=null;let key=kwKey(words),repeat=!!c.kwUsed[key],rel=kwRelation(s),r=c.mis&&KR.find(x=>x.id===c.mis),before=s.willing[p],txt=kwDraft(s,words),kind=words.length===1?'explore':kwPairKind(s,words),snap=wimpactSnapshot(s),forecast=wforecast(s),prior=echoBefore(s),replies=[],corrected=null,q=null;
-let effect=kind==='plan'?'plan:'+kwAdvice(s,words)[0]:kind==='insight'?'insight:'+c.mis:kind==='fact'?'fact:'+WORD_TOPIC[words.find(w=>w!=='份量')||words[0]]:null;let oldEffect=effect?(c.kwEffects[effect]||0):0;if(effect&&(kind==='insight'?oldEffect>=2:oldEffect>0))repeat=true;if(effect&&!repeat)c.kwEffects[effect]=oldEffect+1;let cost=words.length===1?10:20,delta=-cost;c.kwUsed[key]=(c.kwUsed[key]||0)+1;s.kwTurns++;
-if(repeat){kind='repeat';delta=-10;txt='这个话题再聊聊？';s.kwMiss++}
-else if(kind==='explore'){let w=words[0],cause=CAUSE_WORD[c.originalCause?.type];let focused=rel&&[rel.a,rel.b,...rel.more].includes(w),fits=w===cause||(w==='便捷'&&cause==='时间');let reply=focused?reasonVariant(s,p,r,'why'):fits?causeAnswer(s,p,c.kwId,c.originalCause):M[c.kwId][2].map(x=>FOOD_WORD[x]).includes(w)?'今天主要就想吃这个，比较合适。':'这个我还真没细想过。';c.kwFound[w]=true;
-if(focused&&!c.kwInsight){c.kwInsight=true;s.kwBook[c.mis]=true;s.kwHits++;delta=0;let unlocked=[rel.b,...rel.more].filter(w=>!kwWords(s).includes(w));let next=unlocked.slice(0,2);c.kwUnlocked.push(...next);for(let w of next)s.kwSeen[w]=true;replies.push({p,text:reply,kwDiscovery:r.id,kwNewWords:next});}else if(fits&&!c.kwMotivated){c.kwMotivated=true;s.observedCauses[s.i]=c.originalCause;delta=10;replies.push({p,text:reply});}else replies.push({p,text:reply});}
+let single=words.length===1?singleContent(s,words[0]):null;let effect=single?.mode==='plan'?'plan:'+single.q[0]:kind==='plan'?'plan:'+kwAdvice(s,words)[0]:kind==='insight'?'insight:'+c.mis:kind==='fact'?'fact:'+WORD_TOPIC[words.find(w=>w!=='份量')||words[0]]:null;let oldEffect=effect?(c.kwEffects[effect]||0):0;if(effect&&(kind==='insight'?oldEffect>=2:oldEffect>0))repeat=true;if(effect&&!repeat)c.kwEffects[effect]=oldEffect+1;let cost=words.length===1?10:20,delta=-cost;c.kwUsed[key]=(c.kwUsed[key]||0)+1;s.kwTurns++;
+if(repeat){kind='repeat';delta=-10;txt='这方面刚才已经聊过了。';s.kwMiss++}
+else if(kind==='explore'){let w=words[0],cause=CAUSE_WORD[c.originalCause?.type],focused=single.focus,fits=w===cause||(w==='便捷'&&cause==='时间');c.kwFound[w]=true;
+if(single.mode==='fact'&&single.topic){let topic=single.topic;wcadd(s,p,topic,8,'知识');q=['话题知识',txt,{},'知识',topic,false,null,{voice:txt}];echoChanges(s,prior,'learn',txt,[q],3);}
+if(single.mode==='plan'){q=single.q;let fit=explicitFit(s,q,c.originalCause),match=fit>=.95||c.kwMotivated||c.kwInsight;wshift(s,p,q[2],match?.85:.3);makePlan(s,p,q,match?1:.35);if(match){s.kwPlans++;s.kwLinks.push({i:s.i,p,key,kind:'plan'});delta=0;}}
+if(focused&&!c.kwInsight){c.kwInsight=true;s.kwBook[c.mis]=true;s.kwHits++;delta=0;let unlocked=[rel.b,...rel.more].filter(w=>!kwWords(s).includes(w)),next=unlocked.slice(0,2);c.kwUnlocked.push(...next);for(let w of next)s.kwSeen[w]=true;let reply=reasonVariant(s,p,r,'why');replies.push({p,text:reply,kwDiscovery:r.id,kwNewWords:next});}
+else if(fits&&!c.kwMotivated){c.kwMotivated=true;s.observedCauses[s.i]=c.originalCause;delta=10;replies.push({p,text:causeAnswer(s,p,c.kwId,c.originalCause)});}
+else if(single.mode==='plan'){replies.push({p,text:delta===0?(q[7]?.self||'下次可以试试。'):'我得看看方不方便。',accept:delta===0});}
+else if(single.mode==='fact'){replies.push({p,text:focused?'我以前倒没仔细想过这方面。':'原来还得看这个。'});}
+else if(single.mode==='ask'){replies.push({p,text:causeAnswer(s,p,c.kwId,c.originalCause)});}
+}
 else if(kind==='insight'){if(oldEffect)txt=SCI_FOLLOW[r.id];let old=s.C[p].m[r.id]||0,rate=c.kwInsight?1.28:.76,open=PERSON_OPEN[p].open;let drop=(c.kwInsight?22:12)*rate*(.7+.45*open);if(before<20)drop*=.5;
 for(let k of r.parents){wcadd(s,p,k,c.kwInsight?26:16,'知识边界');s.C[p].u[k]=Math.min(100,s.C[p].u[k]+(c.kwInsight?10:5));}let fixed=finishBelief(s,p,r,old,drop);q=[VFIX[r.id][0],VFIX[r.id][1],{},'知识',rel.topic,true,r.id,{voice:txt}];echoChanges(s,prior,'learn',txt,[q],3);
 s.kwHits++;s.kwBook[r.id]=true;s.kwLinks.push({i:s.i,p,key,kind:'insight',myth:r.id,fixed});c.kwCombo++;if(fixed){corrected={p,id:r.id};delta=c.kwInsight?10:0;replies.push({p,text:VFIX[r.id][2],corrected:r.id});}else{delta=-10;replies.push({p,text:'这个区别有点道理，我还得想想。'});}
@@ -1041,7 +1093,7 @@ else{delta=-20;s.kwMiss++;replies.push({p,text:'这两个放在一起，我还�
 s.willing[p]=Math.max(0,Math.min(60,before+delta));delta=s.willing[p]-before;
 if(!repeat&&['insight','plan'].includes(kind)&&s.willing[p]>0){let ns=wmembers(s).filter(n=>n!==p&&(s.willing[n]||0)>0);for(let n of ns){let trust=TRUST[p]?.[n]||.55,prob=.75*trust*s.willing[n]/60*s.willing[p]/60;if(wroll(s)>=prob)continue;let text=kind==='insight'?REASON[r.id].relay:q[7]?.reply;if(text&&!s.Vseen.has(vnorm(text))){s.Vseen.add(vnorm(text));let bs=wimpactSnapshot(s);if(kind==='insight'){let e=echoBefore(s);wcadd(s,n,rel.topic,8,'转述边界');echoChanges(s,e,'relay',text,[q],n)}else wshift(s,n,q[2],.35);let dim=vdims(bs,s,'reply',0);replies.push({p:n,text,support:true,dim,reason:'家人接力'});s.supports++;break}}}
 if(s.willing[p]===0)replies=[];s.trace.push({i:s.i,text:txt,words:words.slice()});s.talks++;let d=vdims(snap,s,'say',wforecast(s)-forecast);if(kind==='explore'&&delta>=0)d.communication+=1;if(kind==='plan'&&replies.some(m=>m.accept))d.communication+=1;
-c.kwLast={kind,key,delta};return {kind,txt,replies,corrected,notice:kwNotice(s,kind==='insight'?'关联命中':kind==='plan'?'搭配建议':kind==='explore'?'探索话题':kind==='repeat'?'重复话题':'继续探索',delta,p,kind),d}}
+c.kwLast={kind,key,delta};return {kind,txt,replies,corrected,notice:kwNotice(s,kind==='insight'?'关联命中':kind==='plan'?'搭配建议':kind==='explore'?(single?.mode==='plan'?'搭配建议':single?.mode==='fact'?'分享知识':'交流话题'):kind==='repeat'?'重复话题':'继续探索',delta,p,kind),d}}
 function kwDots(n){let v=Math.max(0,Math.min(6,Math.round(n/10)));return '<div class="kwdots" aria-label="注意力 '+v+'/6">'+Array.from({length:6},(_,i)=>'<i class="'+(i<v?'on':'')+'"></i>').join('')+'</div><b class="kwvalue">'+v+'/6</b>'}
 const kwMealPanel=mealDietPanel;mealDietPanel=function(s,id){let h=kwMealPanel(s,id),p=E[s.i].p;return h.replace(/<div class="mealwill">[\s\S]*$/,'<div class="mealwill"><span>注意力</span>'+kwDots(s.willing[p])+'</div></div>')};
 wcolumns=function(){let words=kwWords(wr),chosen=wr.selected.map(i=>words[i]);return '<div class="keywordtray">'+words.map((w,j)=>'<button class="keyword '+(wr.selected.includes(j)?'selected':'')+(wr.roundTalk.kwFound[w]?' explored':'')+'" onclick="wselect('+j+')" aria-pressed="'+wr.selected.includes(j)+'">'+clueEscape(w)+'</button>').join('')+'</div>'};
