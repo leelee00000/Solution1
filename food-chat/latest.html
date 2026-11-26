@@ -972,8 +972,8 @@ const contextualAttention=attentionDelta;attentionDelta=function(s,q){let c=s.ro
 if(t==='探问'||t==='肯定')return Math.round(m>0?m*13-2:m*18-9);
 if(t==='建议')return Math.round(m>0?m*21-7:m*12-14);
 return Math.round(m>0?-28+m*20:-28+m*5)};
-receptive=function(s,p,k){let c=s.roundTalk;if(!c?.need)return 1;let n=c.need,open=PERSON_OPEN[p].open;let base=n==='curious'?.95:n==='settled'?.10:n==='busy'?.08:n==='proud'?.06:.08;let unlocked=c.resolvedNeed?(n==='busy'?.62:n==='settled'?.0:.85):0;return Math.min(1.15,base+unlocked+.13*open+.04*s.willing[p]/100)};
-const contextualAct=wact;wact=function(s,op){if(op.type!=='say')return contextualAct(s,op);let q=s.points[(op.ids||[op.index])[0]],c=s.roundTalk,p=E[s.i].p;if(!q||s.willing[p]<=0)return;let oldB=wmembers(s).map(n=>[n,{...s.B[n]}]),oldPlans=s.plans[p].map(x=>({...x,keys:x.keys.slice()})),m=needMatch(s,q),used=c.used[roundKey(q)],oldNeed=c.resolvedNeed;contextualAct(s,op);if(used)return;
+receptive=function(s,p,k){let c=s.roundTalk;if(!c?.need)return 1;let n=c.need,open=PERSON_OPEN[p].open;let base=n==='curious'?.95:n==='settled'?.10:n==='busy'?.08:n==='proud'?.06:.08;let unlocked=c.resolvedNeed?(n==='busy'?.62:n==='settled'?.0:.85):0;let intake=c.intake??1;return Math.min(1.15,base+unlocked+.13*open+.04*s.willing[p]/100)*intake};
+const contextualAct=wact;wact=function(s,op){if(op.type!=='say')return contextualAct(s,op);let q=s.points[(op.ids||[op.index])[0]],c=s.roundTalk,p=E[s.i].p;if(!q||s.willing[p]<=0)return;let oldB=wmembers(s).map(n=>[n,{...s.B[n]}]),oldPlans=s.plans[p].map(x=>({...x,keys:x.keys.slice()})),m=needMatch(s,q),used=c.used[roundKey(q)],oldNeed=c.resolvedNeed;let beforeAttention=s.willing[p];c.intake=q[3]==='知识'?Math.min(1,Math.max(.12,beforeAttention/(m>0?24:34))):1;try{contextualAct(s,op)}finally{c.intake=1}if(used)return;
 if(q[3]==='建议'&&m<0){for(let [n,b] of oldB)for(let k of Object.keys(s.B[n]))s.B[n][k]=(b[k]||0)+(s.B[n][k]-(b[k]||0))*.18;s.plans[p]=oldPlans;}
 if((c.need==='uncertain'&&q[3]==='探问')||(c.need==='proud'&&q[3]==='肯定')||(c.need==='busy'&&q[3]==='建议')||(c.need==='curious'&&q[3]==='知识')){if(m>.45)c.resolvedNeed=true}
 c.history.push(q[3]);c.last.match=m;c.last.opened=!oldNeed&&c.resolvedNeed;
@@ -982,5 +982,16 @@ const needReply=wreply;wreply=function(s,ids){let c=s.roundTalk,p=E[s.i].p,q=s.p
 if(c.last.opened){t=c.need==='uncertain'?'这么一说，我倒是想起来自己为什么这么选了。':c.need==='proud'?'对，我就是这么考虑的。别的搭法也可以聊聊。':c.need==='busy'?'这个要是顺手能办到，我倒愿意试试。':'这个区别我想再琢磨琢磨。'}
 else if(c.last.match<-.3&&!out.some(m=>m.p===p)){t=c.need==='busy'?'我先看看今天能买到什么。':c.need==='curious'?'我主要是想弄明白这个区别。':c.need==='proud'?'我主要还是觉得原来那样有道理。':c.need==='settled'?'今天先这样吃就好。':'我还没太想清楚。'}
 if(t&&!s.Vseen.has(vnorm(t))&&!out.some(m=>m.corrected&&m.p===p)){s.Vseen.add(vnorm(t));out.push({p,text:t})}return out};
+
+/* Make the acknowledgement about the actual reasonable intention, never endorse a misconception. */
+const contextualVoice=voiceLine;voiceLine=function(s,q){let c=s.roundTalk;if(q[3]==='肯定'&&c?.need==='proud'&&!c.resolvedNeed){let id=s.lines?.find(m=>m.photo)?.photo||E[s.i].base;
+if(c.mis==='egg_all')return '你还特意想着补蛋白质，这份心思挺好的。';
+if(c.mis==='fruit_veg'||c.mis==='bun_veg'||c.mis==='count_spice')return '你有特意考虑食材搭配，这点挺好的。';
+if(c.mis==='clear_only'||c.mis==='soup_extract')return '你有留意口味和自己的胃口，这点挺好的。';
+if(c.mis==='air_halo')return '你还想着少用油，这点挺好的。';
+if(c.mis==='reward_offset'||c.mis==='occasional')return '忙完了想吃点喜欢的，很正常。';
+if(c.mis==='fast_meal')return '忙归忙，还惦记着按时吃饭，挺好的。';
+return '看得出来，这顿是你自己认真考虑过的。';
+}return contextualVoice(s,q)};
 whome();
 </script></body></html>
