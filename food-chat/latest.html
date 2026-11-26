@@ -1175,7 +1175,7 @@ Object.assign(WORD_TOPIC,{'纤维粉':'produce','无糖':'moderation','全谷物
 const derivedNew=wnew;wnew=function(...args){let s=derivedNew(...args);s.derivedSeen={};s.derivedEvents=[];return s};
 const derivedSend=kwSend;kwSend=function(s,words){let c=s.roundTalk,p=E[s.i].p,before=s.willing[p],oldMis=c.mis,oldStrength=oldMis?s.C[p].m[oldMis]||0:0,result=derivedSend(s,words);if(!result)return result;
 if(result.kind==='repeat'||result.kind==='miss'||s.willing[p]<=0||c.derivedTriggered||s.derivedEvents.length>=4||oldStrength>=40&&!result.corrected)return result;
-let d=DERIVED.find(d=>!s.derivedSeen[p+':'+d.id]&&d.valid(c.kwId)&&d.trigger.some(w=>words.includes(w))&&(s.C[p].m[d.id]||0)<40);if(!d)return result;
+let d=DERIVED.find(d=>!s.derivedSeen[p+':'+d.id]&&d.valid(c.kwId)&&d.trigger.some(w=>words.includes(w))&&(s.C[p].m[d.id]||0)<40&&({fiber_sub:/膳食纤维|纤维/,zero_sugar:/添加糖|无糖|糖摄入/,whole_grain_free:/全谷物|全麦/}[d.id]).test(result.txt));if(!d)return result;
 let interest=d.motives[p===4?3:p===5?4:p],u=s.C[p].u[d.topic]||0;if(u>=65||wroll(s)>.40+.55*interest-u/150)return result;
 let strength=Math.round(48+interest*15-u*.15),key=p+':'+d.id;s.derivedSeen[key]=true;c.derivedTriggered=true;s.derivedEvents.push({i:s.i,p,id:d.id,from:words.slice()});s.C[p].m[d.id]=Math.max(40,strength);s.beliefOrigins[key]='相关知识接触后推断';s.found.push(d.id);
 let text=d.id==='fiber_sub'&&!menuWords(c.kwId).includes('面')?d.cue[1]:d.cue[(p+s.i+(s.scenarioSeed||0))%d.cue.length],parent=s.echo.events.filter(e=>e.p===p&&e.i===s.i&&e.kind==='learn'&&e.topic===d.topic).at(-1);
