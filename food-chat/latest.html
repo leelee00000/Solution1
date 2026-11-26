@@ -686,7 +686,7 @@ function reasonContext(s,p,r,text){let key=p+':'+r.id,origin=s.beliefOrigins[key
 function reasonAsk(s,r,p){return ['为什么这么理解？','你为什么觉得这样就够了？',{},'探问',null,false,null,{answer:reasonVariant(s,p,r,'why'),cause:{type:'belief',mis:r.id},reasonId:r.id,strategy:'提问'}]}
 const humanRecord=wrecord;wrecord=function(s){s.correctionResult=null;let lines=humanRecord(s),m=lines.find(x=>x.mis);if(m){let r=KR.find(x=>x.id===m.mis);m.reasonInfo=reasonContext(s,m.p,r,m.text);if(s.i<12){let ix=s.points.findIndex(q=>q[3]==='探问');if(ix>=0)s.points[ix]=reasonAsk(s,r,m.p)}}return lines};
 function finishBelief(s,p,r,old,drop){let c=s.C[p],now=Math.max(0,old-drop);c.m[r.id]=Math.min(c.m[r.id]||old,now);if(old>=40&&c.m[r.id]<40){if(!s.fixed.some(x=>x.p===p&&x.id===r.id))s.fixed.push({p,id:r.id,i:s.i});s.correctionResult={p,id:r.id};return true}return false}
-function directBelief(s,p,r,old,rate){let key=p+':'+r.id,a=PERSON_OPEN[p],c=s.C[p],drop=beliefDrop(s,p,r,old,rate);s.beliefAttempts[key]=(s.beliefAttempts[key]||0)+1;for(let k of r.parents){c.u[k]=Math.min(100,(c.u[k]||0)+rate*8*a.open);c.a[k]=Math.min(100,(c.a[k]||0)+rate*5*a.open)}return finishBelief(s,p,r,old,drop)}
+function directBelief(s,p,r,old,rate){let key=p+':'+r.id,a=PERSON_OPEN[p],c=s.C[p],drop=beliefDrop(s,p,r,old,rate);rate*=receptive(s,p,r.parents[0]);s.beliefAttempts[key]=(s.beliefAttempts[key]||0)+1;for(let k of r.parents){c.u[k]=Math.min(100,(c.u[k]||0)+rate*8*a.open);c.a[k]=Math.min(100,(c.a[k]||0)+rate*5*a.open)}return finishBelief(s,p,r,old,drop)}
 // Family members may carry a reason the original speaker did not accept. No irritation scripts.
 const humanReply=wreply;wreply=function(s,ids){let p=E[s.i].p,q=ids.map(i=>s.points[i]).find(x=>x[6]),out=humanReply(s,ids);if(!q||s.correctionResult)return out;let r=KR.find(x=>x.id===q[6]),old=s.C[p].m[r.id]||0;if(old<40)return out;
 let candidates=wmembers(s).filter(n=>n!==p&&n!==3&&(s.C[n].m[r.id]||0)<40&&(s.C[n].u[q[4]]||0)>=22).sort((a,b)=>(TRUST[p]?.[b]||.5)-(TRUST[p]?.[a]||.5));
@@ -905,21 +905,21 @@ return [ask,praise,ad,knowledge].filter(Boolean)}
 function sendRound(s,j){let p=E[s.i].p,q=s.points[j];if(!q||s.willing[p]<=0)return null;let ids=[j],txt=voiceLine(s,q),snap=wimpactSnapshot(s),forecast=wforecast(s);wact(s,{type:'say',ids});let a=s.roundTalk.last,d=vdims(snap,s,'say',wforecast(s)-forecast);if(!a.repeat)d.communication+=s.praiseGain||0;let corrected=s.correctionResult?{...s.correctionResult}:null;let replies=wreply(s,ids);return {q,txt,d,a,corrected,replies}}
 wcolumns=function(){return '<div class="strategylist simplechoices">'+wr.points.map((q,j)=>{let selected=wr.selected.includes(j);return '<button class="wpoint strategyitem '+(selected?'selected':'')+'" onclick="wselect('+j+')" aria-pressed="'+selected+'">'+qType(q)+'</button>'}).join('')+'</div>'};
 wselect=function(j){if(!wr||wr.done||wr.i>=12||wr.shown<wr.lines.length||!wr.points[j])return;wr.selected=wr.selected.includes(j)?[]:[j];wplay()};
-wsay=function(){if(!wr||wr.done||wr.i>=12||wr.shown<wr.lines.length||!wr.selected.length)return;let res=sendRound(wr,wr.selected[0]);if(!res)return;let {q,txt,d,a,corrected,replies}=res;wr.lines.push({p:3,text:txt},{attNotice:true,delta:a.delta,p:a.p,repeat:a.repeat,after:wr.willing[a.p]});let combo=0,f=vmake(wr,d,'say',0,d.fix?'观念得到修正':d.action?'影响后续选择':d.cognition?'理解有所变化':d.communication?'获得认同':'');if(f){vcredit(wr,f);wr.lines.push(f);combo=1}wr.shown=wr.lines.length;
+wsay=function(){if(!wr||wr.done||wr.i>=12||wr.shown<wr.lines.length||!wr.selected.length)return;let res=sendRound(wr,wr.selected[0]);if(!res)return;let {q,txt,d,a,corrected,replies}=res;wr.lines.push({p:3,text:txt},{attNotice:true,delta:a.delta,p:a.p,repeat:a.repeat,after:wr.willing[a.p]});let combo=0,f=vmake(wr,d,'say',0,d.fix?'观念得到修正':q[6]&&!corrected?'听到了，仍保留原看法':d.action?'影响后续选择':d.cognition?'理解有所变化':d.communication?'获得认同':'');if(f){vcredit(wr,f);wr.lines.push(f);combo=1}wr.shown=wr.lines.length;
 if(corrected){let {p,id}=corrected,txt=VFIX[id][2];if(!wr.Vseen.has(vnorm(txt))){wr.Vseen.add(vnorm(txt));wr.lines.push({p,text:txt,corrected:id})}}
 for(let msg of replies){wr.lines.push(msg);if(msg.support||msg.accept){combo++;let bonus=vmake(wr,msg.dim,msg.support?'reply':'accept',combo,msg.reason||'家人认同');if(bonus)wr.lines.push(bonus)}}wr.selected=[];wr.done=wr.willing[E[wr.i].p]<=0;if(!wr.done)wr.points=nextRoundOptions(wr,wr.lines.find(m=>m.photo).photo);wplay();if(wmode&&wr.shown<wr.lines.length)wtimer=setTimeout(wreveal,500)};
 const attentionLike=wlike;wlike=function(i){let m=wr?.lines[i];if(!m||m.liked||wr.done)return;attentionLike(i);if(wr.willing[E[wr.i].p]>0){wr.done=false;wplay()}};
 function attentionHTML(m){let cls=m.delta>0?'gain':m.delta<0?'loss':'neutral',animate=m.attAnimated?'':' attpop';m.attAnimated=true;return '<div class="attnotice attflash '+cls+animate+'"><span>'+(m.repeat?'重复发言':m.delta>0?'说到心坎上':'注意力')+'</span><strong>'+(m.delta>0?'+':'')+m.delta+'</strong><b>'+m.after+'/100</b></div>'}
 
 /* Conversation sequencing: factual recall is not the same as accepting an explanation. */
-function receptive(s,p,k){if(!s.roundTalk)return 1;let c=s.roundTalk,interest=PERSON_OPEN[p].open,match=c.connection||0;return Math.min(1.15,.20+.20*interest+.60*match+.12*(s.willing[p]/100))}
+function receptive(s,p,k){if(!s.roundTalk)return 1;let c=s.roundTalk,interest=PERSON_OPEN[p].open,match=c.connection||0;return Math.min(1.15,.07+.16*interest+.80*match+.10*(s.willing[p]/100))}
 const receptiveBase=personResponse;personResponse=function(s,p,k){let base=receptiveBase(s,p,k);if(s.reasonSource==='relay')return base*.9;return base*receptive(s,p,k)};
 const receptiveBelief=beliefDrop;beliefDrop=function(s,p,r,old,rate,source=3){let d=receptiveBelief(s,p,r,old,rate,source);return source===3?d*receptive(s,p,r.parents[0]):d};
 const sequenceAct=wact;wact=function(s,op){if(op.type!=='say')return sequenceAct(s,op);let q=s.points[(op.ids||[op.index])[0]],p=E[s.i].p,c=s.roundTalk;if(!q||s.willing[p]<=0)return;let used=c.used[roundKey(q)],cause=s.observedCauses[s.i]||currentCause(s,p);sequenceAct(s,op);if(used)return;let delta=c.last.delta,change=0;
 if(q[3]==='探问'&&q[7]?.cause)change=q[7]?.variant===1?.15:.62;
 if(q[3]==='肯定'&&delta>0)change=.27;
 if(q[3]==='建议'&&explicitFit(s,q,cause)>=.95&&!q[7]?.maintain)change=.45;
-if(q[3]==='知识')change=-.10;
+if(q[3]==='知识')change=-.14;
 c.connection=Math.max(0,Math.min(1,(c.connection||0)+change))};
 const EXTRA_K={
 protein:['蛋黄里的胆碱、鱼类的不饱和脂肪酸和大豆的膳食纤维各有特点，所以蛋白质来源相同并不等于营养一样。','每周鱼300–500克、蛋300–350克、畜禽肉300–500克是一般成人参考，不是每顿都要凑齐。','大豆和豆腐也能提供蛋白质，可以与鱼、肉、蛋轮换；豆制品实际重量要结合含水量理解。'],
@@ -932,7 +932,7 @@ regular:['规律进餐与食物搭配是两件事。便携餐也可以安排谷�
 moderation:['添加糖每天不超过50克、最好少于25克是一般成人建议；饮品、甜品和其他加工食品都要计入。','健康饮食看整体，不代表一次甜品就决定健康，也不意味着吃蔬菜能抵扣甜品中的糖。','同样大小的蛋糕配方可能很不同，不能凭图片算糖克数。可以通过营养标签、配方和实际份量了解。']};
 function knowledgePool(s,id){let p=E[s.i].p,mis=s.correction?.id,r=mis&&KR.find(x=>x.id===mis),c=s.roundTalk,has=r&&(s.C[p].m[mis]||0)>=40,all=[];
 if(has){let f=VFIX[mis];all.push([f[0],f[1],{},'知识',r.parents[0],true,mis,{variant:0}],[f[0],f[1],{},'知识',r.parents[0],true,mis,{variant:1,voice:SCI_FOLLOW[mis]}]);}
-let [,ks]=auditedScene(s),tags=M[id][1],preferred=!tags.includes('p')?'protein':!tags.includes('v')?'produce':!tags.includes('s')?'grain':'diversity';let topics=[...new Set([...(has?r.parents:[]),preferred,...ks,...(has?r.correct:[])])];
+let [,ks]=auditedScene(s),tags=M[id][1],preferred=!tags.includes('p')?'protein':!tags.includes('v')?'produce':!tags.includes('s')?'grain':'diversity';let topics=[...new Set([...(has?r.parents:[]),preferred,...ks,...(has?r.correct:[]),...VKN])];
 for(let k of topics){let a=K_AUDIT[k];if(!a)continue;all.push([a[0],a[1],{},'知识',k,false,null,{variant:0}],[a[3],a[2],{},'知识',k,true,null,{variant:1}]);EXTRA_K[k].forEach((voice,j)=>all.push([a[3],a[2],{},'知识',k,true,null,{variant:j+2,voice}]))}
 return all}
 const poolNext=nextRoundOptions;nextRoundOptions=function(s,id){let out=poolNext(s,id),pool=knowledgePool(s,id),fresh=pool.find(q=>!s.roundTalk.used[roundKey(q)]);let pos=out.findIndex(q=>q[3]==='知识');if(pos>=0&&fresh)out[pos]=fresh;return out};
@@ -943,7 +943,7 @@ const tagObserve=clueObserve;clueObserve=function(s,m){if(!m||m.clueRead||m.attN
 let changes=expired.map(label=>({kind:'remove',label}));for(let k of m.clueNew||[]){let v=book[k],old=before[k];if(!v)continue;if(v.type==='已纠正'){v.label=TAG_FIXED[k.slice(4)]||'观念更新';v.valence='positive';changes.push({kind:'change',label:old?.label||MIS_SHORT[k.slice(4)]||k.slice(4),to:v.label});}else if(old&&old.type==='已纠正'){changes.push({kind:'change',label:old.label,to:v.label,negative:true})}else if(!old)changes.push({kind:'add',label:v.label,valence:v.valence});}
 for(let [k,v] of Object.entries(book))if(v.type==='已纠正')v.label=TAG_FIXED[k.slice(4)]||v.label;
 m.clueView=Object.values(book).filter(x=>x.type!=='当下'||x.at===s.i).map(x=>({...x}));if(changes.length)m.tagChanges=changes;};
-function tagChangeHTML(m,active){if(!m.tagChanges?.length)return '';let anim=m.justTag&&!m.tagAnimated?' tagburst':'';if(m.justTag){m.tagAnimated=true;m.justTag=false}return '<div class="tagchanges'+anim+'">'+m.tagChanges.map(c=>'<div class="tagchange '+c.kind+(c.negative?' negative':'')+'"><span class="tagverb">'+(c.kind==='add'?'✦ 发现词条':c.kind==='change'?'↗ 观念改变':'− 状态消退')+'</span><strong class="'+(c.valence||'')+'">'+(c.kind==='change'?'<s>'+clueEscape(c.label)+'</s><span class="tagarrow"> → </span>'+clueEscape(c.to):clueEscape(c.label))+'</strong></div>').join('')+'</div>'}
+function tagChangeHTML(m,active){if(!m.tagChanges?.length)return '';let anim=m.justTag&&!m.tagAnimated?' tagburst':'';if(m.justTag){m.tagAnimated=true;m.justTag=false}return '<div class="tagchanges'+anim+'">'+m.tagChanges.map(c=>'<div class="tagchange '+c.kind+(c.negative?' negative':'')+'"><span class="tagverb">'+(c.kind==='add'?'✦ 发现词条':c.kind==='change'?'↗ 词条改变':'− 词条移除')+'</span><strong class="'+(c.valence||'')+'">'+(c.kind==='change'?'<s>'+clueEscape(c.label)+'</s><span class="tagarrow"> → </span>'+clueEscape(c.to):clueEscape(c.label))+'</strong></div>').join('')+'</div>'}
 const tagMsg=wmsg;wmsg=function(m,i,active){return tagMsg(m,i,active)+tagChangeHTML(m,active)};
 whome();
 </script></body></html>
