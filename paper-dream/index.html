@@ -53,17 +53,54 @@ function buy(i){let u=upgrades[i];if(meta.up.includes(u[0])||meta.xp<u[3])return
 function album(){app.innerHTML='<div class="end"><h1>人类饮食观察</h1><div class="grid">'+all.map(c=>'<div class="receipt">'+(meta.found.includes(c.disc)?'<b>'+c.disc+'</b><p>'+c.q0+'</p>':'<b>？</b><p>尚未发现</p>')+'</div>').join('')+'</div><div class="actions"><button class="primary" onclick="home()">返回日历</button></div></div>'}
 
 const F={"ms":["米饭、豆腐、青菜","spv"],"mt":["米饭、冬瓜汤","sv"],"mb":["菜包、茶","s"],"dn":["肉丝面","sp"],"ds":["红烧肉盖饭、青菜","spv"],"da":["红烧肉、米饭、苹果","spf"],"dm":["红烧肉、苹果","pf"],"gb":["两个菜包（少量菜馅）、茶","s"],"ge":["菜包、茶叶蛋","sp"],"gt":["菜包、茶叶蛋、小番茄","spv"],"gs":["食堂鸡肉饭、青菜","spv"],"gl":["面包、牛奶","sp"],"pp":["葱油面（少量调味菜）","s"],"pe":["鸡蛋面","sp"],"pf":["鸡蛋青菜面","spv"],"pv":["青菜面","sv"],"pm":["肉丝青菜面","spv"],"ps":["葱油面、另配卤蛋","sp"],"pa":["葱油面、苹果","sf"]};
-function freshD(seed,up=[]){return {seed,day:0,phase:0,words:3+(up.includes("talk")?1:0),likes:2+(up.includes("heart")?1:0),B:{girl:0,egg:0,tomato:0,meal:0,dad:0,greens:0,mom:0,potEgg:0,potVeg:0,mix:0,many:0,share:0,apple:0},days:[],actions:[],logs:[],reports:[],up}}
+function freshD(seed,up=[]){return {seed,day:0,phase:0,words:3+(up.includes("talk")?1:0),likes:2+(up.includes("heart")?1:0),B:{girl:0,egg:0,tomato:0,meal:0,dad:0,greens:0,mom:0,potEgg:0,potVeg:0,mix:0,many:0,share:0,apple:0,quick:0,later:0},lastAdvice:null,days:[],actions:[],logs:[],reports:[],up}}
 function msgD(p,t,e={},hint=""){return {p,t,e,hint}}
-function optsD(st){let d=st.day,p=st.phase,v=st.seed;if(d===0&&p===0)return [["包里加个鸡蛋，下午也顶饿。",{egg:3,girl:1},"具体搭配"],["手边有的搭着吃，也能凑一餐。",{mix:2,girl:2,mom:1},"宽泛搭配"]];if(d===0)return [[v===0?"鸡蛋和小番茄都挺好带。":"楼下的茶叶蛋挺方便。",{egg:2,tomato:v===0?4:0,girl:1},"利用现有条件"],["主食、蛋肉豆和菜，可以搭着吃。",{many:2,meal:3,girl:1},"通用原则"]];if(d===1&&p===0)return [["盖饭窗口或许更省时间。",{greens:4,dad:1},"省时搭配"],["一顿里有几种不同食物挺好。",{many:2,mom:1,dad:1,apple:1},"宽泛多样"]];if(d===1)return [["苹果可以留到下午，饭菜照常选。",{greens:2,dad:2,apple:-2},"区分食物作用"],["排队来不及，盖饭也挺方便。",{dad:2,greens:2,share:1},"现实约束"]];if(d===2&&p===0)return [["鸡蛋青菜面，一锅也能做好。",{potEgg:3,potVeg:3,mom:1},"具体搭配"],["各自加点喜欢的配菜也方便。",{share:3,mom:1},"独立选择"]];return [["青菜可以一起下锅。",{potVeg:3,mom:1},"利用库存"],["鸡蛋单独煮，谁想吃谁拿。",{potEgg:3,share:2},"独立选择"]]}
+function optsD(st){
+ let d=st.day,p=st.phase,v=st.seed,b=st.B;
+ if(d===0&&p===0)return [
+ ["路过便利店的话，可以带个茶叶蛋。",{egg:3,girl:1},"就近补充：便利优先","egg"],
+ ["如果有人帮忙看座，可以去食堂吃份简餐。",{meal:5,girl:1,share:1},"完整餐食：需要时间和同伴协助","meal"],
+ ["来不及的话，先吃包子，有空再补点饭菜。",{mix:2,girl:1,later:1},"临时安排：接受本餐暂时不完整","later"]];
+ if(d===0)return [
+ [v===0?"顺路买茶叶蛋和小番茄，配包子就行。":"楼下买个茶叶蛋，正好配包子。",{egg:2,tomato:v===0?4:0,girl:1},"就近补充：根据库存调整","egg2"],
+ [v===0?"同学能帮忙看座的话，去食堂吃份简餐也行。":"打印完有空的话，再补些饭菜。",{meal:v===0?5:0,girl:1,later:v===1?1:0},"完整餐食：取决于可用时间","meal2"],
+ ["以后备些方便带的主食、鸡蛋和蔬菜吧。",{many:2,mom:2,egg:1},"建立长期备餐习惯：不保证今天能实现","prep"]];
+ if(d===1&&p===0)return [
+ ["如果盖饭窗口人少，红烧肉配饭和青菜就很方便。",{greens:3,dad:1},"保留口味：取决于排队","rice"],
+ ["要是面档快，肉丝面加份青菜也可以。",{quick:4,dad:1},"替代方案：放弃今天的红烧肉","noodle"],
+ ["赶时间就先选有主食和肉的，苹果留到下午。",{dad:2,apple:-2,mix:1},"保住用餐时间：蔬菜可能暂缺","basic"]];
+ if(d===1)return [
+ [v===0?"面档要是人少，可以选肉丝面加青菜。":"盖饭那边人少，顺手配份青菜怎么样？",{quick:v===0?4:0,greens:v===1?4:0,dad:1},"利用已知排队信息","queue"],
+ ["苹果可以留到下午，午饭尽量有饭和菜。",{greens:2,dad:2,apple:-3},"厘清搭配原则：现实条件仍有限","fruit"],
+ ["下次打饭可以优先看哪个窗口能配齐主食、肉和菜。",{many:2,mom:2,quick:1},"长期选择规则：可能被其他家人泛化","rule"]];
+ if(d===2&&p===0)return [
+ ["两个鸡蛋打进汤里，青菜一起煮，三个人分着吃。",{potEgg:3,potVeg:3,mom:1},"共用一锅：省时间、食材共享","pot"],
+ ["面先煮好，鸡蛋和青菜另外放，大家自己加。",{share:3,potEgg:2,potVeg:2,mom:1},"独立选择：有人可能少加配菜","side"],
+ ["面里加几样实在的食材，调味料各自放。",{potVeg:2,potEgg:2,many:-3},"明确条件：修正此前的多样化误解","clarify"]];
+ return [
+ [v===0?"青菜直接下锅，鸡蛋打散，省得再洗锅。":"菠菜直接下锅，鸡蛋打散，省得再洗锅。",{potVeg:3,potEgg:1,mom:1},"一锅完成：减少备餐负担","veg"],
+ ["鸡蛋可以单独煮，青菜放桌上按口味加。",{potEgg:3,potVeg:1,share:2},"尊重偏好：不保证人人都取菜","eggside"],
+ ["葱花辣椒用来调味，菜和蛋可以另外加。",{potVeg:2,potEgg:2,many:-4},"区分调味和主要食材","fixmany"]];
+}
 function openingD(st){let b=st.B,v=st.seed,d=st.day;
 if(d===0)return [msgD(0,"昨晚那袋菜包给你装了两个，小饭盒也拿了吧？",{egg:1,mom:1},"随身搭配"),msgD(2,"饭盒没拿，书包塞不下。中午不太想出去，图书馆位置好难抢。",{girl:1},"时间与空间限制"),msgD(1,"两个包子够了吧，我以前上班就这么吃。",{mix:1,girl:-1},"旧经历迁移"),msgD(0,"那袋包子皮厚，馅儿就一点。",{egg:1,tomato:1,girl:1},"菜馅很少")];
 if(d===1)return [msgD(1,"今天食堂有红烧肉，打饭的队都排到门口了。",{dad:1},"排队限制"),msgD(0,"早上给你装的苹果带上了吧？",{apple:1},"可用食物"),msgD(1,b.mix>=2?"昨天不是说手边有的搭着吃嘛。我肉加苹果，也是一顿。":"我想打份红烧肉，饭得去另一个窗口。",b.mix>=2?{mix:1,apple:2}:{dad:1},"旧话影响今天"),msgD(2,"爸，盖饭那边不是还有个小菜窗口吗？",{greens:2,dad:1},"另一条可行路径")];
 return [msgD(0,b.many>=2?"你们昨天说一顿要吃好几种，我把面条弄丰富点。":"中午一起吃吧，我打算下一锅面，省得分开做。",{mom:1},"妈妈偏好省事"),msgD(1,b.many>=2?"葱花、芝麻、辣椒、香菜，四种了。":b.mix>=2?"冰箱有啥就凑一起，跟前天说的一样。":"那我要放点辣椒油。",b.many>=2?{many:2,potVeg:-1}:{mix:1},"爸爸借用旧观念"),msgD(2,"我下午得回学校，吃完就走。",{share:1},"女儿赶时间"),msgD(0,v===0?"冰箱还有一把青菜、两个鸡蛋。":"青菜昨天用完了，冷冻层好像还有菠菜。鸡蛋还剩两个。",{potVeg:2,potEgg:1},"现有食材")]}
-function repliesD(st){let b=st.B,d=st.day,v=st.seed;if(d===0)return [msgD(2,b.egg>=2?"楼下有茶叶蛋，买一个还挺顺路。":"我看看吧，楼下便利店就在门口。",{egg:1},"可行的顺路选择"),msgD(2,v===0?"小番茄也有，食堂隔壁，我同学说能帮我看会儿位置。":"小番茄卖完了，食堂又得绕一圈，我十二点半还要打印。",v===0?{tomato:2,meal:1}:{girl:1},"时间与库存"),msgD(1,b.mix>=2?"这办法我也能用，中午不用排两次队了。":"我中午看看食堂有什么。",b.mix>=2?{mix:1,apple:1}:{dad:1},"父亲听到并借用")];if(d===1)return [msgD(1,v===0?"盖饭那边也排队，红烧肉窗口还剩几份。":"盖饭窗口倒是没什么人，旁边小菜也有。",v===0?{apple:1}:{greens:2},"排队差异"),msgD(2,"苹果下午吃也行吧，你午饭又不是非得用上它。",{apple:-2,dad:1},"女儿补充条件"),msgD(0,b.many>=2?"你们都说种类多好，那明天我做个什锦面。":"那明天我下一锅面，大家都省事。",b.many>=2?{many:1,mom:1}:{mom:1},"妈妈记住群聊内容")];return [msgD(0,v===0?"鸡蛋可以打进去，青菜也好洗。":"冷冻菠菜找到了，直接下锅倒也方便。",{potEgg:1,potVeg:1},"备餐可行性"),msgD(1,b.many>=2?"那我再放点花椒，今天这碗有六七样了。":"我就想吃口面，辣椒油我自己加。",b.many>=2?{many:1,potVeg:-1}:{share:1},"调味料被当成食物种类"),msgD(2,"我可以自己拿个蛋，反正下午要赶回去。",{potEgg:1,share:1},"自主选择")]}
+function repliesD(st){let b=st.B,d=st.day,v=st.seed,a=st.lastAdvice;
+ if(d===0){
+ let first=a==="meal"?(v===0?"我问同学了，她正好要来图书馆，可以帮我看座。":"我同学还没来呢，出去怕位置没了。"):a==="later"?"那我先吃包子，下午打印完再看看。":a==="egg"?"楼下便利店有茶叶蛋，去一趟倒是很快。":b.egg>=2?"楼下有茶叶蛋，买一个还挺顺路。":"我看看吧，楼下便利店就在门口。";
+ return [msgD(2,first,{egg:1},"可行的顺路选择"),msgD(2,v===0?"小番茄也有，食堂就在隔壁。我同学说能帮我看会儿位置。":"小番茄卖完了，食堂又得绕一圈，我十二点半还要打印。",v===0?{tomato:2,meal:1}:{girl:1},"时间与库存"),msgD(1,b.mix>=2?"我以前赶时间也是先吃手边的，剩下的有空再说。":"我中午看看食堂有什么。",b.mix>=2?{mix:1,apple:1}:{dad:1},"父亲听到并借用")];
+ }
+ if(d===1){
+ let first=a==="noodle"?(v===0?"面档倒是不排队。可我今天本来想吃红烧肉。":"面档今天人也不少，还是盖饭快些。"):a==="basic"?"饭在另一个窗口，要不我直接打个盖饭？":v===0?"盖饭那边也排队，红烧肉窗口还剩几份。":"盖饭窗口倒是没什么人，旁边小菜也有。";
+ return [msgD(1,first,v===0?{apple:1,quick:1}:{greens:2},"排队差异"),msgD(2,"苹果下午吃也行吧，你午饭又不是非得用上它。",{apple:-2,dad:1},"女儿补充条件"),msgD(0,b.many>=2?"你们都说一顿要吃好几样，那明天我做个什锦面。":"那明天我下一锅面，大家都省事。",b.many>=2?{many:1,mom:1}:{mom:1},"妈妈记住群聊内容")];
+ }
+ let first=a==="side"?"那我还得多拿两个碗，算了，菜可以单独放。":a==="clarify"?"葱花和辣椒另放吧，面里还能加点菜。":v===0?"鸡蛋可以打进去，青菜也好洗。":"冷冻菠菜找到了，直接下锅倒也方便。";
+ return [msgD(0,first,{potEgg:1,potVeg:1},"备餐可行性"),msgD(1,b.many>=2?"那我再放点花椒，今天这碗有六七样了。":"我就想吃口面，辣椒油我自己加。",b.many>=2?{many:1,potVeg:-1}:{share:1},"调味料被当成食物种类"),msgD(2,"我可以自己拿个蛋，反正下午要赶回去。",{potEgg:1,share:1},"自主选择")];
+}
 function applyD(st,e){for(const [k,v] of Object.entries(e))st.B[k]=(st.B[k]||0)+v}
 function pickD(c){return c.sort((a,b)=>b[1]-a[1])[0][0]}
-function mealsD(st){const b=st.B,v=st.seed,d=st.day;let ids;if(d===0)ids=[pickD([["ms",5+b.mom],["mt",3],["mb",2+b.mix]]),pickD([["dn",5+b.mix],["ds",4+b.dad+b.greens]]),pickD([["gb",5+(v===1?1:0)-b.girl],["ge",3+b.egg+b.girl*.3],["gt",v===0?1+b.egg*.5+b.tomato+b.girl*.3:-50],["gs",v===0?1+b.meal+b.girl*.5:-50]])];else if(d===1)ids=[pickD([["ms",4+b.mom],["mt",5-b.mom]]),pickD([["da",4+b.apple+b.mix*.7+(v===0?2:0)],["ds",4+b.greens+b.dad+(v===1?2:-1)],["dm",3+b.apple+b.mix],["dn",4]]),pickD([["gs",5+b.meal+b.girl*.5],["gl",4+(v===1?1:0)],["ge",3+b.egg*.3]])];else{let egg=b.potEgg>=3,veg=b.potVeg>=(v===0?2:3),base=egg&&veg?"pf":egg?"pe":veg?"pv":"pp";ids=[base,pickD([[base,5+b.mom*.3],["ps",2+b.share+b.potEgg*.5],["pa",3+b.mix*.5+b.many*.5]]),pickD([[base,4+b.mom*.3],["ps",2+b.share+b.egg*.4],["pf",1+b.potVeg*.5+b.potEgg*.5+b.girl*.3]])];if(!egg||!veg){if(ids[2]==="pf")ids[2]=egg?"pe":veg?"pv":"pp"}}
+function mealsD(st){const b=st.B,v=st.seed,d=st.day;let ids;if(d===0)ids=[pickD([["ms",5+b.mom],["mt",3],["mb",2+b.mix]]),pickD([["dn",5+b.mix],["ds",4+b.dad+b.greens]]),pickD([["gb",5+(v===1?1:0)-b.girl],["ge",3+b.egg+b.girl*.3],["gt",v===0?1+b.egg*.5+b.tomato+b.girl*.3:-50],["gs",v===0?1+b.meal+b.girl*.5:-50]])];else if(d===1)ids=[pickD([["ms",4+b.mom],["mt",5-b.mom]]),pickD([["da",4+b.apple+b.mix*.7+(v===0?2:0)],["ds",4+b.greens+b.dad+(v===1?2:-1)],["pm",v===0?3+b.quick+b.dad*.4:1+b.quick*.4],["dm",3+b.apple+b.mix],["dn",4]]),pickD([["gs",5+b.meal+b.girl*.5],["gl",4+(v===1?1:0)],["ge",3+b.egg*.3]])];else{let egg=b.potEgg>=3,veg=b.potVeg>=(v===0?2:3),base=egg&&veg?"pf":egg?"pe":veg?"pv":"pp";ids=[base,pickD([[base,5+b.mom*.3],["ps",2+b.share+b.potEgg*.5],["pa",3+b.mix*.5+b.many*.5]]),pickD([[base,4+b.mom*.3],["ps",2+b.share+b.egg*.4],["pf",1+b.potVeg*.5+b.potEgg*.5+b.girl*.3]])];if(!egg||!veg){if(ids[2]==="pf")ids[2]=egg?"pe":veg?"pv":"pp"}}
 return ids.map(id=>({id,name:F[id][0],tags:F[id][1],score:[..."spv"].filter(x=>F[id][1].includes(x)).length}))}
 function resultD(st){let per=[0,1,2].map(p=>st.days.reduce((s,d)=>s+d[p].score,0));let total=per.reduce((a,b)=>a+b,0);return {per,total,pass:total>=23&&per.every(x=>x>=7)}}
 function cloneD(x){return JSON.parse(JSON.stringify(x))}
@@ -77,12 +114,12 @@ function dstart(){dr=freshD(dm.attempt%2,dm.up);dr.logs=openingD(dr);dr.from=0;d
 function dmsg(m,i){let me=m.p===3;return '<div class="msg '+(me?'me':'')+'"><div class="avatar">'+(me?'助':dshort[m.p])+'</div><div><div class="name">'+(me?'管家':dnames[m.p])+'</div><div class="bubble">'+m.t+'</div>'+(!me&&(m.liked||i>=dr.from)?'<button class="like '+(m.liked?'chosen':'')+'" '+(m.liked||!dr.likes||i<dr.from?'disabled':'onclick="dlike('+i+')"')+' aria-label="点赞">'+(m.liked?'♥ 已点赞':'♡')+'</button>':'')+'</div></div>'}
 function dplay(){let ops=optsD(dr);let clues='';if(dm.up.includes('history')&&dr.day>0){let prev=dr.days[dr.day-1];clues+='<div class="receipt"><small>已授权 · 昨日午餐记录</small>'+prev.map((m,i)=>'<p class="small-meal">'+dnames[i]+'：'+m.name+'</p>').join('')+'</div>'}if(dm.up.includes('context')){let c=dr.day===0?(dr.seed===0?'下午同学可以帮忙看座位。':'12:30 有打印任务。'):dr.day===1?(dr.seed===0?'盖饭窗口今日也排长队。':'盖饭窗口今日较空。'):(dr.seed===0?'冰箱：青菜、两个鸡蛋。':'冰箱：冷冻菠菜、两个鸡蛋。');clues+='<div class="receipt"><small>已授权 · 日程 / 库存</small><p>'+c+'</p></div>'}
 app.innerHTML='<div class="layout"><aside class="side"><small>DAY 0'+(dr.day+1)+' / 03</small><h2>'+dtitles[dr.day]+'</h2><p>发言 <b>'+dr.words+'</b>　♡ <b>'+dr.likes+'</b></p><div class="divider"></div><small>后台记录 '+dr.days.length*3+'/9 份午餐</small><p class="muted">结果在委托结束后公开。</p>'+clues+'</aside><section><div class="row"><div><small>'+['周一 · 11:36','周三 · 11:48','周末 · 10:52'][dr.day]+'</small><h2 style="margin:6px 0">相亲相爱一家人（4）</h2></div><span class="badge">发言 '+dr.words+' · ♡ '+dr.likes+'</span></div><div class="chat" id="dchat">'+dr.logs.map(dmsg).join('')+'</div><div class="options">'+ops.map((o,i)=>'<button '+(!dr.words?'disabled':'onclick="dsay('+i+')"')+'>'+o[0]+'</button>').join('')+'<button onclick="dwait()">继续观察 →</button></div></section></div>';let el=$('dchat');el.scrollTop=dr.phase===0?0:el.scrollHeight}
-function dlike(i){if(!dr||!dr.likes||i<dr.from)return;let m=dr.logs[i];if(!m||m.p===3||m.liked)return;dr.likes--;m.liked=true;applyD(dr,m.e);dr.actions.push({day:dr.day,text:'点赞：'+m.t,kind:m.hint});dstep()}
-function dsay(i){if(!dr||!dr.words)return;let o=optsD(dr)[i];if(!o)return;dr.words--;dr.logs.push(msgD(3,o[0]));applyD(dr,o[1]);dr.actions.push({day:dr.day,text:o[0],kind:o[2]});dstep()}
-function dwait(){if(!dr)return;dstep()}
+function dlike(i){if(!dr||!dr.likes||i<dr.from)return;let m=dr.logs[i];if(!m||m.p===3||m.liked)return;dr.likes--;dr.lastAdvice=null;m.liked=true;applyD(dr,m.e);dr.actions.push({day:dr.day,text:'点赞：'+m.t,kind:m.hint});dstep()}
+function dsay(i){if(!dr||!dr.words)return;let o=optsD(dr)[i];if(!o)return;dr.words--;dr.lastAdvice=o[3];dr.logs.push(msgD(3,o[0]));applyD(dr,o[1]);dr.actions.push({day:dr.day,text:o[0],kind:o[2]});dstep()}
+function dwait(){if(!dr)return;dr.lastAdvice=null;dstep()}
 function dstep(){if(dr.phase===0){dr.from=dr.logs.length;dr.phase=1;dr.logs.push(...repliesD(dr));dplay()}else{let d=dr.day;let record=mealsD(dr);dr.days.push(record);dr.reports.push({mix:dr.B.mix,many:dr.B.many,share:dr.B.share});dinterval(d)}}
 function dinterval(day){let line=day===0?(dr.days[0][2].id==='gb'?'女儿：包子吃完了，继续写作业。':'女儿：午饭搞定了，去打印了。'):day===1?(dr.days[1][1].id==='da'?'老爸：今天苹果也派上用场了。':'老爸：吃完了，下午还有会。'):'老妈：都吃完了？我收碗了。';app.innerHTML='<div class="end"><small>DAY 0'+(day+1)+' · 午后</small><h1>午餐已记录</h1><div class="receipt">'+line+'</div><p class="muted">后台已记录 '+dr.days.length*3+'/9 份午餐。</p>'+(dm.up.includes('history')?'<div class="data-grid">'+dr.days[day].map(dmeal).join('')+'</div>':'')+'<div class="actions"><button class="primary" onclick="dnext()">'+(day===2?'查看委托结果':'下一天')+' →</button></div></div>'}
-function dnext(){if(dr.day===2){dsettle();return}dr.day++;dr.phase=0;dr.logs=openingD(dr);dr.from=0;dplay()}
+function dnext(){if(dr.day===2){dsettle();return}dr.day++;dr.phase=0;dr.lastAdvice=null;dr.logs=openingD(dr);dr.from=0;dplay()}
 function dmeal(m,i){return '<div class="receipt"><small>'+dnames[i]+'</small><p>'+m.name+'</p><div class="row">'+dkeys.map((k,j)=>'<small>'+ (m.tags.includes(k)?'✓ ':'○ ')+dlabels[j]+'</small>').join('')+'</div><b>'+m.score+'/3</b></div>'}
 function dsettle(){if(dr.settled)return;dr.settled=true;let z=resultD(dr),newFound=[];if(dr.reports[0].mix>=2&&dr.days[1][1].id!=='ds')newFound.push('顺手搭配 → 苹果代菜');if(dr.reports[2].many>=2)newFound.push('食物多样 → 数调味料');if(dr.days[0][2].id==='ge'&&dr.seed===1)newFound.push('时间限制 → 合理建议也只能部分落实');let gained=newFound.filter(x=>!dm.found.includes(x));dm.found.push(...gained);let reward=Math.max(0,z.total-dm.best)+gained.length+(z.pass&&!dm.passed?3:0);dm.best=Math.max(dm.best,z.total);dm.passed=dm.passed||z.pass;dm.xp+=reward;dm.attempt++;dsave();app.innerHTML='<div class="end" style="max-width:850px"><small>委托结算 · 午餐搭配</small><h1>'+(z.pass?'委托达成':'仍有改善空间')+'</h1><div class="receipt"><div class="big-number">'+z.total+'/27</div><small>目标 23 · 每人至少 7</small></div>'+z.per.map((v,i)=>'<div class="check"><b>'+dnames[i]+'</b><span>'+v+'/9 '+(v>=7?'✓':'△')+'</span></div>').join('')+'<h2 style="margin-top:24px">真实餐食</h2>'+dr.days.map((d,i)=>'<p><b>DAY 0'+(i+1)+'</b> · '+dtitles[i]+'</p><div class="data-grid">'+d.map(dmeal).join('')+'</div>').join('')+(newFound.length?'<div class="receipt"><b>认知回响</b>'+newFound.map(x=>'<p>'+x+'</p>').join('')+'</div>':'')+'<details><summary>查看介入记录</summary>'+dr.actions.map(a=>'<p>DAY '+(a.day+1)+' · '+a.text+'<br><small>'+a.kind+'</small></p>').join('')+'</details><p>✦ +'+reward+' 经验 · 历史最佳 '+dm.best+'/27</p><p class="muted">模拟结果；类别出现不代表实际营养达标。每次重玩有不同的时间与食材条件。</p><div class="actions"><button onclick="dstart()">再试一次</button><button onclick="dshop()">权限与能力</button><button class="primary" onclick="dhome()">返回日历</button></div></div>'}
 const dups=[['history','饮食记录授权','查看前一日实际午餐与当日反馈',4],['context','生活信息授权','提前查看日程或食材库存',4],['talk','表达机会','每局增加一次发言',5],['heart','轻量回应','每局增加一次点赞',4]];
