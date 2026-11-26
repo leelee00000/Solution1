@@ -7,7 +7,7 @@ const N=['老妈','老爸','女儿','管家'],A=['妈','爸','女','助'];
 M.ju=['橙汁（示意）','',['orange']];M.fr=['鲜橙','',['orange']];
 const cases=[
 {p:1,meal:'so',time:'周一 12:42',diag:'排骨汤配饭，肉量少，汤底用盐未知。',lines:[[1,'今天食堂排骨汤不错，炖得挺浓的。'],[0,'排骨也吃了吧？'],[1,'肉柴得很，剩了几块。汤我倒喝完了。','a'],[1,'炖了那么久，营养多少都进汤里了吧。','b'],[2,'爸你不是一直嫌排骨塞牙嘛。','c'],[1,'嗯，食堂那种大块的我不爱嚼。','d'],[0,'今天下班我顺路买菜。']],tags:[['重汤轻料','belief','a','b'],['嫌肉柴','motive','c','d'],['软嫩优先','motive','d','e']],fact:'炖煮时有些营养会进入汤，但相当一部分蛋白质仍留在肉里。汤的鲜味不能说明蛋白质含量。',practical:'嫌排骨柴的话，嫩豆腐、蒸蛋也能提供蛋白质，不必硬吃不喜欢的肉。',pair:'汤可以照喝。你嫌排骨柴，不妨选嫩豆腐或蒸蛋补充蛋白质；喝汤不能代替吃固体食材。',resist:'肉有营养我知道，可食堂那肉太柴了。讲这个我也不一定吃得下。',follow:'嫩豆腐倒是挺好入口的，食堂也常有。',accept:'豆腐我倒是吃得惯，碰上有豆腐的窗口我试试。',later:'后来食堂有嫩豆腐，爸爸选了米饭、豆腐和青菜。',better:'to',stay:'爸爸仍然买了排骨汤配饭，还没找到合口味的替代搭配。'},
-{p:0,meal:'p',time:'周二 18:20',diag:'白粥、咸菜，食材较单一；咸菜可能含较多钠。',lines:[[0,'这两天吃点清淡的，晚上就煮了白粥。','a'],[2,'妈，冰箱还有鱼，清蒸也挺好。'],[0,'鱼明天再吃吧。晚上不想吃那么多东西，粥喝着舒服。','c'],[1,'你粥里配的咸菜不是还挺咸的？'],[0,'就一小碟。今天没炒菜，也没用什么油，心里踏实。','b'],[0,'这会儿胃口一般，不想再做一锅。','d']],tags:[['清淡重少油','belief','a','b'],['胃口一般','motive','c','d'],['不想另开锅','motive','d','e']],fact:'清淡饮食不只是少油，还要关注盐和食物搭配。白粥配咸菜不一定比清蒸鱼和青菜更符合清淡饮食。',practical:'胃口一般时，粥可以留着。等胃口好些，按情况配些软嫩的蛋、豆腐或青菜。',pair:'粥照喝，不用勉强换成鱼。等胃口好些，可以把蛋和青菜放进粥里，少放咸菜，也能做得清淡。',resist:'我也不是说鱼不健康，就是这会儿不想吃鱼。',follow:'要是跟粥放在一个锅里煮，倒是省事。',accept:'等胃口好点我煮个鸡蛋青菜粥吧，今天先喝原来的。',later:'妈妈打算等胃口恢复再调整，今天没有立刻改餐。',better:'p',stay:'妈妈今天仍然喝白粥。仅凭这一顿不能判断她的长期饮食。'},
+{p:0,meal:'p',time:'周二 18:20',diag:'白粥、咸菜，食材较单一；咸菜可能含较多钠。',lines:[[0,'这两天吃点清淡的，晚上就煮了白粥。','a'],[2,'妈，冰箱还有鱼，清蒸也挺好。'],[0,'鱼明天再吃吧。晚上不想吃那么多东西，粥喝着舒服。','c'],[1,'你粥里配的咸菜不是还挺咸的？'],[0,'就一小碟咸菜嘛。今天没用油，怎么也算清淡吧。','b'],[0,'这会儿胃口一般，不想再做一锅。','d']],tags:[['清淡重少油','belief','a','b'],['胃口一般','motive','c','d'],['不想另开锅','motive','d','e']],fact:'清淡饮食不只是少油，还要关注盐和食物搭配。白粥配咸菜不一定比清蒸鱼和青菜更符合清淡饮食。',practical:'胃口一般时，粥可以留着。等胃口好些，按情况配些软嫩的蛋、豆腐或青菜。',pair:'粥照喝，不用勉强换成鱼。等胃口好些，可以把蛋和青菜放进粥里，少放咸菜，也能做得清淡。',resist:'我也不是说鱼不健康，就是这会儿不想吃鱼。',follow:'要是跟粥放在一个锅里煮，倒是省事。',accept:'等胃口好点我煮个鸡蛋青菜粥吧，今天先喝原来的。',later:'妈妈打算等胃口恢复再调整，今天没有立刻改餐。',better:'p',stay:'妈妈今天仍然喝白粥。仅凭这一顿不能判断她的长期饮食。'},
 {p:2,meal:'ju',time:'周三 10:15',diag:'橙汁饮品，实际份量和配方未知，不能等同完整鲜果。',lines:[[2,'早八路上买了瓶橙汁，今天的水果任务完成。','a'],[1,'不是昨天还买了橙子吗？'],[2,'那个得剥皮，包里又没地方放。','c'],[2,'这瓶写着100%果汁。我觉得跟吃橙子差不多吧。','b'],[0,'橙子我给你留着。'],[2,'早上就几分钟，不想拿一手黏糊糊的东西。','d']],tags:[['果汁算鲜果','belief','a','b'],['携带方便','motive','c','d'],['不想弄脏手','motive','d','e']],fact:'即使是100%果汁，也不能代替完整鲜果。榨汁通常损失部分纤维，而且喝下果汁往往比吃完整水果更快。',practical:'赶课可以带洗好的苹果，或者把水果留到下午吃，不用非在早上完成。',pair:'100%果汁也不是完整鲜果的等价替代。赶课又怕弄脏手的话，带洗好的苹果或者下午再吃水果，可能更省事。',resist:'我又不是不知道水果好。早八没时间剥橙子，喝果汁比较快。',follow:'下午在图书馆倒有时间吃，苹果也不太会弄脏手。',accept:'那我下午带苹果吧。早上偶尔还是会买果汁。',later:'隔天女儿把鲜果留到下午吃，没有承诺从此不喝果汁。',better:'fr',stay:'女儿赶课时仍然买了果汁，便利性还没有解决。'}
 ];
 
@@ -25,19 +25,20 @@ const hypotheses=[
 {id:'chew',p:1,label:'嫌肉柴',val:'neutral',need:[['0:c','0:d'],['0:a','3:a']],fact:'你不爱嚼柴肉，这其实是口感和便利的问题，不必硬吃排骨。嫩豆腐、蒸蛋也能提供蛋白质。',topic:'chew'},
 {id:'soft',p:1,label:'接受豆制品',val:'positive',need:[['3:c','3:d'],['0:e','3:d']],fact:'嫩豆腐吃得惯就保留这个选择，鱼、蛋、肉、豆制品可以合理轮换。',topic:'chew'},
 {id:'no_meat',p:1,label:'不吃肉类',val:'neutral',need:[],counter:['3:d'],fact:'如果你确实不想吃肉，也可以考虑蛋、奶、豆制品等来源。',topic:'chew'},
-{id:'light',p:0,label:'清淡重少油',val:'negative',need:[['1:a','1:b']],counter:['4:b','4:d'],fact:cases[1].fact,topic:'light'},
-{id:'comfort',p:0,label:'胃口一般',val:'neutral',need:[['1:c','1:d']],fact:cases[1].practical,topic:'comfort'},
+{id:'light',p:0,label:'清淡只看油',val:'negative',need:[['1:a','1:b']],counter:['4:b'],fact:cases[1].fact,topic:'light'},
+{id:'comfort',p:0,label:'当晚胃口一般',val:'neutral',need:[['1:c','1:d']],fact:cases[1].practical,topic:'comfort'},
 {id:'onepot',p:0,label:'一锅省事',val:'neutral',need:[['1:d','4:c'],['1:d','1:e']],fact:'一个锅能少洗碗。胃口合适的时候，把蛋、豆腐、青菜放到粥里一起煮，既省事也能丰富食材。',topic:'comfort'},
 {id:'balance',p:0,label:'清淡也多样',val:'positive',need:[['4:a','4:b'],['4:a','4:d']],fact:'今天清淡又有蛋和菜，这种搭配可以继续保留。油盐适量与食材多样并不冲突。',topic:'light'},
-{id:'juice',p:2,label:'果汁算鲜果',val:'negative',need:[['2:a','2:b'],['2:b','5:b']],fact:cases[2].fact,topic:'juice'},
+{id:'juice',p:2,label:'果汁算鲜果',val:'negative',need:[['2:a','2:b']],fact:cases[2].fact,topic:'juice'},
 {id:'carry',p:2,label:'携带方便',val:'neutral',need:[['2:c','2:d'],['2:c','5:c']],fact:cases[2].practical,topic:'carry'},
 {id:'fruit',p:2,label:'愿吃完整鲜果',val:'positive',need:[['5:a','5:d'],['2:e','5:a']],fact:'下午有时间吃鲜果，或者带个方便拿的苹果，这个办法挺适合你的节奏。',topic:'carry'},
 {id:'hatefruit',p:2,label:'不喜欢鲜果',val:'neutral',need:[],counter:['5:a','5:d'],fact:'如果是不喜欢鲜果的口感，也可以试试不同品种。',topic:'carry'}
 ];
+hypotheses.push({id:'no_fish',p:0,label:'不喜欢鱼',val:'neutral',need:[],counter:['4:b'],fact:'如果你不喜欢鱼，也可以考虑其他蛋肉豆类。',topic:'comfort'});
 const byId=id=>hypotheses.find(h=>h.id===id), valName={negative:'负面',neutral:'中性',positive:'正面'}, actionName={negative:'纠正',neutral:'解释',positive:'强调'};
 let st;
 function getScene(x){return scenes[x.i]}
-function seedLines(i){return scenes[i].lines.map(([p,t,id],j)=>[p,t,i+':'+(id||'x'+j)])}
+function seedLines(i,x){let lines=scenes[i].lines.map(([p,t,id],j)=>[p,t,i+':'+(id||'x'+j)]);if(x&&i===3&&x.outcomes.chew?.practical)lines.push([1,'上次说的豆腐我记着了，改天试试那个窗口。',i+':echo']);if(x&&i===4&&(x.outcomes.comfort?.practical||x.outcomes.onepot?.practical))lines.push([0,'上回说一锅煮的办法我试了，倒真省事。',i+':echo']);if(x&&i===5&&x.outcomes.carry?.practical)lines.push([2,'上回说下午吃水果，我今天就是这么安排的。',i+':echo']);return lines}
 function make(){return {i:0,attention:3,lines:seedLines(0),past:[],evidence:{},marked:[],tags:[],selected:[],person:1,filter:'all',notice:'',history:[],used:[],outcomes:{},done:false}}
 function getLine(x,id){return x.lines.find(l=>l[2]===id)||x.past.flatMap(a=>a.lines).find(l=>l[2]===id)}
 function collectState(x,id){let l=getLine(x,id);if(!l||l[0]>=3||x.evidence[id])return false;x.evidence[id]={id,p:l[0],text:l[1],day:Number(id.split(':')[0])};x.notice='';return true}
@@ -48,7 +49,9 @@ function verify(x){let notices=[];for(let t of x.tags){if(t.checkAfter>x.i||t.st
 function draft(x){let ts=x.selected.map(id=>x.tags.find(t=>t.id===id)).filter(Boolean),hs=ts.map(t=>byId(t.id));if(!hs.length)return null;let p=hs[0].p;if(hs.some(h=>h.p!==p))return {blocked:true,text:'这次先和一位家人聊。',cost:0};return {p,ids:hs.map(h=>h.id),ts,hs,text:hs.map(h=>h.fact).join(' '),cost:hs.length,kind:hs.map(h=>actionName[h.val]).join('＋')}}
 function sendState(x){let d=draft(x);if(!d||d.blocked||x.attention<d.cost||d.ids.some(id=>x.used.includes(id)))return false;x.attention-=d.cost;x.used.push(...d.ids);x.lines.push([3,d.text]);let c=getScene(x),relevant=d.p===c.p,parts=[],log=[];
 for(let h of d.hs){let t=x.tags.find(t=>t.id===h.id),support=assess(h,t.ids),out=x.outcomes[h.id]||(x.outcomes[h.id]={talked:0,understood:false,reinforced:false,practical:false});out.talked++;
-if(support==='需修订'||!h.need.length){parts.push(h.p===1?'我没说不吃肉啊，就是那块太柴。':'我可没说不爱吃水果，赶时间而已。');log.push('人物否认了你的判断');continue}
+if(support==='需修订'||!h.need.length){parts.push(h.p===1?'我没说不吃肉啊，就是那块太柴。':h.p===0?'清蒸鱼我也喜欢，只是那天胃口一般。':'我可没说不爱吃水果，赶时间而已。');log.push('人物不认同你的判断');continue}
+if(support==='待验证'){parts.push(h.p===1?'你先别替我下结论，我也得看当天吃什么。':h.p===0?'你说的也不一定是我那天的意思。':'也不全是这么回事吧。');log.push('证据不足，人物保留意见');continue}
+if(h.id==='comfort'&&x.i>=4){parts.push('那天是胃口一般，今天已经好多了。');log.push('临时状态已变');continue}
 if(!relevant){parts.push(h.p===0?'我这会儿在忙，晚点再聊。':h.p===1?'我先把手上的事办完，吃饭时再说。':'我在上课，晚点看。');log.push('时机不合适');continue}
 if(h.val==='negative'){out.understood=true;parts.push(x.i<3?cases[x.i].resist:h.id==='light'?'我现在清蒸鱼也吃，你别把我喝粥当成顿顿只喝粥呀。':h.id==='soup'?'汤还是爱喝，肉太柴的话我就换豆腐。':'我知道不完全一样，但早上还是要方便。');log.push('理解不等于行动')}
 if(h.val==='neutral'){out.practical=true;parts.push(x.i<3?cases[x.i].follow:h.p===1?'有合适的嫩豆腐我就换，不一定每天都有。':h.p===0?'一锅煮倒是可以，看当天胃口。':'苹果好带，别的水果我下午再吃。');log.push('回应生活条件')}
@@ -57,7 +60,7 @@ if(h.val==='positive'){out.reinforced=true;parts.push(h.p===0?'这个我本来�
 for(let [j,t] of [...new Set(parts)].entries())x.lines.push([d.p,t,x.i+':r'+x.used.length+'_'+j]);
 if(relevant&&x.i<3&&!getLine(x,x.i+':e'))x.lines.push([d.p,cases[x.i].follow,x.i+':e']);
 x.lines.push([9,'注意力 −'+d.cost+' · '+x.attention+'/3']);x.history.push({day:x.i,ids:d.ids,log});x.selected=[];return true}
-function advance(x){x.past.push({i:x.i,lines:x.lines.slice()});x.i++;x.marked=[];x.selected=[];x.used=[];x.notice='';if(x.i===scenes.length){x.lines=[];x.lines.push(...verify(x));x.done=true;return x}x.attention=3;x.person=scenes[x.i].p;x.lines=seedLines(x.i);x.lines.unshift(...verify(x));return x}
+function advance(x){x.past.push({i:x.i,lines:x.lines.slice()});x.i++;x.marked=[];x.selected=[];x.used=[];x.notice='';if(x.i===scenes.length){x.lines=[];x.lines.push(...verify(x));x.done=true;return x}x.attention=3;x.person=scenes[x.i].p;x.lines=seedLines(x.i,x);x.lines.unshift(...verify(x));return x}
 function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function collect(id){collectState(st,id);render(true)}
 function mark(id){if(!markState(st,id))st.notice='每次最多选择3条证据。';render(true)}
