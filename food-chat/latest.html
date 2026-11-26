@@ -527,7 +527,7 @@ if(fact&&focus!==fact&&(c.k[fact[4]]||0)<65)result.push(fact);
 if(!opts.length&&bound&&focus!==bound)result.push(bound);
 return result};
 // A question has no nutritional impact; it reveals a character-authored answer and may unlock clues.
-const strategyAct=wact;wact=function(s,op){if(op.type==='say'&&(op.ids||[]).some(i=>s.points[i]?.[3]==='探问')){s.words--;let q=s.points[op.ids.find(i=>s.points[i]?.[3]==='探问')];s.trace.push({i:s.i,text:q[1]});return}return strategyAct(s,op)};
+const strategyAct=wact;wact=function(s,op){if(op.type==='say'&&(op.ids||[]).some(i=>s.points[i]?.[3]==='探问')){s.words--;let q=s.points[op.ids.find(i=>s.points[i]?.[3]==='探问')];s.trace.push({i:s.i,text:voiceLine(s,q)});return}return strategyAct(s,op)};
 const strategyReply=wreply;wreply=function(s,ids){let q=ids.map(i=>s.points[i]).find(x=>x[3]==='探问');if(q){let p=E[s.i].p,txt=q[7].answer;if(s.Vseen.has(vnorm(txt)))return [];s.Vseen.add(vnorm(txt));return [{p,text:txt}]}return strategyReply(s,ids)};
 const strategyTags=vtags;vtags=function(q){if(q[3]==='探问')return [6];return strategyTags(q)};
 const strategyCompose=wcompose;wcompose=function(s,ids){return ids.map(i=>{let t=s.points[i][1];return /[。！？?!]$/.test(t)?t:t+'。'}).join('')};
@@ -535,7 +535,7 @@ const strategyCompose=wcompose;wcompose=function(s,ids){return ids.map(i=>{let t
 /* One exploratory question per meal; any follow-up still costs one speech. */
 const nextQuestionRecord=wrecord;wrecord=function(s){s.asked=false;return nextQuestionRecord(s)};
 const nextQuestionPoints=wpoints;wpoints=function(s,id){let points=nextQuestionPoints(s,id);return s.asked?points.filter(q=>q[3]!=='探问'):points};
-const nextQuestionSay=wsay;wsay=function(){if(!wr||wr.done||wr.i>=12||!wr.words||wr.shown<wr.lines.length||!wr.selected.length)return;let q=wr.points[wr.selected[0]];if(q[3]!=='探问')return nextQuestionSay();if(wr.asked)return;let ids=wr.selected.slice();wact(wr,{type:'say',ids});let replies=wreply(wr,ids);wr.asked=true;wr.lines.push({p:3,text:q[1]});wr.shown=wr.lines.length;wr.lines.push(...replies);let fix=wr.points.find(x=>x[6]);wr.points=wpoints(wr,wr.lines.find(x=>x.photo).photo);if(fix)wr.points=[...wr.points.filter(x=>x[3]!=='知识'),fix];wr.selected=[];wr.done=false;wplay();if(wmode&&wr.shown<wr.lines.length)wtimer=setTimeout(wreveal,1000)};
+const nextQuestionSay=wsay;wsay=function(){if(!wr||wr.done||wr.i>=12||!wr.words||wr.shown<wr.lines.length||!wr.selected.length)return;let q=wr.points[wr.selected[0]];if(q[3]!=='探问')return nextQuestionSay();if(wr.asked)return;let ids=wr.selected.slice();wact(wr,{type:'say',ids});let replies=wreply(wr,ids);wr.asked=true;wr.lines.push({p:3,text:voiceLine(wr,q)});wr.shown=wr.lines.length;wr.lines.push(...replies);let fix=wr.points.find(x=>x[6]);wr.points=wpoints(wr,wr.lines.find(x=>x.photo).photo);if(fix)wr.points=[...wr.points.filter(x=>x[3]!=='知识'),fix];wr.selected=[];wr.done=false;wplay();if(wmode&&wr.shown<wr.lines.length)wtimer=setTimeout(wreveal,1000)};
 
 /* Four choices, one relationship variable, discovered character dossier. */
 const SHORT_CLUES={ease:'省事派',price:'精打细算',warm:'爱热乎',soup:'爱喝汤',egg:'爱加蛋',light:'爱清爽',meat:'爱吃肉',sweet:'甜品庆功',care:'爱投喂',autonomy:'自己来',busy:'赶时间',appetite:'没胃口',tired:'犯困'};
@@ -633,9 +633,9 @@ function echoTopic(k){return WK.find(x=>x.id===k)?.name||k}
 function echoMyth(k){return MIS_SHORT[k]||KR.find(x=>x.id===k)?.name||k}
 function echoStamp(n){return '第'+(Math.floor(n.i/2)+1)+'天 · '+(n.i%2?'晚餐':'午餐')}
 function echoObserveMis(s,p,id,text){let old=s.echo.events.filter(e=>e.p===p&&e.myth===id&&e.kind==='mis').at(-1),fix=s.echo.events.filter(e=>e.p===p&&e.myth===id&&e.kind==='fix').at(-1);if(old&&(!fix||old.id>fix.id))return old;let rule=KR.find(x=>x.id===id),parent=s.echo.events.filter(e=>e.p===p&&e.kind==='emerge'&&e.myth===id).at(-1);return echoAdd(s,{kind:'mis',p,myth:id,topics:rule.parents,text,links:parent?[parent.id]:[]})}
-function echoChanges(s,before,kind,text,qs,source){for(let p of wmembers(s)){let c=s.C[p],b=before[p];for(let k of VKN){let f=(c.k[k]||0)-(b.k[k]||0),u=(c.u[k]||0)-(b.u[k]||0),a=(c.a[k]||0)-(b.a[k]||0);if(f+u+a<1)continue;let key=p+':'+k;if(!s.echo.baselines[key])s.echo.baselines[key]={k:b.k[k]||0,u:b.u[k]||0,a:b.a[k]||0,first:s.i};let relevant=qs.find(q=>q[3]==='知识'&&(q[4]===k||q[6]&&KR.find(r=>r.id===q[6])?.parents.includes(k)));if(!relevant)continue;let src=kind==='relay'?source:null;let prev=s.echo.events.filter(e=>e.p===p&&e.topic===k&&['learn','relay'].includes(e.kind)).at(-1);echoAdd(s,{kind,p,topic:k,text:kind==='relay'?text:relevant[1],boundary:!!relevant[5],from:src??3,heard:text,links:prev?[prev.id]:[],delta:[f,u,a]})}
-for(let r of KR){let old=b.m[r.id]||0,now=c.m[r.id]||0;if(old>=40&&now<40&&s.correctionResult?.p===p&&s.correctionResult?.id===r.id&&['learn','relay','experience'].includes(kind)){let key=p+':mis:'+r.id;if(!s.echo.baselines[key])s.echo.baselines[key]={value:old,first:s.i};let mis=s.echo.events.filter(e=>e.p===p&&e.myth===r.id&&e.kind==='mis').at(-1),learn=s.echo.events.filter(e=>e.p===p&&e.kind==='learn'&&r.parents.includes(e.topic)&&e.i===s.i).at(-1);let q=qs.find(x=>x[6]===r.id);echoAdd(s,{kind:'fix',p,myth:r.id,topics:r.parents,text:q?.[1]||r.fix,links:[mis?.id,learn?.id].filter(x=>x!==undefined),delta:[old,now]})}}}}
-const echoAct=wact;wact=function(s,op){let before=echoBefore(s),qs=op.type==='say'?(op.ids||[op.index]).map(i=>s.points[i]).filter(Boolean):[];echoAct(s,op);if(qs.some(q=>q[3]==='知识'))echoChanges(s,before,'learn',qs.map(q=>q[1]).join(' '),qs,3)};
+function echoChanges(s,before,kind,text,qs,source){for(let p of wmembers(s)){let c=s.C[p],b=before[p];for(let k of VKN){let f=(c.k[k]||0)-(b.k[k]||0),u=(c.u[k]||0)-(b.u[k]||0),a=(c.a[k]||0)-(b.a[k]||0);if(f+u+a<1)continue;let key=p+':'+k;if(!s.echo.baselines[key])s.echo.baselines[key]={k:b.k[k]||0,u:b.u[k]||0,a:b.a[k]||0,first:s.i};let relevant=qs.find(q=>q[3]==='知识'&&(q[4]===k||q[6]&&KR.find(r=>r.id===q[6])?.parents.includes(k)));if(!relevant)continue;let src=kind==='relay'?source:null;let prev=s.echo.events.filter(e=>e.p===p&&e.topic===k&&['learn','relay'].includes(e.kind)).at(-1);echoAdd(s,{kind,p,topic:k,text:kind==='relay'?text:voiceLine(s,relevant),boundary:!!relevant[5],from:src??3,heard:text,links:prev?[prev.id]:[],delta:[f,u,a]})}
+for(let r of KR){let old=b.m[r.id]||0,now=c.m[r.id]||0;if(old>=40&&now<40&&s.correctionResult?.p===p&&s.correctionResult?.id===r.id&&['learn','relay','experience'].includes(kind)){let key=p+':mis:'+r.id;if(!s.echo.baselines[key])s.echo.baselines[key]={value:old,first:s.i};let mis=s.echo.events.filter(e=>e.p===p&&e.myth===r.id&&e.kind==='mis').at(-1),learn=s.echo.events.filter(e=>e.p===p&&e.kind==='learn'&&r.parents.includes(e.topic)&&e.i===s.i).at(-1);let q=qs.find(x=>x[6]===r.id);echoAdd(s,{kind:'fix',p,myth:r.id,topics:r.parents,text:q?voiceLine(s,q):r.fix,links:[mis?.id,learn?.id].filter(x=>x!==undefined),delta:[old,now]})}}}}
+const echoAct=wact;wact=function(s,op){let before=echoBefore(s),qs=op.type==='say'?(op.ids||[op.index]).map(i=>s.points[i]).filter(Boolean):[];echoAct(s,op);if(qs.some(q=>q[3]==='知识'))echoChanges(s,before,'learn',qs.map(q=>voiceLine(s,q)).join(' '),qs,3)};
 
 function echoGenerated(s,p,r,old,now){if(now<40||now<=old)return;let related=s.echo.events.filter(e=>e.p===p&&['learn','relay'].includes(e.kind)&&r.parents.includes(e.topic)&&e.i<s.i).at(-1);s.beliefOrigins[p+':'+r.id]=related?'相关知识接触后推断':s.beliefOrigins[p+':'+r.id]||'个人推断';echoAdd(s,{kind:'emerge',p,myth:r.id,topics:r.parents,text:reasonVariant(s,p,r),links:related?[related.id]:[],delta:[old,now]})}
 function echoSpread(s,from,to,r,old,now,text){if(now<=old)return;let source=echoObserveMis(s,from,r.id,text||r.cue);echoAdd(s,{kind:'spread',p:to,from,myth:r.id,topics:r.parents,text:text||r.cue,links:[source.id],delta:[old,now]})}
@@ -726,5 +726,72 @@ count_spice:['多样','不是说食物要多样吗？今天这碗面放了好几
 air_halo:['油','之前提到少用油好，我这锅不用另外倒油，那就不用担心这顿了吧？']
 };
 const reasonVariantBase=reasonVariant;reasonVariant=function(s,p,r,kind='cue'){if(kind==='cue'&&FACT_ECHO[r.id]){let [needle,line]=FACT_ECHO[r.id],prev=s.echo?.events.filter(e=>e.p===p&&e.kind==='learn'&&!e.boundary&&e.i<s.i&&r.parents.includes(e.topic)&&e.text.includes(needle)).at(-1);if(prev&&r.parents.some(k=>(s.C[p].u[k]||0)<40))return line}return reasonVariantBase(s,p,r,kind)};
+
+/* Warm conversational rendering, independent of the semantic decision tags. */
+const VOICE_AD=[
+[
+['下回顺手加个卤蛋或豆干，怎么样？','面里再配点青菜也不错。','汤面照吃，牛肉多一点，再配份青菜就更丰富了。'],
+['冬瓜汤里加点豆腐也挺搭的。','清蒸鱼或鸡蛋也可以做得很清淡。','冬瓜要是不多，再放把青菜也不错。'],
+['包子配个茶叶蛋和黄瓜，带着也方便。','赶课的话，提前备点饭、蛋和菜会省事些。','来不及的话，配个蛋或无糖豆浆也不错。'],
+['煎饼里加点生菜，鸡蛋照旧，怎么样？','平时也可以换着吃鱼、肉、蛋和豆制品。','下回想换口味的话，带肉和青菜的盖饭也不错。'],
+['水果照吃，再搭个饭团和卤蛋怎么样？','想吃清爽的，带主食、蛋和菜的三明治也不错。','水果留点下午吃，中午提前备点饭、蛋和菜，怎么样？'],
+['面里打个蛋、放把青菜，一口锅就够了。','葱花照放，再搭把青菜也挺好。','蛋和青菜分开盛，大家按胃口添面里也方便。'],
+['苹果留到下午吃，午饭配份青菜怎么样？','找个饭肉菜能一次打齐的窗口，就不用多排队了。','红烧肉配点青菜，吃起来也清爽。'],
+['蛋糕留着享受，晚饭再搭些主食、蛋肉豆和菜怎么样？','甜品和朋友分着尝挺好，正餐另安排就行。','赶作业的时候，提前备个带蛋和菜的三明治会方便些。'],
+['粥配蒸蛋挺顺口的，按胃口吃就好。','吃得下的话，嫩豆腐和软煮青菜也不错。','等胃口好些，再慢慢搭点米饭、豆腐和菜。'],
+['新锅也可以试试少油少盐的烤西兰花。','鸡块照样能尝，配点饭和菜就更丰富了。','下回换个口味，试试蒸鱼或煮豆腐配菜也不错。'],
+['沙拉配块面包和鸡蛋，怎么样？','沙拉照吃，顺手带块全麦面包和蛋也方便。','带米饭、蛋肉豆和菜的清爽套餐也不错。'],
+['蒸鱼时顺手配盘青菜，挺搭的。','鱼汤和鱼肉一起吃也不错。','青菜和鱼分开盛，大家按胃口夹就好。']
+],[
+['上车前顺手带个茶叶蛋，配包子也方便。','带盒黄瓜配包子，车上吃也方便。','出门前备好包子、蛋和黄瓜，路上就省事了。'],
+['鱼和米饭配点当地青菜，怎么样？','鱼和菜都点小份，大家分着尝也不容易浪费。','有鱼、饭和菜的套餐也挺省事的。'],
+['水果杯照吃，再搭个饭团和蛋怎么样？','明早提前备点三明治、蛋和菜，路上会方便些。','景区不好买的话，出来再找份有主食、蛋肉豆和菜的饭也行。'],
+['煎饼里加点生菜也不错。','明天换个口味，尝尝有肉或豆制品、再配点菜的小吃？','夜市要是有饭肉菜套餐，也可以试试。'],
+['沙拉配面包和鸡蛋也不错。','有主食、蛋肉豆和蔬菜的现成套餐会方便些。','晚饭换份有饭、蛋肉豆和菜的热乎饭怎么样？'],
+['面里打个蛋、放把青菜，一锅就能煮好。','调味料照放，再搭点青菜也挺好。','蛋和青菜另盛，大家自己添也方便。'],
+['苹果留着下午吃，午饭配点青菜怎么样？','饭肉菜套餐可以比较一下价格，挑合适的。','红烧肉配份青菜也挺搭的。'],
+['甜品慢慢尝，晚饭再搭些主食、蛋肉豆和菜就好。','几个人分着尝，还能多尝几种，正餐另安排就好。','明早出门前备份带蛋和菜的简餐会方便些。'],
+['酒店有蒸蛋的话，配粥也挺顺口的。','粥配点嫩豆腐和软菜，按胃口吃就好。','等胃口好些，再慢慢搭点饭、蛋和菜。'],
+['附近有蔬菜摊的话，搭份青菜也不错。','炸鸡适量尝尝，正餐再搭些米饭和菜怎么样？','明天也可以尝尝当地的清蒸鱼、豆腐和蔬菜。'],
+['三明治配根黄瓜，车上吃也方便。','要是有带主食、蛋肉豆和菜的简餐，也可以试试。','提前到站挑份带蛋和菜的三明治，会从容些。'],
+['回家蒸鱼的时候配盘青菜，怎么样？','鱼汤和鱼肉一起吃也挺好。','明天换成米饭、豆腐和青菜也不错。']
+],[
+['三明治配点黄瓜也方便。','下回选个带蛋和菜的三明治，怎么样？','忙的时候提前备个带蛋和菜的三明治会方便些。'],
+['冬瓜汤里加点豆腐也挺搭的。','汤配个蛋或鱼也不错。','冬瓜要是不多，再放把青菜也挺好。'],
+['炸鸡券照用，回家配点现成的菜也方便。','鸡块适量尝尝，再搭点米饭和蔬菜怎么样？','下回试试清蒸鱼或豆腐配菜，也不错。']
+],[
+['粥配蒸蛋挺顺口的，按胃口吃就好。','嫩豆腐和软煮青菜配粥也不错。','热粥照喝，搭点蛋、豆腐和菜怎么样？'],
+['苹果留着下午吃，午饭配盘青菜也挺好。','红烧肉配盘青菜，吃起来也清爽。','下回换个口味，试试鱼或豆腐配饭和菜？']
+]];
+const VOICE_K={
+protein:['鱼、蛋、肉、奶和大豆制品都能提供蛋白质。','蛋、肉、豆各有营养特点，换着吃更丰富；蛋白质也只是搭配的一部分。'],
+diversity:['食物多样，不只是种类多，实际吃到的量也重要。','葱花芝麻能提味，也有营养，只是量太少，顶不了主要食材。'],
+produce:['蔬菜和水果各有营养特点，都值得安排在日常饮食里。','水果和蔬菜各有长处，水果好吃，也不等于能代替蔬菜。'],
+light:['清淡主要是少油、少盐、少糖，食材还是可以丰富些。','清淡不只是粥和汤，鱼、蛋、肉和豆腐也能做得清淡。'],
+grain:['主食也可以换着吃，米面、全谷物、杂豆各有特点。','食物叫什么不一定说明吃了多少，甜品也不太适合当日常主食。'],
+oil:['烹调时少放些油，有助于控制油脂摄入。','少油是个优点，食材、份量和盐也一样值得留意。'],
+regular:['忙的时候提前备点方便的正餐，规律吃饭会容易些。','方便是个优点，里面有什么、份量够不够也很重要。'],
+moderation:['喜欢的食物也能融入日常饮食，主要看份量和整体搭配。','一顿吃了菜挺好，不过其他食物的份量和频率还是要单独看。']};
+const VOICE_FIX={
+egg_all:'鸡蛋营养挺好，只是多加一个蛋也不能替代主食和蔬菜。',
+count_spice:'葱花芝麻确实也算食材，只是量太少，顶不了一份主要配菜。',
+fruit_veg:'水果当然可以照吃，只是它和蔬菜各有营养特点，不能完全互换。',
+clear_only:'清淡不一定只有粥和汤，蛋、豆腐和菜也可以做得清淡。',
+soup_extract:'汤里确实有些营养，不过肉和菜里也还有不少，光喝汤不太一样。',
+air_halo:'新锅能少放些油，确实不错。不过食材、份量、盐和整体搭配也有影响。',
+reward_offset:'吃了菜挺好，甜品也可以享受，只是份量和整体饮食还是要单独看。',
+bun_veg:'菜包里确实有菜，只是能算多少蔬菜，还得看实际馅料。',
+fast_meal:'能方便地吃上饭挺好的，里面的食材和份量也值得看看。',
+fruit_soup:'水果和汤都可以吃，不过这一餐的主食、蛋肉豆和蔬菜还得一起看。',
+all_protein:'鱼、蛋、肉、豆都能提供蛋白质，不过营养组成各有不同，换着吃更丰富。',
+occasional:'偶尔吃点当然没问题，只是把这一周的次数放在一起看，会更清楚。'};
+const VOICE_PRAISE={'搭配不错':'这顿主食、蛋肉豆和菜都有，搭得挺好。','肯定蔬菜':'这顿还搭了蔬菜，不错。','肯定蛋肉豆':'这顿也有蛋肉豆类，挺好的。','认可现有选择':'有主食垫垫肚子，挺好。','肯定水果':'水果看着不错，正餐再搭点别的就好。','理解庆祝':'忙完了和朋友吃点喜欢的，挺好的。'};
+const VOICE_ASK={n:'这家的面是合口味，还是买着比较方便？',rs:'今天是想喝点热汤吗？',b:'今天选包子，是因为方便吗？',de:'这家的煎饼是特别合你口味吗？',f:'今天是想吃清爽点，还是时间比较赶？',pn:'今天是想做点省事的面吗？',r:'今天这份饭是合口味，还是买着比较方便？',c:'今天是有什么值得庆祝的事吗？',p:'今天胃口还好吗？',ch:'这次是想试试新锅的口感吗？',sa:'今天是想吃点清爽的吗？',fi:'今天做这顿饭还顺手吗？',s:'这次选三明治，是因为好带吗？'};
+const VOICE_MAP=new Map();[AD_D,AD_T,AD_X,AD_G].forEach((rows,g)=>rows.forEach((row,i)=>row.forEach((a,j)=>VOICE_MAP.set(a[0]+'|'+a[1],VOICE_AD[g][i][j]))));
+function voiceLine(s,q){if(!q)return '';if(q[3]==='探问'){if(q[7]?.reasonId)return '我有点好奇，你是怎么想到这个的？';return VOICE_ASK[E[s.i].base]||'今天这顿是怎么想到这样搭的？'}
+if(q[3]==='肯定')return VOICE_PRAISE[q[0]]||q[1];
+if(q[3]==='知识')return q[6]?VOICE_FIX[q[6]]||q[1]:VOICE_K[q[4]]?.[q[5]?1:0]||q[1];
+if(q[3]==='建议')return VOICE_MAP.get(q[0]+'|'+q[1])||(q[7]?.maintain?'这样搭就挺好，按胃口取餐就行。':q[1]);return q[1]}
+wcompose=function(s,ids){return ids.map(i=>voiceLine(s,s.points[i])).join('')};
 whome();
 </script></body></html>
