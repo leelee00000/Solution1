@@ -368,4 +368,53 @@ v4leftHTML=function(){let lv=v4level(),earned=vg.xp-(lv-1)*40;return '<aside cla
 function v45apHTML(){let d=draft(st),cost=d&&!d.blocked?d.cost:0;return '<div class="v45ap"><span>行动点</span><span class="v45apcells">'+Array.from({length:vg.cap},(_,i)=>'<i class="'+(i<st.attention?(i>=st.attention-cost?'spend':'on'):'')+'"></i>').join('')+'</span><strong>'+st.attention+'/'+vg.cap+'</strong>'+(cost?'<span class="v43cost">−'+cost+'</span>':'')+'<span>每日 +'+vg.daily+'</span></div>'}
 const v45render=render;render=function(preserve){v45render(preserve);if(st.done)return;let root=document.getElementById('app'),rack=root.querySelector('.spBoard .tagbar'),title=root.querySelector('.v4rackTitle');if(rack){let cards=[...rack.children];cards.sort((a,b)=>{let rank=e=>e.classList.contains('behavior')?0:e.classList.contains('cognition')?1:e.classList.contains('context')?2:3;return rank(a)-rank(b)});rack.append(...cards)}if(title){let header=document.createElement('div');header.className='v45rackhead';title.before(header);header.append(title);header.insertAdjacentHTML('beforeend',v45apHTML());if(vg.pending)header.insertAdjacentHTML('afterend','<div class="v45reward">升级奖励 '+vg.pending+' 次 <button onclick="v4grow(\'daily\')" '+(vg.daily>=5?'disabled':'')+'>每日AP +1</button><button onclick="v4grow(\'cap\')" '+(vg.cap>=10?'disabled':'')+'>容量 +1</button></div>');if(st.lastDay&&st.attention<st.people.reduce((n,q)=>n+v4min(q),0))header.insertAdjacentHTML('afterend','<p class="v43warning">行动点不足以完成全部问题。</p>')}};
 
+
+/* V4.7: tutorial pacing, three days; independent character signatures. */
+scenes.splice(0,scenes.length,
+{...cases[1],time:'周一 18:20',lines:[
+[0,'晚饭开张，今天白粥配咸菜。','a'],
+[2,'妈，你昨天不也是这么吃的？','e'],
+[0,'没放一滴油，这还不够清淡？','b'],
+[1,'我中午那碗排骨汤倒是挺香，肉剩了几块。','c'],
+[2,'爸，你是不是又光顾着喝汤了？','d'],
+[0,'你俩先别聊吃的，谁把遥控器拿走了？']]},
+{...cases[2],time:'周二 10:15',lines:[
+[2,'早八路上买了瓶橙汁，今天水果任务完成。','a'],
+[0,'昨天给你留的橙子呢？'],
+[2,'这瓶写着100%果汁，跟吃橙子差不多吧。','b'],
+[2,'那个得剥皮，包里又没地方放。','c'],
+[2,'早上就几分钟，不想弄得一手黏糊糊。','d'],
+[1,'排骨炖那么久，营养多少都进汤里了吧。','e'],
+[0,'你今天记得把快递取了。']]},
+{...cases[0],time:'周三 12:30',lines:[
+[1,'今天食堂又是排骨汤，汤喝完了，肉还是剩了。','a'],
+[1,'我觉得炖久了，喝汤也能补到肉里的营养。','b'],
+[2,'爸你不是一直嫌排骨塞牙嘛。','c'],
+[1,'嗯，食堂那种大块的我不爱嚼。','d'],
+[0,'我这两天胃口一般，晚上不想再做一锅菜。','e'],
+[0,'粥喝着舒服，一个锅也省事。','echo'],
+[2,'我们家群聊怎么一到饭点就开会。']]}
+);
+PHOTO_CLUES.splice(0,PHOTO_CLUES.length,'白粥配咸菜；图中未见其他明确蛋鱼肉豆搭配。','橙汁饮品；不是完整鲜橙，不能从图中判断配方。','排骨汤与米饭；固体肉量少，需结合人物原话。');
+const v47paths={
+light:[['0:a','0:b'],['0:photo','0:b']],
+comfort:[['2:e','2:echo']],
+juice:[['1:a','1:b'],['1:photo','1:b']],
+carry:[['1:c','1:d']],
+soup:[['0:c','1:e'],['2:a','2:b']],
+chew:[['2:c','2:d']],
+light_action:[['0:photo','0:a'],['0:a','0:e']],
+juice_action:[['1:photo','1:a']],
+soup_action:[['0:c','0:d'],['2:photo','2:a']]
+};
+for(const h of hypotheses){h.need=v47paths[h.id]||[];h.counter=[]}
+Object.assign(v44owners,{'0:c':1,'0:d':1,'0:e':0,'1:e':1,'2:c':1});
+/* Use explicit dialogue IDs and avoid old six-day conditional dialogue injection. */
+seedLines=function(i,x){return scenes[i].lines.map(([p,t,id],j)=>[p,t,i+':'+(id||'x'+j)])};
+const v47sig=['有话就直说，别在家里开会。','凡事我心里有数，你们别急。','能用表情包解决的事，绝不打字。'];
+const v47person=v4personHTML;v4personHTML=function(){let html=v47person(),quote=v47sig[v4focus];return html.replace(/<p class="v4quote"[^>]*>[\s\S]*?<\/p>/,'<p class="v4quote" title="'+esc(quote)+'">“'+esc(quote)+'”</p>')};
+/* Optional explicit reset for repeatable baseline tutorial tests; no automatic save deletion. */
+const v47rules=v4rules;v4rules=function(){return v47rules().replace('</details>','<p>教学关：3日。初始配置下理论9 AP，最终日容量5。已有成长会降低资源压力。</p><button onclick="v47reset()">重置V4测试成长并重玩</button></details>')};
+function v47reset(){if(!confirm('清空V4测试经验、奖励和结算记录？V1—V3不受影响。'))return;vg={xp:0,daily:3,cap:5,paid:[],pending:0};v4save();document.getElementById('v42rulesDialog')?.close();restart()}
+
 restart();</script></body></html>
