@@ -601,4 +601,36 @@ const v411render=render;render=function(preserve){
  v411render(preserve)
 };
 
+
+/* V4.12: contextual tutorial covers evidence completeness, stats and post-response rules. */
+let v412seen=new Set(),v412lastCombo=false;
+const v412restart=restart;restart=function(){v412seen.clear();v412lastCombo=false;v412restart()};
+function v412guideAt(target,text,title,key){v49placeGuide(target,text,title,key)}
+v49guide=function(){
+ if(v48stage!=='practice'||st.done){v49removeGuide();return}
+ const sel=x=>document.querySelector(x),q=st.people.find(p=>p.p===1),ids=['soup_action','soup','chew'],found=ids.filter(id=>st.tags.some(t=>t.id===id&&t.status==='已支持')),d=draft(st);
+ if(v49canFinish()){if(st.attention===0||st.people.every(p=>p.settled))v412guideAt(sel('#v49settle'),'点击结算本局，领取已解决人物的健康值。','本局结算','settle');else v49removeGuide();return}
+ if(st.i>0){v49removeGuide();return}
+ if(!q.left){v412guideAt(sel('.v45stats')||sel('.v4avatars'),'父亲的问题全部解决了！问题顽固度归零后，他的健康值才有资格转化为经验；全员完成还有额外奖励。你可以现在继续回应，也可以把行动点留到下一日。过于直接的劝说可能降低信任。你的长期目标是升至 Lv.10，获得转正资格。','首次任务反馈','first-solved');return}
+ if(!st.evidence['0:photo']){v412guideAt(v410clue('0:photo'),'先点击这张餐图，收进父亲的线索板。餐图只是第一条证据，还需要阅读完整对话，寻找行为、想法与现实原因。','收集餐图','photo');return}
+ if(!st.evidence['0:a']){v412guideAt(v410clue('0:a'),'点击这条原话，补充父亲的行为证据。不要只收集两条：还要找出他为什么这样吃。','收集原话','quote');return}
+ if(!found.includes('soup_action')){v412guideAt(sel('#boardScroll'),'把餐图与喝汤剩肉的原话拖近，发现第一张行为卡。后面还需要继续收集证据，理解父亲的想法和现实困难。','首次推理','first-link');return}
+ if(found.length<3){
+ let missing=['0:b','0:c','0:d'].filter(id=>!st.evidence[id]),target=missing.map(v410clue).find(v410visible);
+ if(missing.length){v412guideAt(target||sel('.chatSide .chat'),'行为卡只是起点。继续收集关于父亲营养想法、咀嚼困难的原话，包括家人对他的描述，再关联证据。','寻找成因','more-evidence');return}
+ v412guideAt(sel('#boardScroll'),'现在把描述同一原因的线索分别拖近，形成认知卡和现实卡。三类卡牌齐全后，才能作出综合回应。','理解成因','more-links');return
+ }
+ if(v4focus!==1){v412guideAt(sel('.v4avatars button:nth-child(2)'),'选择父亲头像，查看他的属性和卡牌。','选择对象','father-focus');return}
+ if(!st.selected.length){
+ if(!v410dismissed.has('stats-intro')){v412guideAt(sel('.v45stats')||sel('.v4avatars'),'健康值决定最终经验；信任度越高，回应增加的健康值越多；问题顽固度必须降到零，才有结算资格。先选一张行为卡，看看数值怎样变化。','了解人物数值','stats-intro');return}
+ v412guideAt(sel('.tagbar .behavior')||sel('.tagbar'),'先选择行为卡，再搭配认知卡和现实卡。','组合回应','choose');return
+ }
+ if(st.selected.length<3){v412guideAt(sel('.tagbar'),'父亲比较倔强，单纯判断正误可能降低信任。补齐认知和现实卡，综合回应才能解决问题。','选择策略','complete-combo');return}
+ if(!v410dismissed.has('stats-preview')&&!v412lastCombo){v412guideAt(sel('.v45stats')||sel('.v4avatars'),'数值条上的浅色部分是本次预期变化。健康增量由卡牌基础值乘以信任倍率决定；信任变化与问题削减也会在这里显示。本次消耗3点行动点，卡牌栏可查看余额；确认后点击发送。','数值预览','stats-preview');return}
+ if(st.attention<3){v412guideAt(sel('.v45ap'),'行动点不足，可以留到下一日恢复后再回应。','行动资源','ap-low');return}
+ v412guideAt(sel('.v45ap'),'这次综合回应消耗3点行动点。行动点每天恢复，剩余可继承。确认后点击发送。','行动资源','ap-send')
+};
+const v412choose=choose;choose=function(id){let before=st.selected.length;v412choose(id);if(st.selected.length===3&&before<3){v412lastCombo=false;v49guide()}};
+const v412dismiss=v410dismiss;v410dismiss=function(){if(v410key==='stats-preview')v412lastCombo=true;v412dismiss();if(v410key==='stats-intro'||v410key==='stats-preview')v49guide()};
+
 restart();</script></body></html>
