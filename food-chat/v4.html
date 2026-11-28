@@ -721,7 +721,8 @@ schedulePlayback=function(){if(playbackTimer!==null||!isPlaying())return;let own
 function v414stop(e){e.preventDefault();e.stopImmediatePropagation()}
 document.addEventListener('click',e=>{
  let t=e.target;if(!t?.closest)return;let g=v414model();
- if(t.closest('#v49coach'))return;
+ if(t.closest('#v49coach,#v415auto'))return;
+ if(t.closest('#v415hint')&&g?.mode!=='read')return;
  if(g){
   if(g.mode==='read'){if(!t.closest('button,a,input,[role="button"],.spCard,summary')){v414read.add(g.key);v414stop(e);v414refresh();return}v414stop(e);return}
   if(v414blank(t)&&isPlaying()){v414stop(e);v414advanceLine();return}
@@ -734,5 +735,19 @@ document.addEventListener('drop',e=>{if(v414model())v414stop(e)},true);
 document.addEventListener('keydown',e=>{let g=v414model();if(!g||!['Enter',' '].includes(e.key))return;let t=e.target;if(t?.closest?.('#v49coach')||v414allowed(t,g))return;v414stop(e);if(g.mode==='read'&&(!t?.closest?.('button,a,input,[role="button"],summary'))){v414read.add(g.key);v414refresh()}},true);
 const v414update=updatePlaybackControls;updatePlaybackControls=function(){v414update();let n=document.getElementById('chatNext');if(n&&isPlaying()){n.textContent='下一条消息';n.disabled=!!v414model()}};
 const v414next=next;next=function(){if(v414model())return;if(isPlaying()){v414advanceLine();return}v414next()};
+
+
+/* V4.15: manual chat playback by default, optional autoplay. */
+let v415auto=false;
+const v415restart=restart;restart=function(){v415auto=false;clearPlayback();v415restart()};
+const v415schedule=schedulePlayback;schedulePlayback=function(){if(v415auto)v415schedule()};
+function v415ui(){let b=document.getElementById('v415auto'),h=document.getElementById('v415hint');if(b){b.textContent=v415auto?'暂停播放':'自动播放';b.setAttribute('aria-pressed',String(v415auto))}if(h)h.hidden=!isPlaying()}
+function v415toggle(){v415auto=!v415auto;if(v415auto)schedulePlayback();else clearPlayback();v415ui()}
+const v415update=updatePlaybackControls;updatePlaybackControls=function(){v415update();v415ui()};
+const v415allowed=v414allowed;v414allowed=function(e,g){return !!e?.closest?.('#v415auto')||v415allowed(e,g)};
+const v415controls=v414controls;v414controls=function(){return v415controls().filter(e=>e.id!=='v415auto')};
+const v415model=v414model;v414model=function(){let g=v415model();if(g?.mode==='wait')g.txt='点击群聊空白处，继续阅读剩余消息。';return g};
+const v415render=render;render=function(preserve){v415render(preserve);if(st.done||!document.querySelector('.chatSide'))return;let head=document.querySelector('.chathead'),chat=document.getElementById('chat');if(head&&!document.getElementById('v415auto')){let b=document.createElement('button');b.id='v415auto';b.onclick=v415toggle;b.style.cssText='font-size:11px;padding:4px 6px;white-space:nowrap';head.insertBefore(b,head.lastElementChild)}if(chat&&!document.getElementById('v415hint')){let h=document.createElement('div');h.id='v415hint';h.textContent='点击空白处继续';h.style.cssText='text-align:center;color:#929b90;font-size:11px;padding:5px 0;flex:none;cursor:pointer';h.onclick=()=>{if(isPlaying())v414advanceLine()};chat.after(h)}v415ui()};
+document.addEventListener('click',e=>{if(e.target?.closest?.('#v415auto')){e.preventDefault();e.stopImmediatePropagation();v415toggle()}else if(e.target?.closest?.('#v415hint')){e.preventDefault();e.stopImmediatePropagation();v414advanceLine()}},true);
 
 restart();</script></body></html>
