@@ -633,4 +633,36 @@ v49guide=function(){
 const v412choose=choose;choose=function(id){let before=st.selected.length;v412choose(id);if(st.selected.length===3&&before<3){v412lastCombo=false;v49guide()}};
 const v412dismiss=v410dismiss;v410dismiss=function(){if(v410key==='stats-preview')v412lastCombo=true;v412dismiss();if(v410key==='stats-intro'||v410key==='stats-preview')v49guide()};
 
+
+/* V4.13: local tutorial anchors; never fall back to remote header. */
+const v413place=v49placeGuide;
+v49placeGuide=function(target,txt,step,key=step){
+ if(target?.id==='boardScroll'){
+  let ids=key==='first-link'?['0:a','0:photo']:!st.tags.some(t=>t.id==='soup'&&t.status==='已支持')?['0:b','0:a']:['0:d','0:c'];
+  let cards=[...target.querySelectorAll('.spCard')];
+  target=ids.map(id=>cards.find(e=>e.getAttribute('onpointerdown')==="cardStart(event,'"+id+"')")).find(v410visible)||cards.find(v410visible)||target;
+ }
+ v49removeGuide();v410key=key;if(v410dismissed.has(key)||!v410visible(target))return;
+ target.classList.add('v49target');
+ let box=document.createElement('div');box.id='v49coach';box.className='v49coach noarrow';box.innerHTML='<button class="v410close" aria-label="关闭当前引导" onclick="v410dismiss()">×</button><b>管理员 · '+esc(step)+'</b>'+esc(txt);document.body.appendChild(box);
+ let r=v410rect(target),W=innerWidth,H=innerHeight,clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
+ let protectedRects=[...document.querySelectorAll('.chatSide .msg,.chatSide .controls,.v4person,.v4avatars,.v45rackhead,.tagbar,.v45reward,.spCard,.v4left')].filter(e=>e!==target&&v410visible(e)).map(v410rect);protectedRects.push(r);
+ let options=[];
+ for(let width of [255,210,180]){
+ box.style.width=Math.min(width,W-24)+'px';let w=box.offsetWidth,h=box.offsetHeight;
+ for(let side of ['right','left','below','above'])for(let shift of [0,-35,35,-70,70,-110,110]){
+ let x=side==='right'?r.right+10:side==='left'?r.left-w-10:clamp(r.left+(r.width-w)/2+shift,8,W-w-8);
+ let y=side==='below'?r.bottom+10:side==='above'?r.top-h-10:clamp(r.top+(r.height-h)/2+shift,8,H-h-8);
+ if(x<8||y<8||x+w>W-8||y+h>H-8)continue;
+ let c={left:x,top:y,right:x+w,bottom:y+h},over=protectedRects.reduce((n,p)=>n+v410over(c,p),0);
+ let gap=Math.hypot(Math.max(r.left-c.right,c.left-r.right,0),Math.max(r.top-c.bottom,c.top-r.bottom,0));
+ options.push({c,w,h,side,score:over*10+gap+Math.abs(shift)*.15+(255-width)*.1,over});
+ }}
+ options.sort((a,b)=>a.score-b.score);
+ let best=options.find(o=>o.over===0)||options.find(o=>v410over(o.c,r)===0&&[...document.querySelectorAll('.chatSide .controls,.tagbar,.v45rackhead')].every(e=>!v410over(o.c,v410rect(e))));
+ if(!best){box.remove();return}
+ let {c,w,h,side}=best;box.style.width=w+'px';box.style.left=c.left+'px';box.style.top=c.top+'px';
+ box.classList.remove('noarrow');if(side==='above')box.classList.add('above');if(side==='right'||side==='left'){box.classList.add(side);box.style.setProperty('--arrowY',clamp((r.top+r.bottom)/2-c.top,12,h-12)+'px')}else box.style.setProperty('--arrow',clamp((r.left+r.right)/2-c.left,12,w-12)+'px');
+};
+
 restart();</script></body></html>
