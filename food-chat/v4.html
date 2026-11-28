@@ -781,4 +781,34 @@ const v416next=next;next=function(){
  v416next();
 };
 
+
+/* V4.17: protected AP tutorial anchor and immediate guided send. */
+function v417ready(){return v48stage==='practice'&&!st.done&&st.i===0&&st.people.find(q=>q.p===1)?.left>0&&['soup_action','soup','chew'].every(id=>st.selected.includes(id))&&v414read.has('preview')&&v414read.has('ap')}
+const v417model=v414model;v414model=function(){
+ if(v417ready()){let b=document.getElementById('chatSend');return {key:'send',title:'发送回应',txt:'三张卡已选齐，点击发送，完成首次回应。',target:b,mode:'op',allow:[b].filter(Boolean)}}
+ return v417model()
+};
+const v417place=v49placeGuide;v49placeGuide=function(target,txt,step,key=step){
+ if(key!=='ap'&&key!=='strategy'&&key!=='send')return v417place(target,txt,step,key);
+ v49removeGuide();v410key=key;if(v410dismissed.has(key)||!v410visible(target))return;
+ target.classList.add('v49target');
+ let box=document.createElement('div');box.id='v49coach';box.className='v49coach above';box.style.cssText='box-sizing:border-box;width:230px;max-width:calc(100vw - 24px)';box.innerHTML='<button class="v410close" aria-label="关闭当前引导" onclick="v410dismiss()">×</button><b>管理员 · '+esc(step)+'</b>'+esc(txt);document.body.appendChild(box);
+ // Include the continuation hint in measurement so the reading box never expands across its anchor.
+ let r=target.getBoundingClientRect(),w=box.offsetWidth,h=box.offsetHeight+(v414model()?.mode==='read'?24:0),x=Math.max(8,Math.min(innerWidth-w-8,r.left+(r.width-w)/2)),y=r.top-h-14;
+ if(y<8){box.classList.remove('above');y=r.bottom+14}
+ box.style.left=x+'px';box.style.top=y+'px';box.style.setProperty('--arrow',Math.max(12,Math.min(w-12,r.left+r.width/2-x))+'px');
+};
+const v417update=updatePlaybackControls;updatePlaybackControls=function(){v417update();v417enable()};
+function v417enable(){if(!v417ready())return;let b=document.getElementById('chatSend'),d=draft(st);if(b){b.disabled=!d||d.blocked||st.attention<d.cost;b.textContent='发送'}clearPlayback()}
+const v417refresh=v49guide;v49guide=function(){v417refresh();v417enable()};
+const v417schedule=schedulePlayback;schedulePlayback=function(){if(!v417ready())v417schedule()};
+const v417send=send;send=function(){
+ if(!v417ready())return v417send();
+ let d=draft(st);if(!d||d.blocked||st.attention<d.cost)return;
+ clearPlayback();let at=visibleLines,end=st.lines.length;
+ if(!sendState(st))return;
+ let feedback=st.lines.splice(end);st.lines.splice(at,0,...feedback);visibleLines=at+feedback.length;
+ render(true);let ch=document.getElementById('chat');if(ch)ch.scrollTop=ch.scrollHeight;
+};
+
 restart();</script></body></html>
