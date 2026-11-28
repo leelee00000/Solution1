@@ -750,4 +750,35 @@ const v415model=v414model;v414model=function(){let g=v415model();if(g?.mode==='w
 const v415render=render;render=function(preserve){v415render(preserve);if(st.done||!document.querySelector('.chatSide'))return;let head=document.querySelector('.chathead'),chat=document.getElementById('chat');if(head&&!document.getElementById('v415auto')){let b=document.createElement('button');b.id='v415auto';b.onclick=v415toggle;b.style.cssText='font-size:11px;padding:4px 6px;white-space:nowrap';head.insertBefore(b,head.lastElementChild)}if(chat&&!document.getElementById('v415hint')){let h=document.createElement('div');h.id='v415hint';h.textContent='点击空白处继续';h.style.cssText='text-align:center;color:#929b90;font-size:11px;padding:5px 0;flex:none;cursor:pointer';h.onclick=()=>{if(isPlaying())v414advanceLine()};chat.after(h)}v415ui()};
 document.addEventListener('click',e=>{if(e.target?.closest?.('#v415auto')){e.preventDefault();e.stopImmediatePropagation();v415toggle()}else if(e.target?.closest?.('#v415hint')){e.preventDefault();e.stopImmediatePropagation();v414advanceLine()}},true);
 
+
+/* V4.16: wait for unrevealed tutorial evidence instead of locking a missing target. */
+const v416model=v414model;
+v414model=function(){
+ let g=v416model();if(!g)return null;
+ if((g.mode==='op'&&!g.target&&isPlaying())||g.mode==='wait'){
+  let target=document.getElementById('v415hint')||document.getElementById('chat');
+  return {key:'read-chat-'+g.key,title:'继续阅读',txt:'点击群聊空白处，查看下一条消息。',target,mode:'wait',allow:[target].filter(Boolean)};
+ }
+ return g;
+};
+const v416render=render;render=function(preserve){
+ v416render(preserve);
+ if(st.done||!document.getElementById('chat'))return;
+ let n=document.getElementById('chatNext');
+ if(n&&isPlaying()){n.textContent='下一条消息';n.disabled=false}
+ v49guide();
+};
+const v416update=updatePlaybackControls;updatePlaybackControls=function(){
+ v416update();let n=document.getElementById('chatNext');
+ if(n&&isPlaying()){n.textContent='下一条消息';n.disabled=false}
+};
+const v416allowed=v414allowed;v414allowed=function(e,g){
+ if(g?.mode==='wait'&&e?.closest?.('#chatNext,#v415hint'))return true;
+ return v416allowed(e,g);
+};
+const v416next=next;next=function(){
+ if(v414model()?.mode==='wait'&&isPlaying()){v414advanceLine();return}
+ v416next();
+};
+
 restart();</script></body></html>
